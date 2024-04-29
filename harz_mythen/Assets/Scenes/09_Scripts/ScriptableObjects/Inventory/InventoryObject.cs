@@ -22,6 +22,7 @@ public class InventoryObject : ScriptableObject
         if (!hasItem) // wenn hasItem nicht zutrifft
         {
             Container.Add(new InventorySlot(_item, _amount));
+// evtl. Nachricht schicken, dass Bild erscheinen soll
         }
     }
 }
@@ -40,5 +41,6 @@ public class InventorySlot
     public void AddAmount(int value)
     {
         amount += value;
+        // evtl. Nachricht schicken, dass Anzahl sich erhöhen soll
     }
 }
