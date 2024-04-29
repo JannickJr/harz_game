@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e52ec1883ee9e449ae277eecf79911d, type: 3}
   m_Name: Bones
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 4937918741002010186, guid: 9e32ef325781a7c49a27a7e80879a390, type: 3}
   type: 2
   description: "Das sind gro\xDFe Knochen."

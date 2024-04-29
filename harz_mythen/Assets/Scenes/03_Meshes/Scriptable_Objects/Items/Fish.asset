@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1821d4a65bcdb0441a50c6cf09022db0, type: 3}
   m_Name: Fish
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 5041156355102243869, guid: a3136bf9890ce1e4ba31216f8ce84384, type: 3}
   type: 0
-  description: Gifitig
+  description: Giftig
   restoreHealthValue: 0
