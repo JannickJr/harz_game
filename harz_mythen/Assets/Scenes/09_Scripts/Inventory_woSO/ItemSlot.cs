@@ -67,7 +67,6 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
             selectedShader.SetActive(false);
             thisItemSelected = false;
         }
-        
     }
     public void OnRightClick()
     {
