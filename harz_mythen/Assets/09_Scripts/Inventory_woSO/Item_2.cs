@@ -7,6 +7,7 @@ public class Item_2 : MonoBehaviour
     [SerializeField] private string itemName;
     [SerializeField] private int quantity;
     [SerializeField] private Sprite sprite;
+    [TextArea] [SerializeField] private string itemDescription;
 
     private InventoryManager inventoryManager;
 
@@ -39,7 +40,7 @@ public class Item_2 : MonoBehaviour
                     //var item = gameObject.GetComponent<Item_2>();
                     //if (item)
                     {
-                        inventoryManager.AddItem(itemName, quantity, sprite);
+                        inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
                         Debug.Log("Plus XXX"); // funktioniert (sogar für einzelnes Objekt)
                         Destroy(gameObject);
                         Debug.Log("weg XXX"); // funktioniert (sogar für einzelnes Objekt)
