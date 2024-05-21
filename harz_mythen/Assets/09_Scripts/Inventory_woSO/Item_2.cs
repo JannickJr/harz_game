@@ -24,7 +24,8 @@ public class Item_2 : MonoBehaviour
     {
         MouseClick();
     }
-
+    
+    //==Variante ohne Stackable Items==// funktioniert
     public void MouseClick()    // Klick
     {
         if (Input.GetMouseButtonDown(0))
@@ -48,6 +49,40 @@ public class Item_2 : MonoBehaviour
                 }
             }
         }
-    }
+    } // 
+    /*
+    //==Variante mit Stackable Items==// funktioniert noch nicht
+    public void MouseClick()    // Klick
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+
+            // funktioniert super (sogar für einzelnes Objekt)
+            if (Physics.Raycast(ray, out RaycastHit hit)) // funktioniert super
+            {                                               // funktioniert nur, wenn Script auf anzuklickendem Objekt liegt
+                if (hit.transform.gameObject == gameObject)
+                {
+                    Debug.Log("Treffer XXX"); // funktioniert
+                    //var item = gameObject.GetComponent<Item_2>();
+                    //if (item)
+                    {
+                        int leftOverItems = inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
+                        Debug.Log("Plus XXX"); // funktioniert (sogar für einzelnes Objekt)
+                        if (leftOverItems <= 0)
+                        {
+                            Destroy(gameObject);
+                            Debug.Log("weg XXX"); // funktioniert (sogar für einzelnes Objekt)
+                        }
+                        else
+                        {
+                            quantity = leftOverItems;
+                        }
+                    }
+                }
+            }
+        }
+    }*/ //
+
 }
 

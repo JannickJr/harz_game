@@ -1073,10 +1073,6 @@ PrefabInstance:
       value: ItemSlot
       objectReference: {fileID: 0}
     - target: {fileID: 5637946935301730940, guid: f6bb8361537087e4bb6177bc57c72c9d, type: 3}
-      propertyPath: emptySprite
-      value: 
-      objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 5637946935301730940, guid: f6bb8361537087e4bb6177bc57c72c9d, type: 3}
       propertyPath: itemDescriptionBar
       value: 
       objectReference: {fileID: 1382526456}

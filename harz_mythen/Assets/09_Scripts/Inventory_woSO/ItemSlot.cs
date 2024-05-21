@@ -16,6 +16,8 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public string itemDescription;
     public Sprite emptySprite;
 
+    [SerializeField] private int maxNumberOfItems; // efiniert die Größe des Slots
+
     //==ITEM SLOT==//
     [SerializeField] private TMP_Text quantityText;
     [SerializeField] private Image itemImage;
@@ -37,7 +39,8 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     {
         inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
     }
-
+    
+    //==Variante ohne Stackable Items==// funktioniert
     public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
         this.itemName = itemName;
@@ -50,6 +53,46 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         quantityText.enabled = true;
         itemImage.sprite = itemSprite;
     }
+    /*
+    //==Variante mit Stackable Items==// funktioniert noch nicht
+    public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
+    {
+        //Check to see, if the slot is already full
+        //isFull = true;
+        if (isFull)
+        {
+            return quantity;
+        }
+        // Update Name
+        this.itemName = itemName;
+
+        // Update Image
+        this.itemSprite = itemSprite;
+        itemImage.sprite = itemSprite;
+
+        // Update Description
+        this.itemDescription = itemDescription;
+
+        // Update Quantity
+        this.quantity += quantity;
+        if (this.quantity >= maxNumberOfItems)
+        {
+            quantityText.text = quantity.ToString();
+            quantityText.enabled = true;
+            isFull = true;
+
+            // Return LeftOverItems
+            int extraItems = this.quantity - maxNumberOfItems;
+            this.quantity = maxNumberOfItems;
+            return extraItems;
+        }
+
+        // Update Quantity Text
+        quantityText.text = this.quantity.ToString();
+        quantityText.enabled = true;
+
+        return 0;
+    }*/ //
 
     public void OnPointerClick(PointerEventData eventData)
     {
