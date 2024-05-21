@@ -1073,6 +1073,10 @@ PrefabInstance:
       value: ItemSlot
       objectReference: {fileID: 0}
     - target: {fileID: 5637946935301730940, guid: f6bb8361537087e4bb6177bc57c72c9d, type: 3}
+      propertyPath: emptySprite
+      value: 
+      objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 5637946935301730940, guid: f6bb8361537087e4bb6177bc57c72c9d, type: 3}
       propertyPath: ItemDescriptionText
       value: 
       objectReference: {fileID: 2032848264}
@@ -1380,6 +1384,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemSlot (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5637946935301730940, guid: f6bb8361537087e4bb6177bc57c72c9d, type: 3}
+      propertyPath: emptySprite
+      value: 
+      objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 5637946935301730940, guid: f6bb8361537087e4bb6177bc57c72c9d, type: 3}
       propertyPath: ItemDescriptionText
       value: 
@@ -1724,6 +1732,10 @@ PrefabInstance:
       value: ItemSlot (2)
       objectReference: {fileID: 0}
     - target: {fileID: 5637946935301730940, guid: f6bb8361537087e4bb6177bc57c72c9d, type: 3}
+      propertyPath: emptySprite
+      value: 
+      objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 5637946935301730940, guid: f6bb8361537087e4bb6177bc57c72c9d, type: 3}
       propertyPath: ItemDescriptionText
       value: 
       objectReference: {fileID: 2032848264}
@@ -1848,6 +1860,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemSlot (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5637946935301730940, guid: f6bb8361537087e4bb6177bc57c72c9d, type: 3}
+      propertyPath: emptySprite
+      value: 
+      objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 5637946935301730940, guid: f6bb8361537087e4bb6177bc57c72c9d, type: 3}
       propertyPath: ItemDescriptionText
       value: 
@@ -2460,6 +2476,10 @@ PrefabInstance:
       value: ItemSlot (7)
       objectReference: {fileID: 0}
     - target: {fileID: 5637946935301730940, guid: f6bb8361537087e4bb6177bc57c72c9d, type: 3}
+      propertyPath: emptySprite
+      value: 
+      objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 5637946935301730940, guid: f6bb8361537087e4bb6177bc57c72c9d, type: 3}
       propertyPath: ItemDescriptionText
       value: 
       objectReference: {fileID: 2032848264}
@@ -2584,6 +2604,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemSlot (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5637946935301730940, guid: f6bb8361537087e4bb6177bc57c72c9d, type: 3}
+      propertyPath: emptySprite
+      value: 
+      objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 5637946935301730940, guid: f6bb8361537087e4bb6177bc57c72c9d, type: 3}
       propertyPath: ItemDescriptionText
       value: 
@@ -2797,6 +2821,10 @@ PrefabInstance:
       value: ItemSlot (6)
       objectReference: {fileID: 0}
     - target: {fileID: 5637946935301730940, guid: f6bb8361537087e4bb6177bc57c72c9d, type: 3}
+      propertyPath: emptySprite
+      value: 
+      objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 5637946935301730940, guid: f6bb8361537087e4bb6177bc57c72c9d, type: 3}
       propertyPath: ItemDescriptionText
       value: 
       objectReference: {fileID: 2032848264}
@@ -3006,6 +3034,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5637946935301730940, guid: f6bb8361537087e4bb6177bc57c72c9d, type: 3}
       propertyPath: itemSprite
+      value: 
+      objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 5637946935301730940, guid: f6bb8361537087e4bb6177bc57c72c9d, type: 3}
+      propertyPath: emptySprite
       value: 
       objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 5637946935301730940, guid: f6bb8361537087e4bb6177bc57c72c9d, type: 3}

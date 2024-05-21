@@ -179,6 +179,7 @@ MonoBehaviour:
   ItemDescriptionText: {fileID: 0}
   selectedShader: {fileID: 9068556061845085413}
   thisItemSelected: 0
+  itemMenuActivated: 0
 --- !u!1 &9068556061845085413
 GameObject:
   m_ObjectHideFlags: 0
