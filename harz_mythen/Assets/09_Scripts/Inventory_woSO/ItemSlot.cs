@@ -27,8 +27,9 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
 
     public GameObject selectedShader;
+    public GameObject itemDescriptionBar; //neu
     public bool thisItemSelected; // hiermit arbeiten
-    public bool itemMenuActivated;
+    
 
     private InventoryManager inventoryManager;
 
@@ -68,7 +69,16 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         {
             inventoryManager.DeselectAllSlots(); // einer aktiviert, alle anderen deaktiviert
             //inventoryManager.SelectTwoSlots(); // zwei können gleichzeitig aktiviert sein, alle anderen deaktiviert
-            selectedShader.SetActive(true);
+            if (isFull == true) // Slots nur noch auswählabr, wenn etwas drinliegt, und auch nur dann Beschreibung sichtbar
+            {
+                selectedShader.SetActive(true);
+                itemDescriptionBar.SetActive(true); //neu
+            }
+            else if (isFull == false)
+            {
+                selectedShader.SetActive(false);
+                itemDescriptionBar.SetActive(false); //neu
+            }
             thisItemSelected = true;
             ItemDescriptionNameText.text = itemName;
             ItemDescriptionText.text = itemDescription;
@@ -81,6 +91,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         else if (thisItemSelected)
         {
             selectedShader.SetActive(false);
+            itemDescriptionBar.SetActive(false); //neu
             thisItemSelected = false;
             ItemDescriptionText.text = "";
             ItemDescriptionNameText.text = "";
