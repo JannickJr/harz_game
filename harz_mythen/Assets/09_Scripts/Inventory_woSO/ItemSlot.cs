@@ -143,6 +143,28 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     }
     public void OnRightClick()
     {
+        if (thisItemSelected)
+        {
+            this.quantity -= 1;
+            quantityText.text = this.quantity.ToString();
+            if (this.quantity <= 0)
+            {
+                EmptySlot();
+            }
+        }
+    }
 
+    public void EmptySlot()
+    {
+        quantityText.enabled = false;
+        itemImage.sprite = emptySprite;
+
+        isFull = false;
+        selectedShader.SetActive(false);
+        itemDescriptionBar.SetActive(false); //neu
+        thisItemSelected = false;
+        ItemDescriptionText.text = "";
+        ItemDescriptionNameText.text = "";
+        itemDescriptionImage.sprite = emptySprite;
     }
 }
