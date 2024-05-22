@@ -16,7 +16,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public string itemDescription;
     public Sprite emptySprite;
 
-    [SerializeField] private int maxNumberOfItems; // efiniert die Größe des Slots
+    [SerializeField] private int maxNumberOfItems; // definiert die Größe des Slots, im Moment nicht in Benutzung
 
     //==ITEM SLOT==//
     [SerializeField] private TMP_Text quantityText;

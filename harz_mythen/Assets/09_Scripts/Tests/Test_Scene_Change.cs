@@ -23,5 +23,13 @@ public class Test_Scene_Change : MonoBehaviour
         {
             SceneManager.LoadScene(1);
         }
+        if (Input.GetKeyDown(KeyCode.K))
+            {
+                SceneManager.LoadScene(0);
+            }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 }

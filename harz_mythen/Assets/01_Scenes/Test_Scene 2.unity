@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 128337147}
   - component: {fileID: 128337146}
   - component: {fileID: 128337150}
+  - component: {fileID: 128337151}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -311,6 +312,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42f557276f7f4464ab4b08cb239d58ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &128337151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128337145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e5c0c14d5c9574eba5303d3fbb73a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectIndex: 1
 --- !u!1 &144726524
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,6 +525,7 @@ MonoBehaviour:
   itemName: Wood
   quantity: 1
   sprite: {fileID: 21300000, guid: 920081b891e77d34295e92346c1b2187, type: 3}
+  itemDescription: 
   mainCamera: {fileID: 128337147}
 --- !u!135 &235542662
 SphereCollider:
@@ -749,6 +764,7 @@ MonoBehaviour:
   itemName: Home
   quantity: 1
   sprite: {fileID: 21300000, guid: b16d597c230d93d498a284c65afd2ad7, type: 3}
+  itemDescription: 
   mainCamera: {fileID: 128337147}
 --- !u!1001 &521605643
 PrefabInstance:
@@ -1904,6 +1920,7 @@ GameObject:
   - component: {fileID: 1345273286}
   - component: {fileID: 1345273285}
   - component: {fileID: 1345273284}
+  - component: {fileID: 1345273288}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1995,6 +2012,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1345273288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345273283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e5c0c14d5c9574eba5303d3fbb73a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectIndex: 0
 --- !u!1 &1405276376
 GameObject:
   m_ObjectHideFlags: 0
@@ -2738,6 +2768,7 @@ MonoBehaviour:
   itemName: Metal
   quantity: 1
   sprite: {fileID: 21300000, guid: ea80edfbbf2484a408283074f27ab158, type: 3}
+  itemDescription: 
   mainCamera: {fileID: 128337147}
 --- !u!1 &2137713221
 GameObject:
@@ -2825,6 +2856,7 @@ MonoBehaviour:
   itemName: Wood
   quantity: 1
   sprite: {fileID: 21300000, guid: 920081b891e77d34295e92346c1b2187, type: 3}
+  itemDescription: 
   mainCamera: {fileID: 128337147}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
