@@ -634,7 +634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Wood
   quantity: 1
-  sprite: {fileID: 21300000, guid: 920081b891e77d34295e92346c1b2187, type: 3}
+  sprite: {fileID: 21300000, guid: 4dc6efed612abab4b842eff0d95a4594, type: 3}
   itemDescription: "Ein Stock. Daraus l\xE4sst sich ein Werkzeug herstellen."
   mainCamera: {fileID: 128337147}
 --- !u!135 &235542662
@@ -991,7 +991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Home
   quantity: 1
-  sprite: {fileID: 21300000, guid: b16d597c230d93d498a284c65afd2ad7, type: 3}
+  sprite: {fileID: 21300000, guid: 1ef3461871d8a554c942c3950901ae62, type: 3}
   itemDescription: Ein altes Spielzeughaus.
   mainCamera: {fileID: 128337147}
 --- !u!1001 &521605643
@@ -3590,7 +3590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Metal
   quantity: 1
-  sprite: {fileID: 21300000, guid: ea80edfbbf2484a408283074f27ab158, type: 3}
+  sprite: {fileID: 21300000, guid: b3b422e26c72f7a42966bab3ce325002, type: 3}
   itemDescription: "Es gl\xE4nzt leicht."
   mainCamera: {fileID: 128337147}
 --- !u!1 &2032848262
@@ -3812,7 +3812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Wood
   quantity: 1
-  sprite: {fileID: 21300000, guid: 920081b891e77d34295e92346c1b2187, type: 3}
+  sprite: {fileID: 21300000, guid: 128b72ff09ffcab4e8f72bd9d53d2731, type: 3}
   itemDescription: "Ein Stock. Daraus l\xE4sst sich ein Werkzeug herstellen."
   mainCamera: {fileID: 128337147}
 --- !u!1660057539 &9223372036854775807
