@@ -11,27 +11,30 @@ public class Dialog : MonoBehaviour
 
     private int index;
 
+    //public bool dialogActivated = false;
     
     void Start()
     {
-        textComponent.text = string.Empty;
-        StartDialog();
+        if (index == 0)
+        {
+            textComponent.text = string.Empty;
+            StartDialog();
+        }
     }
 
-    
+
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        Start_2(); // neu
+        Next();
+    }
+
+    public void Start_2() // neu
+    {
+        if (index == -1)
         {
-            if (textComponent.text == lines[index])
-            {
-                NextLine();
-            }
-            else
-            {
-                StopAllCoroutines();
-                textComponent.text = lines[index];
-            }
+            textComponent.text = string.Empty;
+            StartDialog();
         }
     }
 
@@ -61,7 +64,24 @@ public class Dialog : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
+            index = -1; // neu
+
         }
     }
 
+    public void Next()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (textComponent.text == lines[index])
+            {
+                NextLine();
+            }
+            else
+            {
+                StopAllCoroutines();
+                textComponent.text = lines[index];
+            }
+        }
+    }
 }
