@@ -11,7 +11,16 @@ public class Dialog : MonoBehaviour
 
     private int index;
 
-    //public bool dialogActivated = false;
+    //---INFO---//
+    /* Nachricht schicken mit GetComponent oder FindComponent oder int, 
+    um in diesem Script jeweils auch Charakternamen und -Bild zu triggern.
+    Materialchange, Textänderung, z.B. mit int-Änderung --> 1 Ruma, 2 Romar 
+    bzw. so viele Namen und Materials, wie es Wechsel in Sprecherrolle gibt.
+    Oder in Update auch Funktion zu oben Genanntem reinschreiben und dort sagen, wenn index = 0, = 1, = 2,
+    Hilfe siehe Seifenkiste
+    Später muss noch abgefragt werden, von wem die Nachricht zur Aktivierung kam. Um die richtigen Texte zu triggern.
+    leichtere Alternative: lauter einzelne Dialogscripte.
+    */
     
     void Start()
     {
@@ -21,7 +30,6 @@ public class Dialog : MonoBehaviour
             StartDialog();
         }
     }
-
 
     void Update()
     {
@@ -58,6 +66,7 @@ public class Dialog : MonoBehaviour
         if (index < lines.Length - 1)
         {
             index++;
+            Debug.Log(index);
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
         }
