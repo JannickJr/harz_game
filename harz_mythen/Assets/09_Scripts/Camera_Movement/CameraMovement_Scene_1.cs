@@ -5,16 +5,34 @@ using UnityEngine.UI;
 
 public class CameraMovement_Scene_1 : MonoBehaviour
 {
-    public Slider movementSlider;
-
-    private float moveSliderNumber;
+    [SerializeField] private GameObject mainCamera;
+    [SerializeField] private Slider slider;
+    [SerializeField] private float movementSpeedCamera;
 
 
     private void Update()
     {
-        moveSliderNumber = movementSlider.value * 10f;
-        //this.transform.position = transform.Translate(Vector3.forward * Time.deltaTime * verticalInput);
+        float movement = slider.value;
+        mainCamera.transform.position += new Vector3(movement, 0, 0) * movementSpeedCamera * Time.deltaTime;
+        //StopMovement();
     }
 
+    public void resetSlider()
+    {
+        slider.value = 0;
+    }
+
+    public void StopMovement()
+    {
+        mainCamera.transform.position = new Vector3(1.37f, 0, 0);
+        
+        //float movement = 0;
+    }
+
+    public void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("Treffer");
+        //movementSpeedCamera = 0;
+    }
 }
 
