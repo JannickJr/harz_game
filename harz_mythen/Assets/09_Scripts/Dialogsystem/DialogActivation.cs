@@ -9,6 +9,8 @@ public class DialogActivation : MonoBehaviour
 
     public Camera mainCamera;
 
+    public float valueText { get; private set; }
+
     private void Update()
     {
         MouseClick();
@@ -37,6 +39,41 @@ public class DialogActivation : MonoBehaviour
                         dialogActivated = true;
                     }
                 }
+                
+                /*if (hit.transform.gameObject == gameObject.CompareTag("Ruma"))
+                {
+                    Debug.Log("Treffer XXX"); // funktioniert
+                    /*if (dialogActivated)
+                    {
+                        Dialog.SetActive(false);
+                        dialogActivated = false;
+                    }*/
+                    //else if (!dialogActivated)
+                    /*{
+                        Debug.Log("valueText = " + valueText);
+                        valueText = 1;
+                        Debug.Log("valueText = " + valueText);
+                        Dialog.SetActive(true);
+                        dialogActivated = true;
+                    }
+                }
+                if (hit.transform.gameObject == gameObject.CompareTag("Romar"))
+                {
+                    Debug.Log("Treffer XXX"); // funktioniert
+                    /*if (dialogActivated)
+                    {
+                        Dialog.SetActive(false);
+                        dialogActivated = false;
+                    }*/
+                    //else if (!dialogActivated)
+                    /*{
+                        Debug.Log("valueText = " + valueText);
+                        valueText = 2;
+                        Debug.Log("valueText = " + valueText);
+                        Dialog.SetActive(true);
+                        dialogActivated = true;
+                    }
+                }*/
             }
         }
     }

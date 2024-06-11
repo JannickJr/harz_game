@@ -7,6 +7,10 @@ TagManager:
   - Fisch
   - Sword
   - Knochen
+  - weg
+  - Biene
+  - Ruma
+  - Romar
   layers:
   - Default
   - TransparentFX

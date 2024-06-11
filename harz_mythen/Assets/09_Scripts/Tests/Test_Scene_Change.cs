@@ -31,5 +31,9 @@ public class Test_Scene_Change : MonoBehaviour
         {
             SceneManager.LoadScene(2);
         }
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            SceneManager.LoadScene(3);
+        }
     }
 }

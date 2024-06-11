@@ -6,10 +6,15 @@ using TMPro;
 public class Dialog : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
+    public TextMeshProUGUI textName; // neu
+    public GameObject imageRuma;
+    public GameObject imageRomar;
     public string[] lines;
     public float textSpeed;
 
     private int index;
+
+    //public static float valueText;
 
     //---INFO---//
     /* Nachricht schicken mit GetComponent oder FindComponent oder int, 
@@ -20,21 +25,28 @@ public class Dialog : MonoBehaviour
     Hilfe siehe Seifenkiste
     Später muss noch abgefragt werden, von wem die Nachricht zur Aktivierung kam. Um die richtigen Texte zu triggern.
     leichtere Alternative: lauter einzelne Dialogscripte.
+    SetActive nutzen für ImageSprites
     */
     
     void Start()
     {
-        if (index == 0)
+        ///if (valueText == 1)
         {
-            textComponent.text = string.Empty;
-            StartDialog();
+            //Debug.Log("valueText = " + valueText);
+            if (index == 0)
+            {
+                textComponent.text = string.Empty;
+                StartDialog();
+            }
         }
+        
     }
 
     void Update()
     {
         Start_2(); // neu
         Next();
+        CharacterChange(); // neu
     }
 
     public void Start_2() // neu
@@ -91,6 +103,25 @@ public class Dialog : MonoBehaviour
                 StopAllCoroutines();
                 textComponent.text = lines[index];
             }
+        }
+    }
+
+    public void CharacterChange()
+    {
+        switch (index)
+        {
+            case 0: 
+                imageRomar.SetActive(true);
+                imageRuma.SetActive(false);
+                textName.text = "Romar";
+                break;
+            case 1: case 2:
+                imageRuma.SetActive(true);
+                imageRomar.SetActive(false);
+                textName.text = "Ruma";
+                break;
+            default:
+                break;
         }
     }
 }

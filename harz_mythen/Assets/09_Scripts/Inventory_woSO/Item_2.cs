@@ -13,6 +13,8 @@ public class Item_2 : MonoBehaviour
 
     public Camera mainCamera;
 
+    public GameObject bienePrefab; //neu
+
     //public ItemObject item;
 
     void Start()
@@ -43,8 +45,16 @@ public class Item_2 : MonoBehaviour
                     {
                         inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
                         Debug.Log("Plus XXX"); // funktioniert (sogar für einzelnes Objekt)
-                        Destroy(gameObject);
-                        Debug.Log("weg XXX"); // funktioniert (sogar für einzelnes Objekt)
+                        //if (gameObject.CompareTag("weg"))
+                        {
+                            Destroy(gameObject);
+                            Debug.Log("weg XXX"); // funktioniert (sogar für einzelnes Objekt)
+                            if (gameObject.CompareTag("Biene"))
+                            {
+                                Instantiate(bienePrefab, transform.position, Quaternion.Euler(new Vector3(-90F, 0F, 0F)));
+                            }
+                        }
+                        
                     }
                 }
             }
