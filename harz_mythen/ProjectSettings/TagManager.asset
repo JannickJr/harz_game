@@ -11,6 +11,7 @@ TagManager:
   - Biene
   - Ruma
   - Romar
+  - Selectable
   layers:
   - Default
   - TransparentFX
