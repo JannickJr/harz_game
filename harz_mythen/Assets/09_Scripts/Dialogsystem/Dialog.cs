@@ -14,6 +14,13 @@ public class Dialog : MonoBehaviour
 
     private int index;
 
+    //---HUD Deactivation---//
+    [SerializeField] private GameObject Slider;
+    [SerializeField] private GameObject IS;
+    [SerializeField] private GameObject ISD;
+    [SerializeField] private GameObject IB;
+    [SerializeField] private GameObject MB;
+
     //public static float valueText;
 
     //---INFO---//
@@ -27,7 +34,7 @@ public class Dialog : MonoBehaviour
     leichtere Alternative: lauter einzelne Dialogscripte.
     SetActive nutzen für ImageSprites
     */
-    
+
     void Start()
     {
         ///if (valueText == 1)
@@ -37,6 +44,13 @@ public class Dialog : MonoBehaviour
             {
                 textComponent.text = string.Empty;
                 StartDialog();
+                //---HUD Deactivation---//
+                //Slider = GameObject.Find("Slider");
+                /*IS = GameObject.Find("InventoryScreen");
+                ISD = GameObject.Find("InventoryScreenDescription");
+                IB = GameObject.Find("Inventory_Button");
+                MB = GameObject.Find("Menu_Buttons");*/
+                Debug.Log("fertig");
             }
         }
         
@@ -44,6 +58,14 @@ public class Dialog : MonoBehaviour
 
     void Update()
     {
+        //---HUD Deactivation---//
+        Slider.SetActive(false);
+        IS.SetActive(false);
+        ISD.SetActive(false);
+        IB.SetActive(false);
+        MB.SetActive(false);
+        Debug.Log("fertig_2");
+        //---Dialog weiter---///
         Start_2(); // neu
         Next();
         CharacterChange(); // neu
@@ -55,6 +77,13 @@ public class Dialog : MonoBehaviour
         {
             textComponent.text = string.Empty;
             StartDialog();
+            //---HUD Deactivation---//
+            //Slider = GameObject.Find("Slider");
+                /*IS = GameObject.Find("InventoryScreen");
+                ISD = GameObject.Find("InventoryScreenDescription");
+                IB = GameObject.Find("Inventory_Button");
+                MB = GameObject.Find("Menu_Buttons");*/
+
         }
     }
 
@@ -86,7 +115,12 @@ public class Dialog : MonoBehaviour
         {
             gameObject.SetActive(false);
             index = -1; // neu
-
+            //---HUD Activation---//
+            Slider.SetActive(true);
+            //IS.SetActive(true);
+            //ISD.SetActive(true);
+            IB.SetActive(true);
+            MB.SetActive(true);
         }
     }
 

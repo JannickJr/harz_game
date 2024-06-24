@@ -9,7 +9,7 @@ public class DialogActivation : MonoBehaviour
 
     public Camera mainCamera;
 
-    public float valueText { get; private set; }
+    //public float valueText { get; private set; }
 
     private void Update()
     {

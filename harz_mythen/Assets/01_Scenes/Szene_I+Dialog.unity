@@ -1616,6 +1616,11 @@ MonoBehaviour:
   - 'RUMA: Die Welt scheint so friedlich und Sorgen des Alltags sind sofort vergessen,
     wenn ich in deine liebevollen Augen blicke.'
   textSpeed: 0.05
+  Slider: {fileID: 0}
+  IS: {fileID: 552637057}
+  ISD: {fileID: 0}
+  IB: {fileID: 0}
+  MB: {fileID: 0}
 --- !u!114 &278139589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2591,6 +2596,11 @@ MonoBehaviour:
   - Die Welt scheint so friedlich und Sorgen des Alltags sind sofort vergessen, wenn
     ich in deine liebevollen Augen blicke.
   textSpeed: 0.05
+  Slider: {fileID: 649796078}
+  IS: {fileID: 552637057}
+  ISD: {fileID: 1382526456}
+  IB: {fileID: 1256696784}
+  MB: {fileID: 1117135218}
 --- !u!1 &469441995
 GameObject:
   m_ObjectHideFlags: 0
@@ -8756,12 +8766,12 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 649796079}
   - {fileID: 552637058}
   - {fileID: 1382526461}
   - {fileID: 1256696785}
-  - {fileID: 468118236}
   - {fileID: 1117135222}
-  - {fileID: 649796079}
+  - {fileID: 468118236}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
