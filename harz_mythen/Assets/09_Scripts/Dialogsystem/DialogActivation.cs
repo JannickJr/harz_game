@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace _09_Scripts._Dialogsystem
+{
+
+
 public class DialogActivation : MonoBehaviour
 {
-    public GameObject Dialog;
+    public GameObject Dialogi;
     private bool dialogActivated;
 
     public Camera mainCamera;
-
-    //public float valueText { get; private set; }
 
     private void Update()
     {
@@ -35,19 +37,31 @@ public class DialogActivation : MonoBehaviour
                     }*/
                     //else if (!dialogActivated)
                     {
-                        Dialog.SetActive(true);
+                        Dialogi.SetActive(true);
                         dialogActivated = true;
                     }
                 }
-                
-                /*if (hit.transform.gameObject == gameObject.CompareTag("Ruma"))
-                {
-                    Debug.Log("Treffer XXX"); // funktioniert
-                    /*if (dialogActivated)
+                if (Dialog.isdriving) // Quatsch-Test
                     {
-                        Dialog.SetActive(false);
-                        dialogActivated = false;
-                    }*/
+                        Debug.Log("isDriving");
+                    }
+                if (!Dialog.isdriving) 
+                    {
+                        Debug.Log("isNotDriving"); // wird angegeben
+                    }
+                if (Dialog.valueText == 1)
+                    {
+
+                    }
+
+                    /*if (hit.transform.gameObject == gameObject.CompareTag("Ruma"))
+                    {
+                        Debug.Log("Treffer XXX"); // funktioniert
+                        /*if (dialogActivated)
+                        {
+                            Dialog.SetActive(false);
+                            dialogActivated = false;
+                        }*/
                     //else if (!dialogActivated)
                     /*{
                         Debug.Log("valueText = " + valueText);
@@ -74,7 +88,8 @@ public class DialogActivation : MonoBehaviour
                         dialogActivated = true;
                     }
                 }*/
-            }
+                }
         }
     }
+}
 }

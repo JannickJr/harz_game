@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+namespace _09_Scripts._Dialogsystem
+{
 public class Dialog : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
@@ -21,7 +23,8 @@ public class Dialog : MonoBehaviour
     [SerializeField] private GameObject IB;
     [SerializeField] private GameObject MB;
 
-    //public static float valueText;
+    public static float valueText;
+    public static bool isdriving = false; // neu Test
 
     //---INFO---//
     /* Nachricht schicken mit GetComponent oder FindComponent oder int, 
@@ -33,6 +36,7 @@ public class Dialog : MonoBehaviour
     Später muss noch abgefragt werden, von wem die Nachricht zur Aktivierung kam. Um die richtigen Texte zu triggern.
     leichtere Alternative: lauter einzelne Dialogscripte.
     SetActive nutzen für ImageSprites
+    Script.static quasi
     */
 
     void Start()
@@ -44,13 +48,13 @@ public class Dialog : MonoBehaviour
             {
                 textComponent.text = string.Empty;
                 StartDialog();
+                isdriving = false; // neu Test
                 //---HUD Deactivation---//
                 //Slider = GameObject.Find("Slider");
                 /*IS = GameObject.Find("InventoryScreen");
                 ISD = GameObject.Find("InventoryScreenDescription");
                 IB = GameObject.Find("Inventory_Button");
                 MB = GameObject.Find("Menu_Buttons");*/
-                Debug.Log("fertig");
             }
         }
         
@@ -64,11 +68,11 @@ public class Dialog : MonoBehaviour
         ISD.SetActive(false);
         IB.SetActive(false);
         MB.SetActive(false);
-        Debug.Log("fertig_2");
         //---Dialog weiter---///
         Start_2(); // neu
         Next();
         CharacterChange(); // neu
+        isdriving = true; // neu Test
     }
 
     public void Start_2() // neu
@@ -83,7 +87,6 @@ public class Dialog : MonoBehaviour
                 ISD = GameObject.Find("InventoryScreenDescription");
                 IB = GameObject.Find("Inventory_Button");
                 MB = GameObject.Find("Menu_Buttons");*/
-
         }
     }
 
@@ -158,4 +161,5 @@ public class Dialog : MonoBehaviour
                 break;
         }
     }
+}
 }

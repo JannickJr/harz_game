@@ -2761,7 +2761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84724fe490ebabd4daa5fe51978ddb9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dialog: {fileID: 468118235}
+  Dialogi: {fileID: 468118235}
   mainCamera: {fileID: 128337147}
 --- !u!65 &485058264
 BoxCollider:
@@ -5781,7 +5781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84724fe490ebabd4daa5fe51978ddb9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dialog: {fileID: 468118235}
+  Dialogi: {fileID: 468118235}
   mainCamera: {fileID: 128337147}
 --- !u!65 &926589702
 BoxCollider:
