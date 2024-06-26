@@ -23,7 +23,7 @@ public class Dialog : MonoBehaviour
     [SerializeField] private GameObject IB;
     [SerializeField] private GameObject MB;
 
-    public static float valueText;
+    public static int valueText = 0;
     public static bool isdriving = false; // neu Test
 
     //---INFO---//
@@ -41,7 +41,7 @@ public class Dialog : MonoBehaviour
 
     void Start()
     {
-        ///if (valueText == 1)
+        //if (valueText == 0)
         {
             //Debug.Log("valueText = " + valueText);
             if (index == 0)
@@ -49,15 +49,8 @@ public class Dialog : MonoBehaviour
                 textComponent.text = string.Empty;
                 StartDialog();
                 isdriving = false; // neu Test
-                //---HUD Deactivation---//
-                //Slider = GameObject.Find("Slider");
-                /*IS = GameObject.Find("InventoryScreen");
-                ISD = GameObject.Find("InventoryScreenDescription");
-                IB = GameObject.Find("Inventory_Button");
-                MB = GameObject.Find("Menu_Buttons");*/
             }
-        }
-        
+        } 
     }
 
     void Update()
@@ -81,12 +74,6 @@ public class Dialog : MonoBehaviour
         {
             textComponent.text = string.Empty;
             StartDialog();
-            //---HUD Deactivation---//
-            //Slider = GameObject.Find("Slider");
-                /*IS = GameObject.Find("InventoryScreen");
-                ISD = GameObject.Find("InventoryScreenDescription");
-                IB = GameObject.Find("Inventory_Button");
-                MB = GameObject.Find("Menu_Buttons");*/
         }
     }
 
@@ -117,6 +104,7 @@ public class Dialog : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
+            DialogActivation.dialogActivated = false;
             index = -1; // neu
             //---HUD Activation---//
             Slider.SetActive(true);
