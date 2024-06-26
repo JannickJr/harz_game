@@ -16,7 +16,9 @@ public class CameraMovement_Scene_1 : MonoBehaviour
         mainCamera.transform.position += new Vector3(movement, 0, 0) * movementSpeedCamera * Time.deltaTime;
         //StopMovement();
     }
-
+    // Wenn Slider negativ + zu nah am linken Empty, dann nicht weiter in diese Richtung bewegen;
+    // Wenn Slider positiv + zu nah am rechten Empty, dann nicht weiter in diese Richtung bewegen; 
+    // eine Koordinate angucken: Ist x-Koordinate größer oder kleiner als Ecken (= Sitz der Emptys), die ich gesetzt habe?
     public void resetSlider()
     {
         slider.value = 0;

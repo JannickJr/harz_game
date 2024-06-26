@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class OutlineSelection : MonoBehaviour
 {
-    public Camera mainCamera;
+    
     public void MyOutlines()
     {
-        Material myMaterial = GetComponent<Material>();
+        Material myMaterial = GetComponent<Renderer>().material;
         myMaterial.SetFloat("_OutlineThickness", 0.015f);
     }
     
     void Start()
     {
-        Material myMaterial = GetComponent<Material>();
+        Material myMaterial = GetComponent<Renderer>().material;
         myMaterial.SetFloat("_OutlineThickness", 0f);
     }
 
@@ -27,7 +27,7 @@ public class OutlineSelection : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             // funktioniert super (sogar für einzelnes Objekt)
             if (Physics.Raycast(ray, out RaycastHit hit)) // funktioniert super
