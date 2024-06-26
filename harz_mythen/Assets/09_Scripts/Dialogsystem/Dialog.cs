@@ -42,7 +42,9 @@ public class Dialog : MonoBehaviour
     void Start()
     {
         //if (valueText == 0)
+        //if (DialogActivation.characterNumber == 0)
         {
+                Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
             //Debug.Log("valueText = " + valueText);
             if (index == 0)
             {
@@ -70,11 +72,11 @@ public class Dialog : MonoBehaviour
 
     public void Start_2() // neu
     {
-        if (index == -1)
-        {
-            textComponent.text = string.Empty;
-            StartDialog();
-        }
+            if (index == -1)
+            {
+                textComponent.text = string.Empty;
+                StartDialog();
+            }
     }
 
     void StartDialog()

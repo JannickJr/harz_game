@@ -10,6 +10,7 @@ public class DialogActivation : MonoBehaviour
 {
     public GameObject Dialogi;
     public static bool dialogActivated;
+    public static int characterNumber = 0;
 
     public Camera mainCamera;
 
@@ -65,38 +66,42 @@ public class DialogActivation : MonoBehaviour
                 if (hit.transform.gameObject.CompareTag("Ruma"))
                     {
                         Debug.Log("Treffer XXX Ruma"); // funktioniert
-                    if (dialogActivated)
-                        {
-                            Dialogi.SetActive(false);
-                            dialogActivated = false;
-                        }
-                    if (!dialogActivated)
-                        {
-                            //Debug.Log("valueText = " + valueText);
-                            //valueText = 1;
-                            //Debug.Log("valueText = " + valueText);
-                            Debug.Log("Dialog-Ruma_on");
-                            Dialogi.SetActive(true);
-                            dialogActivated = true;
-                        }
-                }
+                        characterNumber = 1;
+                        Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
+                        if (dialogActivated)
+                            {
+                                Dialogi.SetActive(false);
+                                dialogActivated = false;
+                            }
+                        if (!dialogActivated)
+                            {
+                                //Debug.Log("valueText = " + valueText);
+                                //valueText = 1;
+                                //Debug.Log("valueText = " + valueText);
+                                Debug.Log("Dialog-Ruma_on");
+                                Dialogi.SetActive(true);
+                                dialogActivated = true;
+                            }
+                    }
                 if (hit.transform.gameObject.CompareTag("Romar"))
                     {
-                    Debug.Log("Treffer XXX Romar"); // funktioniert
-                    if (dialogActivated)
-                        {
-                            Dialogi.SetActive(false);
-                            dialogActivated = false;
-                        }
-                    if (!dialogActivated)
-                        {
-                            //Debug.Log("valueText = " + valueText);
-                            //valueText = 2;
-                            //Debug.Log("valueText = " + valueText);
-                            Debug.Log("Dialog-Romar_on");
-                            Dialogi.SetActive(true);
-                            dialogActivated = true;
-                        }
+                        Debug.Log("Treffer XXX Romar"); // funktioniert
+                        characterNumber = 2;
+                        Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
+                        if (dialogActivated)
+                            {
+                                Dialogi.SetActive(false);
+                                dialogActivated = false;
+                            }
+                        if (!dialogActivated)
+                            {
+                                //Debug.Log("valueText = " + valueText);
+                                //valueText = 2;
+                                //Debug.Log("valueText = " + valueText);
+                                Debug.Log("Dialog-Romar_on");
+                                Dialogi.SetActive(true);
+                                dialogActivated = true;
+                            }
                     }
             }
         }
