@@ -107,6 +107,7 @@ public class Dialog : MonoBehaviour
         {
             gameObject.SetActive(false);
             DialogActivation.dialogActivated = false;
+            DialogActivation.characterNumber = 0;
             index = -1; // neu
             //---HUD Activation---//
             Slider.SetActive(true);
