@@ -1,3 +1,4 @@
+using _09_Scripts._Dialogsystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,9 +15,12 @@ public class CameraMovement_Scene_1 : MonoBehaviour
   
     private void Update()
     {
-        if (slider.value != 0)
+        //if (DialogActivation.dialogActivated == false)
         {
-            MoveCamera();
+            if (slider.value != 0)
+            {
+                MoveCamera_S1();
+            }
         }
     }
     // Wenn Slider negativ + Kamera zu nah am linken Empty, dann Slider nicht weiter in diese Richtung bewegen;
@@ -24,7 +28,7 @@ public class CameraMovement_Scene_1 : MonoBehaviour
     // eine Koordinate angucken: Ist x-Koordinate größer oder kleiner als Ecken (= Sitz der Emptys), die ich gesetzt habe?
     // wenn nicht gedrückt, dann nicht bewegen
 
-    public void MoveCamera()
+    public void MoveCamera_S1()
     {
         float movement = slider.value;
 
@@ -41,6 +45,24 @@ public class CameraMovement_Scene_1 : MonoBehaviour
             mainCamera.transform.position = rightWall.position;
         }
     }
+    /*
+    public void MoveCamera_S3()
+    {
+        float movement = slider_S3.value;
+
+        mainCamera.transform.position += new Vector3(0, movement, 0) * movementSpeedCamera * Time.deltaTime;
+
+        if (slider_S3.value <= 0 && mainCamera.transform.position.x <= leftWall.position.y)
+        {
+            Debug.Log("Es ist soweit."); // wird erkannt
+            mainCamera.transform.position = leftWall.position;
+
+        }
+        else if (slider_S3.value >= 0 && mainCamera.transform.position.x >= rightWall.position.y)
+        {
+            mainCamera.transform.position = rightWall.position;
+        }
+    }*/
 
     public void resetSlider()
     {
