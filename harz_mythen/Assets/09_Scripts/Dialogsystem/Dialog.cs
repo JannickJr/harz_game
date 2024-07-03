@@ -14,7 +14,8 @@ namespace _09_Scripts._Dialogsystem
         public string[] lines;
         public float textSpeed;
 
-        private int index;        
+        private int index;
+        private bool cutScene_1IsActive;
 
         #region //---HUD Deactivation---//
         [SerializeField] private GameObject Slider;
@@ -54,6 +55,7 @@ namespace _09_Scripts._Dialogsystem
                 character.GetComponent<DialogActivation>().enabled = false;
                 character = GameObject.Find("Character_Ruma");
                 character.GetComponent<DialogActivation>().enabled = false;
+            cutScene_1IsActive = true;
                 StartDialog();
         }
 
@@ -68,8 +70,11 @@ namespace _09_Scripts._Dialogsystem
             //---Sprechblasen---// --> Muss vor "Dialog weiter"-Methoden stehen!
             TextStart();
             //---Dialog weiter---//
-            Next();
-            CharacterChange();
+            if (cutScene_1IsActive == true)
+            {
+                Next();
+                CharacterChange();
+            }
         }
 
         void StartDialog() // Cutscene 1 - Start Cutscene 1
@@ -113,6 +118,7 @@ namespace _09_Scripts._Dialogsystem
                 character.GetComponent<DialogActivation>().enabled = true;
                 character = GameObject.Find("Character_Ruma");
                 character.GetComponent<DialogActivation>().enabled = true;
+                cutScene_1IsActive = false;
             }
         }
 
