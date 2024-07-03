@@ -14,13 +14,6 @@ namespace _09_Scripts._Dialogsystem
 
         public Camera mainCamera;
 
-        //---Dialog Start vor Interaktion---//
-        /*private void Start() 
-        {
-            Dialogi.SetActive(true);
-            dialogActivated = true;
-        }*/
-
         //---Dialog Start nach Interaktion---//
         private void Update()
         {
@@ -36,33 +29,6 @@ namespace _09_Scripts._Dialogsystem
                 // funktioniert super (sogar für einzelnes Objekt)
                 if (Physics.Raycast(ray, out RaycastHit hit)) // funktioniert super
                 {                                               // funktioniert nur, wenn Script auf anzuklickendem Objekt liegt
-                    /*if (hit.transform.gameObject == gameObject)
-                    {
-                        Debug.Log("Treffer XXX"); // funktioniert
-                        /*if (dialogActivated)
-                        {
-                            Dialogi.SetActive(false);
-                            dialogActivated = false;
-                        }*/
-                        //else if (!dialogActivated)
-                       /* {
-                            Dialogi.SetActive(true);
-                            dialogActivated = true;
-                        }
-                    }
-                    if (Dialog.isdriving) // Quatsch-Test
-                        {
-                            Debug.Log("isDriving");
-                        }
-                    if (!Dialog.isdriving) 
-                        {
-                            Debug.Log("isNotDriving"); // wird angegeben
-                        }
-                    if (Dialog.valueText == 1)
-                        {
-
-                        }*/
-
                     if (hit.transform.gameObject.CompareTag("Ruma"))
                     {
                         Debug.Log("Treffer XXX Ruma"); // funktioniert
@@ -74,9 +40,6 @@ namespace _09_Scripts._Dialogsystem
                             }
                             if (!dialogActivated && characterNumber != 2)
                             {
-                                //Debug.Log("valueText = " + valueText);
-                                //valueText = 1;
-                                //Debug.Log("valueText = " + valueText);
                                 characterNumber = 1;
                                 Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
                                 Debug.Log("Dialog-Ruma_on");
@@ -95,9 +58,6 @@ namespace _09_Scripts._Dialogsystem
                             }
                             if (!dialogActivated && characterNumber != 1)
                             {
-                                //Debug.Log("valueText = " + valueText);
-                                //valueText = 2;
-                                //Debug.Log("valueText = " + valueText);
                                 characterNumber = 2;
                                 Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
                                 Debug.Log("Dialog-Romar_on");
