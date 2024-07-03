@@ -15,11 +15,11 @@ namespace _09_Scripts._Dialogsystem
         public Camera mainCamera;
 
         //---Dialog Start vor Interaktion---//
-        private void Start() 
+        /*private void Start() 
         {
             Dialogi.SetActive(true);
             dialogActivated = true;
-        }
+        }*/
 
         //---Dialog Start nach Interaktion---//
         private void Update()
@@ -64,45 +64,47 @@ namespace _09_Scripts._Dialogsystem
                         }*/
 
                     if (hit.transform.gameObject.CompareTag("Ruma"))
-                        {
-                            Debug.Log("Treffer XXX Ruma"); // funktioniert
-                            characterNumber = 1;
-                            Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
+                    {
+                        Debug.Log("Treffer XXX Ruma"); // funktioniert
                             if (dialogActivated)
-                                {
-                                    Dialogi.SetActive(false);
-                                    dialogActivated = false;
-                                }
-                            if (!dialogActivated)
-                                {
-                                    //Debug.Log("valueText = " + valueText);
-                                    //valueText = 1;
-                                    //Debug.Log("valueText = " + valueText);
-                                    Debug.Log("Dialog-Ruma_on");
-                                    Dialogi.SetActive(true);
-                                    dialogActivated = true;
-                                }
-                        }
+                            {
+                                Dialogi.SetActive(false);
+                                dialogActivated = false;
+                                characterNumber = 0;
+                            }
+                            if (!dialogActivated && characterNumber != 2)
+                            {
+                                //Debug.Log("valueText = " + valueText);
+                                //valueText = 1;
+                                //Debug.Log("valueText = " + valueText);
+                                characterNumber = 1;
+                                Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
+                                Debug.Log("Dialog-Ruma_on");
+                                Dialogi.SetActive(true);
+                                dialogActivated = true;
+                            }
+                    }
                     if (hit.transform.gameObject.CompareTag("Romar"))
-                        {
+                    {
                             Debug.Log("Treffer XXX Romar"); // funktioniert
-                            characterNumber = 2;
-                            Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
                             if (dialogActivated)
-                                {
-                                    Dialogi.SetActive(false);
-                                    dialogActivated = false;
-                                }
-                            if (!dialogActivated)
-                                {
-                                    //Debug.Log("valueText = " + valueText);
-                                    //valueText = 2;
-                                    //Debug.Log("valueText = " + valueText);
-                                    Debug.Log("Dialog-Romar_on");
-                                    Dialogi.SetActive(true);
-                                    dialogActivated = true;
-                                }
-                        }
+                            {
+                                Dialogi.SetActive(false);
+                                dialogActivated = false;
+                                characterNumber = 0;
+                            }
+                            if (!dialogActivated && characterNumber != 1)
+                            {
+                                //Debug.Log("valueText = " + valueText);
+                                //valueText = 2;
+                                //Debug.Log("valueText = " + valueText);
+                                characterNumber = 2;
+                                Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
+                                Debug.Log("Dialog-Romar_on");
+                                Dialogi.SetActive(true);
+                                dialogActivated = true;
+                            }
+                    }
                 }
             }
         }

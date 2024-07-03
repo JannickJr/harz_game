@@ -8,7 +8,7 @@ namespace _09_Scripts._Dialogsystem
     public class Dialog : MonoBehaviour
     {
         public TextMeshProUGUI textComponent;
-        public TextMeshProUGUI textName; // neu
+        public TextMeshProUGUI textName; 
         public GameObject imageRuma;
         public GameObject imageRomar;
         public string[] lines;
@@ -24,8 +24,7 @@ namespace _09_Scripts._Dialogsystem
         [SerializeField] private GameObject MB;
         #endregion
 
-        public static int valueText = 0;
-        public static bool isdriving = false; // neu Test
+        private GameObject character;
 
         #region //---INFO---//
         /* Nachricht schicken mit GetComponent oder FindComponent oder int, 
@@ -43,18 +42,22 @@ namespace _09_Scripts._Dialogsystem
 
         void Start()
         {
-            //if (valueText == 0)
-            //if (DialogActivation.characterNumber == 0)
+            StartCutscene_1();  
+        }
+
+        public void StartCutscene_1()
+        {
+            Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
+            if (index == 0)
             {
-                Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
-                //Debug.Log("valueText = " + valueText);
-                if (index == 0)
-                {
-                    textComponent.text = string.Empty;
-                    StartDialog();
-                    isdriving = false; // neu Test
-                }
-            } 
+                textComponent.text = string.Empty;
+                //--- R + R können nicht angeklickt werden ---
+                character = GameObject.Find("Character_Romar");
+                character.GetComponent<DialogActivation>().enabled = false;
+                character = GameObject.Find("Character_Ruma");
+                character.GetComponent<DialogActivation>().enabled = false;
+                StartDialog();
+            }
         }
 
         void Update()
@@ -65,11 +68,10 @@ namespace _09_Scripts._Dialogsystem
             ISD.SetActive(false);
             IB.SetActive(false);
             MB.SetActive(false);
-            //---Dialog weiter---///
+            //---Dialog weiter---//
             Start_2(); // neu
             Next();
-            CharacterChange(); // neu
-            isdriving = true; // neu Test
+            CharacterChange();
         }
 
         public void Start_2() // neu // irgendwo hier zuweisen, wer spricht und wann
@@ -111,13 +113,18 @@ namespace _09_Scripts._Dialogsystem
                 gameObject.SetActive(false);
                 DialogActivation.dialogActivated = false;
                 DialogActivation.characterNumber = 0;
-                index = -1; // neu
+                index = -1; 
                 //---HUD Activation---//
                 Slider.SetActive(true);
                 //IS.SetActive(true);
                 //ISD.SetActive(true);
                 IB.SetActive(true);
                 MB.SetActive(true);
+                //---Script Activation---//
+                character = GameObject.Find("Character_Romar");
+                character.GetComponent<DialogActivation>().enabled = true;
+                character = GameObject.Find("Character_Ruma");
+                character.GetComponent<DialogActivation>().enabled = true;
             }
         }
 
@@ -151,6 +158,11 @@ namespace _09_Scripts._Dialogsystem
                     imageRomar.SetActive(false);
                     textName.text = "Ruma";
                     break;
+                case 3:
+                    imageRuma.SetActive(false);
+                    imageRomar.SetActive(false);
+                    textName.text = "Aufgabe";
+                    break;
                 default:
                     break;
             }
@@ -158,13 +170,15 @@ namespace _09_Scripts._Dialogsystem
 
         public void TextStart()
         {
-            //index = 0; // Wenn aktiviert, gibt es zwar keine Fehlermeldung, aber Dialog springt in Anfang über.
             if (DialogActivation.characterNumber == 1)
             {
                 imageRuma.SetActive(true);
                 textName.text = "Ruma";
+                // hier davor evtl. int wechseln, für anderen Text; aber nur in andere Szene
                 textComponent.text = "Ein Geschenk möchtest du mir geben? Oh Romar, du bist so gut zu mir! >>> Beenden ...";
-                // evtl. hier Script vom anderen deaktivieren
+                imageRomar.SetActive(false);
+                character = GameObject.Find("Character_Romar"); 
+                character.GetComponent<DialogActivation>().enabled = false;
                 if (Input.GetMouseButtonDown(0))
                 {
                     End();
@@ -175,6 +189,9 @@ namespace _09_Scripts._Dialogsystem
                 imageRomar.SetActive(true);
                 textName.text = "Romar";
                 textComponent.text = "Das Geschenk für Ruma liegt hier irgendwo verborgen. Wenn ich doch bloß wüsste, wo ich es ließ …. >>> Beenden ...";
+                imageRuma.SetActive(false);
+                character = GameObject.Find("Character_Ruma");
+                character.GetComponent<DialogActivation>().enabled = false;
                 if (Input.GetMouseButtonDown(0))
                 {
                     End();
@@ -189,7 +206,10 @@ namespace _09_Scripts._Dialogsystem
             imageRomar.SetActive(false);
             DialogActivation.dialogActivated = false;
             DialogActivation.characterNumber = 0;
-            index = -1; // neu
+            character = GameObject.Find("Character_Romar");
+            character.GetComponent<DialogActivation>().enabled = true;
+            character = GameObject.Find("Character_Ruma");
+            character.GetComponent<DialogActivation>().enabled = true; 
             //---HUD Activation---//
             Slider.SetActive(true);
             //IS.SetActive(true);
