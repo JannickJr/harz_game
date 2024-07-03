@@ -45,7 +45,7 @@ namespace _09_Scripts._Dialogsystem
             StartCutscene_1();  
         }
 
-        public void StartCutscene_1()
+        public void StartCutscene_1() // Cutscene 1 - Verweis auf startende Methode
         {
             Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
             if (index == 0)
@@ -60,7 +60,7 @@ namespace _09_Scripts._Dialogsystem
             }
         }
 
-        void Update()
+        void Update() 
         {
             //---HUD Deactivation---//
             Slider.SetActive(false);
@@ -68,29 +68,20 @@ namespace _09_Scripts._Dialogsystem
             ISD.SetActive(false);
             IB.SetActive(false);
             MB.SetActive(false);
+            //---Sprechblasen---// --> Muss vor "Dialog weiter"-Methoden stehen!
+            Start_2();
             //---Dialog weiter---//
-            Start_2(); // neu
             Next();
             CharacterChange();
         }
 
-        public void Start_2() // neu // irgendwo hier zuweisen, wer spricht und wann
-        {
-            if (index == -1)
-            {
-                textComponent.text = string.Empty;
-                //StartDialog(); // --> Hier was anderes einfügen.
-                TextStart();
-            }
-        }
-
-        void StartDialog()
+        void StartDialog() // Cutscene 1 - Start Cutscene 1
         {
             index = 0;
             StartCoroutine(TypeLine());
         }
 
-        IEnumerator TypeLine()
+        IEnumerator TypeLine() // Cutscene 1 - Text wird in einzelnen Buchstaben wiedergegeben
         {
             foreach (char c in lines[index].ToCharArray())
             {
@@ -99,7 +90,7 @@ namespace _09_Scripts._Dialogsystem
             }
         }
 
-        void NextLine()
+        void NextLine() // Cutscene 1 - Sprung in nächste Textzeile bei Klick oder Schluss
         {
             if (index < lines.Length - 1)
             {
@@ -128,7 +119,7 @@ namespace _09_Scripts._Dialogsystem
             }
         }
 
-        public void Next()
+        public void Next() // Cutscene 1 - Verweis auf Methode mit Sprung in nächste Textzeile bei Klick
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -144,7 +135,7 @@ namespace _09_Scripts._Dialogsystem
             }  
         }
 
-        public void CharacterChange()
+        public void CharacterChange() // Cutscene 1 - Textboxanhänge verändern sich
         {
             switch (index)
             {
@@ -168,7 +159,17 @@ namespace _09_Scripts._Dialogsystem
             }
         }
 
-        public void TextStart()
+        public void Start_2() // Sprechblase
+        {
+            if (index == -1)
+            {
+                textComponent.text = string.Empty;
+                //StartDialog(); // --> Hier was anderes einfügen.
+                TextStart();
+            }
+        }
+
+        public void TextStart() // Sprechblasen - Start
         {
             if (DialogActivation.characterNumber == 1)
             {
@@ -199,7 +200,7 @@ namespace _09_Scripts._Dialogsystem
             }
         }
 
-        public void End()
+        public void End() // Sprechblasen - Ende
         {
             gameObject.SetActive(false);
             imageRuma.SetActive(false);
@@ -212,10 +213,10 @@ namespace _09_Scripts._Dialogsystem
             character.GetComponent<DialogActivation>().enabled = true; 
             //---HUD Activation---//
             Slider.SetActive(true);
-            //IS.SetActive(true);
-            //ISD.SetActive(true);
             IB.SetActive(true);
             MB.SetActive(true);
+            //IS.SetActive(true);
+            //ISD.SetActive(true);
         }
     }
 }
