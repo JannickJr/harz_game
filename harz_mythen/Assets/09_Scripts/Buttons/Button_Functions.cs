@@ -16,4 +16,22 @@ public class Button_Functions : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void Update()
+    {
+        Exit();
+    }
+
+    public void Exit()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("Beenden");
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+        }
+    }  
 }
