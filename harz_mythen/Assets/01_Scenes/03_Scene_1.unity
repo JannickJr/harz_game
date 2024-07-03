@@ -2333,7 +2333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &385786096
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2469,7 +2469,7 @@ RectTransform:
   m_Father: {fileID: 509235890}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2763,10 +2763,12 @@ MonoBehaviour:
   imageRuma: {fileID: 1061771683}
   imageRomar: {fileID: 1507395859}
   lines:
-  - "Im Schatten der B\xE4ume mit dir zu liegen ist wundervoll, meine liebste Ruma. "
-  - "Mein lieber Romar, diese gemeinsamen Momente mit dir sind mir die sch\xF6nsten."
+  - "Im Schatten der B\xE4ume mit dir zu liegen ist wundervoll, meine liebste Ruma.
+    >>> Fortsetzen ..."
+  - "Mein lieber Romar, diese gemeinsamen Momente mit dir sind mir die sch\xF6nsten.
+    >>> Fortsetzen ..."
   - Die Welt scheint so friedlich und Sorgen des Alltags sind sofort vergessen, wenn
-    ich in deine liebevollen Augen blicke.
+    ich in deine liebevollen Augen blicke. >>> Beenden ...
   textSpeed: 0.05
   Slider: {fileID: 649796078}
   IS: {fileID: 552637057}
@@ -10983,8 +10985,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1628736410}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
