@@ -48,8 +48,6 @@ namespace _09_Scripts._Dialogsystem
         public void StartCutscene_1() // Cutscene 1 - Verweis auf startende Methode
         {
             Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
-            if (index == 0)
-            {
                 textComponent.text = string.Empty;
                 //--- R + R können nicht angeklickt werden ---
                 character = GameObject.Find("Character_Romar");
@@ -57,7 +55,6 @@ namespace _09_Scripts._Dialogsystem
                 character = GameObject.Find("Character_Ruma");
                 character.GetComponent<DialogActivation>().enabled = false;
                 StartDialog();
-            }
         }
 
         void Update() 
@@ -69,7 +66,7 @@ namespace _09_Scripts._Dialogsystem
             IB.SetActive(false);
             MB.SetActive(false);
             //---Sprechblasen---// --> Muss vor "Dialog weiter"-Methoden stehen!
-            Start_2();
+            TextStart();
             //---Dialog weiter---//
             Next();
             CharacterChange();
@@ -156,16 +153,6 @@ namespace _09_Scripts._Dialogsystem
                     break;
                 default:
                     break;
-            }
-        }
-
-        public void Start_2() // Sprechblase
-        {
-            if (index == -1)
-            {
-                textComponent.text = string.Empty;
-                //StartDialog(); // --> Hier was anderes einfügen.
-                TextStart();
             }
         }
 
