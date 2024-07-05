@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using UnityEngine.Video;
 
 namespace _09_Scripts._Dialogsystem
 {
@@ -27,6 +29,7 @@ namespace _09_Scripts._Dialogsystem
 
         private GameObject character;
 
+
         #region //---INFO---//
         /* Nachricht schicken mit GetComponent oder FindComponent oder int, 
         um in diesem Script jeweils auch Charakternamen und -Bild zu triggern.
@@ -43,8 +46,29 @@ namespace _09_Scripts._Dialogsystem
 
         void Start()
         {
+            //StartCoroutine(PlayVideo());
             StartCutscene_1();  
         }
+        
+        /*IEnumerator PlayVideo()
+        {
+            videoPlayer.Prepare();
+            //WaitForSeconds waitForSeconds = new WaitForSeconds(1);
+            while (!videoPlayer.isPrepared)
+            {
+                yield return null;
+            }
+            rawImage.texture = videoPlayer.texture;
+            videoPlayer.Play();
+            Debug.Log("Playing Video");
+            StopCoroutine(PlayVideo());
+            while (videoPlayer.isPlaying)
+            {
+                yield return null;
+            }
+            Debug.Log("Done Playing Video");
+        }*/
+        
 
         public void StartCutscene_1() // Cutscene 1 - Verweis auf startende Methode
         {
