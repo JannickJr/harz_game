@@ -30,6 +30,7 @@ public class Change_Scene_CS : MonoBehaviour
     {
         Debug.Log("fertig");
         SceneManager.LoadScene("03_Scene_1");
+        //Button_Manager.playgroundOn = true;
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

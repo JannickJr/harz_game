@@ -926,7 +926,7 @@ GameObject:
   - component: {fileID: 1004330555}
   - component: {fileID: 1004330554}
   - component: {fileID: 1004330553}
-  - component: {fileID: 1004330556}
+  - component: {fileID: 1004330557}
   m_Layer: 0
   m_Name: EndButton
   m_TagString: Untagged
@@ -976,7 +976,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.46226406, g: 1, b: 0.50833267, a: 0.392}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -998,8 +998,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1004330556}
-        m_TargetAssemblyTypeName: Button_Functions, Assembly-CSharp
+      - m_Target: {fileID: 1004330557}
+        m_TargetAssemblyTypeName: Button_Manager, Assembly-CSharp
         m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
@@ -1048,7 +1048,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004330551}
   m_CullTransparentMesh: 1
---- !u!114 &1004330556
+--- !u!114 &1004330557
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1057,9 +1057,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1004330551}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbe213ac9ccf411478cfbe211564d3dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 3061ae36ce14e7543853985cee431388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Buttons: {fileID: 0}
 --- !u!1 &1018089136
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,7 +1122,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.46226406, g: 1, b: 0.50833267, a: 0.392}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1452,7 +1453,7 @@ GameObject:
   - component: {fileID: 1235053916}
   - component: {fileID: 1235053915}
   - component: {fileID: 1235053914}
-  - component: {fileID: 1235053917}
+  - component: {fileID: 1235053918}
   m_Layer: 0
   m_Name: PlayButton
   m_TagString: Untagged
@@ -1502,7 +1503,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.46226406, g: 1, b: 0.50833267, a: 0.392}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1524,10 +1525,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1235053917}
-        m_TargetAssemblyTypeName: Button_Functions, Assembly-CSharp
-        m_MethodName: LoadSceneOnClick
-        m_Mode: 5
+      - m_Target: {fileID: 1235053918}
+        m_TargetAssemblyTypeName: Button_Manager, Assembly-CSharp
+        m_MethodName: LoadCutScene_1
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1574,7 +1575,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1235053912}
   m_CullTransparentMesh: 1
---- !u!114 &1235053917
+--- !u!114 &1235053918
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1583,9 +1584,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1235053912}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbe213ac9ccf411478cfbe211564d3dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 3061ae36ce14e7543853985cee431388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Buttons: {fileID: 0}
 --- !u!1 &1253692679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1792,7 +1794,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.46226406, g: 1, b: 0.50833267, a: 0.392}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -2249,7 +2251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1813584540}
   m_Layer: 0
-  m_Name: MainMenu
+  m_Name: MainMenu_Buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2547,6 +2549,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2010873016}
   m_CullTransparentMesh: 1
+--- !u!1 &2051764614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2051764616}
+  - component: {fileID: 2051764615}
+  m_Layer: 0
+  m_Name: MainMenu-Base
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2051764615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051764614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 552ac8c6c1730c0449c3df055512bf6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2051764616
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051764614}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 870.8493, y: 513.0703, z: -3.6960583}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2121544266
 GameObject:
   m_ObjectHideFlags: 0
@@ -2826,3 +2872,4 @@ SceneRoots:
   - {fileID: 132547925}
   - {fileID: 1984678561}
   - {fileID: 1174168125}
+  - {fileID: 2051764616}

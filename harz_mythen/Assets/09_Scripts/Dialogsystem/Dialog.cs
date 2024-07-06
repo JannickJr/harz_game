@@ -25,6 +25,9 @@ namespace _09_Scripts._Dialogsystem
         [SerializeField] private GameObject ISD;
         [SerializeField] private GameObject IB;
         [SerializeField] private GameObject MB;
+        [SerializeField] private GameObject A1;
+        [SerializeField] private GameObject A2;
+        [SerializeField] private GameObject A2Panel;
         #endregion
 
         private GameObject character;
@@ -46,30 +49,9 @@ namespace _09_Scripts._Dialogsystem
 
         void Start()
         {
-            //StartCoroutine(PlayVideo());
             StartCutscene_1();  
         }
         
-        /*IEnumerator PlayVideo()
-        {
-            videoPlayer.Prepare();
-            //WaitForSeconds waitForSeconds = new WaitForSeconds(1);
-            while (!videoPlayer.isPrepared)
-            {
-                yield return null;
-            }
-            rawImage.texture = videoPlayer.texture;
-            videoPlayer.Play();
-            Debug.Log("Playing Video");
-            StopCoroutine(PlayVideo());
-            while (videoPlayer.isPlaying)
-            {
-                yield return null;
-            }
-            Debug.Log("Done Playing Video");
-        }*/
-        
-
         public void StartCutscene_1() // Cutscene 1 - Verweis auf startende Methode
         {
             Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
@@ -130,7 +112,7 @@ namespace _09_Scripts._Dialogsystem
                 gameObject.SetActive(false);
                 DialogActivation.dialogActivated = false;
                 DialogActivation.characterNumber = 0;
-                index = -1; 
+                //index = -1; // im Moment nicht mehr notwendig, aber zur Sicherheit mal noch deaktiviert im Code lassen
                 //---HUD Activation---//
                 Slider.SetActive(true);
                 //IS.SetActive(true);
@@ -143,6 +125,11 @@ namespace _09_Scripts._Dialogsystem
                 character = GameObject.Find("Character_Ruma");
                 character.GetComponent<DialogActivation>().enabled = true;
                 cutScene_1IsActive = false;
+                //---Aufgabenaktivierung---//
+                A1.SetActive(true);
+                A2Panel.SetActive(true);
+                A2.SetActive(true);
+                
             }
         }
 
@@ -193,7 +180,7 @@ namespace _09_Scripts._Dialogsystem
                 imageRuma.SetActive(true);
                 textName.text = "Ruma";
                 // hier davor evtl. int wechseln, für anderen Text; aber nur in andere Szene
-                textComponent.text = "Ein Geschenk möchtest du mir geben? Oh Romar, du bist so gut zu mir! >>> Beenden ...";
+                textComponent.text = "Ein Geschenk möchtest du mir geben? Oh Romar, du bist so gut zu mir!";
                 imageRomar.SetActive(false);
                 character = GameObject.Find("Character_Romar"); 
                 character.GetComponent<DialogActivation>().enabled = false;
@@ -206,7 +193,7 @@ namespace _09_Scripts._Dialogsystem
             {
                 imageRomar.SetActive(true);
                 textName.text = "Romar";
-                textComponent.text = "Das Geschenk für Ruma liegt hier irgendwo verborgen. Wenn ich doch bloß wüsste, wo ich es ließ …. >>> Beenden ...";
+                textComponent.text = "Das Geschenk für Ruma liegt hier irgendwo verborgen. Wenn ich doch bloß wüsste, wo ich es ließ ….";
                 imageRuma.SetActive(false);
                 character = GameObject.Find("Character_Ruma");
                 character.GetComponent<DialogActivation>().enabled = false;

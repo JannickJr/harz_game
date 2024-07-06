@@ -9,12 +9,12 @@ public class DontDestroy : MonoBehaviour
 
     void Awake()
     {
-        if (persistentObjects[objectIndex] == null)
+        if (persistentObjects[objectIndex] == null) //&& Main_Menu.MainMenuIsActivated == false)
         {
             persistentObjects[objectIndex] = gameObject;
             DontDestroyOnLoad(gameObject);
         }
-        else if (persistentObjects[objectIndex] != gameObject)
+        else if (persistentObjects[objectIndex] != gameObject) //&& Main_Menu.MainMenuIsActivated == false)
         {
             Destroy(gameObject);
         }

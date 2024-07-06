@@ -272,9 +272,9 @@ GameObject:
   - component: {fileID: 292564407}
   - component: {fileID: 292564406}
   - component: {fileID: 292564405}
-  - component: {fileID: 292564404}
+  - component: {fileID: 292564408}
   m_Layer: 0
-  m_Name: PlayButton
+  m_Name: Weiter-Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -300,18 +300,6 @@ RectTransform:
   m_AnchoredPosition: {x: -7.7848, y: -451.4367}
   m_SizeDelta: {x: 167.7848, y: -1041.4366}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &292564404
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 292564402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbe213ac9ccf411478cfbe211564d3dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &292564405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,7 +322,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.46226406, g: 1, b: 0.50833267, a: 0.392}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -356,10 +344,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 292564404}
-        m_TargetAssemblyTypeName: Button_Functions, Assembly-CSharp
-        m_MethodName: LoadSceneOnClick
-        m_Mode: 5
+      - m_Target: {fileID: 292564408}
+        m_TargetAssemblyTypeName: Button_Manager, Assembly-CSharp
+        m_MethodName: LoadScene_1
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -406,6 +394,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 292564402}
   m_CullTransparentMesh: 1
+--- !u!114 &292564408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292564402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3061ae36ce14e7543853985cee431388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Buttons: {fileID: 0}
+  Slider: {fileID: 0}
+  IS: {fileID: 0}
+  ISD: {fileID: 0}
+  IB: {fileID: 0}
+  MB: {fileID: 0}
 --- !u!1 &669507164
 GameObject:
   m_ObjectHideFlags: 0
