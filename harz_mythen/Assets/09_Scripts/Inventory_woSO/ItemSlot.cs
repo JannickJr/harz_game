@@ -44,13 +44,13 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
         this.itemName = itemName;
-        this.quantity = quantity;
+        //this.quantity = quantity; // Anzahl fürs Erste entfernt
         this.itemSprite = itemSprite;
         this.itemDescription = itemDescription;
         isFull = true;
 
-        quantityText.text = quantity.ToString();
-        quantityText.enabled = true;
+        //quantityText.text = quantity.ToString(); // Anzahl fürs Erste entfernt
+        //quantityText.enabled = true; // Anzahl fürs Erste entfernt
         itemImage.sprite = itemSprite;
     }
     /*
@@ -102,7 +102,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         }
         if (eventData.button == PointerEventData.InputButton.Right)
         {
-            OnRightClick();
+            //OnRightClick();
         }
     }
 
@@ -141,7 +141,9 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
             itemDescriptionImage.sprite = emptySprite;
         }
     }
-    public void OnRightClick() // funktioniert bzw. aktuell ausführbar // Entfernen des Items aus Itemslot 
+
+    // Entfernen des Items aus Itemslot mit Rechtsklick, wenn das Item markiert war
+    public void OnRightClick() // funktioniert // aktuell deaktiviert bei Methodenweiterleitung 
     {
         if (thisItemSelected)
         {
@@ -161,7 +163,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
         isFull = false;
         selectedShader.SetActive(false);
-        itemDescriptionBar.SetActive(false); //neu
+        itemDescriptionBar.SetActive(false); 
         thisItemSelected = false;
         ItemDescriptionText.text = "";
         ItemDescriptionNameText.text = "";
