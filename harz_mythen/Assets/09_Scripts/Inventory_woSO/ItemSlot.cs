@@ -40,7 +40,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
     }
     
-    //==Variante ohne Stackable Items==// funktioniert
+    //==Variante ohne Stackable Items==// funktioniert // Hinzufügen eines Items in Itemslot
     public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
         this.itemName = itemName;
@@ -94,7 +94,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         return 0;
     }*/ //
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnPointerClick(PointerEventData eventData) // Weiterleitung zu den Methoden
     {
         if (eventData.button == PointerEventData.InputButton.Left)
         {
@@ -106,7 +106,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    public void OnLeftClick()
+    public void OnLeftClick() // Itemslot auswählen, um Itembeschreibung zu (de-)aktivieren
     {
         if (!thisItemSelected)
         {
@@ -141,7 +141,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
             itemDescriptionImage.sprite = emptySprite;
         }
     }
-    public void OnRightClick()
+    public void OnRightClick() // funktioniert bzw. aktuell ausführbar // Entfernen des Items aus Itemslot 
     {
         if (thisItemSelected)
         {
@@ -154,7 +154,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    public void EmptySlot()
+    public void EmptySlot() // Was passiert, wenn Itemslot leer ist.
     {
         quantityText.enabled = false;
         itemImage.sprite = emptySprite;

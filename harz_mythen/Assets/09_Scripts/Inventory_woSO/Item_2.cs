@@ -28,7 +28,7 @@ public class Item_2 : MonoBehaviour
     }
     
     //==Variante ohne Stackable Items==// funktioniert
-    public void MouseClick()    // Klick
+    public void MouseClick()    // Was beim Anklicken eines Items passiert.
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -49,7 +49,7 @@ public class Item_2 : MonoBehaviour
                         {
                             Destroy(gameObject);
                             Debug.Log("weg XXX"); // funktioniert (sogar für einzelnes Objekt)
-                            if (gameObject.CompareTag("Biene"))
+                            if (gameObject.CompareTag("Biene")) // notwendig, da Bienenstock erhalten bleiben soll.
                             {
                                 Instantiate(bienePrefab, transform.position, Quaternion.Euler(new Vector3(-90F, 0F, 0F)));
                             }
