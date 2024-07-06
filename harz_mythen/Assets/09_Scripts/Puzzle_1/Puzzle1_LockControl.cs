@@ -8,7 +8,7 @@ public class Puzzle1_LockControl : MonoBehaviour
     private void Start()
     {
         result = new int[] { 0, 0, 0, 0 };
-        correctCombination = new int[] { 7, 2, 7, 0 };
+        correctCombination = new int[] { 7, 2, 5, 0 };
         Puzzle1_Rotate.Rotated += CheckResults;
     }
 
