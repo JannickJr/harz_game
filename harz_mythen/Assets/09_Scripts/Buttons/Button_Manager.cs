@@ -52,6 +52,17 @@ public class Button_Manager : MonoBehaviour
         SceneManager.LoadScene("03_Scene_1");
     }
 
+    public void GoToMainCamera()
+    {
+
+    }
+
+    public void GoToCam2()
+    {
+
+    }
+
+
     // Diese Methode ermöglicht das Beenden der Anwendung beim Anklicken eines Buttons
     public void ExitGame()
     {

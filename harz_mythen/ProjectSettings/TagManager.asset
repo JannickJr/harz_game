@@ -12,14 +12,16 @@ TagManager:
   - Ruma
   - Romar
   - Selectable
+  - Box
+  - Lock
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Lock
   - Water
   - UI
-  - 
+  - Truhe
   - 
   - 
   - 
