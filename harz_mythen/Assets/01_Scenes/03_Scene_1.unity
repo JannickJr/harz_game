@@ -3117,7 +3117,28 @@ MonoBehaviour:
   - "Mein lieber Romar, diese gemeinsamen Momente mit dir sind mir die sch\xF6nsten."
   - Die Welt scheint so friedlich und Sorgen des Alltags sind sofort vergessen, wenn
     ich in deine liebevollen Augen blicke.
+  - "Ich w\xFCnschte blo\xDF, wir m\xFCssten unsere Liebe nicht vor deinem Vater
+    verstecken."
+  - "Mein Vater wird unsere Gef\xFChle niemals verstehen. Die Liebe ist ihm fremd.
+    Alles, was er je geliebt hat, ist sein Silber."
+  - "Dann m\xF6chte ich dir ein Geschenk geben, das dich die Sorgen \xFCber deinen
+    Vater f\xFCr einen winzigen Moment vergessen l\xE4sst."
+  - Gedulde dich nur kurz, mein Liebling.
   textSpeed: 0.05
+  lines2:
+  - Sag, was verbirgst du in deiner Hand?
+  - "Es ist nichts anderes als mein Geschenk f\xFCr dich, mein Liebling."
+  - "Dieser Ring soll Ausdruck meiner unsterblichen Liebe f\xFCr dich sein."
+  - "Nein, wie unendlich sch\xF6n! Mein Liebster, ich kann mein Gl\xFCck kaum in
+    Worte fassen."
+  - Eine derartige Geste der Leidenschaft ist mir noch nie widerfahren! Lass mich
+    dir von Herzen danken.
+  - "Du nimmst meinen Ring also an? Oh Ruma, du machst mich zum gl\xFCcklichsten
+    Riesen des Waldes!"
+  - "Eines Tages m\xF6chte ich dir meine Gef\xFChle mit einer ebenso ber\xFChrenden
+    Geste beweisen - ja, das schw\xF6re ich dir."
+  - "Nun lass uns gemeinsam im Gras ruhen und den strahlenden Himmel betrachten.
+    Die sch\xF6ne Zeit mit dir wird schon bald wieder vorbei sein."
   Slider: {fileID: 649796078}
   IS: {fileID: 552637057}
   ISD: {fileID: 1382526456}
@@ -12136,6 +12157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f284b71f35071044ea4f14ed4b8f4db3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Dialogi: {fileID: 468118235}
 --- !u!1 &1382526456
 GameObject:
   m_ObjectHideFlags: 0
@@ -25633,6 +25655,7 @@ MonoBehaviour:
   cam2: {fileID: 894841722}
   cam3: {fileID: 1055017654}
   Cam2On: 0
+  Box: {fileID: 2585353320291574031}
   Button: {fileID: 507228324}
   Slider: {fileID: 649796078}
 --- !u!1 &7756937731250851319
@@ -26496,7 +26519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &8575323083051339492
 GameObject:
   m_ObjectHideFlags: 0

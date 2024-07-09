@@ -9,7 +9,7 @@ public class Puzzle1_Camera : MonoBehaviour
     public Camera cam3;
     public bool Cam2On;
     //[SerializeField] private GameObject locki;
-    //public GameObject Hugo;
+    public GameObject Box;
     public GameObject Button;
     public GameObject Slider;
 
@@ -23,6 +23,10 @@ public class Puzzle1_Camera : MonoBehaviour
     private void Update()
     {
         MouseClick();
+        if (Puzzle1_LockControl.victory == true)
+        {
+            Victory();
+        }
     }
 
     public void MouseClick()    // Was beim Anklicken eines Items passiert.
@@ -44,7 +48,6 @@ public class Puzzle1_Camera : MonoBehaviour
                     Button.SetActive(true);
                     Slider.SetActive(false);
                     //locki.SetActive(true);
-                    //Hugo.GetComponent<BoxCollider>().enabled = false;
                 }
             }
         }
@@ -76,6 +79,7 @@ public class Puzzle1_Camera : MonoBehaviour
             cam3.enabled = false;
             Button.SetActive(false);
             Slider.SetActive(true);
+            Cam2On = false;
         }
         if (Cam2On == false)
         {
@@ -84,5 +88,14 @@ public class Puzzle1_Camera : MonoBehaviour
             cam3.enabled = false;
             Cam2On = true;
         }
+    }
+
+    public void Victory()
+    {
+        mainCamera.enabled = true;
+        cam2.enabled = false;
+        cam3.enabled = false;
+        Button.SetActive(false);
+        Box.GetComponent<BoxCollider>().enabled = false;
     }
 }

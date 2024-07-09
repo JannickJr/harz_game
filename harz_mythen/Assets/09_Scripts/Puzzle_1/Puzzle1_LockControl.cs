@@ -1,9 +1,14 @@
+using _09_Scripts._Dialogsystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Puzzle1_LockControl : MonoBehaviour
 {
+    public GameObject Dialogi;
+
+    public static bool victory = false;
+
     private int[] result, correctCombination;
     private void Start()
     {
@@ -35,6 +40,12 @@ public class Puzzle1_LockControl : MonoBehaviour
         if(result[0] == correctCombination[0] && result[1] == correctCombination[1] && result[2] == correctCombination[2] && result[3] == correctCombination[3])
         {
             Debug.Log("Opened!");
+            victory = true;
+            Debug.Log("Victory: " + victory);
+            Dialog.LevelStarted = false;
+            Debug.Log("Dialog.LevelStarted: " + Dialog.LevelStarted);
+            Dialogi.SetActive(true);
+            Debug.Log("Dialogi.SetActive(true): " + Dialogi);
         }
     }
     private void OnDestroy()
