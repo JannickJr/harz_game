@@ -10,14 +10,15 @@ public class Puzzle1_LockControl : MonoBehaviour
     public static bool victory = false;
 
     private int[] result, correctCombination;
-    private void Start()
+
+    private void Start() // Startanweisung
     {
         result = new int[] { 0, 0, 0, 0 };
-        correctCombination = new int[] { 7, 2, 5, 0 };
+        correctCombination = new int[] { 7, 2, 5, 0 }; // Lösung
         Puzzle1_Rotate.Rotated += CheckResults;
     }
 
-    private void CheckResults(string wheelName, int number)
+    private void CheckResults(string wheelName, int number) // Checken der Lösung
     {
         switch (wheelName)
         {
@@ -37,7 +38,8 @@ public class Puzzle1_LockControl : MonoBehaviour
                 result[3] = number;
                 break;
         }
-        if(result[0] == correctCombination[0] && result[1] == correctCombination[1] && result[2] == correctCombination[2] && result[3] == correctCombination[3])
+        // wenn richtig
+        if (result[0] == correctCombination[0] && result[1] == correctCombination[1] && result[2] == correctCombination[2] && result[3] == correctCombination[3]) 
         {
             Debug.Log("Opened!");
             victory = true;
@@ -48,7 +50,7 @@ public class Puzzle1_LockControl : MonoBehaviour
             Debug.Log("Dialogi.SetActive(true): " + Dialogi);
         }
     }
-    private void OnDestroy()
+    private void OnDestroy() // nach Drehung Eingabe checken
     {
         Puzzle1_Rotate.Rotated -= CheckResults;
     }

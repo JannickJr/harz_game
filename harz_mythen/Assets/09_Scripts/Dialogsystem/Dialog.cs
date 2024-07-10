@@ -37,14 +37,14 @@ namespace _09_Scripts._Dialogsystem
 
         private GameObject character;
 
-        
-            //---Dialog 2 Start---//
-            /*if (LevelStarted == false) // die muss irgendwie ausgeführt werden
-            {
-                StartCutscene_2();
-                Debug.Log("Start2");
-            }*/
-        
+        // funktioniert in Awake-Methode nicht, da sie nur einmal aufgerufen wird
+        //---Dialog 2 Start---//
+        /*if (LevelStarted == false) // die muss irgendwie ausgeführt werden
+        {
+            StartCutscene_2();
+            Debug.Log("Start2");
+        }*/
+
 
         #region //---INFO---//
         /* Nachricht schicken mit GetComponent oder FindComponent oder int, 
@@ -63,7 +63,7 @@ namespace _09_Scripts._Dialogsystem
         void Start()
         {
             StartCutscene_1();
-            /*if (LevelStarted == true)
+            /*if (LevelStarted == true) // funktioniert nicht, da es nur einmal aufgerufen wird
             {
                 StartCutscene_1();
             }
@@ -212,7 +212,7 @@ namespace _09_Scripts._Dialogsystem
             character = GameObject.Find("Character_Romar");
             character.GetComponent<DialogActivation>().enabled = false;
             character = GameObject.Find("Character_Ruma");
-            character.GetComponent<DialogActivation>().enabled = false;
+            character.GetComponent<DialogActivation>().enabled = false;          
             cutScene_2IsActive = true;
             StartDialog2();
         }

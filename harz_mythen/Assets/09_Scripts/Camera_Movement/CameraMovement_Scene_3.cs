@@ -15,38 +15,33 @@ public class CameraMovement_Scene_3 : MonoBehaviour
   
     private void Update()
     {
-        //if ()
+        
+        if (slider.value != 0) // führe Methode aus, wenn Sliderwert nicht Null ist
         {
-            if (slider.value != 0)
-            {
-                MoveCamera_S3();
-            }
+            MoveCamera_S3();
         }
+        
     }
-    // Wenn Slider negativ + Kamera zu nah am unteren Empty, dann Slider nicht weiter in diese Richtung bewegen;
-    // Wenn Slider positiv + Kamera zu nah am oberen Empty, dann Slider nicht weiter in diese Richtung bewegen; 
-    // eine Koordinate angucken: Ist x-Koordinate größer oder kleiner als Ecken (= Sitz der Emptys), die ich gesetzt habe?
-    // wenn nicht gedrückt, dann nicht bewegen
     
-    public void MoveCamera_S3()
+    public void MoveCamera_S3() // Kamerabewegung durch Sliderverschiebung
     {
         float movement = slider.value;
 
-        mainCamera.transform.position += new Vector3(0, movement, 0) * movementSpeedCamera * Time.deltaTime;
+        mainCamera.transform.position += new Vector3(0, movement, 0) * movementSpeedCamera * Time.deltaTime; 
 
-        if (slider.value <= 0 && mainCamera.transform.position.y <= bottomWall.position.y)
+        if (slider.value <= 0 && mainCamera.transform.position.y <= bottomWall.position.y) // unten
         {
             Debug.Log("Es ist soweit."); // wird erkannt
             mainCamera.transform.position = bottomWall.position;
 
         }
-        else if (slider.value >= 0 && mainCamera.transform.position.y >= topWall.position.y)
+        else if (slider.value >= 0 && mainCamera.transform.position.y >= topWall.position.y) // oben
         {
             mainCamera.transform.position = topWall.position;
         }
     }
 
-    public void resetSlider()
+    public void resetSlider() // Slider wird auf Null gesetzt, wenn er losgelassen wird
     {
         slider.value = 0;
     }

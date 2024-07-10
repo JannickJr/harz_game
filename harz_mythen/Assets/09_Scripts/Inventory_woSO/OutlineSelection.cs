@@ -4,19 +4,13 @@ using UnityEngine;
 
 public class OutlineSelection : MonoBehaviour
 {
-    
-    public void MyOutlines()
-    {
-        Material myMaterial = GetComponent<Renderer>().material;
-        myMaterial.SetFloat("_OutlineThickness", 0.015f);
-    }
+    // Script noch nicht in aktiver Benutzung, da noch nicht funktionstüchtig von den Verbindungen her
     
     void Start()
     {
         Material myMaterial = GetComponent<Renderer>().material;
         myMaterial.SetFloat("_OutlineThickness", 0f);
     }
-
     
     void Update()
     {
@@ -38,5 +32,11 @@ public class OutlineSelection : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void MyOutlines()
+    {
+        Material myMaterial = GetComponent<Renderer>().material;
+        myMaterial.SetFloat("_OutlineThickness", 0.015f);
     }
 }

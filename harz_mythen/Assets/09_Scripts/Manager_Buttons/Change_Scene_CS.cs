@@ -12,7 +12,7 @@ public class Change_Scene_CS : MonoBehaviour
     [SerializeField] private VideoPlayer videoPlayer;
 
 
-    private void Awake()
+    private void Awake() // Videostart
     {
         //videoPlayer.Play();
         videoPlayer.loopPointReached += ChangeSceneWhenVideoFinish; // delegate
@@ -26,13 +26,19 @@ public class Change_Scene_CS : MonoBehaviour
         //videoPlayer.loopPointReached += ChangeSceneWhenVideoFinish; // delegate
     }
 
-    public void ChangeSceneWhenVideoFinish(VideoPlayer vp)
+    public void ChangeSceneWhenVideoFinish(VideoPlayer vp) // Szenenwechsel
     {
         Debug.Log("fertig");
         SceneManager.LoadScene("03_Scene_1");
         //Button_Manager.playgroundOn = true;
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    // Diese Methode ermöglicht das Laden einer Szene beim Anklicken eines Buttons
+    /*public void LoadSceneOnClick(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }*/
 
     /*public void StartVideo()
     {

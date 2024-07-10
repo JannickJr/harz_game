@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Rotation_1 : MonoBehaviour
 {
+    // aktuell nicht in Benutzung
     public Camera mainCamera;
     public Vector3 rotation;
 

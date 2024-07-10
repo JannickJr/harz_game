@@ -9,18 +9,13 @@ public class CameraMovement_Scene_2 : MonoBehaviour
     float rotationY = 0f;
     public float sensitivity = 5f;
 
-    // Variante 2:
+    // Variante 2: // kein 360°-Blick
     /*private float x;
     private float y;
     public float sensitivity_2 = -1f;
     private Vector3 rotate;*/
 
-    void Start()
-    {
-        
-    }
 
-    
     void Update()
     {
         // Variante 1: // 360°-Blick

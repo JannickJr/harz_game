@@ -5,42 +5,37 @@ using UnityEngine.SceneManagement;
 
 public class Test_Scene_Change : MonoBehaviour
 {
+    // in Benutzung
     [SerializeField] private GameObject Slider;
     [SerializeField] private GameObject Slider_2;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         SceneChange();
     }
 
-    public void SceneChange()
+    public void SceneChange() // Szenenwechsel
     {
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.M)) // mit M
         {
             SceneManager.LoadScene(1);
             Slider.SetActive(false);
             Slider_2.SetActive(true);
         }
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K)) // mit K
             {
              SceneManager.LoadScene(0);
              Slider.SetActive(false);
              Slider_2.SetActive(true);
             }
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L)) // mit L
         {
             SceneManager.LoadScene(2);
             Slider.SetActive(false);
             Slider_2.SetActive(true);
         }
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.J)) // mit J
         {
             SceneManager.LoadScene(3);
             Slider.SetActive(false);

@@ -8,12 +8,8 @@ public class Button_Manager : MonoBehaviour
     public GameObject Buttons;
     private bool menuActivated;
 
-    private void Start()
-    {
-     
-    }
 
-    public void ButtonBar()
+    public void ButtonBar() // (De-)Aktivierung der Menubuttons in der Spielszene
     {
         if (menuActivated)
         {
@@ -33,37 +29,26 @@ public class Button_Manager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    public void LoadMainMenu()
+    public void LoadMainMenu() // Laden des Hauptmenüs
     {
         Main_Menu.MainMenuIsActivated = false; // war für DontDestroy-Script gedacht
         Debug.Log(Main_Menu.MainMenuIsActivated);
         SceneManager.LoadScene("01_Main_Menu");
     }
 
-    public void LoadCutScene_1()
+    public void LoadCutScene_1() // Lader der ersten Cutscene
     {
         SceneManager.LoadScene("02_CutScene_01");
         Main_Menu.MainMenuIsActivated = false; // war für DontDestroy-Script gedacht
         Debug.Log(Main_Menu.MainMenuIsActivated);// war für DontDestroy-Script gedacht
     }
 
-    public void LoadScene_1()
+    public void LoadScene_1() // Laden der ersten Szene
     {
         SceneManager.LoadScene("03_Scene_1");
     }
 
-    public void GoToMainCamera()
-    {
-
-    }
-
-    public void GoToCam2()
-    {
-
-    }
-
-
-    // Diese Methode ermöglicht das Beenden der Anwendung beim Anklicken eines Buttons
+    // Die folgenden Methoden ermöglichen das Beenden der Anwendung beim Anklicken eines Buttons
     public void ExitGame()
     {
         Application.Quit();

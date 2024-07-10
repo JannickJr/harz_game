@@ -29,7 +29,7 @@ namespace _09_Scripts._Dialogsystem
                 // funktioniert super (sogar für einzelnes Objekt)
                 if (Physics.Raycast(ray, out RaycastHit hit)) // funktioniert super
                 {                                               // funktioniert nur, wenn Script auf anzuklickendem Objekt liegt
-                    if (hit.transform.gameObject.CompareTag("Ruma"))
+                    if (hit.transform.gameObject.CompareTag("Ruma")) // wenn Ruma angeklickt wird
                     {
                         Debug.Log("Treffer XXX Ruma"); // funktioniert
                             if (dialogActivated)
@@ -47,7 +47,7 @@ namespace _09_Scripts._Dialogsystem
                                 dialogActivated = true;
                             }
                     }
-                    if (hit.transform.gameObject.CompareTag("Romar"))
+                    if (hit.transform.gameObject.CompareTag("Romar")) // wenn Romar angeklickt wird
                     {
                             Debug.Log("Treffer XXX Romar"); // funktioniert
                             if (dialogActivated)

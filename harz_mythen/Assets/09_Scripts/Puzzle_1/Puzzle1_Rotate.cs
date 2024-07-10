@@ -11,13 +11,13 @@ public class Puzzle1_Rotate : MonoBehaviour
 
     private int numberShown;
 
-    private void Start()
+    private void Start() // Startanweisung
     {
         coroutineAllowed = true;
         numberShown = 0;
     }
 
-    private void OnMouseDown()
+    private void OnMouseDown() // Klick
     {
         if (coroutineAllowed)
         {
@@ -25,7 +25,7 @@ public class Puzzle1_Rotate : MonoBehaviour
         }
     }
 
-    private IEnumerator RotateWheel()
+    private IEnumerator RotateWheel() // Raddrehung und Nummernänderung
     {
         coroutineAllowed = false;
 
