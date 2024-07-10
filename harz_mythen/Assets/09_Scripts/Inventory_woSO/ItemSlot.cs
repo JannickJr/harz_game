@@ -134,7 +134,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         else if (thisItemSelected)
         {
             selectedShader.SetActive(false);
-            itemDescriptionBar.SetActive(false); //neu
+            itemDescriptionBar.SetActive(false); 
             thisItemSelected = false;
             ItemDescriptionText.text = "";
             ItemDescriptionNameText.text = "";
