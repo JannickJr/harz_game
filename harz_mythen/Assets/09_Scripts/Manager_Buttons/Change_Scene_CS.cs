@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
 using UnityEngine.SceneManagement;
+using System;
 
 public class Change_Scene_CS : MonoBehaviour
 {
@@ -29,16 +30,17 @@ public class Change_Scene_CS : MonoBehaviour
     public void ChangeSceneWhenVideoFinish(VideoPlayer vp) // Szenenwechsel
     {
         Debug.Log("fertig");
-        SceneManager.LoadScene("03_Scene_1");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         //Button_Manager.playgroundOn = true;
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     // Diese Methode ermöglicht das Laden einer Szene beim Anklicken eines Buttons
+
     /*public void LoadSceneOnClick(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }*/
+
 
     /*public void StartVideo()
     {

@@ -31,19 +31,24 @@ public class Button_Manager : MonoBehaviour
 
     public void LoadMainMenu() // Laden des Hauptmenüs
     {
-        Main_Menu.MainMenuIsActivated = false; // war für DontDestroy-Script gedacht
-        Debug.Log(Main_Menu.MainMenuIsActivated);
+        //Main_Menu.MainMenuIsActivated = false; // war für DontDestroy-Script gedacht
+        //Debug.Log(Main_Menu.MainMenuIsActivated);
         SceneManager.LoadScene("01_Main_Menu");
     }
 
-    public void LoadCutScene_1() // Lader der ersten Cutscene
+    public void LoadNextScene() // Lader der nächsten Szene im Build
     {
-        SceneManager.LoadScene("02_CutScene_01");
-        Main_Menu.MainMenuIsActivated = false; // war für DontDestroy-Script gedacht
-        Debug.Log(Main_Menu.MainMenuIsActivated);// war für DontDestroy-Script gedacht
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void LoadScene_1() // Laden der ersten Szene
+    public void LoadCutScene_1() // Lader der ersten Cutscene --- gerade nicht mehr aktiv
+    {
+        SceneManager.LoadScene("02_CutScene_01");
+        //Main_Menu.MainMenuIsActivated = false; // war für DontDestroy-Script gedacht
+        //Debug.Log(Main_Menu.MainMenuIsActivated);// war für DontDestroy-Script gedacht
+    }
+
+    public void LoadScene_1() // Laden der ersten Szene --- gerade nicht mehr aktiv
     {
         SceneManager.LoadScene("03_Scene_1");
     }

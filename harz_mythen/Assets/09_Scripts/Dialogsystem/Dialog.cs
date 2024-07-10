@@ -37,22 +37,6 @@ namespace _09_Scripts._Dialogsystem
 
         private GameObject character;
 
-        // funktioniert in Awake-Methode nicht, da sie nur einmal aufgerufen wird
-        //---Dialog 2 Start---//
-        private void OnEnable()
-        {
-            if (LevelStarted == false && Puzzle1_LockControl.victory == true) 
-            {
-                StartCutscene_2();
-                Debug.Log("Start2");
-            }
-            else
-            {
-                return;
-            }
-        }
-
-
         #region //---INFO---//
         /* Nachricht schicken mit GetComponent oder FindComponent oder int, 
         um in diesem Script jeweils auch Charakternamen und -Bild zu triggern.
@@ -70,13 +54,6 @@ namespace _09_Scripts._Dialogsystem
         void Start()
         {
             StartCutscene_1();
-            /*
-            if (LevelStarted == false) // funktioniert nicht, da es nur einmal aufgerufen wird
-            {
-                StartCutscene_2();
-            }*/
-            Debug.Log("cutScene_1IsActive: " + cutScene_1IsActive);
-            Debug.Log("cutScene_2IsActive: " + cutScene_2IsActive);
         }
         
         void Update() 
@@ -208,6 +185,19 @@ namespace _09_Scripts._Dialogsystem
         }
 
         //---DIALOG 2---//
+        private void OnEnable() // Start Dialog 2 nach Rätsellösung
+        {
+            if (LevelStarted == false && Puzzle1_LockControl.victory == true)
+            {
+                StartCutscene_2();
+                Debug.Log("Start2");
+            }
+            else
+            {
+                return;
+            }
+        }
+
         public void StartCutscene_2() // Cutscene 2 - Verweis auf startende Methode
         {
             Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
@@ -247,26 +237,8 @@ namespace _09_Scripts._Dialogsystem
             else
             {
                 gameObject.SetActive(false);
-                //DialogActivation.dialogActivated = false;
-                //DialogActivation.characterNumber = 0;
-                //index = -1; // im Moment nicht mehr notwendig, aber zur Sicherheit mal noch deaktiviert im Code lassen
-                //---HUD Activation---//
-                //Slider.SetActive(true);
-                //IS.SetActive(true);
-                //ISD.SetActive(true);
-                //IB.SetActive(true);
-                //MB.SetActive(true);
-                //---Script Activation---//
-                //character = GameObject.Find("Character_Romar");
-                //character.GetComponent<DialogActivation>().enabled = true;
-                //character = GameObject.Find("Character_Ruma");
-                //character.GetComponent<DialogActivation>().enabled = true;
-                //cutScene_2IsActive = false;
-                //---Aufgabenaktivierung---//
-                //A1.SetActive(true);
-                //A2Panel.SetActive(true);
-                //A2.SetActive(true);
-                SceneManager.LoadScene("04_CutScene_2");
+                //SceneManager.LoadScene("04_CutScene_02");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
 
