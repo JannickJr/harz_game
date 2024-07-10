@@ -37,6 +37,15 @@ namespace _09_Scripts._Dialogsystem
 
         private GameObject character;
 
+        private void Awake()
+        {
+            //---Dialog 2 Start---//
+            if (LevelStarted == false) // die muss irgendwie ausgeführt werden
+            {
+                StartCutscene_2();
+                Debug.Log("Start2");
+            }
+        }
 
         #region //---INFO---//
         /* Nachricht schicken mit GetComponent oder FindComponent oder int, 
@@ -82,11 +91,6 @@ namespace _09_Scripts._Dialogsystem
             {
                 Next();
                 CharacterChange();
-            }
-            //---Dialog 2 Start---//
-            if (LevelStarted == false) // die muss irgendwie ausgeführt werden
-            {
-                StartCutscene_2();
             }
             //---Dialog 2 Start---//
             if (cutScene_2IsActive == true)
@@ -255,9 +259,9 @@ namespace _09_Scripts._Dialogsystem
                 character.GetComponent<DialogActivation>().enabled = true;
                 cutScene_2IsActive = false;
                 //---Aufgabenaktivierung---//
-                A1.SetActive(true);
-                A2Panel.SetActive(true);
-                A2.SetActive(true);
+                //A1.SetActive(true);
+                //A2Panel.SetActive(true);
+                //A2.SetActive(true);
                 SceneManager.LoadScene("04_CutScene_2");
             }
         }

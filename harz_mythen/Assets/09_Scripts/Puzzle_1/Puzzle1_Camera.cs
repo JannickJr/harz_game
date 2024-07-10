@@ -75,11 +75,12 @@ public class Puzzle1_Camera : MonoBehaviour
         if (Cam2On == true)
         {
             mainCamera.enabled = true;
+            Debug.Log("Kamera: " + mainCamera.enabled);
             cam2.enabled = false;
             cam3.enabled = false;
             Button.SetActive(false);
             Slider.SetActive(true);
-            Cam2On = false;
+            //Cam2On = false;
         }
         if (Cam2On == false)
         {
