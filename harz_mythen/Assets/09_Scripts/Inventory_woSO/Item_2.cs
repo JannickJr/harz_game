@@ -30,7 +30,8 @@ public class Item_2 : MonoBehaviour
         MouseClick2();
     }
 
-
+    // Text: "Das funktioniert leider nicht."
+    // Text: "Der Honig ist sья und klebrig."
 
     //==Variante ohne Stackable Items==// funktioniert
 
