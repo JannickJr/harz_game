@@ -42,7 +42,7 @@ public class Puzzle1_LockControl : MonoBehaviour
             Debug.Log("Opened!");
             victory = true;
             Debug.Log("Victory: " + victory);
-            Dialog.LevelStarted = false;
+            //Dialog.LevelStarted = false;
             Debug.Log("Dialog.LevelStarted: " + Dialog.LevelStarted);
             Dialogi.SetActive(true);
             Debug.Log("Dialogi.SetActive(true): " + Dialogi);

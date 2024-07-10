@@ -37,15 +37,14 @@ namespace _09_Scripts._Dialogsystem
 
         private GameObject character;
 
-        private void Awake()
-        {
+        
             //---Dialog 2 Start---//
-            if (LevelStarted == false) // die muss irgendwie ausgeführt werden
+            /*if (LevelStarted == false) // die muss irgendwie ausgeführt werden
             {
                 StartCutscene_2();
                 Debug.Log("Start2");
-            }
-        }
+            }*/
+        
 
         #region //---INFO---//
         /* Nachricht schicken mit GetComponent oder FindComponent oder int, 
@@ -160,6 +159,7 @@ namespace _09_Scripts._Dialogsystem
                 A1.SetActive(true);
                 A2Panel.SetActive(true);
                 A2.SetActive(true);
+                LevelStarted = false; // neu
             }
         }
 

@@ -1,3 +1,4 @@
+using _09_Scripts._Dialogsystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,6 +27,10 @@ public class Puzzle1_Camera : MonoBehaviour
         if (Puzzle1_LockControl.victory == true)
         {
             Victory();
+        }
+        if (Dialog.LevelStarted == false)
+        {
+            Box.GetComponent<BoxCollider>().enabled = true;
         }
     }
 
@@ -80,7 +85,6 @@ public class Puzzle1_Camera : MonoBehaviour
             cam3.enabled = false;
             Button.SetActive(false);
             Slider.SetActive(true);
-            //Cam2On = false;
         }
         if (Cam2On == false)
         {
@@ -97,6 +101,7 @@ public class Puzzle1_Camera : MonoBehaviour
         cam2.enabled = false;
         cam3.enabled = false;
         Button.SetActive(false);
-        Box.GetComponent<BoxCollider>().enabled = false;
+        Box.GetComponent<BoxCollider>().enabled = false; 
+        Dialog.LevelStarted = true; // neu
     }
 }
