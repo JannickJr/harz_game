@@ -5,20 +5,27 @@ using UnityEngine;
 
 public class Puzzle1_LockControl : MonoBehaviour
 {
+
     public GameObject Dialogi;
 
     public static bool victory = false;
 
     private int[] result, correctCombination;
 
-    private void Start() // Startanweisung
+    [SerializeField] private AudioClip openLockClip;
+
+    [SerializeField] private AudioClip puzzleDoneClip;
+
+    public AudioClip turnDialClip;
+
+    private void Start()
     {
         result = new int[] { 0, 0, 0, 0 };
-        correctCombination = new int[] { 7, 2, 5, 0 }; // Lösung
+        correctCombination = new int[] { 7, 2, 5, 0 }; // Lï¿½sung
         Puzzle1_Rotate.Rotated += CheckResults;
     }
 
-    private void CheckResults(string wheelName, int number) // Checken der Lösung
+    private void CheckResults(string wheelName, int number) // Checken der Lï¿½sung
     {
         switch (wheelName)
         {
@@ -48,9 +55,12 @@ public class Puzzle1_LockControl : MonoBehaviour
             Debug.Log("Dialog.LevelStarted: " + Dialog.LevelStarted);
             Dialogi.SetActive(true);
             Debug.Log("Dialogi.SetActive(true): " + Dialogi);
+
+            SoundFXManager.instance.PlaySoundFXClip(openLockClip, transform, 1f);
+            SoundFXManager.instance.PlaySoundFXClip(puzzleDoneClip, transform, 1f);
         }
     }
-    private void OnDestroy() // bei Zerstörung Methode beenden
+    private void OnDestroy() // bei Zerstï¿½rung Methode beenden
     {
         Puzzle1_Rotate.Rotated -= CheckResults;
     }

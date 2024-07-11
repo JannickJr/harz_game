@@ -11,10 +11,13 @@ public class Puzzle1_Rotate : MonoBehaviour
 
     private int numberShown;
 
-    private void Start() // Startanweisung
+    //private AudioClip turnDialClip;
+
+    private void Start()
     {
         coroutineAllowed = true;
         numberShown = 0;
+        //turnDialClip = Puzzle1_LockControl.turnDialClip,
     }
 
     private void OnMouseDown() // Klick
@@ -25,7 +28,7 @@ public class Puzzle1_Rotate : MonoBehaviour
         }
     }
 
-    private IEnumerator RotateWheel() // Raddrehung und Nummernänderung
+    private IEnumerator RotateWheel() // Raddrehung und Nummernï¿½nderung
     {
         coroutineAllowed = false;
 
@@ -43,6 +46,8 @@ public class Puzzle1_Rotate : MonoBehaviour
         {
             numberShown = 0;
         }
+
+        //SoundFXManager.instance.PlaySoundFXClip(turnDialClip, transform, 1f);
 
         Rotated(name, numberShown);
     }
