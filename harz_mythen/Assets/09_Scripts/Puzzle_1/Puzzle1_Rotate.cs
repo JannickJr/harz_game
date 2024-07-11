@@ -11,10 +11,13 @@ public class Puzzle1_Rotate : MonoBehaviour
 
     private int numberShown;
 
+    //private AudioClip turnDialClip;
+
     private void Start()
     {
         coroutineAllowed = true;
         numberShown = 0;
+        //turnDialClip = Puzzle1_LockControl.turnDialClip,
     }
 
     private void OnMouseDown()
@@ -43,6 +46,8 @@ public class Puzzle1_Rotate : MonoBehaviour
         {
             numberShown = 0;
         }
+
+        //SoundFXManager.instance.PlaySoundFXClip(turnDialClip, transform, 1f);
 
         Rotated(name, numberShown);
     }

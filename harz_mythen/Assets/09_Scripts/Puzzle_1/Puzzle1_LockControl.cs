@@ -5,11 +5,19 @@ using UnityEngine;
 
 public class Puzzle1_LockControl : MonoBehaviour
 {
+
     public GameObject Dialogi;
 
     public static bool victory = false;
 
     private int[] result, correctCombination;
+
+    [SerializeField] private AudioClip openLockClip;
+
+    [SerializeField] private AudioClip puzzleDoneClip;
+
+    public AudioClip turnDialClip;
+
     private void Start()
     {
         result = new int[] { 0, 0, 0, 0 };
@@ -46,6 +54,9 @@ public class Puzzle1_LockControl : MonoBehaviour
             Debug.Log("Dialog.LevelStarted: " + Dialog.LevelStarted);
             Dialogi.SetActive(true);
             Debug.Log("Dialogi.SetActive(true): " + Dialogi);
+
+            SoundFXManager.instance.PlaySoundFXClip(openLockClip, transform, 1f);
+            SoundFXManager.instance.PlaySoundFXClip(puzzleDoneClip, transform, 1f);
         }
     }
     private void OnDestroy()
