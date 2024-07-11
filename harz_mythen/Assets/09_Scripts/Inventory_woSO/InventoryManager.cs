@@ -8,7 +8,7 @@ public class InventoryManager : MonoBehaviour
     private bool menuActivated;
     public ItemSlot[] itemSlot; // Array
     
-    public void Inventory()
+    public void Inventory() // Aktivierung und Deaktivierung der Inventarleiste
     {
         if (menuActivated)
         {
@@ -22,7 +22,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
     
-    //==Variante ohne Stackable Items==// funktioniert
+    //==Variante ohne Stackable Items==// funktioniert // Regulierung der Menge der Items in Inventarleiste
     public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
         Debug.Log("itemName = " + itemName + " quantity = " + quantity + " itemSprite = " + itemSprite);
@@ -56,16 +56,18 @@ public class InventoryManager : MonoBehaviour
         return quantity;
     }*/ //
 
-    public void DeselectAllSlots()
+    public void DeselectAllSlots() // ein Itemslot aktiviert, alle anderen deaktiviert; in Benutzung in ItemSlot-Script
     {
+        Debug.Log("Item markiert_3");
         for (int i = 0; i < itemSlot.Length; i++)
         {
             itemSlot[i].selectedShader.SetActive(false);
             itemSlot[i].thisItemSelected = false;
+            Debug.Log("Item markiert_4");
         }
     }
 
-    public void SelectTwoSlots()
+    public void SelectTwoSlots() // zwei Itemslots gleichzeitig aktivieren // aktuell nicht in Benutzung
     {
         for (int i = 1; i < itemSlot.Length; i++)
         {

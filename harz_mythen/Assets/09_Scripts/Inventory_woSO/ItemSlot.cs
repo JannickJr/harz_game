@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System;
 
 
 public class ItemSlot : MonoBehaviour, IPointerClickHandler
@@ -32,25 +33,26 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public GameObject itemDescriptionBar; //neu
     public bool thisItemSelected; // hiermit arbeiten
     
-
     private InventoryManager inventoryManager;
+
+    //public event Action OnItemMarked;
 
     private void Start()
     {
         inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
     }
     
-    //==Variante ohne Stackable Items==// funktioniert
+    //==Variante ohne Stackable Items==// funktioniert // Hinzufügen eines Items in Itemslot
     public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
         this.itemName = itemName;
-        this.quantity = quantity;
+        //this.quantity = quantity; // Anzahl fürs Erste entfernt
         this.itemSprite = itemSprite;
         this.itemDescription = itemDescription;
         isFull = true;
 
-        quantityText.text = quantity.ToString();
-        quantityText.enabled = true;
+        //quantityText.text = quantity.ToString(); // Anzahl fürs Erste entfernt
+        //quantityText.enabled = true; // Anzahl fürs Erste entfernt
         itemImage.sprite = itemSprite;
     }
     /*
@@ -94,7 +96,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         return 0;
     }*/ //
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnPointerClick(PointerEventData eventData) // Weiterleitung zu den Methoden
     {
         if (eventData.button == PointerEventData.InputButton.Left)
         {
@@ -102,11 +104,11 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         }
         if (eventData.button == PointerEventData.InputButton.Right)
         {
-            OnRightClick();
+            //OnRightClick();
         }
     }
 
-    public void OnLeftClick()
+    public void OnLeftClick() // Itemslot auswählen, um Itembeschreibung zu (de-)aktivieren
     {
         if (!thisItemSelected)
         {
@@ -115,7 +117,10 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
             if (isFull == true) // Slots nur noch auswählabr, wenn etwas drinliegt, und auch nur dann Beschreibung sichtbar
             {
                 selectedShader.SetActive(true);
+                Debug.Log("Item markiert");
                 itemDescriptionBar.SetActive(true); //neu
+                //OnItemMarked?.Invoke(); // Event wird ausgelöst
+                Debug.Log("Item markiert_2");
             }
             else if (isFull == false)
             {
@@ -123,9 +128,11 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
                 itemDescriptionBar.SetActive(false); //neu
             }
             thisItemSelected = true;
+            // Hier muss Code eingefügt werden --> inventoryManager.UseItem(itemName);
             ItemDescriptionNameText.text = itemName;
             ItemDescriptionText.text = itemDescription;
             itemDescriptionImage.sprite = itemSprite;
+            Debug.Log("Item markiert_5");
             if (itemDescriptionImage.sprite == null)
             {
                 itemDescriptionImage.sprite = emptySprite;
@@ -134,14 +141,16 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         else if (thisItemSelected)
         {
             selectedShader.SetActive(false);
-            itemDescriptionBar.SetActive(false); //neu
+            itemDescriptionBar.SetActive(false); 
             thisItemSelected = false;
             ItemDescriptionText.text = "";
             ItemDescriptionNameText.text = "";
             itemDescriptionImage.sprite = emptySprite;
         }
     }
-    public void OnRightClick()
+
+    // Entfernen des Items aus Itemslot mit Rechtsklick, wenn das Item markiert war
+    public void OnRightClick() // funktioniert // aktuell deaktiviert bei Methodenweiterleitung 
     {
         if (thisItemSelected)
         {
@@ -154,17 +163,19 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    public void EmptySlot()
+    public void EmptySlot() // Was passiert, wenn Itemslot leer ist.
     {
         quantityText.enabled = false;
         itemImage.sprite = emptySprite;
 
         isFull = false;
         selectedShader.SetActive(false);
-        itemDescriptionBar.SetActive(false); //neu
+        itemDescriptionBar.SetActive(false); 
         thisItemSelected = false;
         ItemDescriptionText.text = "";
         ItemDescriptionNameText.text = "";
         itemDescriptionImage.sprite = emptySprite;
     }
+
+    
 }

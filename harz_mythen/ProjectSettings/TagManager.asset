@@ -7,14 +7,22 @@ TagManager:
   - Fisch
   - Sword
   - Knochen
+  - weg
+  - Biene
+  - Ruma
+  - Romar
+  - Selectable
+  - Box
+  - Lock
+  - Borki
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Lock
   - Water
   - UI
-  - 
+  - Truhe
   - 
   - 
   - 

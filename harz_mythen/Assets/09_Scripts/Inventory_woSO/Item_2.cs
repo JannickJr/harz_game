@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,43 +14,107 @@ public class Item_2 : MonoBehaviour
 
     public Camera mainCamera;
 
+    public GameObject bienePrefab; 
+    public GameObject borki;
+
     //public ItemObject item;
+
+    
+
+    //private ItemSlot item;
 
     void Start()
     {
         inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
+        //item = FindObjectOfType<ItemSlot>();
+        //item.OnItemMarked += HandleOnItemMarked;
+
+        //item.OnItemMarked -= HandleOnItemMarked;
     }
 
     private void Update()
     {
         MouseClick();
+        MouseClick2();
     }
-    
+
+    // Text: "Das funktioniert leider nicht."
+    // Text: "Der Honig ist süß und klebrig."
+
     //==Variante ohne Stackable Items==// funktioniert
-    public void MouseClick()    // Klick
+
+    public void MouseClick()    // Was beim Anklicken eines Items passiert.
     {
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
-            // funktioniert super (sogar für einzelnes Objekt)
             if (Physics.Raycast(ray, out RaycastHit hit)) // funktioniert super
             {                                               // funktioniert nur, wenn Script auf anzuklickendem Objekt liegt
-                if (hit.transform.gameObject == gameObject)
+                if (hit.transform.gameObject.CompareTag("Borki"))
                 {
-                    Debug.Log("Treffer XXX"); // funktioniert
-                    //var item = gameObject.GetComponent<Item_2>();
-                    //if (item)
+                    borki.SetActive(true);
+                    //Instantiate(borki, transform.position, Quaternion.Euler(new Vector3(-90F, 0F, 0F)));
+                }
+
+                else
+                {
+                    return;
+                }
+
+
+
+
+            }
+        }
+    }
+    
+    /*public void OnItemMarked()
+    {
+        Debug.Log("Item markiert");
+    }*/
+            
+        public void MouseClick2()    // Was beim Anklicken eines Items passiert.
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+
+                // funktioniert super (sogar für einzelnes Objekt)
+                if (Physics.Raycast(ray, out RaycastHit hit)) // funktioniert super
+                {                                               // funktioniert nur, wenn Script auf anzuklickendem Objekt liegt
+                    if (hit.transform.gameObject == gameObject)
                     {
-                        inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
-                        Debug.Log("Plus XXX"); // funktioniert (sogar für einzelnes Objekt)
-                        Destroy(gameObject);
-                        Debug.Log("weg XXX"); // funktioniert (sogar für einzelnes Objekt)
+                        Debug.Log("Treffer XXX"); // funktioniert
+                        //var item = gameObject.GetComponent<Item_2>();
+                        //if (item)
+                        {
+                            inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
+                            Debug.Log("Plus XXX"); // funktioniert (sogar für einzelnes Objekt)
+                            //if (gameObject.CompareTag("weg"))
+                            {
+                                Destroy(gameObject);
+                                Debug.Log("weg XXX"); // funktioniert (sogar für einzelnes Objekt)
+                                if (gameObject.CompareTag("Biene")) // notwendig, da Bienenstock erhalten bleiben soll.
+                                {
+                                    Instantiate(bienePrefab, transform.position, Quaternion.Euler(new Vector3(-90F, 0F, 0F)));
+                                }
+                            }
+
+                        }
                     }
                 }
             }
-        }
-    } // 
+        } // 
+
+    public void HandleOnItemMarked()
+    {
+
+    }
+
+
+
+
     /*
     //==Variante mit Stackable Items==// funktioniert noch nicht
     public void MouseClick()    // Klick
@@ -83,6 +148,7 @@ public class Item_2 : MonoBehaviour
             }
         }
     }*/ //
-
 }
+    
+
 
