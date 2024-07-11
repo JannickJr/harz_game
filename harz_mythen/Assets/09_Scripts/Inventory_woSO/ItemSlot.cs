@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System;
 
 
 public class ItemSlot : MonoBehaviour, IPointerClickHandler
@@ -32,8 +33,9 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public GameObject itemDescriptionBar; //neu
     public bool thisItemSelected; // hiermit arbeiten
     
-
     private InventoryManager inventoryManager;
+
+    //public event Action OnItemMarked;
 
     private void Start()
     {
@@ -115,7 +117,10 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
             if (isFull == true) // Slots nur noch auswählabr, wenn etwas drinliegt, und auch nur dann Beschreibung sichtbar
             {
                 selectedShader.SetActive(true);
+                Debug.Log("Item markiert");
                 itemDescriptionBar.SetActive(true); //neu
+                //OnItemMarked?.Invoke(); // Event wird ausgelöst
+                Debug.Log("Item markiert_2");
             }
             else if (isFull == false)
             {
@@ -123,9 +128,11 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
                 itemDescriptionBar.SetActive(false); //neu
             }
             thisItemSelected = true;
+            // Hier muss Code eingefügt werden --> inventoryManager.UseItem(itemName);
             ItemDescriptionNameText.text = itemName;
             ItemDescriptionText.text = itemDescription;
             itemDescriptionImage.sprite = itemSprite;
+            Debug.Log("Item markiert_5");
             if (itemDescriptionImage.sprite == null)
             {
                 itemDescriptionImage.sprite = emptySprite;
@@ -169,4 +176,6 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         ItemDescriptionNameText.text = "";
         itemDescriptionImage.sprite = emptySprite;
     }
+
+    
 }

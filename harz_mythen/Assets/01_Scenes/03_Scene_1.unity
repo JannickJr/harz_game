@@ -3048,10 +3048,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1691fac1ed12bc4a921259d3bfac5bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Home
+  itemName: "Tongef\xE4\xDF"
   quantity: 1
   sprite: {fileID: 21300000, guid: 1ef3461871d8a554c942c3950901ae62, type: 3}
-  itemDescription: Ein altes Spielzeughaus.
+  itemDescription: "Ein leeres Gef\xE4\xDF."
   mainCamera: {fileID: 128337147}
   bienePrefab: {fileID: 0}
   borki: {fileID: 4369016121952088376}

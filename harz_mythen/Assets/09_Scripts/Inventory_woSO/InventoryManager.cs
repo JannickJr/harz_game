@@ -58,10 +58,12 @@ public class InventoryManager : MonoBehaviour
 
     public void DeselectAllSlots() // ein Itemslot aktiviert, alle anderen deaktiviert; in Benutzung in ItemSlot-Script
     {
+        Debug.Log("Item markiert_3");
         for (int i = 0; i < itemSlot.Length; i++)
         {
             itemSlot[i].selectedShader.SetActive(false);
             itemSlot[i].thisItemSelected = false;
+            Debug.Log("Item markiert_4");
         }
     }
 

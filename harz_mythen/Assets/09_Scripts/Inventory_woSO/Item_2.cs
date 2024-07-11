@@ -19,9 +19,17 @@ public class Item_2 : MonoBehaviour
 
     //public ItemObject item;
 
+    
+
+    //private ItemSlot item;
+
     void Start()
     {
         inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
+        //item = FindObjectOfType<ItemSlot>();
+        //item.OnItemMarked += HandleOnItemMarked;
+
+        //item.OnItemMarked -= HandleOnItemMarked;
     }
 
     private void Update()
@@ -60,7 +68,11 @@ public class Item_2 : MonoBehaviour
             }
         }
     }
-            
+    
+    /*public void OnItemMarked()
+    {
+        Debug.Log("Item markiert");
+    }*/
             
         public void MouseClick2()    // Was beim Anklicken eines Items passiert.
         {
@@ -95,45 +107,48 @@ public class Item_2 : MonoBehaviour
             }
         } // 
 
-       
+    public void HandleOnItemMarked()
+    {
+
+    }
 
 
 
 
-        /*
-        //==Variante mit Stackable Items==// funktioniert noch nicht
-        public void MouseClick()    // Klick
+    /*
+    //==Variante mit Stackable Items==// funktioniert noch nicht
+    public void MouseClick()    // Klick
+    {
+        if (Input.GetMouseButtonDown(0))
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
-                // funktioniert super (sogar für einzelnes Objekt)
-                if (Physics.Raycast(ray, out RaycastHit hit)) // funktioniert super
-                {                                               // funktioniert nur, wenn Script auf anzuklickendem Objekt liegt
-                    if (hit.transform.gameObject == gameObject)
+            // funktioniert super (sogar für einzelnes Objekt)
+            if (Physics.Raycast(ray, out RaycastHit hit)) // funktioniert super
+            {                                               // funktioniert nur, wenn Script auf anzuklickendem Objekt liegt
+                if (hit.transform.gameObject == gameObject)
+                {
+                    Debug.Log("Treffer XXX"); // funktioniert
+                    //var item = gameObject.GetComponent<Item_2>();
+                    //if (item)
                     {
-                        Debug.Log("Treffer XXX"); // funktioniert
-                        //var item = gameObject.GetComponent<Item_2>();
-                        //if (item)
+                        int leftOverItems = inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
+                        Debug.Log("Plus XXX"); // funktioniert (sogar für einzelnes Objekt)
+                        if (leftOverItems <= 0)
                         {
-                            int leftOverItems = inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
-                            Debug.Log("Plus XXX"); // funktioniert (sogar für einzelnes Objekt)
-                            if (leftOverItems <= 0)
-                            {
-                                Destroy(gameObject);
-                                Debug.Log("weg XXX"); // funktioniert (sogar für einzelnes Objekt)
-                            }
-                            else
-                            {
-                                quantity = leftOverItems;
-                            }
+                            Destroy(gameObject);
+                            Debug.Log("weg XXX"); // funktioniert (sogar für einzelnes Objekt)
+                        }
+                        else
+                        {
+                            quantity = leftOverItems;
                         }
                     }
                 }
             }
-        }*/ //
         }
+    }*/ //
+}
     
 
 

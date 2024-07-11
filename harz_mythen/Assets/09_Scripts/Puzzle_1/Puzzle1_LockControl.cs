@@ -50,7 +50,7 @@ public class Puzzle1_LockControl : MonoBehaviour
             Debug.Log("Dialogi.SetActive(true): " + Dialogi);
         }
     }
-    private void OnDestroy() // nach Drehung Eingabe checken
+    private void OnDestroy() // bei Zerstörung Methode beenden
     {
         Puzzle1_Rotate.Rotated -= CheckResults;
     }
