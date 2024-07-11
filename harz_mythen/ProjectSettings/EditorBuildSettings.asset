@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01_Scenes/05_CutScene_03.unity
     guid: 8f01296eb6c131f4c9835a3ee0ae6e15
+  - enabled: 1
+    path: Assets/01_Scenes/Test_Lena_S3.unity
+    guid: 1ae3550bbf71584498169c07ebbc6232
   m_configObjects: {}

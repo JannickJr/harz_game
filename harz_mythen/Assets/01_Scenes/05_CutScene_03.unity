@@ -346,8 +346,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 292564408}
         m_TargetAssemblyTypeName: Button_Manager, Assembly-CSharp
-        m_MethodName: LoadSceneOnClick
-        m_Mode: 5
+        m_MethodName: LoadNextScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
