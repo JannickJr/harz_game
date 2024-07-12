@@ -57,13 +57,7 @@ namespace _09_Scripts._Dialogsystem
         }
         
         void Update() 
-        {
-            //---HUD Deactivation---//
-            Slider.SetActive(false);
-            IS.SetActive(false);
-            ISD.SetActive(false);
-            IB.SetActive(false);
-            MB.SetActive(false);
+        {      
             //---Sprechblasen---// --> Muss vor "Dialog weiter"-Methoden stehen!
             TextStart();
             //---Dialog weiter---//
@@ -90,6 +84,13 @@ namespace _09_Scripts._Dialogsystem
             character.GetComponent<DialogActivation>().enabled = false;
             character = GameObject.Find("Character_Ruma");
             character.GetComponent<DialogActivation>().enabled = false;
+            //---HUD Deactivation---//
+            Slider.SetActive(false);
+            IS.SetActive(false);
+            ISD.SetActive(false);
+            IB.SetActive(false);
+            MB.SetActive(false);
+            Debug.Log("falsch: " + MB.active);
             cutScene_1IsActive = true;
             StartDialog();
         }
@@ -118,7 +119,7 @@ namespace _09_Scripts._Dialogsystem
                 textComponent.text = string.Empty;
                 StartCoroutine(TypeLine());
             }
-            else
+            else  // kein Dialogfeld mehr vorhanden
             {
                 gameObject.SetActive(false);
                 DialogActivation.dialogActivated = false;
@@ -128,8 +129,8 @@ namespace _09_Scripts._Dialogsystem
                 Slider.SetActive(true);
                 //IS.SetActive(true);
                 //ISD.SetActive(true);
-                IB.SetActive(true);
-                MB.SetActive(true);
+                IB.SetActive(true); 
+                MB.SetActive(true); 
                 //---Script Activation---//
                 character = GameObject.Find("Character_Romar");
                 character.GetComponent<DialogActivation>().enabled = true;
@@ -137,9 +138,9 @@ namespace _09_Scripts._Dialogsystem
                 character.GetComponent<DialogActivation>().enabled = true;
                 cutScene_1IsActive = false;
                 //---Aufgabenaktivierung---//
-                A1.SetActive(true);
-                A2Panel.SetActive(true);
-                A2.SetActive(true);
+                //A1.SetActive(true);
+                //A2Panel.SetActive(true);
+                //A2.SetActive(true);
                 LevelStarted = false; // neu
             }
         }
