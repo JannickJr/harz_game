@@ -14,12 +14,12 @@ namespace _09_Scripts._Dialogsystem
 
         public Camera mainCamera;
 
-        //---Dialog Start nach Interaktion---//
+        //---Sprechblasen - Start nach Interaktion---//
         private void Update()
         {
             MouseClick();
         }
-        //---Dialog Start nach Interaktion---//
+        //---Sprechblasen - Start nach Interaktion---//
         public void MouseClick()    // Klick
         {
             if (Input.GetMouseButtonDown(0))

@@ -35,7 +35,7 @@ public class Item_2 : MonoBehaviour
     private void Update()
     {
         MouseClick();
-        MouseClick2();
+        MouseClick2(); 
     }
 
     // Text: "Das funktioniert leider nicht."
@@ -107,10 +107,10 @@ public class Item_2 : MonoBehaviour
             }
         } // 
 
-    public void HandleOnItemMarked()
+    /*public void HandleOnItemMarked()
     {
 
-    }
+    }*/
 
 
 
