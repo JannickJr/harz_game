@@ -26,6 +26,8 @@ public class Item_2 : MonoBehaviour
     void Start()
     {
         inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
+        Debug.Log("IM_1: ");
+        Debug.Log("IM_1: " + inventoryManager);
         //item = FindObjectOfType<ItemSlot>();
         //item.OnItemMarked += HandleOnItemMarked;
 
@@ -35,7 +37,7 @@ public class Item_2 : MonoBehaviour
     private void Update()
     {
         MouseClick();
-        MouseClick2(); 
+        //MouseClick2(); 
     }
 
     // Text: "Das funktioniert leider nicht."
@@ -74,7 +76,7 @@ public class Item_2 : MonoBehaviour
         Debug.Log("Item markiert");
     }*/
             
-        public void MouseClick2()    // Was beim Anklicken eines Items passiert.
+        /*public void MouseClick2()    // Was beim Anklicken eines Items passiert.
         {
             if (Input.GetMouseButtonDown(0))
             {
