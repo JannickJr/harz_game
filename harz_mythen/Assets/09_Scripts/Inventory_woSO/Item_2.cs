@@ -37,7 +37,7 @@ public class Item_2 : MonoBehaviour
     private void Update()
     {
         MouseClick();
-        //MouseClick2(); 
+        MouseClick2(); 
     }
 
     // Text: "Das funktioniert leider nicht."
@@ -76,7 +76,7 @@ public class Item_2 : MonoBehaviour
         Debug.Log("Item markiert");
     }*/
             
-        /*public void MouseClick2()    // Was beim Anklicken eines Items passiert.
+        public void MouseClick2()    // Was beim Anklicken eines Items passiert.
         {
             if (Input.GetMouseButtonDown(0))
             {
