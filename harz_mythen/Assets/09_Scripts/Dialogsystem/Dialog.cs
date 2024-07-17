@@ -35,7 +35,9 @@ namespace _09_Scripts._Dialogsystem
         [SerializeField] private GameObject A2Panel;
         #endregion
 
-        private GameObject character;
+        private GameObject character; 
+
+        public GameObject wall;
 
         #region //---INFO---//
         /* Nachricht schicken mit GetComponent oder FindComponent oder int, 
@@ -79,17 +81,19 @@ namespace _09_Scripts._Dialogsystem
         {
             Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
             textComponent.text = string.Empty;
-            //--- R + R können nicht angeklickt werden ---//
-            character = GameObject.Find("Character_Romar");
+            //--- R + R können nicht angeklickt werden ---// --> braucht man nicht mehr wegen Wall
+            /*character = GameObject.Find("Character_Romar");
             character.GetComponent<DialogActivation>().enabled = false;
             character = GameObject.Find("Character_Ruma");
-            character.GetComponent<DialogActivation>().enabled = false;
+            character.GetComponent<DialogActivation>().enabled = false;*/
             //---HUD Deactivation---//
             Slider.SetActive(false);
             IS.SetActive(false);
             ISD.SetActive(false);
             IB.SetActive(false);
             MB.SetActive(false);
+            //---Wall---///
+            wall.SetActive(true);
             cutScene_1IsActive = true;
             StartDialog();
         }
@@ -129,7 +133,9 @@ namespace _09_Scripts._Dialogsystem
                 //IS.SetActive(true);
                 //ISD.SetActive(true);
                 IB.SetActive(true); 
-                MB.SetActive(true); 
+                MB.SetActive(true);
+                //---Wall---///
+                wall.SetActive(false);
                 //---Script Activation---//
                 character = GameObject.Find("Character_Romar");
                 character.GetComponent<DialogActivation>().enabled = true;
@@ -202,17 +208,19 @@ namespace _09_Scripts._Dialogsystem
         {
             Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
             textComponent.text = string.Empty;
-            //--- R + R können nicht angeklickt werden ---
-            character = GameObject.Find("Character_Romar");
+            //--- R + R können nicht angeklickt werden --- --> braucht man nicht mehr wegen Wall
+            /*character = GameObject.Find("Character_Romar");
             character.GetComponent<DialogActivation>().enabled = false;
             character = GameObject.Find("Character_Ruma");
-            character.GetComponent<DialogActivation>().enabled = false;
+            character.GetComponent<DialogActivation>().enabled = false;*/
             //---HUD Deactivation---//
             Slider.SetActive(false);
             IS.SetActive(false);
             ISD.SetActive(false);
             IB.SetActive(false);
             MB.SetActive(false);
+            //---Wall---///
+            wall.SetActive(true);
             cutScene_2IsActive = true;
             StartDialog2();
         }

@@ -1,3 +1,4 @@
+using _09_Scripts._Dialogsystem;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -25,7 +26,8 @@ public class Item_2 : MonoBehaviour
 
     void Start()
     {
-        inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
+        // inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>(); // Es darf nicht in der Startmethode stehen, weil es da nicht gefunden wird, weil es in dem Moment noch deaktiviert ist.
+        // muss am besten mit Eventmethode gelöst werden!
         Debug.Log("IM_1: ");
         Debug.Log("IM_1: " + inventoryManager);
         //item = FindObjectOfType<ItemSlot>();
@@ -47,14 +49,17 @@ public class Item_2 : MonoBehaviour
 
     public void MouseClick()    // Was beim Anklicken eines Items passiert.
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)) //&& Dialog.LevelStarted == false)
         {
+            //inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
+
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out RaycastHit hit)) // funktioniert super
             {                                               // funktioniert nur, wenn Script auf anzuklickendem Objekt liegt
                 if (hit.transform.gameObject.CompareTag("Borki"))
                 {
+                    inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
                     borki.SetActive(true);
                     //Instantiate(borki, transform.position, Quaternion.Euler(new Vector3(-90F, 0F, 0F)));
                 }
@@ -78,8 +83,9 @@ public class Item_2 : MonoBehaviour
             
         public void MouseClick2()    // Was beim Anklicken eines Items passiert.
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0)) //&& Dialog.LevelStarted == false)
             {
+                //inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
                 Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
                 // funktioniert super (sogar für einzelnes Objekt)
@@ -88,9 +94,10 @@ public class Item_2 : MonoBehaviour
                     if (hit.transform.gameObject == gameObject)
                     {
                         Debug.Log("Treffer XXX"); // funktioniert
-                        //var item = gameObject.GetComponent<Item_2>();
-                        //if (item)
-                        {
+                                                  //var item = gameObject.GetComponent<Item_2>();
+                                                  //if (item)
+                        inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
+                    {
                             inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
                             Debug.Log("Plus XXX"); // funktioniert (sogar für einzelnes Objekt)
                             //if (gameObject.CompareTag("weg"))
