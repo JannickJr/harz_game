@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
-
+using _09_Scripts._Dialogsystem;
 
 public class ItemSlot : MonoBehaviour, IPointerClickHandler
 {
@@ -39,9 +39,17 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     private void Start()
     {
-        inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
+        //inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>(); --> darf nicht schon in Start gesucht werden, weil es dann hzu Fehlermeldungen kommt
     }
-    
+
+    private void Update()
+    {
+        if (Dialog.LevelStarted == false) // besser als Eventmethode ausführen lassen und nicht im Update
+        {
+            inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
+        }
+    }
+
     //==Variante ohne Stackable Items==// funktioniert // Hinzufügen eines Items in Itemslot
     public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {

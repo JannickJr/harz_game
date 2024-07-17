@@ -1,3 +1,4 @@
+using _09_Scripts._Dialogsystem;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -25,7 +26,7 @@ public class Item_2 : MonoBehaviour
 
     void Start()
     {
-        inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
+        //inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>(); --> darf nicht schon in Start gesucht werden, weil es dann hzu Fehlermeldungen kommt
         //item = FindObjectOfType<ItemSlot>();
         //item.OnItemMarked += HandleOnItemMarked;
 
@@ -53,6 +54,7 @@ public class Item_2 : MonoBehaviour
             {                                               // funktioniert nur, wenn Script auf anzuklickendem Objekt liegt
                 if (hit.transform.gameObject.CompareTag("Borki"))
                 {
+                    inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
                     borki.SetActive(true);
                     //Instantiate(borki, transform.position, Quaternion.Euler(new Vector3(-90F, 0F, 0F)));
                 }
@@ -76,23 +78,27 @@ public class Item_2 : MonoBehaviour
             
         public void MouseClick2()    // Was beim Anklicken eines Items passiert.
         {
-            if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
             {
                 Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
                 // funktioniert super (sogar für einzelnes Objekt)
                 if (Physics.Raycast(ray, out RaycastHit hit)) // funktioniert super
                 {                                               // funktioniert nur, wenn Script auf anzuklickendem Objekt liegt
-                    if (hit.transform.gameObject == gameObject)
+                    if (hit.transform.gameObject == gameObject && Dialog.LevelStarted == false)
                     {
                         Debug.Log("Treffer XXX"); // funktioniert
-                        //var item = gameObject.GetComponent<Item_2>();
-                        //if (item)
-                        {
-                            inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
+                                                  //var item = gameObject.GetComponent<Item_2>();
+                                                  //if (item)
+                    inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
+                    {
+                           
                             Debug.Log("Plus XXX"); // funktioniert (sogar für einzelnes Objekt)
-                            //if (gameObject.CompareTag("weg"))
-                            {
+                            
+                            
+                        inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
+                        //if (gameObject.CompareTag("weg"))
+                        {
                                 Destroy(gameObject);
                                 Debug.Log("weg XXX"); // funktioniert (sogar für einzelnes Objekt)
                                 if (gameObject.CompareTag("Biene")) // notwendig, da Bienenstock erhalten bleiben soll.
