@@ -3,6 +3,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Item_2 : MonoBehaviour
 {
@@ -17,10 +19,14 @@ public class Item_2 : MonoBehaviour
 
     public GameObject bienePrefab; 
     public GameObject borki;
+    [SerializeField] private Image borkiBox;
+    [SerializeField] private TextMeshProUGUI borkiText;
+
+
 
     //public ItemObject item;
 
-    
+
 
     //private ItemSlot item;
 
@@ -61,9 +67,9 @@ public class Item_2 : MonoBehaviour
                 {
                     inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
                     borki.SetActive(true);
+                    StartCoroutine(FadeOut());
                     //Instantiate(borki, transform.position, Quaternion.Euler(new Vector3(-90F, 0F, 0F)));
                 }
-
                 else
                 {
                     return;
@@ -75,13 +81,24 @@ public class Item_2 : MonoBehaviour
             }
         }
     }
-    
+
+    IEnumerator FadeOut()
+    {
+        Debug.Log("Borki");
+        yield return new WaitForSeconds(1f);
+        borkiBox.CrossFadeAlpha(0, 1, false);
+        borkiText.CrossFadeAlpha(0, 1, false);
+        yield return new WaitForSeconds(1f);
+        StopAllCoroutines();
+        borki.SetActive(false);
+    }
+
     /*public void OnItemMarked()
     {
         Debug.Log("Item markiert");
     }*/
-            
-        public void MouseClick2()    // Was beim Anklicken eines Items passiert.
+
+    public void MouseClick2()    // Was beim Anklicken eines Items passiert.
         {
             if (Input.GetMouseButtonDown(0)) //&& Dialog.LevelStarted == false)
             {

@@ -19,10 +19,10 @@ public class Task : MonoBehaviour
 
     IEnumerator FadeOut()
     {
-        yield return new WaitForSeconds(4f);
-        box.CrossFadeAlpha(0, 5, false);
-        text.CrossFadeAlpha(0, 5, false);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
+        box.CrossFadeAlpha(0, 2, false);
+        text.CrossFadeAlpha(0, 2, false);
+        yield return new WaitForSeconds(2f);
         StopAllCoroutines();
         task_1.SetActive(false);
     }

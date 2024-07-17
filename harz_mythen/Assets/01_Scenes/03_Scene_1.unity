@@ -1685,6 +1685,8 @@ MonoBehaviour:
   mainCamera: {fileID: 128337147}
   bienePrefab: {fileID: 0}
   borki: {fileID: 4369016121952088376}
+  borkiBox: {fileID: 1000537325132582743}
+  borkiText: {fileID: 5919086338025192245}
 --- !u!135 &235542662
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3355,6 +3357,8 @@ MonoBehaviour:
   mainCamera: {fileID: 128337147}
   bienePrefab: {fileID: 0}
   borki: {fileID: 4369016121952088376}
+  borkiBox: {fileID: 1000537325132582743}
+  borkiText: {fileID: 5919086338025192245}
 --- !u!1 &473831550
 GameObject:
   m_ObjectHideFlags: 0
@@ -16657,6 +16661,8 @@ MonoBehaviour:
   mainCamera: {fileID: 128337147}
   bienePrefab: {fileID: 0}
   borki: {fileID: 4369016121952088376}
+  borkiBox: {fileID: 1000537325132582743}
+  borkiText: {fileID: 5919086338025192245}
 --- !u!1 &1894845666
 GameObject:
   m_ObjectHideFlags: 0
@@ -18424,6 +18430,8 @@ MonoBehaviour:
   mainCamera: {fileID: 128337147}
   bienePrefab: {fileID: 0}
   borki: {fileID: 4369016121952088376}
+  borkiBox: {fileID: 1000537325132582743}
+  borkiText: {fileID: 5919086338025192245}
 --- !u!1 &2146260215
 GameObject:
   m_ObjectHideFlags: 0
@@ -19441,7 +19449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.63522005, g: 0.39824632, b: 0.04993855, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -20872,6 +20880,8 @@ MonoBehaviour:
   mainCamera: {fileID: 128337147}
   bienePrefab: {fileID: 0}
   borki: {fileID: 4369016121952088376}
+  borkiBox: {fileID: 1000537325132582743}
+  borkiText: {fileID: 5919086338025192245}
 --- !u!23 &2815608386613074490
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23742,13 +23752,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50.15
+  m_fontSize: 41.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -23778,7 +23788,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 10, y: 10, z: 10, w: 10}
+  m_margin: {x: 20, y: 20, z: 20, w: 20}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -24463,6 +24473,8 @@ MonoBehaviour:
   mainCamera: {fileID: 128337147}
   bienePrefab: {fileID: 0}
   borki: {fileID: 4369016121952088376}
+  borkiBox: {fileID: 1000537325132582743}
+  borkiText: {fileID: 5919086338025192245}
 --- !u!1 &6713414871842869127
 GameObject:
   m_ObjectHideFlags: 0
@@ -24827,7 +24839,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4369016121952088376}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -26938,6 +26950,8 @@ MonoBehaviour:
   mainCamera: {fileID: 128337147}
   bienePrefab: {fileID: 3414608346786208892, guid: b1d6f18a9c8491143bd912a1d4e6c80b, type: 3}
   borki: {fileID: 4369016121952088376}
+  borkiBox: {fileID: 1000537325132582743}
+  borkiText: {fileID: 5919086338025192245}
 --- !u!1 &8802511396832160649
 GameObject:
   m_ObjectHideFlags: 0
