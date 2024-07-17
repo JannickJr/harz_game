@@ -30,9 +30,8 @@ namespace _09_Scripts._Dialogsystem
         [SerializeField] private GameObject ISD;
         [SerializeField] private GameObject IB;
         [SerializeField] private GameObject MB;
-        [SerializeField] private GameObject A1;
-        [SerializeField] private GameObject A2;
-        [SerializeField] private GameObject A2Panel;
+        
+        [SerializeField] private GameObject task_1;
         #endregion
 
         private GameObject character; 
@@ -143,9 +142,7 @@ namespace _09_Scripts._Dialogsystem
                 character.GetComponent<DialogActivation>().enabled = true;*/
                 cutScene_1IsActive = false;
                 //---Aufgabenaktivierung---//
-                //A1.SetActive(true);
-                //A2Panel.SetActive(true);
-                //A2.SetActive(true);
+                task_1.SetActive(true);
                 LevelStarted = false; // neu
             }
         }
