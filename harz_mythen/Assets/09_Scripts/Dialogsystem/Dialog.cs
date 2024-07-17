@@ -136,11 +136,11 @@ namespace _09_Scripts._Dialogsystem
                 MB.SetActive(true);
                 //---Wall---///
                 wall.SetActive(false);
-                //---Script Activation---//
-                character = GameObject.Find("Character_Romar");
+                //---Script Activation---// --> braucht man nicht mehr wegen Wall
+                /*character = GameObject.Find("Character_Romar");
                 character.GetComponent<DialogActivation>().enabled = true;
                 character = GameObject.Find("Character_Ruma");
-                character.GetComponent<DialogActivation>().enabled = true;
+                character.GetComponent<DialogActivation>().enabled = true;*/
                 cutScene_1IsActive = false;
                 //---Aufgabenaktivierung---//
                 //A1.SetActive(true);
