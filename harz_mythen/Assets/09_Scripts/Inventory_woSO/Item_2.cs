@@ -34,8 +34,8 @@ public class Item_2 : MonoBehaviour
     {
         // inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>(); // Es darf nicht in der Startmethode stehen, weil es da nicht gefunden wird, weil es in dem Moment noch deaktiviert ist.
         // muss am besten mit Eventmethode gelöst werden!
-        Debug.Log("IM_1: ");
-        Debug.Log("IM_1: " + inventoryManager);
+        //Debug.Log("IM_1: ");
+        //Debug.Log("IM_1: " + inventoryManager);
         //item = FindObjectOfType<ItemSlot>();
         //item.OnItemMarked += HandleOnItemMarked;
 
