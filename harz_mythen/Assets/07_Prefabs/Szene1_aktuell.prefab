@@ -4367,6 +4367,10 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: f4c14d81067a98d45bda9b26b3c282ba, type: 3}
   itemDescription: Der Honig ist sehr klebrig.
   mainCamera: {fileID: 0}
+  bienePrefab: {fileID: 0}
+  borki: {fileID: 0}
+  borkiBox: {fileID: 0}
+  borkiText: {fileID: 0}
 --- !u!136 &6226842308683061686
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5584,6 +5588,10 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 1ef3461871d8a554c942c3950901ae62, type: 3}
   itemDescription: "Der K\xE4fer frisst sich durch die B\xE4ume."
   mainCamera: {fileID: 0}
+  bienePrefab: {fileID: 0}
+  borki: {fileID: 0}
+  borkiBox: {fileID: 0}
+  borkiText: {fileID: 0}
 --- !u!65 &2394403212828215793
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7353,6 +7361,10 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 128b72ff09ffcab4e8f72bd9d53d2731, type: 3}
   itemDescription: 'Ein morscher Baumstamm. '
   mainCamera: {fileID: 0}
+  bienePrefab: {fileID: 0}
+  borki: {fileID: 0}
+  borkiBox: {fileID: 0}
+  borkiText: {fileID: 0}
 --- !u!136 &2690111911656743382
 CapsuleCollider:
   m_ObjectHideFlags: 0
