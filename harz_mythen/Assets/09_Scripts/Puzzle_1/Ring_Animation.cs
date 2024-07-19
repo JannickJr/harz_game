@@ -52,4 +52,9 @@ public class Ring_Animation : MonoBehaviour
             }
         }
     }
+
+    private void OnDestroy()
+    {
+        Puzzle1_Camera.animationVictory -= VictoryAnimation;
+    }
 }

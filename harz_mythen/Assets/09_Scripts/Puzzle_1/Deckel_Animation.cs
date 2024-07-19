@@ -28,4 +28,9 @@ public class Deckel_Animation : MonoBehaviour
     {
         animator.Play("Deckel_open");
     }
+
+    private void OnDestroy()
+    {
+        Puzzle1_Camera.animationVictory -= VictoryAnimation;
+    }
 }

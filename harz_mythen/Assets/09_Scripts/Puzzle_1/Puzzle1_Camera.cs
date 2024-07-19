@@ -132,5 +132,11 @@ public class Puzzle1_Camera : MonoBehaviour
         Debug.Log("Dialogi.SetActive(true): " + Dialogi);
         Dialog.LevelStarted = true;  
     }
+
+    private void OnDestroy()
+    {
+        Puzzle1_LockControl.puzzleVictory -= Victory; 
+        Ring_Animation.VictoryToDialog -= VictoryToDialog; 
+    }
 }
 
