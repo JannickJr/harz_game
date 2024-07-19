@@ -7,7 +7,10 @@ public class InventoryManager : MonoBehaviour
     public GameObject InventoryMenu;
     private bool menuActivated;
     public ItemSlot[] itemSlot; // Array
-    
+
+    public Item_SO[] itemSOs; // neu
+    private string itemName; // neu, eigentlich falsch oder unnötig
+
     public void Inventory() // Aktivierung und Deaktivierung der Inventarleiste
     {
         if (menuActivated)
@@ -22,6 +25,17 @@ public class InventoryManager : MonoBehaviour
         }
     }
     
+    public void UseItem(string ItemName) // wird aufgerufen, wenn Item in Inventar angeklickt wird
+    { 
+        for (int i = 0; i < itemSOs.Length; i++) // Suche in Liste der SCriptable Objects 
+        {
+            if (itemSOs[i].itemName == itemName) // wenn die Namen übereinstimmen (zweites itemName funktioniert noch nicht)
+            {
+                itemSOs[i].UseItem();
+            }
+        }
+    }
+
     //==Variante ohne Stackable Items==// funktioniert // Regulierung der Menge der Items in Inventarleiste
     public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {

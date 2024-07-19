@@ -133,6 +133,11 @@ public class Item_2 : MonoBehaviour
             }
         } // 
 
+    public void Test()
+    {
+        Debug.Log("Item-Test");
+    }
+
     /*public void HandleOnItemMarked()
     {
 

@@ -136,7 +136,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
                 itemDescriptionBar.SetActive(false); //neu
             }
             thisItemSelected = true;
-            // Hier muss Code eingefügt werden --> inventoryManager.UseItem(itemName);
+            inventoryManager.UseItem(itemName); // neu // Hier muss Code eingefügt werden --> inventoryManager.UseItem(itemName);
             ItemDescriptionNameText.text = itemName;
             ItemDescriptionText.text = itemDescription;
             itemDescriptionImage.sprite = itemSprite;
