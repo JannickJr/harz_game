@@ -9,7 +9,7 @@ public class InventoryManager : MonoBehaviour
     public ItemSlot[] itemSlot; // Array
 
     public Item_SO[] itemSOs; // neu
-    private string itemName; // neu, eigentlich falsch oder unnötig
+    //private string itemName; // neu, eigentlich falsch oder unnötig
 
     public void Inventory() // Aktivierung und Deaktivierung der Inventarleiste
     {
@@ -29,9 +29,11 @@ public class InventoryManager : MonoBehaviour
     { 
         for (int i = 0; i < itemSOs.Length; i++) // Suche in Liste der SCriptable Objects 
         {
-            if (itemSOs[i].itemName == itemName) // wenn die Namen übereinstimmen (zweites itemName funktioniert noch nicht)
+            if (itemSOs[i].itemName == itemSOs[i].itemName)//itemName) // wenn die Namen übereinstimmen (zweites itemName funktioniert noch nicht)
             {
-                itemSOs[i].UseItem();
+                Debug.Log("Itemname: " + itemSOs[i].itemName);
+;               itemSOs[i].UseItem();
+                Debug.Log("Itemname_2: " + itemSOs[i].itemName);
             }
         }
     }

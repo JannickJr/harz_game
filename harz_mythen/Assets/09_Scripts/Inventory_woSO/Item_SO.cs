@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 
 [CreateAssetMenu]
@@ -14,11 +15,16 @@ public class Item_SO : ScriptableObject
     public AttributesToChange attributesToChange = new AttributesToChange();
     public int amountToChangeAttributes;
 
+    public static event Action OnPot;
+
     public void UseItem()
     {
-        if (statToChange == StatToChange.bee) // jetzt muss was passieren
+        if (statToChange == StatToChange.pot) // jetzt muss was passieren
         {
-            GameObject.Find("Box").GetComponent<Item_2>().Test();
+            Debug.Log("Find");
+            //GameObject.Find("Item").GetComponent<Item_2>().Test(); // hier geht es nicht weiter
+            OnPot();
+            Debug.Log("Find_2");
         }
         // das für jeden Stat schreiben
     }

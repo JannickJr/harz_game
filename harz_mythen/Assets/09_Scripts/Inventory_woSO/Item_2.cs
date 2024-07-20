@@ -133,9 +133,19 @@ public class Item_2 : MonoBehaviour
             }
         } // 
 
+    private void OnEnable()
+    {
+        Item_SO.OnPot += Test;
+    }
+
     public void Test()
     {
         Debug.Log("Item-Test");
+    }
+
+    private void OnDestroy()
+    {
+        Item_SO.OnPot -= Test;
     }
 
     /*public void HandleOnItemMarked()
