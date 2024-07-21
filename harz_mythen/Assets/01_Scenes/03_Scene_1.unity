@@ -1607,7 +1607,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 4dc6efed612abab4b842eff0d95a4594, type: 3}
   itemDescription: "Ein Stock. Daraus l\xE4sst sich ein Werkzeug herstellen."
   mainCamera: {fileID: 128337147}
-  bienePrefab: {fileID: 0}
+  bienePrefab: {fileID: 3414608346786208892, guid: b1d6f18a9c8491143bd912a1d4e6c80b, type: 3}
   borki: {fileID: 4369016121952088376}
   borkiBox: {fileID: 1000537325132582743}
   borkiText: {fileID: 5919086338025192245}
@@ -3202,7 +3202,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 1ef3461871d8a554c942c3950901ae62, type: 3}
   itemDescription: "Ein leeres Gef\xE4\xDF."
   mainCamera: {fileID: 128337147}
-  bienePrefab: {fileID: 0}
+  bienePrefab: {fileID: 3414608346786208892, guid: b1d6f18a9c8491143bd912a1d4e6c80b, type: 3}
   borki: {fileID: 4369016121952088376}
   borkiBox: {fileID: 1000537325132582743}
   borkiText: {fileID: 5919086338025192245}
@@ -15042,7 +15042,7 @@ GameObject:
   - component: {fileID: 1755515692}
   m_Layer: 0
   m_Name: Item_Pot
-  m_TagString: Untagged
+  m_TagString: Pot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15161,9 +15161,9 @@ MonoBehaviour:
   itemName: "Gef\xE4\xDF"
   quantity: 1
   sprite: {fileID: 21300000, guid: 970af1998707ebb44befd56572fd46ee, type: 3}
-  itemDescription: "Es gl\xE4nzt leicht."
+  itemDescription: Das hat wohl jemand verloren.
   mainCamera: {fileID: 128337147}
-  bienePrefab: {fileID: 0}
+  bienePrefab: {fileID: 3414608346786208892, guid: b1d6f18a9c8491143bd912a1d4e6c80b, type: 3}
   borki: {fileID: 4369016121952088376}
   borkiBox: {fileID: 1000537325132582743}
   borkiText: {fileID: 5919086338025192245}
@@ -18442,7 +18442,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 128b72ff09ffcab4e8f72bd9d53d2731, type: 3}
   itemDescription: "Ein Stock. Daraus l\xE4sst sich ein Werkzeug herstellen."
   mainCamera: {fileID: 128337147}
-  bienePrefab: {fileID: 0}
+  bienePrefab: {fileID: 3414608346786208892, guid: b1d6f18a9c8491143bd912a1d4e6c80b, type: 3}
   borki: {fileID: 4369016121952088376}
   borkiBox: {fileID: 1000537325132582743}
   borkiText: {fileID: 5919086338025192245}
@@ -24612,7 +24612,7 @@ GameObject:
   - component: {fileID: 9054868658389564656}
   - component: {fileID: 9054868658389564658}
   m_Layer: 0
-  m_Name: Borkii
+  m_Name: Borki
   m_TagString: Borki
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27609,7 +27609,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 1ef3461871d8a554c942c3950901ae62, type: 3}
   itemDescription: "Der K\xE4fer frisst sich durch die B\xE4ume."
   mainCamera: {fileID: 128337147}
-  bienePrefab: {fileID: 0}
+  bienePrefab: {fileID: 3414608346786208892, guid: b1d6f18a9c8491143bd912a1d4e6c80b, type: 3}
   borki: {fileID: 4369016121952088376}
   borkiBox: {fileID: 1000537325132582743}
   borkiText: {fileID: 5919086338025192245}

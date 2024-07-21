@@ -22,7 +22,7 @@ public class Item_2 : MonoBehaviour
     [SerializeField] private Image borkiBox;
     [SerializeField] private TextMeshProUGUI borkiText;
 
-
+    private bool potActive = false;
 
     //public ItemObject item;
 
@@ -42,7 +42,11 @@ public class Item_2 : MonoBehaviour
     private void Update()
     {
         MouseClick();
-        MouseClick2(); 
+        MouseClick2();
+        /*if (potActive == true) // funktioniert, aber dann kriegt man von Bienen wieder alle Items
+        {
+            FollowTest();
+        }*/
     }
 
     // Text: "Das funktioniert leider nicht."
@@ -62,7 +66,6 @@ public class Item_2 : MonoBehaviour
             {                                               // funktioniert nur, wenn Script auf anzuklickendem Objekt liegt
                 if (hit.transform.gameObject.CompareTag("Borki"))
                 {
-                    
                     borki.SetActive(true);
                     StartCoroutine(FadeOut());
                     //Instantiate(borki, transform.position, Quaternion.Euler(new Vector3(-90F, 0F, 0F)));
@@ -72,14 +75,12 @@ public class Item_2 : MonoBehaviour
                         //Destroy(gameObject);
                     }
                 }
-                //else
+                /*if (hit.transform.gameObject != gameObject.CompareTag("Borki") && hit.transform.gameObject != gameObject.CompareTag("Biene") && hit.transform.gameObject != gameObject.CompareTag("weg")) //(hit.transform.gameObject.CompareTag("Pot"))
                 {
-                    //return;
-                }
-
-
-
-
+                    inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
+                    inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
+                    Destroy(gameObject);
+                }*/
             }
         }
     }
@@ -108,18 +109,19 @@ public class Item_2 : MonoBehaviour
                 // funktioniert super (sogar für einzelnes Objekt)
                 if (Physics.Raycast(ray, out RaycastHit hit)) // funktioniert super
                 {                                               // funktioniert nur, wenn Script auf anzuklickendem Objekt liegt
+                    //inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
                     if (hit.transform.gameObject == gameObject)
                     {
                         Debug.Log("Treffer XXX"); // funktioniert
                                                   //var item = gameObject.GetComponent<Item_2>();
                                                   //if (item)
                         inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
-                    {
+                        {
                             inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
                             Debug.Log("Plus XXX"); // funktioniert (sogar für einzelnes Objekt)
                             //if (gameObject.CompareTag("weg"))
                             {
-                                Destroy(gameObject);
+                                Destroy(gameObject); // muss wieder hin
                                 Debug.Log("weg XXX"); // funktioniert (sogar für einzelnes Objekt)
                                 if (gameObject.CompareTag("Biene")) // notwendig, da Bienenstock erhalten bleiben soll.
                                 {
@@ -128,6 +130,10 @@ public class Item_2 : MonoBehaviour
                             }
                         }
                     }
+                    else
+                {
+                    return;
+                }
                 }
             }
         } // 
@@ -141,8 +147,51 @@ public class Item_2 : MonoBehaviour
 
     public void Test()
     {
-        Debug.Log("Item-Test");
+        Debug.Log("Item-Test"); // wird erkannt
+        potActive = true;
+        Debug.Log("potActive: "+ potActive);
+        if (potActive == true)
+        {
+            FollowTest();
+        }
+        //OnMouseDown();
     }
+    private void OnMouseDown()
+    {
+        Debug.Log("OnMouseDown");
+        if (gameObject.CompareTag("Biene") && potActive == true)
+        {
+            Debug.Log("OnMouseDown2");
+        }
+    }
+    public void FollowTest()
+    {
+        Debug.Log("Hallo???");
+        if (Input.GetMouseButtonDown(0))  // ab hier wird es nicht mehr erkannt
+        {
+            //inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
+            Debug.Log("Warum_1");
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+            Debug.Log("Warum_2");
+            if (Physics.Raycast(ray, out RaycastHit hit))
+            {
+                Debug.Log("Warum_3");
+                if (hit.transform.gameObject.CompareTag("Biene"))
+                {
+                    Debug.Log("Warum_4");
+
+                    {
+                        inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
+                        Debug.Log("Warum_5");
+                        inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
+                        Destroy(gameObject);
+                        Instantiate(bienePrefab, transform.position, Quaternion.Euler(new Vector3(-90F, 0F, 0F)));
+                    }
+                }
+            }
+        }
+    }
+
     public void Test2()
     {
         Debug.Log("Item-Test2");
@@ -152,12 +201,12 @@ public class Item_2 : MonoBehaviour
         Debug.Log("Item-Test3");
     }
 
-    private void OnDestroy()
+    /*private void OnDestroy()
     {
         Item_SO.OnPot -= Test;
         Item_SO.OnHoney -= Test2;
         Item_SO.OnBorki -= Test3;
-    }
+    }*/
 
 
 
