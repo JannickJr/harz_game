@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a935135571d204c4abadedf9dfed0c67, type: 3}
-  m_Name: pot
+  m_Name: pot_of_honey
   m_EditorClassIdentifier: 
-  itemName: "Gef\xE4\xDF"
-  statToChange: 5
-  amountToChangeStat: 0
+  itemName: Pot_of_honey
+  statToChange: 7
+  amountToChangeStat: 2
   attributesToChange: 0
   amountToChangeAttributes: 0

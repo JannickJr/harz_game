@@ -25,11 +25,11 @@ public class InventoryManager : MonoBehaviour
         }
     }
     
-    public void UseItem(string ItemName) // wird aufgerufen, wenn Item in Inventar angeklickt wird
+    public void UseItem(string itemName) // wird aufgerufen, wenn Item in Inventar angeklickt wird
     { 
         for (int i = 0; i < itemSOs.Length; i++) // Suche in Liste der SCriptable Objects 
         {
-            if (itemSOs[i].itemName == itemSOs[i].itemName)//itemName) // wenn die Namen übereinstimmen (zweites itemName funktioniert noch nicht)
+            if (itemSOs[i].itemName == itemName)//itemName) // wenn die Namen übereinstimmen (zweites itemName funktioniert noch nicht)
             {
                 Debug.Log("Itemname: " + itemSOs[i].itemName);
 ;               itemSOs[i].UseItem();

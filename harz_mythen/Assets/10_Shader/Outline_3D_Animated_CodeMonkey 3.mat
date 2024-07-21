@@ -58,11 +58,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _OutlineThickness: 0.015
+    - _OutlineThickness: 0.012
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _WindIntensity: 0.4
-    - _WindSpeed: 0.3
     m_Colors:
     - _OutlineColor: {r: 0.2213583, g: 1, b: 0, a: 1}
     - _OutlineColor2: {r: 0, g: 0.1984982, b: 1, a: 1}

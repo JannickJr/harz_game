@@ -37,9 +37,6 @@ public class Item_2 : MonoBehaviour
         //Debug.Log("IM_1: ");
         //Debug.Log("IM_1: " + inventoryManager);
         //item = FindObjectOfType<ItemSlot>();
-        //item.OnItemMarked += HandleOnItemMarked;
-
-        //item.OnItemMarked -= HandleOnItemMarked;
     }
 
     private void Update()
@@ -65,14 +62,19 @@ public class Item_2 : MonoBehaviour
             {                                               // funktioniert nur, wenn Script auf anzuklickendem Objekt liegt
                 if (hit.transform.gameObject.CompareTag("Borki"))
                 {
-                    inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
+                    
                     borki.SetActive(true);
                     StartCoroutine(FadeOut());
                     //Instantiate(borki, transform.position, Quaternion.Euler(new Vector3(-90F, 0F, 0F)));
+                    //if ()
+                    {
+                        //inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
+                        //Destroy(gameObject);
+                    }
                 }
-                else
+                //else
                 {
-                    return;
+                    //return;
                 }
 
 
@@ -82,21 +84,19 @@ public class Item_2 : MonoBehaviour
         }
     }
 
-    IEnumerator FadeOut()
+    IEnumerator FadeOut() // Borki-Text blendet aus
     {
         Debug.Log("Borki");
         yield return new WaitForSeconds(1f);
         borkiBox.CrossFadeAlpha(0, 1, false);
         borkiText.CrossFadeAlpha(0, 1, false);
         yield return new WaitForSeconds(1f);
-        StopAllCoroutines();
         borki.SetActive(false);
+        borkiBox.CrossFadeAlpha(1, 0, false);
+        borkiText.CrossFadeAlpha(1, 1, false);
+        StopAllCoroutines();
     }
 
-    /*public void OnItemMarked()
-    {
-        Debug.Log("Item markiert");
-    }*/
 
     public void MouseClick2()    // Was beim Anklicken eines Items passiert.
         {
@@ -126,7 +126,6 @@ public class Item_2 : MonoBehaviour
                                     Instantiate(bienePrefab, transform.position, Quaternion.Euler(new Vector3(-90F, 0F, 0F)));
                                 }
                             }
-
                         }
                     }
                 }
@@ -136,23 +135,29 @@ public class Item_2 : MonoBehaviour
     private void OnEnable()
     {
         Item_SO.OnPot += Test;
+        Item_SO.OnHoney += Test2;
+        Item_SO.OnBorki += Test3;
     }
 
     public void Test()
     {
         Debug.Log("Item-Test");
     }
+    public void Test2()
+    {
+        Debug.Log("Item-Test2");
+    }
+    public void Test3()
+    {
+        Debug.Log("Item-Test3");
+    }
 
     private void OnDestroy()
     {
         Item_SO.OnPot -= Test;
+        Item_SO.OnHoney -= Test2;
+        Item_SO.OnBorki -= Test3;
     }
-
-    /*public void HandleOnItemMarked()
-    {
-
-    }*/
-
 
 
 

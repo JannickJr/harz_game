@@ -126,17 +126,17 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
             {
                 selectedShader.SetActive(true);
                 Debug.Log("Item markiert");
-                itemDescriptionBar.SetActive(true); //neu
+                itemDescriptionBar.SetActive(true); 
                 //OnItemMarked?.Invoke(); // Event wird ausgelöst
                 Debug.Log("Item markiert_2");
             }
             else if (isFull == false)
             {
                 selectedShader.SetActive(false);
-                itemDescriptionBar.SetActive(false); //neu
+                itemDescriptionBar.SetActive(false); 
             }
             thisItemSelected = true;
-            inventoryManager.UseItem(itemName); // neu // Hier muss Code eingefügt werden --> inventoryManager.UseItem(itemName);
+            inventoryManager.UseItem(itemName); // Weiterleitung an Item_SO // neu
             ItemDescriptionNameText.text = itemName;
             ItemDescriptionText.text = itemDescription;
             itemDescriptionImage.sprite = itemSprite;
