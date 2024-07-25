@@ -8,7 +8,7 @@ public class InventoryManager : MonoBehaviour
     private bool menuActivated;
     public ItemSlot[] itemSlot; // Array
 
-    public Item_SO[] itemSOs; // neu
+    public Item_SO[] itemSOs; 
 
     public void Inventory() // Aktivierung und Deaktivierung der Inventarleiste
     {
@@ -51,8 +51,6 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-   
-
     public void DeselectAllSlots() // ein Itemslot aktiviert, alle anderen deaktiviert; in Benutzung in ItemSlot-Script
     {
         Debug.Log("Item markiert_3");
@@ -73,6 +71,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
     
+
    //==Variante mit Stackable Items==// funktioniert noch nicht // Regulierung der Menge der Items in Inventarleiste
    /*public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
    {

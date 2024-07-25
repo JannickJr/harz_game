@@ -30,16 +30,16 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
 
     public GameObject selectedShader;
-    public GameObject itemDescriptionBar; //neu
+    public GameObject itemDescriptionBar; 
     public bool thisItemSelected; // hiermit arbeiten
     
     private InventoryManager inventoryManager;
 
-    public static event Action OnItemShutUp;
+    public static event Action OnItemShutUp; // Eventmanagement für Deaktivierung des markierten Zustands
 
-    private void Start()
+    private void OnEnable()
     {
-      
+        Item_2.OnDelete += OnDeleteYes;
     }
 
     private void Update() // muss am besten mit Eventmethode gelöst werden statt Update
@@ -63,8 +63,6 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         //quantityText.enabled = true; // Anzahl fürs Erste entfernt
         itemImage.sprite = itemSprite;
     }
-    
-    
 
     public void OnPointerClick(PointerEventData eventData) // Weiterleitung zu den Methoden
     {
@@ -135,6 +133,19 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         }
     }
 
+    public void OnDeleteYes()
+    {
+        if (thisItemSelected)
+        {
+            this.quantity -= 1;
+            quantityText.text = this.quantity.ToString();
+            if (this.quantity <= 0)
+            {
+                EmptySlot();
+            }
+        }
+    }
+
     public void EmptySlot() // Was passiert, wenn Itemslot leer ist.
     {
         quantityText.enabled = false;
@@ -147,6 +158,11 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         ItemDescriptionText.text = "";
         ItemDescriptionNameText.text = "";
         itemDescriptionImage.sprite = emptySprite;
+    }
+
+    private void OnDestroy()
+    {
+        Item_2.OnDelete -= OnDeleteYes;
     }
 
     //==Variante mit Stackable Items==// funktioniert noch nicht

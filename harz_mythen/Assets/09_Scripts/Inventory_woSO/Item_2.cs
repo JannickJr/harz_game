@@ -25,6 +25,7 @@ public class Item_2 : MonoBehaviour
     private bool potActive = false;
     private bool honeyActive = false;
 
+    public static event Action OnDelete;
 
     private void OnEnable()
     {
@@ -41,14 +42,17 @@ public class Item_2 : MonoBehaviour
             StartCoroutine(FadeOut());
             if (honeyActive == true)
             {
+                OnDelete();
                 borki.SetActive(false);
                 inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
                 inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
                 Destroy(gameObject);
+                ItemSlot.OnItemShutUp -= ShutUp; // ShutUp unsubscriben
             }
         }
         if (gameObject.CompareTag("Biene") && potActive == true)
         {
+            OnDelete();
             inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
             inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
             Destroy(gameObject);
@@ -97,14 +101,11 @@ public class Item_2 : MonoBehaviour
         Debug.Log("honeyActive = " + honeyActive);
     }
 
-
-    /*private void OnDisable() // OnDestroy()
+    private void OnDestroy() 
     {
-        Item_SO.OnPot -= Test;
-        Item_SO.OnHoney -= Test2;
-        ItemSlot.OnItemShutUp -= ShutUp;
-    }*/
-
+        Item_SO.OnPot -= OnPotYes;
+        Item_SO.OnHoney -= OnHoneyYes;
+    }
 
     //==Variante mit Stackable Items==// funktioniert noch nicht
     /*public void MouseClick()    // Klick

@@ -1582,7 +1582,6 @@ GameObject:
   - component: {fileID: 235542664}
   - component: {fileID: 235542663}
   - component: {fileID: 235542662}
-  - component: {fileID: 235542661}
   m_Layer: 0
   m_Name: Item (3)
   m_TagString: Knochen
@@ -1590,27 +1589,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &235542661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 235542660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1691fac1ed12bc4a921259d3bfac5bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: Wood
-  quantity: 1
-  sprite: {fileID: 21300000, guid: 4dc6efed612abab4b842eff0d95a4594, type: 3}
-  itemDescription: "Ein Stock. Daraus l\xE4sst sich ein Werkzeug herstellen."
-  mainCamera: {fileID: 128337147}
-  bienePrefab: {fileID: 3414608346786208892, guid: b1d6f18a9c8491143bd912a1d4e6c80b, type: 3}
-  borki: {fileID: 4369016121952088376}
-  borkiBox: {fileID: 1000537325132582743}
-  borkiText: {fileID: 5919086338025192245}
 --- !u!135 &235542662
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3125,7 +3103,6 @@ GameObject:
   - component: {fileID: 469441998}
   - component: {fileID: 469441997}
   - component: {fileID: 469441996}
-  - component: {fileID: 469441999}
   m_Layer: 0
   m_Name: Item (1)
   m_TagString: weg
@@ -3185,27 +3162,6 @@ Transform:
   - {fileID: 1613914878}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &469441999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 469441995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1691fac1ed12bc4a921259d3bfac5bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: "Tongef\xE4\xDF"
-  quantity: 1
-  sprite: {fileID: 21300000, guid: 1ef3461871d8a554c942c3950901ae62, type: 3}
-  itemDescription: "Ein leeres Gef\xE4\xDF."
-  mainCamera: {fileID: 128337147}
-  bienePrefab: {fileID: 3414608346786208892, guid: b1d6f18a9c8491143bd912a1d4e6c80b, type: 3}
-  borki: {fileID: 4369016121952088376}
-  borkiBox: {fileID: 1000537325132582743}
-  borkiText: {fileID: 5919086338025192245}
 --- !u!1 &473831550
 GameObject:
   m_ObjectHideFlags: 0
@@ -18363,7 +18319,6 @@ GameObject:
   - component: {fileID: 2137713224}
   - component: {fileID: 2137713223}
   - component: {fileID: 2137713222}
-  - component: {fileID: 2137713225}
   m_Layer: 0
   m_Name: Item (2)
   m_TagString: weg
@@ -18423,27 +18378,6 @@ Transform:
   - {fileID: 97105452}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2137713225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137713221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1691fac1ed12bc4a921259d3bfac5bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: Wood
-  quantity: 1
-  sprite: {fileID: 21300000, guid: 128b72ff09ffcab4e8f72bd9d53d2731, type: 3}
-  itemDescription: "Ein Stock. Daraus l\xE4sst sich ein Werkzeug herstellen."
-  mainCamera: {fileID: 128337147}
-  bienePrefab: {fileID: 3414608346786208892, guid: b1d6f18a9c8491143bd912a1d4e6c80b, type: 3}
-  borki: {fileID: 4369016121952088376}
-  borkiBox: {fileID: 1000537325132582743}
-  borkiText: {fileID: 5919086338025192245}
 --- !u!1 &2146260215
 GameObject:
   m_ObjectHideFlags: 0
