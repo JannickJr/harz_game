@@ -15,14 +15,6 @@ public class Deckel_Animation : MonoBehaviour
     {
         animator = GetComponent<Animator>();
     }
-    
-    /*void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            animator.Play("Deckel_open");
-        }
-    }*/
 
     public void VictoryAnimation() // Eventmanagement fuer Animation
     {

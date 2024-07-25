@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Video;
 using UnityEngine.SceneManagement;
+using System;
 
 namespace _09_Scripts._Dialogsystem
 {
@@ -22,7 +23,7 @@ namespace _09_Scripts._Dialogsystem
 
         public string[] lines2;
         private bool cutScene_2IsActive = false;
-        public static bool LevelStarted = true;
+        public static bool LevelStarted = true; // als Methode schreiben
 
         #region //---HUD Deactivation---//
         [SerializeField] private GameObject Slider;
@@ -37,6 +38,8 @@ namespace _09_Scripts._Dialogsystem
         private GameObject character; 
 
         public GameObject wall;
+
+        //public static event Action OnInteraction; // gescheitertes Experiment
 
         #region //---INFO---//
         /* Nachricht schicken mit GetComponent oder FindComponent oder int, 
@@ -75,6 +78,13 @@ namespace _09_Scripts._Dialogsystem
             }
         }
 
+        /*private void OnEnable()
+        {
+            Puzzle1_LockControl.PuzzleVictory += Victory;
+            Puzzle1_Camera.OnDialog_2_Continue += Dialog2Continue; 
+            Victory();
+        }*/
+
         //---DIALOG 1---//
         public void StartCutscene_1() // Dialog 1 - Verweis auf startende Methode
         {
@@ -93,7 +103,7 @@ namespace _09_Scripts._Dialogsystem
             MB.SetActive(false);
             //---Wall---///
             wall.SetActive(true);
-            cutScene_1IsActive = true;
+            cutScene_1IsActive = true; // cutScene_1IsActive = true; --> evtl. zu Methode ändern
             StartDialog();
         }
 
@@ -140,10 +150,11 @@ namespace _09_Scripts._Dialogsystem
                 character.GetComponent<DialogActivation>().enabled = true;
                 character = GameObject.Find("Character_Ruma");
                 character.GetComponent<DialogActivation>().enabled = true;*/
-                cutScene_1IsActive = false;
+                cutScene_1IsActive = false; // cutScene_1IsActive = false; --> evtl. zu Methode ändern
                 //---Aufgabenaktivierung---//
                 task_1.SetActive(true);
-                LevelStarted = false; // neu
+                LevelStarted = false; // LevelStarted = false; --> evtl. zu Methode ändern
+                //OnInteraction(); // gescheitertes Experiment
             }
         }
 
@@ -188,9 +199,19 @@ namespace _09_Scripts._Dialogsystem
         }
 
         //---DIALOG 2---//
+        /*public void Victory()
+        {
+            StartCutscene_2();
+            Debug.Log("Start2");
+        }*/
+        public void Dialog2Continue()
+        {
+
+        }
+
         private void OnEnable() // Start Dialog 2 nach Rätsellösung
         {
-            if (LevelStarted == false && Puzzle1_LockControl.victory == true)
+            if (LevelStarted == false && Puzzle1_LockControl.victory == true) // evtl. zu Methode ändern
             {
                 StartCutscene_2();
                 Debug.Log("Start2");
@@ -218,7 +239,7 @@ namespace _09_Scripts._Dialogsystem
             MB.SetActive(false);
             //---Wall---///
             wall.SetActive(true);
-            cutScene_2IsActive = true;
+            cutScene_2IsActive = true; // --> evtl.zu Methode ändern
             StartDialog2();
         }
         void StartDialog2() // Dialog 2 - Start 

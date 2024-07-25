@@ -9,8 +9,8 @@ namespace _09_Scripts._Dialogsystem
     public class DialogActivation : MonoBehaviour
     {
         public GameObject Dialogi;
-        public static bool dialogActivated;
-        public static int characterNumber = 0;
+        public static bool dialogActivated; // evtl. in Methode umwandeln
+        public static int characterNumber = 0; // evtl. in Methode umwandeln
 
         public Camera mainCamera;
 

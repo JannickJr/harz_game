@@ -21,6 +21,7 @@ public class Puzzle1_Camera : MonoBehaviour
     public GameObject Dialogi;
 
     public static event Action animationVictory; // Eventmanagement fuer Animation
+    //public static event Action OnDialog_2_Continue; // Eventmanagement fuer Dialog 2 // noch nicht in Benutzung
 
     void Start() // Kameraanweisung bei Szenenstart
     {
@@ -33,11 +34,23 @@ public class Puzzle1_Camera : MonoBehaviour
     private void Update()
     {
         MouseClick(); // Klick
-        if (Dialog.LevelStarted == false) // passiert nach Ende von Dialog 1
+        if (Dialog.LevelStarted == false) // passiert nach Ende von Dialog 1 // in Methode ändern Empfänger
         {
             Box.GetComponent<BoxCollider>().enabled = true;
         }
     }
+
+    private void OnEnable()
+    {
+        Puzzle1_LockControl.PuzzleVictory += Victory; // Eventmanagement fuer Kameras
+        Ring_Animation.VictoryToDialog += VictoryToDialog; // Eventmanagement fuer Dialog 2
+        // Dialog.OnInteraction += GetCollider; // gescheitertes Experiment
+    }
+
+    /*public void GetCollider()
+    {
+        Box.GetComponent<BoxCollider>().enabled = true;
+    }*/
 
     public void MouseClick()    // Was beim Anklicken eines Items passiert.
     {
@@ -106,12 +119,6 @@ public class Puzzle1_Camera : MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        Puzzle1_LockControl.puzzleVictory += Victory; // Eventmanagement fuer Kameras
-        Ring_Animation.VictoryToDialog += VictoryToDialog; // Eventmanagement fuer Dialog 2
-    }
-
     public void Victory()
     {
         cam2.enabled = true;
@@ -129,14 +136,16 @@ public class Puzzle1_Camera : MonoBehaviour
         cam4.enabled = true;
         Debug.Log("Dialog.LevelStarted: " + Dialog.LevelStarted);
         Dialogi.SetActive(true);
-        Debug.Log("Dialogi.SetActive(true): " + Dialogi);
-        Dialog.LevelStarted = true;  
+        //Debug.Log("Dialogi.SetActive(true): " + Dialogi);
+        //Dialog.LevelStarted = true; // --> evtl.zu Methode ändern
+        //OnDialog_2_Continue(); // neu Sender // nicht in Benutzung
     }
 
     private void OnDestroy()
     {
-        Puzzle1_LockControl.puzzleVictory -= Victory; 
-        Ring_Animation.VictoryToDialog -= VictoryToDialog; 
+        Puzzle1_LockControl.PuzzleVictory -= Victory; 
+        Ring_Animation.VictoryToDialog -= VictoryToDialog;
+        //Dialog.OnInteraction -= GetCollider; // // gescheitertes Experiment
     }
 }
 

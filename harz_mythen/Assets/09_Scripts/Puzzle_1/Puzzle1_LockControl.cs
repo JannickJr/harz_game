@@ -16,7 +16,7 @@ public class Puzzle1_LockControl : MonoBehaviour
 
     public AudioClip turnDialClip;
 
-    public static event Action puzzleVictory; // Eventmanagement fuer Raetsel
+    public static event Action PuzzleVictory; // Eventmanagement fuer Raetsel
 
     private void Start()
     {
@@ -49,10 +49,10 @@ public class Puzzle1_LockControl : MonoBehaviour
         if (result[0] == correctCombination[0] && result[1] == correctCombination[1] && result[2] == correctCombination[2] && result[3] == correctCombination[3]) 
         {
             Debug.Log("Opened!");
-            victory = true;
+            victory = true; // Sender siehe Z. 55 (puzzleVictory)
             Debug.Log("Victory: " + victory);
             //Dialog.LevelStarted = false;
-            puzzleVictory(); // Eventmanagement fuer Raetsel
+            PuzzleVictory(); // Eventmanagement fuer Raetsel
 
             SoundFXManager.instance.PlaySoundFXClip(openLockClip, transform, 1f);
             SoundFXManager.instance.PlaySoundFXClip(puzzleDoneClip, transform, 1f);

@@ -40,14 +40,25 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     private void OnEnable()
     {
         Item_2.OnDelete += OnDeleteYes;
+        //Dialog.OnInteraction += Inventory; // gescheitertes Experiment
     }
+
+    /*private void OnDisable()
+    {
+        Dialog.OnInteraction += Inventory; // gescheitertes Experiment
+    }*/
 
     private void Update() // muss am besten mit Eventmethode gelöst werden statt Update
     {
-        if (Dialog.LevelStarted == false)
+        if (Dialog.LevelStarted == false) // Empfänger
         {
             inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>(); // Es darf nicht in der Startmethode stehen, weil es da nicht gefunden wird, weil es in dem Moment noch deaktiviert ist.
         }
+    }
+
+    public void Inventory() // gescheitertes Experiment
+    {
+        inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
     }
 
     //==Variante ohne Stackable Items==// funktioniert // Hinzufügen eines Items in Itemslot
@@ -75,7 +86,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
             //OnRightClick();
         }
     }
-
+    
     public void OnLeftClick() // Itemslot auswählen, um Itembeschreibung zu (de-)aktivieren
     {
         if (!thisItemSelected) // wenn kein Slot markiert ist und er angeklickt wird
@@ -163,6 +174,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     private void OnDestroy()
     {
         Item_2.OnDelete -= OnDeleteYes;
+        //Dialog.OnInteraction -= Inventory; // gescheitertes Experiment
     }
 
     //==Variante mit Stackable Items==// funktioniert noch nicht

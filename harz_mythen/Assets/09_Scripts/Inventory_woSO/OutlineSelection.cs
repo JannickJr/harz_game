@@ -10,15 +10,6 @@ public class OutlineSelection : MonoBehaviour
         Material myMaterial = GetComponent<Renderer>().material;
         myMaterial.SetFloat("_OutlineThickness", 0.015f);
     }
-    
-    public void OnMouseDown()
-    {
-        Debug.Log("Crazy");
-        if (gameObject.CompareTag("Untagged"))
-        {
-            Debug.Log("Untagged");
-        }
-    }
 
     public void OnMouseEnter() // klappt
     {
