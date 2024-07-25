@@ -41,8 +41,8 @@ public class Item_2 : MonoBehaviour
 
     private void Update()
     {
-        MouseClick();
-        MouseClick2();
+        //MouseClick();
+        //MouseClick2();
         /*if (potActive == true) // funktioniert, aber dann kriegt man von Bienen wieder alle Items
         {
             FollowTest();
@@ -68,13 +68,24 @@ public class Item_2 : MonoBehaviour
                 {
                     borki.SetActive(true);
                     StartCoroutine(FadeOut());
-                    //Instantiate(borki, transform.position, Quaternion.Euler(new Vector3(-90F, 0F, 0F)));
-                    //if ()
-                    {
-                        //inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
-                        //Destroy(gameObject);
-                    }
                 }
+                if (hit.transform.gameObject.CompareTag("Biene") && potActive == true)
+                {
+                    inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
+                    inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
+                    Destroy(gameObject);
+                    Instantiate(bienePrefab, transform.position, Quaternion.Euler(new Vector3(-90F, 0F, 0F)));
+                }
+                if (hit.transform.gameObject.CompareTag("Pot"))
+                {
+                    inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
+                    inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
+                    Destroy(gameObject);
+                }
+
+
+
+
                 /*if (hit.transform.gameObject != gameObject.CompareTag("Borki") && hit.transform.gameObject != gameObject.CompareTag("Biene") && hit.transform.gameObject != gameObject.CompareTag("weg")) //(hit.transform.gameObject.CompareTag("Pot"))
                 {
                     inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
@@ -143,6 +154,7 @@ public class Item_2 : MonoBehaviour
         Item_SO.OnPot += Test;
         Item_SO.OnHoney += Test2;
         Item_SO.OnBorki += Test3;
+        ItemSlot.OnItemShutUp += ShutUp; // Eventmanagement für Deaktivierung des markierten Zustands
     }
 
     public void Test()
@@ -158,11 +170,29 @@ public class Item_2 : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        Debug.Log("OnMouseDown");
+        if (gameObject.CompareTag("Borki"))
+        {
+            borki.SetActive(true);
+            StartCoroutine(FadeOut());
+        }
+        if (gameObject.CompareTag("Biene") && potActive == true)
+        {
+            inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
+            inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
+            Destroy(gameObject);
+            Instantiate(bienePrefab, transform.position, Quaternion.Euler(new Vector3(-90F, 0F, 0F)));
+        }
+        if (gameObject.CompareTag("Pot"))
+        {
+            inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
+            inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
+            Destroy(gameObject);
+        }
+        /*Debug.Log("OnMouseDown");
         if (gameObject.CompareTag("Biene") && potActive == true)
         {
             Debug.Log("OnMouseDown2");
-        }
+        }*/
     }
     public void FollowTest()
     {
@@ -199,6 +229,12 @@ public class Item_2 : MonoBehaviour
     public void Test3()
     {
         Debug.Log("Item-Test3");
+    }
+
+    public void ShutUp() // Eventmanagement für Deaktivierung des markierten Zustands
+    {
+        potActive = false;
+        Debug.Log("potActive = " + potActive);
     }
 
     /*private void OnDestroy()

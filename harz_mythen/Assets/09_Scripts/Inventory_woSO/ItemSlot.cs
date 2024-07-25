@@ -35,7 +35,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     
     private InventoryManager inventoryManager;
 
-    //public event Action OnItemMarked;
+    public static event Action OnItemShutUp;
 
     private void Start()
     {
@@ -127,7 +127,6 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
                 selectedShader.SetActive(true);
                 Debug.Log("Item markiert");
                 itemDescriptionBar.SetActive(true); 
-                //OnItemMarked?.Invoke(); // Event wird ausgelöst
                 Debug.Log("Item markiert_2");
             }
             else if (isFull == false)
@@ -154,6 +153,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
             ItemDescriptionText.text = "";
             ItemDescriptionNameText.text = "";
             itemDescriptionImage.sprite = emptySprite;
+            OnItemShutUp(); // Eventmanagement für Deaktivierung des markierten Zustands
         }
     }
 
