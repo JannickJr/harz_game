@@ -23,76 +23,42 @@ public class Item_2 : MonoBehaviour
     [SerializeField] private TextMeshProUGUI borkiText;
 
     private bool potActive = false;
-
-    //public ItemObject item;
-
+    private bool honeyActive = false;
 
 
-    //private ItemSlot item;
-
-    void Start()
+    private void OnEnable()
     {
-        // inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>(); // Es darf nicht in der Startmethode stehen, weil es da nicht gefunden wird, weil es in dem Moment noch deaktiviert ist.
-        // muss am besten mit Eventmethode gelöst werden!
-        //Debug.Log("IM_1: ");
-        //Debug.Log("IM_1: " + inventoryManager);
-        //item = FindObjectOfType<ItemSlot>();
+        Item_SO.OnPot += OnPotYes;
+        Item_SO.OnHoney += OnHoneyYes;
+        ItemSlot.OnItemShutUp += ShutUp; // Eventmanagement für Deaktivierung des markierten Zustands
     }
 
-    private void Update()
+    private void OnMouseDown()
     {
-        //MouseClick();
-        //MouseClick2();
-        /*if (potActive == true) // funktioniert, aber dann kriegt man von Bienen wieder alle Items
+        if (gameObject.CompareTag("Borki"))
         {
-            FollowTest();
-        }*/
-    }
-
-    // Text: "Das funktioniert leider nicht."
-    // Text: "Der Honig ist süß und klebrig."
-
-    //==Variante ohne Stackable Items==// funktioniert
-
-    public void MouseClick()    // Was beim Anklicken eines Items passiert.
-    {
-        if (Input.GetMouseButtonDown(0)) //&& Dialog.LevelStarted == false)
-        {
-            //inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
-
-            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out RaycastHit hit)) // funktioniert super
-            {                                               // funktioniert nur, wenn Script auf anzuklickendem Objekt liegt
-                if (hit.transform.gameObject.CompareTag("Borki"))
-                {
-                    borki.SetActive(true);
-                    StartCoroutine(FadeOut());
-                }
-                if (hit.transform.gameObject.CompareTag("Biene") && potActive == true)
-                {
-                    inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
-                    inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
-                    Destroy(gameObject);
-                    Instantiate(bienePrefab, transform.position, Quaternion.Euler(new Vector3(-90F, 0F, 0F)));
-                }
-                if (hit.transform.gameObject.CompareTag("Pot"))
-                {
-                    inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
-                    inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
-                    Destroy(gameObject);
-                }
-
-
-
-
-                /*if (hit.transform.gameObject != gameObject.CompareTag("Borki") && hit.transform.gameObject != gameObject.CompareTag("Biene") && hit.transform.gameObject != gameObject.CompareTag("weg")) //(hit.transform.gameObject.CompareTag("Pot"))
-                {
-                    inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
-                    inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
-                    Destroy(gameObject);
-                }*/
+            borki.SetActive(true);
+            StartCoroutine(FadeOut());
+            if (honeyActive == true)
+            {
+                borki.SetActive(false);
+                inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
+                inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
+                Destroy(gameObject);
             }
+        }
+        if (gameObject.CompareTag("Biene") && potActive == true)
+        {
+            inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
+            inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
+            Destroy(gameObject);
+            Instantiate(bienePrefab, transform.position, Quaternion.Euler(new Vector3(-90F, 0F, 0F)));
+        }
+        if (gameObject.CompareTag("Pot"))
+        {
+            inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
+            inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
+            Destroy(gameObject);
         }
     }
 
@@ -109,146 +75,39 @@ public class Item_2 : MonoBehaviour
         StopAllCoroutines();
     }
 
-
-    public void MouseClick2()    // Was beim Anklicken eines Items passiert.
-        {
-            if (Input.GetMouseButtonDown(0)) //&& Dialog.LevelStarted == false)
-            {
-                //inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
-                Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-
-                // funktioniert super (sogar für einzelnes Objekt)
-                if (Physics.Raycast(ray, out RaycastHit hit)) // funktioniert super
-                {                                               // funktioniert nur, wenn Script auf anzuklickendem Objekt liegt
-                    //inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
-                    if (hit.transform.gameObject == gameObject)
-                    {
-                        Debug.Log("Treffer XXX"); // funktioniert
-                                                  //var item = gameObject.GetComponent<Item_2>();
-                                                  //if (item)
-                        inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
-                        {
-                            inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
-                            Debug.Log("Plus XXX"); // funktioniert (sogar für einzelnes Objekt)
-                            //if (gameObject.CompareTag("weg"))
-                            {
-                                Destroy(gameObject); // muss wieder hin
-                                Debug.Log("weg XXX"); // funktioniert (sogar für einzelnes Objekt)
-                                if (gameObject.CompareTag("Biene")) // notwendig, da Bienenstock erhalten bleiben soll.
-                                {
-                                    Instantiate(bienePrefab, transform.position, Quaternion.Euler(new Vector3(-90F, 0F, 0F)));
-                                }
-                            }
-                        }
-                    }
-                    else
-                {
-                    return;
-                }
-                }
-            }
-        } // 
-
-    private void OnEnable()
+    public void OnPotYes()
     {
-        Item_SO.OnPot += Test;
-        Item_SO.OnHoney += Test2;
-        Item_SO.OnBorki += Test3;
-        ItemSlot.OnItemShutUp += ShutUp; // Eventmanagement für Deaktivierung des markierten Zustands
-    }
-
-    public void Test()
-    {
-        Debug.Log("Item-Test"); // wird erkannt
+        Debug.Log("Item-Test"); 
         potActive = true;
-        Debug.Log("potActive: "+ potActive);
-        if (potActive == true)
-        {
-            FollowTest();
-        }
-        //OnMouseDown();
-    }
-    private void OnMouseDown()
-    {
-        if (gameObject.CompareTag("Borki"))
-        {
-            borki.SetActive(true);
-            StartCoroutine(FadeOut());
-        }
-        if (gameObject.CompareTag("Biene") && potActive == true)
-        {
-            inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
-            inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
-            Destroy(gameObject);
-            Instantiate(bienePrefab, transform.position, Quaternion.Euler(new Vector3(-90F, 0F, 0F)));
-        }
-        if (gameObject.CompareTag("Pot"))
-        {
-            inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
-            inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
-            Destroy(gameObject);
-        }
-        /*Debug.Log("OnMouseDown");
-        if (gameObject.CompareTag("Biene") && potActive == true)
-        {
-            Debug.Log("OnMouseDown2");
-        }*/
-    }
-    public void FollowTest()
-    {
-        Debug.Log("Hallo???");
-        if (Input.GetMouseButtonDown(0))  // ab hier wird es nicht mehr erkannt
-        {
-            //inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
-            Debug.Log("Warum_1");
-            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-            Debug.Log("Warum_2");
-            if (Physics.Raycast(ray, out RaycastHit hit))
-            {
-                Debug.Log("Warum_3");
-                if (hit.transform.gameObject.CompareTag("Biene"))
-                {
-                    Debug.Log("Warum_4");
-
-                    {
-                        inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
-                        Debug.Log("Warum_5");
-                        inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
-                        Destroy(gameObject);
-                        Instantiate(bienePrefab, transform.position, Quaternion.Euler(new Vector3(-90F, 0F, 0F)));
-                    }
-                }
-            }
-        }
+        Debug.Log("potActive: " + potActive);
     }
 
-    public void Test2()
+    public void OnHoneyYes()
     {
         Debug.Log("Item-Test2");
-    }
-    public void Test3()
-    {
-        Debug.Log("Item-Test3");
+        honeyActive = true;
+        Debug.Log("honeyActive: " + honeyActive);
     }
 
     public void ShutUp() // Eventmanagement für Deaktivierung des markierten Zustands
     {
         potActive = false;
         Debug.Log("potActive = " + potActive);
+        honeyActive = false;
+        Debug.Log("honeyActive = " + honeyActive);
     }
 
-    /*private void OnDestroy()
+
+    /*private void OnDisable() // OnDestroy()
     {
         Item_SO.OnPot -= Test;
         Item_SO.OnHoney -= Test2;
-        Item_SO.OnBorki -= Test3;
+        ItemSlot.OnItemShutUp -= ShutUp;
     }*/
 
 
-
-    /*
     //==Variante mit Stackable Items==// funktioniert noch nicht
-    public void MouseClick()    // Klick
+    /*public void MouseClick()    // Klick
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -280,6 +139,7 @@ public class Item_2 : MonoBehaviour
         }
     }*/ //
 }
-    
+
+
 
 

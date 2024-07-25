@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: honey
   m_EditorClassIdentifier: 
   itemName: Bienenstock
-  statToChange: 6
-  amountToChangeStat: 1
+  statToChange: 2
+  amountToChangeStat: 2
   attributesToChange: 0
   amountToChangeAttributes: 0

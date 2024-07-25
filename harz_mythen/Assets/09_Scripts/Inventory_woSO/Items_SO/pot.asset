@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: pot
   m_EditorClassIdentifier: 
   itemName: "Gef\xE4\xDF"
-  statToChange: 5
-  amountToChangeStat: 0
+  statToChange: 1
+  amountToChangeStat: 1
   attributesToChange: 0
   amountToChangeAttributes: 0

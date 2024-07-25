@@ -63,46 +63,8 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         //quantityText.enabled = true; // Anzahl fürs Erste entfernt
         itemImage.sprite = itemSprite;
     }
-    /*
-    //==Variante mit Stackable Items==// funktioniert noch nicht
-    public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
-    {
-        //Check to see, if the slot is already full
-        //isFull = true;
-        if (isFull)
-        {
-            return quantity;
-        }
-        // Update Name
-        this.itemName = itemName;
-
-        // Update Image
-        this.itemSprite = itemSprite;
-        itemImage.sprite = itemSprite;
-
-        // Update Description
-        this.itemDescription = itemDescription;
-
-        // Update Quantity
-        this.quantity += quantity;
-        if (this.quantity >= maxNumberOfItems)
-        {
-            quantityText.text = quantity.ToString();
-            quantityText.enabled = true;
-            isFull = true;
-
-            // Return LeftOverItems
-            int extraItems = this.quantity - maxNumberOfItems;
-            this.quantity = maxNumberOfItems;
-            return extraItems;
-        }
-
-        // Update Quantity Text
-        quantityText.text = this.quantity.ToString();
-        quantityText.enabled = true;
-
-        return 0;
-    }*/ //
+    
+    
 
     public void OnPointerClick(PointerEventData eventData) // Weiterleitung zu den Methoden
     {
@@ -118,34 +80,36 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     public void OnLeftClick() // Itemslot auswählen, um Itembeschreibung zu (de-)aktivieren
     {
-        if (!thisItemSelected)
+        if (!thisItemSelected) // wenn kein Slot markiert ist und er angeklickt wird
         {
             inventoryManager.DeselectAllSlots(); // einer aktiviert, alle anderen deaktiviert
             //inventoryManager.SelectTwoSlots(); // zwei können gleichzeitig aktiviert sein, alle anderen deaktiviert
+            thisItemSelected = true;
             if (isFull == true) // Slots nur noch auswählabr, wenn etwas drinliegt, und auch nur dann Beschreibung sichtbar
             {
                 selectedShader.SetActive(true);
                 Debug.Log("Item markiert");
                 itemDescriptionBar.SetActive(true); 
                 Debug.Log("Item markiert_2");
+
+                ItemDescriptionNameText.text = itemName;
+                ItemDescriptionText.text = itemDescription;
+                itemDescriptionImage.sprite = itemSprite;
+
+                inventoryManager.UseItem(itemName); // Weiterleitung an Item_SO // neu
+                Debug.Log("Item markiert_5");
             }
-            else if (isFull == false)
+            else if (isFull == false) // wenn nichts drinliegt
             {
                 selectedShader.SetActive(false);
                 itemDescriptionBar.SetActive(false); 
             }
-            thisItemSelected = true;
-            inventoryManager.UseItem(itemName); // Weiterleitung an Item_SO // neu
-            ItemDescriptionNameText.text = itemName;
-            ItemDescriptionText.text = itemDescription;
-            itemDescriptionImage.sprite = itemSprite;
-            Debug.Log("Item markiert_5");
-            if (itemDescriptionImage.sprite == null)
+            if (itemDescriptionImage.sprite == null) // wenn kein Sprite mehr drinliegt
             {
                 itemDescriptionImage.sprite = emptySprite;
             }
         }
-        else if (thisItemSelected)
+        else if (thisItemSelected) // wenn Slot markiert ist und er ein weiteres mal angeklickt wird
         {
             selectedShader.SetActive(false);
             itemDescriptionBar.SetActive(false); 
@@ -185,5 +149,43 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         itemDescriptionImage.sprite = emptySprite;
     }
 
-    
+    //==Variante mit Stackable Items==// funktioniert noch nicht
+    /*public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
+    {
+        //Check to see, if the slot is already full
+        //isFull = true;
+        if (isFull)
+        {
+            return quantity;
+        }
+        // Update Name
+        this.itemName = itemName;
+
+        // Update Image
+        this.itemSprite = itemSprite;
+        itemImage.sprite = itemSprite;
+
+        // Update Description
+        this.itemDescription = itemDescription;
+
+        // Update Quantity
+        this.quantity += quantity;
+        if (this.quantity >= maxNumberOfItems)
+        {
+            quantityText.text = quantity.ToString();
+            quantityText.enabled = true;
+            isFull = true;
+
+            // Return LeftOverItems
+            int extraItems = this.quantity - maxNumberOfItems;
+            this.quantity = maxNumberOfItems;
+            return extraItems;
+        }
+
+        // Update Quantity Text
+        quantityText.text = this.quantity.ToString();
+        quantityText.enabled = true;
+
+        return 0;
+    }*/
 }
