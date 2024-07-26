@@ -4,39 +4,26 @@ using UnityEngine;
 
 public class OutlineSelection : MonoBehaviour
 {
-    // Script noch nicht in aktiver Benutzung, da noch nicht funktionstüchtig von den Verbindungen her
-    
+ 
     void Start()
     {
         Material myMaterial = GetComponent<Renderer>().material;
-        myMaterial.SetFloat("_OutlineThickness", 0f);
-    }
-    
-    void Update()
-    {
-        OutlineStart();
+        myMaterial.SetFloat("_OutlineThickness", 0.015f);
     }
 
-    public void OutlineStart()
-    {
-        if (Input.GetMouseButton(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            // funktioniert super (sogar für einzelnes Objekt)
-            if (Physics.Raycast(ray, out RaycastHit hit)) // funktioniert super
-            {                                               // funktioniert nur, wenn Script auf anzuklickendem Objekt liegt
-                if (hit.transform.gameObject == gameObject)
-                {
-                    MyOutlines();
-                }
-            }
-        }
-    }
-
-    public void MyOutlines()
+    public void OnMouseEnter() // klappt
     {
         Material myMaterial = GetComponent<Renderer>().material;
         myMaterial.SetFloat("_OutlineThickness", 0.015f);
+        //myMaterial.SetColor("_OutlineColor_3D", new Color32(255, 114, 0, 255)); // RGB-Color-Code, orange, Werte in default-Modus, nicht HDR (Shader)
+        //myMaterial.SetColor("_OutlineColor_3D", new Color(1f, 0.4471f, 0f, 1f)); // Rechnung für Colorcode: 114/255=0,4471, orange; Werte in default-Modus, nicht HDR (Shader)
+        //myMaterial.SetColor("_OutlineColor_3D", new Color32(255, 40, 0, 255)); // RGB-Color-Code, orange, Werte in HDR-Modus, nicht default (Shader)
+        myMaterial.SetColor("_OutlineColor_3D", new Color(1f, 0.1569f, 0f, 1f)); // Rechnung für Colorcode: 114/255=0,4471, orange; Werte in HDR-Modus, nicht default (Shader)
+    }
+
+    public void OnMouseExit() // klappt
+    {
+        Material myMaterial = GetComponent<Renderer>().material;
+        myMaterial.SetColor("_OutlineColor_3D", Color.black);
     }
 }

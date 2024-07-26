@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Video;
 using UnityEngine.SceneManagement;
+using System;
 
 namespace _09_Scripts._Dialogsystem
 {
@@ -22,7 +23,7 @@ namespace _09_Scripts._Dialogsystem
 
         public string[] lines2;
         private bool cutScene_2IsActive = false;
-        public static bool LevelStarted = true;
+        public static bool LevelStarted = true; // als Methode schreiben
 
         #region //---HUD Deactivation---//
         [SerializeField] private GameObject Slider;
@@ -30,12 +31,15 @@ namespace _09_Scripts._Dialogsystem
         [SerializeField] private GameObject ISD;
         [SerializeField] private GameObject IB;
         [SerializeField] private GameObject MB;
-        [SerializeField] private GameObject A1;
-        [SerializeField] private GameObject A2;
-        [SerializeField] private GameObject A2Panel;
+        
+        [SerializeField] private GameObject task_1;
         #endregion
 
-        private GameObject character;
+        private GameObject character; 
+
+        public GameObject wall;
+
+        //public static event Action OnInteraction; // gescheitertes Experiment
 
         #region //---INFO---//
         /* Nachricht schicken mit GetComponent oder FindComponent oder int, 
@@ -58,21 +62,15 @@ namespace _09_Scripts._Dialogsystem
         
         void Update() 
         {
-            //---HUD Deactivation---//
-            Slider.SetActive(false);
-            IS.SetActive(false);
-            ISD.SetActive(false);
-            IB.SetActive(false);
-            MB.SetActive(false);
             //---Sprechblasen---// --> Muss vor "Dialog weiter"-Methoden stehen!
             TextStart();
-            //---Dialog weiter---//
+            //---Dialog 1 weiter---//
             if (cutScene_1IsActive == true && LevelStarted == true)
             {
                 Next();
                 CharacterChange();
             }
-            //---Dialog 2 Start---//
+            //---Dialog 2 weiter---//
             if (cutScene_2IsActive == true)
             {
                 Next2();
@@ -80,27 +78,42 @@ namespace _09_Scripts._Dialogsystem
             }
         }
 
+        /*private void OnEnable()
+        {
+            Puzzle1_LockControl.PuzzleVictory += Victory;
+            Puzzle1_Camera.OnDialog_2_Continue += Dialog2Continue; 
+            Victory();
+        }*/
+
         //---DIALOG 1---//
-        public void StartCutscene_1() // Cutscene 1 - Verweis auf startende Methode
+        public void StartCutscene_1() // Dialog 1 - Verweis auf startende Methode
         {
             Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
             textComponent.text = string.Empty;
-            //--- R + R können nicht angeklickt werden ---
-            character = GameObject.Find("Character_Romar");
+            //--- R + R können nicht angeklickt werden ---// --> braucht man nicht mehr wegen Wall
+            /*character = GameObject.Find("Character_Romar");
             character.GetComponent<DialogActivation>().enabled = false;
             character = GameObject.Find("Character_Ruma");
-            character.GetComponent<DialogActivation>().enabled = false;
-            cutScene_1IsActive = true;
+            character.GetComponent<DialogActivation>().enabled = false;*/
+            //---HUD Deactivation---//
+            Slider.SetActive(false);
+            IS.SetActive(false);
+            ISD.SetActive(false);
+            IB.SetActive(false);
+            MB.SetActive(false);
+            //---Wall---///
+            wall.SetActive(true);
+            cutScene_1IsActive = true; // cutScene_1IsActive = true; --> evtl. zu Methode ändern
             StartDialog();
         }
 
-        void StartDialog() // Cutscene 1 - Start Cutscene 1
+        void StartDialog() // Dialog 1 - Start 
         {
             index = 0;
             StartCoroutine(TypeLine());
         }
 
-        IEnumerator TypeLine() // Cutscene 1 - Text wird in einzelnen Buchstaben wiedergegeben
+        IEnumerator TypeLine() // Dialog 1 - Text wird in einzelnen Buchstaben wiedergegeben
         {
             foreach (char c in lines[index].ToCharArray())
             {
@@ -109,7 +122,7 @@ namespace _09_Scripts._Dialogsystem
             }
         }
 
-        void NextLine() // Cutscene 1 - Sprung in nächste Textzeile bei Klick oder Schluss
+        void NextLine() // Dialog 1 - Sprung in nächste Textzeile bei Klick oder Schluss
         {
             if (index < lines.Length - 1)
             {
@@ -118,7 +131,7 @@ namespace _09_Scripts._Dialogsystem
                 textComponent.text = string.Empty;
                 StartCoroutine(TypeLine());
             }
-            else
+            else  // kein Dialogfeld mehr vorhanden
             {
                 gameObject.SetActive(false);
                 DialogActivation.dialogActivated = false;
@@ -128,23 +141,24 @@ namespace _09_Scripts._Dialogsystem
                 Slider.SetActive(true);
                 //IS.SetActive(true);
                 //ISD.SetActive(true);
-                IB.SetActive(true);
+                IB.SetActive(true); 
                 MB.SetActive(true);
-                //---Script Activation---//
-                character = GameObject.Find("Character_Romar");
+                //---Wall---///
+                wall.SetActive(false);
+                //---Script Activation---// --> braucht man nicht mehr wegen Wall
+                /*character = GameObject.Find("Character_Romar");
                 character.GetComponent<DialogActivation>().enabled = true;
                 character = GameObject.Find("Character_Ruma");
-                character.GetComponent<DialogActivation>().enabled = true;
-                cutScene_1IsActive = false;
+                character.GetComponent<DialogActivation>().enabled = true;*/
+                cutScene_1IsActive = false; // cutScene_1IsActive = false; --> evtl. zu Methode ändern
                 //---Aufgabenaktivierung---//
-                A1.SetActive(true);
-                A2Panel.SetActive(true);
-                A2.SetActive(true);
-                LevelStarted = false; // neu
+                task_1.SetActive(true);
+                LevelStarted = false; // LevelStarted = false; --> evtl. zu Methode ändern
+                //OnInteraction(); // gescheitertes Experiment
             }
         }
 
-        public void Next() // Cutscene 1 - Verweis auf Methode mit Sprung in nächste Textzeile bei Klick
+        public void Next() // Dialog 1 - Verweis auf Methode mit Sprung in nächste Textzeile bei Klick
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -160,7 +174,7 @@ namespace _09_Scripts._Dialogsystem
             }  
         }
 
-        public void CharacterChange() // Cutscene 1 - Textboxanhänge verändern sich
+        public void CharacterChange() // Dialog 1 - Textboxanhänge verändern sich
         {
             switch (index)
             {
@@ -185,9 +199,19 @@ namespace _09_Scripts._Dialogsystem
         }
 
         //---DIALOG 2---//
+        /*public void Victory()
+        {
+            StartCutscene_2();
+            Debug.Log("Start2");
+        }*/
+        public void Dialog2Continue()
+        {
+
+        }
+
         private void OnEnable() // Start Dialog 2 nach Rätsellösung
         {
-            if (LevelStarted == false && Puzzle1_LockControl.victory == true)
+            if (LevelStarted == false && Puzzle1_LockControl.victory == true) // evtl. zu Methode ändern
             {
                 StartCutscene_2();
                 Debug.Log("Start2");
@@ -198,25 +222,33 @@ namespace _09_Scripts._Dialogsystem
             }
         }
 
-        public void StartCutscene_2() // Cutscene 2 - Verweis auf startende Methode
+        public void StartCutscene_2() // Dialog 2 - Verweis auf startende Methode
         {
             Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
             textComponent.text = string.Empty;
-            //--- R + R können nicht angeklickt werden ---
-            character = GameObject.Find("Character_Romar");
+            //--- R + R können nicht angeklickt werden --- --> braucht man nicht mehr wegen Wall
+            /*character = GameObject.Find("Character_Romar");
             character.GetComponent<DialogActivation>().enabled = false;
             character = GameObject.Find("Character_Ruma");
-            character.GetComponent<DialogActivation>().enabled = false;          
-            cutScene_2IsActive = true;
+            character.GetComponent<DialogActivation>().enabled = false;*/
+            //---HUD Deactivation---//
+            Slider.SetActive(false);
+            IS.SetActive(false);
+            ISD.SetActive(false);
+            IB.SetActive(false);
+            MB.SetActive(false);
+            //---Wall---///
+            wall.SetActive(true);
+            cutScene_2IsActive = true; // --> evtl.zu Methode ändern
             StartDialog2();
         }
-        void StartDialog2() // Cutscene 2 - Start Cutscene 2
+        void StartDialog2() // Dialog 2 - Start 
         {
             index = 0;
             StartCoroutine(TypeLine2());
         }
 
-        IEnumerator TypeLine2() // Cutscene 2 - Text wird in einzelnen Buchstaben wiedergegeben
+        IEnumerator TypeLine2() // Dialog 2 - Text wird in einzelnen Buchstaben wiedergegeben
         {
             foreach (char c in lines2[index].ToCharArray())
             {
@@ -225,7 +257,7 @@ namespace _09_Scripts._Dialogsystem
             }
         }
 
-        void NextLine2() // Cutscene 2 - Sprung in nächste Textzeile bei Klick oder Schluss
+        void NextLine2() // Dialog 2 - Sprung in nächste Textzeile bei Klick oder Schluss
         {
             if (index < lines2.Length - 1)
             {
@@ -234,7 +266,7 @@ namespace _09_Scripts._Dialogsystem
                 textComponent.text = string.Empty;
                 StartCoroutine(TypeLine2());
             }
-            else
+            else // kein Dialogfeld mehr vorhanden
             {
                 gameObject.SetActive(false);
                 //SceneManager.LoadScene("04_CutScene_02");
@@ -242,7 +274,7 @@ namespace _09_Scripts._Dialogsystem
             }
         }
 
-        public void Next2() // Cutscene 2 - Verweis auf Methode mit Sprung in nächste Textzeile bei Klick
+        public void Next2() // Dialog 2 - Verweis auf Methode mit Sprung in nächste Textzeile bei Klick
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -250,7 +282,7 @@ namespace _09_Scripts._Dialogsystem
                 {
                     NextLine2();
                 }
-                else
+                else 
                 {
                     StopAllCoroutines();
                     textComponent.text = lines2[index];
@@ -258,7 +290,7 @@ namespace _09_Scripts._Dialogsystem
             }
         }
 
-        public void CharacterChange2() // Cutscene 2 - Textboxanhänge verändern sich
+        public void CharacterChange2() // Dialog 2 - Textboxanhänge verändern sich
         {
             switch (index)
             {
@@ -287,11 +319,17 @@ namespace _09_Scripts._Dialogsystem
         //---SPRECHBLASEN---//
         public void TextStart() // Sprechblasen - Start
         {
+            //---HUD Deactivation---//
+            Slider.SetActive(false);
+            IS.SetActive(false);
+            ISD.SetActive(false);
+            IB.SetActive(false);
+            MB.SetActive(false);
             if (DialogActivation.characterNumber == 1)
             {
                 imageRuma.SetActive(true);
                 textName.text = "Ruma";
-                // hier davor evtl. int wechseln, für anderen Text; aber nur in andere Szene
+                // hier davor evtl. int wechseln, für anderen Text; aber nur in andere(r) Szene
                 textComponent.text = "Ein Geschenk möchtest du mir geben? Oh Romar, du bist so gut zu mir!";
                 imageRomar.SetActive(false);
                 character = GameObject.Find("Character_Romar"); 

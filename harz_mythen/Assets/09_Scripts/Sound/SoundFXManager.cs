@@ -12,7 +12,6 @@ public class SoundFXManager : MonoBehaviour
     void Start()
     { 
         ambience = GetComponent<AudioSource>();
-        ambience.Play();
     }
 
     private void Awake()

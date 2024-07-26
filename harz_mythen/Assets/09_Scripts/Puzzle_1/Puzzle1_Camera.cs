@@ -1,4 +1,5 @@
-using _09_Scripts._Dialogsystem;
+ï»¿using _09_Scripts._Dialogsystem;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,39 +9,54 @@ public class Puzzle1_Camera : MonoBehaviour
     public Camera mainCamera;
     public Camera cam2;
     public Camera cam3;
+    public Camera cam4;
     public bool Cam2On;
     public GameObject Box;
     public GameObject Button;
     public GameObject Slider;
+    public GameObject Lock;
 
     private GameObject character;
+
+    public GameObject Dialogi;
+
+    public static event Action animationVictory; // Eventmanagement fuer Animation
+    //public static event Action OnDialog_2_Continue; // Eventmanagement fuer Dialog 2 // noch nicht in Benutzung
 
     void Start() // Kameraanweisung bei Szenenstart
     {
         mainCamera.enabled = true;
         cam2.enabled = false;
         cam3.enabled = false;
+        cam4.enabled = false;
     }
 
     private void Update()
     {
         MouseClick(); // Klick
-        if (Puzzle1_LockControl.victory == true) // Wenn Rätsel gelöst
-        {
-            Victory();
-        }
-        if (Dialog.LevelStarted == false) // passiert nach Ende von Dialog 1
+        if (Dialog.LevelStarted == false) // passiert nach Ende von Dialog 1 // in Methode Ã¤ndern EmpfÃ¤nger
         {
             Box.GetComponent<BoxCollider>().enabled = true;
         }
     }
+
+    private void OnEnable()
+    {
+        Puzzle1_LockControl.PuzzleVictory += Victory; // Eventmanagement fuer Kameras
+        Ring_Animation.VictoryToDialog += VictoryToDialog; // Eventmanagement fuer Dialog 2
+        // Dialog.OnInteraction += GetCollider; // gescheitertes Experiment
+    }
+
+    /*public void GetCollider()
+    {
+        Box.GetComponent<BoxCollider>().enabled = true;
+    }*/
 
     public void MouseClick()    // Was beim Anklicken eines Items passiert.
     {
         if (Input.GetMouseButtonDown(0)) // Achtung, hier mit mainCamera
         {
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-            Ray ray2 = cam2.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit)) 
             {                                               
                 Debug.Log("Ray");
@@ -79,7 +95,7 @@ public class Puzzle1_Camera : MonoBehaviour
         }
     }
 
-    public void GoToCamera() // "Zurück"-Button-Methode
+    public void GoToCamera() // "ZurÃ¼ck"-Button-Methode
     {
         if (Cam2On == true)
         {
@@ -94,7 +110,7 @@ public class Puzzle1_Camera : MonoBehaviour
             character = GameObject.Find("Character_Ruma");
             character.GetComponent<DialogActivation>().enabled = true;
         }
-        if (Cam2On == false)
+        if (Cam2On == false) 
         {
             mainCamera.enabled = false;
             cam2.enabled = true;
@@ -103,13 +119,33 @@ public class Puzzle1_Camera : MonoBehaviour
         }
     }
 
-    public void Victory() // Wenn Rätsel gelöst
+    public void Victory()
     {
-        mainCamera.enabled = true;
-        cam2.enabled = false;
+        cam2.enabled = true;
         cam3.enabled = false;
+        Lock.SetActive(false);
         Button.SetActive(false);
-        Box.GetComponent<BoxCollider>().enabled = false; 
-        Dialog.LevelStarted = true; // neu
+        Box.GetComponent<BoxCollider>().enabled = false;
+        animationVictory(); // Eventmanagement fuer Animation
+        //StartCoroutine(Victory_Camera());
+    }
+
+    public void VictoryToDialog() // Eventmanagement fuer Dialog 2
+    {
+        cam2.enabled = false;
+        cam4.enabled = true;
+        Debug.Log("Dialog.LevelStarted: " + Dialog.LevelStarted);
+        Dialogi.SetActive(true);
+        //Debug.Log("Dialogi.SetActive(true): " + Dialogi);
+        //Dialog.LevelStarted = true; // --> evtl.zu Methode Ã¤ndern
+        //OnDialog_2_Continue(); // neu Sender // nicht in Benutzung
+    }
+
+    private void OnDestroy()
+    {
+        Puzzle1_LockControl.PuzzleVictory -= Victory; 
+        Ring_Animation.VictoryToDialog -= VictoryToDialog;
+        //Dialog.OnInteraction -= GetCollider; // // gescheitertes Experiment
     }
 }
+
