@@ -21,6 +21,8 @@ public class Puzzle1_Camera : MonoBehaviour
     public GameObject Dialogi;
 
     public static event Action animationVictory; // Eventmanagement fuer Animation
+    //public static event Action OnMarkedItems;
+    //public static event Action OnDemarkedItems;
     //public static event Action OnDialog_2_Continue; // Eventmanagement fuer Dialog 2 // noch nicht in Benutzung
 
     void Start() // Kameraanweisung bei Szenenstart
@@ -118,6 +120,16 @@ public class Puzzle1_Camera : MonoBehaviour
             Cam2On = true;
         }
     }
+
+    /*public void OnMouseEnter()
+    {
+        OnMarkedItems();
+    }
+
+    public void OnMouseExit()
+    {
+        OnDemarkedItems();
+    }*/
 
     public void Victory()
     {
