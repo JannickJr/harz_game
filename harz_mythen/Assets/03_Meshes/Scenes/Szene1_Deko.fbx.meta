@@ -3,7 +3,77 @@ guid: 1a178cc0dc839bf46b5686e40c2ec874
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baumstamm_Spirale
+    second: {fileID: 2100000, guid: 5a8dff225c32e5746b49073301bb129b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Material_Gr\xFCnzeug"
+    second: {fileID: 2100000, guid: 4ffc56fbe7494eb48944b2db61c43b02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Material_Gr\xFCnzeug_dunkel"
+    second: {fileID: 2100000, guid: 4ffc56fbe7494eb48944b2db61c43b02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Material_Gr\xFCnzeug_dunkel.001"
+    second: {fileID: 2100000, guid: 4ffc56fbe7494eb48944b2db61c43b02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Moos
+    second: {fileID: 2100000, guid: 819527da2aeba994db0ee272cd53fe0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Material_Pilz_gro\xDF_Hut"
+    second: {fileID: 2100000, guid: 03b3b472222ea9441a21530d89412cb1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Material_Pilz_gro\xDF_Stiel"
+    second: {fileID: 2100000, guid: 03b3b472222ea9441a21530d89412cb1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Pilz_klein_Hut
+    second: {fileID: 2100000, guid: 03b3b472222ea9441a21530d89412cb1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Pilz_klein_Stiel
+    second: {fileID: 2100000, guid: 03b3b472222ea9441a21530d89412cb1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Stamm
+    second: {fileID: 2100000, guid: 39010d6c7ab8ad54a869930e2358e73c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Stamm_innen
+    second: {fileID: 2100000, guid: 5a8dff225c32e5746b49073301bb129b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Stamm_innen.001
+    second: {fileID: 2100000, guid: 5a8dff225c32e5746b49073301bb129b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Zapfen
+    second: {fileID: 2100000, guid: 5eb10a7701dd9a94c819e1fe61027f9b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Steine
+    second: {fileID: 2100000, guid: 3f54339f254a5b34ca0ede358dbec1e1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

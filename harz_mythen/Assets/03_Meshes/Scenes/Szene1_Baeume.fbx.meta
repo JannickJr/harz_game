@@ -3,7 +3,42 @@ guid: df71e9ef8e86ffd42ba5c8fb3546ad56
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Krone
+    second: {fileID: 2100000, guid: b52e9c7e3d84cfc46ace2a40efc0ead2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Krone_Laub
+    second: {fileID: 2100000, guid: 819527da2aeba994db0ee272cd53fe0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Krone_dunkel
+    second: {fileID: 2100000, guid: b52e9c7e3d84cfc46ace2a40efc0ead2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Stamm
+    second: {fileID: 3685112913792903100, guid: a57b3ecfebb8d434293376df8a9b71a2, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Stamm_dunkel
+    second: {fileID: 2100000, guid: 5a8dff225c32e5746b49073301bb129b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Stamm_hell
+    second: {fileID: 2100000, guid: 5a8dff225c32e5746b49073301bb129b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Stamm_mittel
+    second: {fileID: 2100000, guid: 5a8dff225c32e5746b49073301bb129b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

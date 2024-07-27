@@ -3,7 +3,32 @@ guid: 6742b94e39ca5cb40a9553e842ae2918
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Material_Bl\xFCte_Ring"
+    second: {fileID: 2100000, guid: b52e9c7e3d84cfc46ace2a40efc0ead2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Material_Gr\xFCnzeug"
+    second: {fileID: 2100000, guid: 4ffc56fbe7494eb48944b2db61c43b02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_LB
+    second: {fileID: 2100000, guid: 58694c334329f094482ab54d257472f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Outlines
+    second: {fileID: 2100000, guid: ff4736d66a7dd174494c7edc6635bbbc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Pollending
+    second: {fileID: 2100000, guid: 3959f179230b97a4bb3bfd292141f389, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

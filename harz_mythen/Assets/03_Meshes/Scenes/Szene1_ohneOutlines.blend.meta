@@ -3,7 +3,97 @@ guid: 30707b27c30c7c04b9707ad77b601f5d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Burg
+    second: {fileID: 2100000, guid: 3f54339f254a5b34ca0ede358dbec1e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_BWR
+    second: {fileID: 2100000, guid: 819527da2aeba994db0ee272cd53fe0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Bienenstock
+    second: {fileID: 2100000, guid: 3959f179230b97a4bb3bfd292141f389, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Material_Bl\xFCte_Ring"
+    second: {fileID: 2100000, guid: 119e01dedac76074a90900d15aee2e7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Boden
+    second: {fileID: 2100000, guid: eb9354d3d27f4984da9ddd3a0944e7fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Gras2
+    second: {fileID: 2100000, guid: 819527da2aeba994db0ee272cd53fe0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Material_Gr\xFCnzeug"
+    second: {fileID: 2100000, guid: 4ffc56fbe7494eb48944b2db61c43b02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Hintergrund
+    second: {fileID: 2100000, guid: eb9354d3d27f4984da9ddd3a0944e7fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Krone
+    second: {fileID: 2100000, guid: b52e9c7e3d84cfc46ace2a40efc0ead2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_LB
+    second: {fileID: 2100000, guid: 58694c334329f094482ab54d257472f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Nebel
+    second: {fileID: 2100000, guid: 15f99af2368f15147ad28eeb01853ec0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Outlines
+    second: {fileID: 2100000, guid: 7ebd2817d884eb8428db0842acd3e86b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Pollending
+    second: {fileID: 2100000, guid: 3959f179230b97a4bb3bfd292141f389, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Stamm
+    second: {fileID: 2100000, guid: 5a8dff225c32e5746b49073301bb129b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Tonschale
+    second: {fileID: 2100000, guid: b571357a79b1b4c45a93442f3b2ee2d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Truhe_Holz
+    second: {fileID: 2100000, guid: 03b3b472222ea9441a21530d89412cb1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Truhe_Rand
+    second: {fileID: 2100000, guid: d917a9fe6ea384f4cabb3844cc921464, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_WSB
+    second: {fileID: 2100000, guid: 3e6f5ae55e96038498e05e5745f31483, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
