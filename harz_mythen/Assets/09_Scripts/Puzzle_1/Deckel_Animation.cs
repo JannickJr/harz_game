@@ -18,7 +18,7 @@ public class Deckel_Animation : MonoBehaviour
 
     public void VictoryAnimation() // Eventmanagement fuer Animation
     {
-        animator.Play("Deckel_open_2");
+        animator.Play("Deckel_open_3");
     }
 
     private void OnDestroy()

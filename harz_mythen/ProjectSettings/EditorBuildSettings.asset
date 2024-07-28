@@ -5,15 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/01_Scenes/Test_Scene_2.unity
     guid: 9835bf0c07654f34cbc290dc21a35115
-  - enabled: 1
+  - enabled: 0
     path: Assets/01_Scenes/Test_Lena_S1.unity
     guid: 310092e0590a9444d986315acbe0eb03
-  - enabled: 1
+  - enabled: 0
     path: Assets/01_Scenes/Test_Scene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 0
+    path: Assets/01_Scenes/03_Scene_1.unity
+    guid: ea29c552bb79bef42b871eb3cfd6ee2a
   - enabled: 1
     path: Assets/01_Scenes/01_Main_Menu.unity
     guid: 2a46bf2910b3df84b993f2455fc65d98
@@ -21,8 +24,8 @@ EditorBuildSettings:
     path: Assets/01_Scenes/02_CutScene_01.unity
     guid: 8e53501c2a65dc4488b8e8d52a20112d
   - enabled: 1
-    path: Assets/01_Scenes/03_Scene_1.unity
-    guid: ea29c552bb79bef42b871eb3cfd6ee2a
+    path: Assets/01_Scenes/03_Scene_1_b.unity
+    guid: 81a63c2f6cdc26546ae70ba569707896
   - enabled: 1
     path: Assets/01_Scenes/04_CutScene_02.unity
     guid: 74e69ea8ff84d674e89e7c2015cd82f1

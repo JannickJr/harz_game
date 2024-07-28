@@ -39,7 +39,9 @@ namespace _09_Scripts._Dialogsystem
 
         public GameObject wall;
 
-        //public static event Action OnInteraction; // gescheitertes Experiment
+        public Camera mainCamera;
+
+        //public static event Action OnInteraction; // gescheitertes Experiment für Itemslot // Test für Truhencollider funktionierte, ist aber unnötig
 
         #region //---INFO---//
         /* Nachricht schicken mit GetComponent oder FindComponent oder int, 
@@ -154,7 +156,7 @@ namespace _09_Scripts._Dialogsystem
                 //---Aufgabenaktivierung---//
                 task_1.SetActive(true);
                 LevelStarted = false; // LevelStarted = false; --> evtl. zu Methode ändern
-                //OnInteraction(); // gescheitertes Experiment
+                //OnInteraction(); // gescheitertes Experiment // neuer Test funktionierte für Truhe
             }
         }
 
@@ -270,6 +272,7 @@ namespace _09_Scripts._Dialogsystem
             {
                 gameObject.SetActive(false);
                 //SceneManager.LoadScene("04_CutScene_02");
+                mainCamera.enabled = true;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }

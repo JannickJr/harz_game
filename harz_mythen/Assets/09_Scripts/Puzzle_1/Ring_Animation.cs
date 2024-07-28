@@ -10,6 +10,8 @@ public class Ring_Animation : MonoBehaviour
     public Camera cam2;
 
     public static event Action VictoryToDialog;
+    //public static event Action OnMarkedItems;
+    //public static event Action OnDemarkedItems;
 
     private void OnEnable() // Eventmanagement fuer Animation
     {
@@ -52,6 +54,16 @@ public class Ring_Animation : MonoBehaviour
             }
         }
     }
+
+    /*public void OnMouseEnter()
+    {
+        OnMarkedItems();
+    }
+
+    public void OnMouseExit()
+    {
+        OnDemarkedItems();
+    }*/
 
     private void OnDestroy()
     {

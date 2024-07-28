@@ -21,6 +21,8 @@ public class Puzzle1_Camera : MonoBehaviour
     public GameObject Dialogi;
 
     public static event Action animationVictory; // Eventmanagement fuer Animation
+    //public static event Action OnMarkedItems;
+    //public static event Action OnDemarkedItems;
     //public static event Action OnDialog_2_Continue; // Eventmanagement fuer Dialog 2 // noch nicht in Benutzung
 
     void Start() // Kameraanweisung bei Szenenstart
@@ -34,20 +36,16 @@ public class Puzzle1_Camera : MonoBehaviour
     private void Update()
     {
         MouseClick(); // Klick
-        if (Dialog.LevelStarted == false) // passiert nach Ende von Dialog 1 // in Methode ändern Empfänger
-        {
-            Box.GetComponent<BoxCollider>().enabled = true;
-        }
     }
 
     private void OnEnable()
     {
         Puzzle1_LockControl.PuzzleVictory += Victory; // Eventmanagement fuer Kameras
         Ring_Animation.VictoryToDialog += VictoryToDialog; // Eventmanagement fuer Dialog 2
-        // Dialog.OnInteraction += GetCollider; // gescheitertes Experiment
+        //Dialog.OnInteraction += GetCollider; // unnötig
     }
 
-    /*public void GetCollider()
+    /*public void GetCollider() // unnötig
     {
         Box.GetComponent<BoxCollider>().enabled = true;
     }*/
@@ -90,6 +88,7 @@ public class Puzzle1_Camera : MonoBehaviour
                     cam2.enabled = false;
                     cam3.enabled = true;
                     Cam2On = false;
+                    Box.GetComponent<BoxCollider>().enabled = false;
                 } 
             }
         }
@@ -109,6 +108,7 @@ public class Puzzle1_Camera : MonoBehaviour
             character.GetComponent<DialogActivation>().enabled = true;
             character = GameObject.Find("Character_Ruma");
             character.GetComponent<DialogActivation>().enabled = true;
+            Box.GetComponent<BoxCollider>().enabled = true;
         }
         if (Cam2On == false) 
         {
@@ -118,6 +118,16 @@ public class Puzzle1_Camera : MonoBehaviour
             Cam2On = true;
         }
     }
+
+    /*public void OnMouseEnter()
+    {
+        OnMarkedItems();
+    }
+
+    public void OnMouseExit()
+    {
+        OnDemarkedItems();
+    }*/
 
     public void Victory()
     {
