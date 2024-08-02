@@ -2549,7 +2549,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 899041032}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2608,10 +2608,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 18
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -2644,7 +2644,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 10, y: 10, z: 10, w: 10}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5577,8 +5577,9 @@ GameObject:
   - component: {fileID: 1894266930}
   - component: {fileID: 1894266929}
   - component: {fileID: 1894266931}
-  - component: {fileID: 1894266932}
   - component: {fileID: 1894266933}
+  - component: {fileID: 1894266934}
+  - component: {fileID: 1894266935}
   m_Layer: 0
   m_Name: Seerosenblatt.002 (1)
   m_TagString: Untagged
@@ -5621,8 +5622,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6707265023085876107, guid: 68c655758cce1bf47b28a4475c99231d, type: 3}
-  - {fileID: 811587589528617379, guid: 68c655758cce1bf47b28a4475c99231d, type: 3}
+  - {fileID: 2100000, guid: cfd8f02bd9d1ccd44ace137f34369cfa, type: 2}
+  - {fileID: 2100000, guid: b52e9c7e3d84cfc46ace2a40efc0ead2, type: 2}
+  - {fileID: 2100000, guid: 819527da2aeba994db0ee272cd53fe0c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5665,28 +5667,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item3DViewer: {fileID: 0}
---- !u!64 &1894266932
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 3299150556615474673, guid: 4f5fd0b6b8610304daac857fa9f7664d, type: 3}
-  m_PrefabInstance: {fileID: 8327678264193759141}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1894266927}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3131323836108729670, guid: 68c655758cce1bf47b28a4475c99231d, type: 3}
 --- !u!114 &1894266933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5703,6 +5683,39 @@ MonoBehaviour:
   prefab: {fileID: 5342067225125819856}
   itemPrefab: {fileID: 0}
   mainCamera: {fileID: 1750940343}
+--- !u!114 &1894266934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894266927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1024fede47a77c645908bf810511ed79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &1894266935
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894266927}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.86504805
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1985875304
 GameObject:
   m_ObjectHideFlags: 0
@@ -5821,15 +5834,15 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 899041033}
   m_Father: {fileID: 4552770869323101875}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -104, y: 39}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -55, y: 33}
+  m_SizeDelta: {x: 80.3214, y: 38.077}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2023381002
 MonoBehaviour:
@@ -18383,7 +18396,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 4d170a8aa584240f4b18ce6a5e58ef2e, type: 2}
+  - {fileID: 8988893523594694977, guid: 8a59f9bbad4a3a9469b4bfbc63c754fc, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -22063,6 +22077,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Seerosenblatt.002 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3299150556615474673, guid: 4f5fd0b6b8610304daac857fa9f7664d, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5825042568708827340, guid: 4f5fd0b6b8610304daac857fa9f7664d, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -22111,7 +22129,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 153.147
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8172113975067844938, guid: 4f5fd0b6b8610304daac857fa9f7664d, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8172113975067844938, guid: 4f5fd0b6b8610304daac857fa9f7664d, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
