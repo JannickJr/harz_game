@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace _09_Scripts._Dialogsystem
 {
@@ -13,6 +14,8 @@ namespace _09_Scripts._Dialogsystem
         public static int characterNumber = 0; // evtl. in Methode umwandeln
 
         public Camera mainCamera;
+
+        public static event Action OnInventoryWall;
 
         //---Sprechblasen - Start nach Interaktion---//
         private void Update()
@@ -45,6 +48,7 @@ namespace _09_Scripts._Dialogsystem
                                 Debug.Log("Dialog-Ruma_on");
                                 Dialogi.SetActive(true);
                                 dialogActivated = true;
+                                OnInventoryWall(); // Nachricht schreiben, dass Inventar geschlossen und deaktiviert wird
                             }
                     }
                     if (hit.transform.gameObject.CompareTag("Romar")) // wenn Romar angeklickt wird
@@ -63,6 +67,7 @@ namespace _09_Scripts._Dialogsystem
                                 Debug.Log("Dialog-Romar_on");
                                 Dialogi.SetActive(true);
                                 dialogActivated = true;
+                                OnInventoryWall(); // Nachricht schreiben, dass Inventar geschlossen und deaktiviert wird
                             }
                     }
                 }

@@ -37,9 +37,12 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     public static event Action OnItemShutUp; // Eventmanagement für Deaktivierung des markierten Zustands
 
+    public GameObject wall;
+
     private void OnEnable()
     {
         Item_2.OnDelete += OnDeleteYes;
+        DialogActivation.OnInventoryWall += InventoryDeactivation;
         //Dialog.OnInteraction += Inventory; // gescheitertes Experiment
     }
 
@@ -107,11 +110,14 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
                 inventoryManager.UseItem(itemName); // Weiterleitung an Item_SO // neu
                 Debug.Log("Item markiert_5");
+
+                wall.SetActive(true);
             }
             else if (isFull == false) // wenn nichts drinliegt
             {
                 selectedShader.SetActive(false);
-                itemDescriptionBar.SetActive(false); 
+                itemDescriptionBar.SetActive(false);
+                wall.SetActive(false);
             }
             if (itemDescriptionImage.sprite == null) // wenn kein Sprite mehr drinliegt
             {
@@ -171,9 +177,20 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         itemDescriptionImage.sprite = emptySprite;
     }
 
+    public void InventoryDeactivation()
+    {
+        selectedShader.SetActive(false);
+        itemDescriptionBar.SetActive(false);
+        thisItemSelected = false;
+        ItemDescriptionText.text = "";
+        ItemDescriptionNameText.text = "";
+        itemDescriptionImage.sprite = emptySprite;
+    }
+
     private void OnDestroy()
     {
         Item_2.OnDelete -= OnDeleteYes;
+        DialogActivation.OnInventoryWall -= InventoryDeactivation;
         //Dialog.OnInteraction -= Inventory; // gescheitertes Experiment
     }
 
