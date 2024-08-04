@@ -914,6 +914,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781581999}
   m_CullTransparentMesh: 1
+--- !u!1 &841776879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 841776881}
+  - component: {fileID: 841776880}
+  m_Layer: 0
+  m_Name: DontDestroyOnLoad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &841776880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841776879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1042ca7cd98fec46a597ac09a1e8805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &841776881
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841776879}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1004330551
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,7 +970,7 @@ GameObject:
   - component: {fileID: 1004330555}
   - component: {fileID: 1004330554}
   - component: {fileID: 1004330553}
-  - component: {fileID: 1004330557}
+  - component: {fileID: 1004330556}
   m_Layer: 0
   m_Name: EndButton
   m_TagString: Untagged
@@ -998,8 +1042,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1004330557}
-        m_TargetAssemblyTypeName: Button_Manager, Assembly-CSharp
+      - m_Target: {fileID: 1004330556}
+        m_TargetAssemblyTypeName: Quit_Game, Assembly-CSharp
         m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
@@ -1048,7 +1092,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004330551}
   m_CullTransparentMesh: 1
---- !u!114 &1004330557
+--- !u!114 &1004330556
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1057,10 +1101,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1004330551}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3061ae36ce14e7543853985cee431388, type: 3}
+  m_Script: {fileID: 11500000, guid: c1042ca7cd98fec46a597ac09a1e8805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Buttons: {fileID: 0}
 --- !u!1 &1018089136
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,6 +1497,7 @@ GameObject:
   - component: {fileID: 1235053915}
   - component: {fileID: 1235053914}
   - component: {fileID: 1235053918}
+  - component: {fileID: 1235053919}
   m_Layer: 0
   m_Name: PlayButton
   m_TagString: Untagged
@@ -1525,9 +1569,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1235053918}
-        m_TargetAssemblyTypeName: Button_Manager, Assembly-CSharp
-        m_MethodName: LoadCutScene_1
+      - m_Target: {fileID: 1235053919}
+        m_TargetAssemblyTypeName: SceneManagement, Assembly-CSharp
+        m_MethodName: LoadNextScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1588,6 +1632,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Buttons: {fileID: 0}
+--- !u!114 &1235053919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235053912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7073ced5d3555ba44912df78b60e1948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1253692679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1878,6 +1934,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1296826983}
   m_CullTransparentMesh: 1
+--- !u!1 &1393366707
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1393366708}
+  m_Layer: 0
+  m_Name: Normal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1393366708
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393366707}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.8641201, y: -1.9341373, z: 42.01946}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1454124432
 GameObject:
   m_ObjectHideFlags: 0
@@ -2873,3 +2960,5 @@ SceneRoots:
   - {fileID: 1984678561}
   - {fileID: 1174168125}
   - {fileID: 2051764616}
+  - {fileID: 1393366708}
+  - {fileID: 841776881}

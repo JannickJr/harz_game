@@ -13,9 +13,13 @@ public class InventoryManager : MonoBehaviour
 
     public GameObject wall;
 
+
     public void OnEnable()
     {
         DialogActivation.OnInventoryWall += InventoryDeactivation;
+
+        Dialog.OnLoadScene += Activation;
+        Change_Scene_CS.OnLoadScene += Activation;
     }
 
     public void Inventory() // Aktivierung und Deaktivierung der Inventarleiste
@@ -88,9 +92,18 @@ public class InventoryManager : MonoBehaviour
         wall.SetActive(false);
     }
 
+    public void Activation()
+    {
+        gameObject.SetActive(true);
+        //GameObject.Find("Task").SetActive(true);
+    }
+
     public void OnDestroy()
     {
         DialogActivation.OnInventoryWall -= InventoryDeactivation;
+
+        Dialog.OnLoadScene -= Activation;
+        Change_Scene_CS.OnLoadScene -= Activation;
     }
 
     //==Variante mit Stackable Items==// funktioniert noch nicht // Regulierung der Menge der Items in Inventarleiste

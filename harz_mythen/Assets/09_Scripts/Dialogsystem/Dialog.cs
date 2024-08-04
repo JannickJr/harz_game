@@ -42,6 +42,7 @@ namespace _09_Scripts._Dialogsystem
         public Camera mainCamera;
 
         //public static event Action OnInteraction; // gescheitertes Experiment für Itemslot // Test für Truhencollider funktionierte, ist aber unnötig
+        public static event Action OnLoadScene;
 
         #region //---INFO---//
         /* Nachricht schicken mit GetComponent oder FindComponent oder int, 
@@ -273,7 +274,9 @@ namespace _09_Scripts._Dialogsystem
                 gameObject.SetActive(false);
                 //SceneManager.LoadScene("04_CutScene_02");
                 mainCamera.enabled = true;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                task_1.SetActive(true);
+                OnLoadScene();
             }
         }
 
