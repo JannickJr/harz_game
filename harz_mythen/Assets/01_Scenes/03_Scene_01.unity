@@ -6596,7 +6596,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: cfd8f02bd9d1ccd44ace137f34369cfa, type: 2}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2954940444893219250, guid: 589fcdc1f45e1f146a7136a71e42fc59, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 589fcdc1f45e1f146a7136a71e42fc59, type: 3}
@@ -7330,6 +7331,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -1.264
       objectReference: {fileID: 0}
+    - target: {fileID: -3388661794696214690, guid: 30707b27c30c7c04b9707ad77b601f5d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -3378814613977471379, guid: 30707b27c30c7c04b9707ad77b601f5d, type: 3}
       propertyPath: m_Materials.Array.size
       value: 2
@@ -7733,6 +7738,34 @@ PrefabInstance:
     - target: {fileID: 7336114379512186083, guid: 30707b27c30c7c04b9707ad77b601f5d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425638341844058935, guid: 30707b27c30c7c04b9707ad77b601f5d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.33736128
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425638341844058935, guid: 30707b27c30c7c04b9707ad77b601f5d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.089441255
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425638341844058935, guid: 30707b27c30c7c04b9707ad77b601f5d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425638341844058935, guid: 30707b27c30c7c04b9707ad77b601f5d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.2014
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425638341844058935, guid: 30707b27c30c7c04b9707ad77b601f5d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.6993
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425638341844058935, guid: 30707b27c30c7c04b9707ad77b601f5d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -51.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425638341844058935, guid: 30707b27c30c7c04b9707ad77b601f5d, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7683820229023049723, guid: 30707b27c30c7c04b9707ad77b601f5d, type: 3}
       propertyPath: m_Materials.Array.size

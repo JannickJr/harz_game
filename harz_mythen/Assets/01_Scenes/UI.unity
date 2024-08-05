@@ -646,6 +646,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1115932406}
+        m_TargetAssemblyTypeName: Task, Assembly-CSharp
+        m_MethodName: TaskVoting
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &120981792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -697,6 +709,7 @@ GameObject:
   - component: {fileID: 121310918}
   - component: {fileID: 121310917}
   - component: {fileID: 121310916}
+  - component: {fileID: 121310920}
   m_Layer: 5
   m_Name: Hilfe
   m_TagString: Untagged
@@ -793,6 +806,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 121310920}
+        m_TargetAssemblyTypeName: HelpTexts, Assembly-CSharp
+        m_MethodName: HelpVoting
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &121310918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -831,6 +856,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 121310914}
   m_CullTransparentMesh: 1
+--- !u!114 &121310920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121310914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abb02defc7197e94aba2c61efcccf99b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  help_1: {fileID: 52633362}
+  help_2: {fileID: 1264066783}
+  solution: {fileID: 1859130662}
 --- !u!1 &135279135
 GameObject:
   m_ObjectHideFlags: 0
@@ -2768,6 +2808,7 @@ MonoBehaviour:
   box: {fileID: 1181475800}
   text: {fileID: 197792051}
   task_1: {fileID: 1115932404}
+  text_2: {fileID: 1774050521}
 --- !u!114 &1115932407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3123,7 +3164,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Wie oft findest du die Farben auf dem Schloss in der Umgebung wieder?
+  m_text: Wie oft findest du die Farben auf dem Schloss auf den Blumen wieder?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

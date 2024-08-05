@@ -44,9 +44,10 @@ public class SceneManagement : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Additive);
             SceneManager.UnloadSceneAsync("04_CutScene_02");
-            GameObject.Find("Inventory_Button").SetActive(true);
-            GameObject.Find("Menu_Buttons").SetActive(true);
-            GameObject.Find("Task").SetActive(true);
+            //GameObject.Find("Inventory_Button").SetActive(true);
+            //GameObject.Find("Menu_Buttons").SetActive(true);
+            //GameObject.Find("Task").SetActive(true);
+            GameObject.Find("Buttons").SetActive(true);
         }
         if (GameObject.Find("05_Scene_02"))
         {
@@ -57,9 +58,10 @@ public class SceneManagement : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Additive);
             SceneManager.UnloadSceneAsync("06_CutScene_03");
-            GameObject.Find("Inventory_Button").SetActive(true);
-            GameObject.Find("Menu_Buttons").SetActive(true);
-            GameObject.Find("Task").SetActive(true);
+            //GameObject.Find("Inventory_Button").SetActive(true);
+            //GameObject.Find("Menu_Buttons").SetActive(true);
+            //GameObject.Find("Task").SetActive(true);
+            GameObject.Find("Buttons").SetActive(true);
         }
         if (GameObject.Find("07_Scene_03"))
         {
