@@ -38,7 +38,8 @@ public class SceneManagement : MonoBehaviour
         if (GameObject.Find("03_Scene_01"))
         { 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Additive);
-            GameObject.Find("03_Scene_01").SetActive(false);
+            //GameObject.Find("03_Scene_01").SetActive(false);
+            SceneManager.UnloadSceneAsync("03_Scene_01");
         }
         if (GameObject.Find("04_CutScene_02"))
         {
@@ -67,6 +68,7 @@ public class SceneManagement : MonoBehaviour
         {
             //SceneManager.LoadScene("01_Main_Menu");
             //SceneManager.LoadScene("08_CutScene_04");
+            //SceneManager.UnloadSceneAsync("07_Scene_03");
         }
         //if (GameObject.Find("08_CutScene_04"))
         {
