@@ -9,10 +9,10 @@ using System;
 
 namespace _09_Scripts._Dialogsystem
 {
-    public class Dialog : MonoBehaviour
+    public class Dialog_old : MonoBehaviour
     {
         public TextMeshProUGUI textComponent;
-        public TextMeshProUGUI textName; 
+        public TextMeshProUGUI textName;
         public GameObject imageRuma;
         public GameObject imageRomar;
         public string[] lines;
@@ -27,11 +27,15 @@ namespace _09_Scripts._Dialogsystem
 
         #region //---HUD Deactivation---//
         [SerializeField] private GameObject Slider;
-        public static event Action OnHUDActivation;
-        public static event Action OnHUDDeactivation;
+        [SerializeField] private GameObject IS;
+        [SerializeField] private GameObject ISD;
+        [SerializeField] private GameObject IB;
+        [SerializeField] private GameObject MB;
+
+        [SerializeField] private GameObject task_1;
         #endregion
 
-        private GameObject character; 
+        private GameObject character;
 
         public GameObject wall;
 
@@ -58,8 +62,8 @@ namespace _09_Scripts._Dialogsystem
         {
             StartCutscene_1();
         }
-        
-        void Update() 
+
+        void Update()
         {
             //---Sprechblasen---// --> Muss vor "Dialog weiter"-Methoden stehen!
             TextStart();
@@ -96,7 +100,10 @@ namespace _09_Scripts._Dialogsystem
             character.GetComponent<DialogActivation>().enabled = false;*/
             //---HUD Deactivation---//
             Slider.SetActive(false);
-            OnHUDDeactivation();
+            IS.SetActive(false);
+            ISD.SetActive(false);
+            IB.SetActive(false);
+            MB.SetActive(false);
             //---Wall---///
             wall.SetActive(true);
             cutScene_1IsActive = true; // cutScene_1IsActive = true; --> evtl. zu Methode ändern
@@ -133,9 +140,12 @@ namespace _09_Scripts._Dialogsystem
                 DialogActivation.dialogActivated = false;
                 DialogActivation.characterNumber = 0;
                 //index = 0; // im Moment nicht mehr notwendig, aber zur Sicherheit mal noch deaktiviert im Code lassen; war auf -1
-                //---HUD Activation---////---Aufgabenaktivierung---//
+                //---HUD Activation---//
                 Slider.SetActive(true);
-                OnHUDActivation();
+                //IS.SetActive(true);
+                //ISD.SetActive(true);
+                IB.SetActive(true);
+                MB.SetActive(true);
                 //---Wall---///
                 wall.SetActive(false);
                 //---Script Activation---// --> braucht man nicht mehr wegen Wall
@@ -144,6 +154,8 @@ namespace _09_Scripts._Dialogsystem
                 character = GameObject.Find("Character_Ruma");
                 character.GetComponent<DialogActivation>().enabled = true;*/
                 cutScene_1IsActive = false; // cutScene_1IsActive = false; --> evtl. zu Methode ändern
+                //---Aufgabenaktivierung---//
+                task_1.SetActive(true);
                 LevelStarted = false; // LevelStarted = false; --> evtl. zu Methode ändern
                 //OnInteraction(); // gescheitertes Experiment // neuer Test funktionierte für Truhe
             }
@@ -162,7 +174,7 @@ namespace _09_Scripts._Dialogsystem
                     StopAllCoroutines();
                     textComponent.text = lines[index];
                 }
-            }  
+            }
         }
 
         public void CharacterChange() // Dialog 1 - Textboxanhänge verändern sich
@@ -224,7 +236,10 @@ namespace _09_Scripts._Dialogsystem
             character.GetComponent<DialogActivation>().enabled = false;*/
             //---HUD Deactivation---//
             Slider.SetActive(false);
-            OnHUDDeactivation();
+            IS.SetActive(false);
+            ISD.SetActive(false);
+            IB.SetActive(false);
+            MB.SetActive(false);
             //---Wall---///
             wall.SetActive(true);
             cutScene_2IsActive = true; // --> evtl.zu Methode ändern
@@ -257,8 +272,10 @@ namespace _09_Scripts._Dialogsystem
             else // kein Dialogfeld mehr vorhanden
             {
                 gameObject.SetActive(false);
+                //SceneManager.LoadScene("04_CutScene_02");
                 mainCamera.enabled = true;
-                OnHUDActivation();  
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                task_1.SetActive(true);
                 OnLoadScene();
             }
         }
@@ -271,7 +288,7 @@ namespace _09_Scripts._Dialogsystem
                 {
                     NextLine2();
                 }
-                else 
+                else
                 {
                     StopAllCoroutines();
                     textComponent.text = lines2[index];
@@ -287,7 +304,7 @@ namespace _09_Scripts._Dialogsystem
                 case 2:
                 case 5:
                 case 7:
-                case 8: 
+                case 8:
                     imageRuma.SetActive(false);
                     imageRomar.SetActive(true);
                     textName.text = "Romar";
@@ -310,7 +327,10 @@ namespace _09_Scripts._Dialogsystem
         {
             //---HUD Deactivation---//
             Slider.SetActive(false);
-            OnHUDDeactivation();
+            IS.SetActive(false);
+            ISD.SetActive(false);
+            IB.SetActive(false);
+            MB.SetActive(false);
             if (DialogActivation.characterNumber == 1)
             {
                 imageRuma.SetActive(true);
@@ -318,7 +338,7 @@ namespace _09_Scripts._Dialogsystem
                 // hier davor evtl. int wechseln, für anderen Text; aber nur in andere(r) Szene
                 textComponent.text = "Ein Geschenk möchtest du mir geben? Oh Romar, du bist so gut zu mir!";
                 imageRomar.SetActive(false);
-                character = GameObject.Find("Character_Romar"); 
+                character = GameObject.Find("Character_Romar");
                 character.GetComponent<DialogActivation>().enabled = false;
                 if (Input.GetMouseButtonDown(0))
                 {
@@ -350,10 +370,13 @@ namespace _09_Scripts._Dialogsystem
             character = GameObject.Find("Character_Romar");
             character.GetComponent<DialogActivation>().enabled = true;
             character = GameObject.Find("Character_Ruma");
-            character.GetComponent<DialogActivation>().enabled = true; 
+            character.GetComponent<DialogActivation>().enabled = true;
             //---HUD Activation---//
             Slider.SetActive(true);
-            OnHUDActivation();
+            IB.SetActive(true);
+            MB.SetActive(true);
+            //IS.SetActive(true);
+            //ISD.SetActive(true);
         }
     }
 }

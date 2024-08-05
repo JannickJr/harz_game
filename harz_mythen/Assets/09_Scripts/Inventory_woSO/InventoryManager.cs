@@ -2,6 +2,7 @@ using _09_Scripts._Dialogsystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class InventoryManager : MonoBehaviour
 
     public GameObject wall;
 
+    public static event Action OnWallActivation;
+    public static event Action OnWallDeactivation;
+
 
     public void OnEnable()
     {
@@ -22,19 +26,26 @@ public class InventoryManager : MonoBehaviour
         Change_Scene_CS.OnLoadScene += Activation;
     }
 
+    private void Start()
+    {
+        OnWallDeactivation();
+    }
+
     public void Inventory() // Aktivierung und Deaktivierung der Inventarleiste
     {
         if (menuActivated)
         {
             InventoryMenu.SetActive(false);
             menuActivated = false;
-            wall.SetActive(false);
+            OnWallDeactivation();
+            //wall.SetActive(false);
         }
         else if (!menuActivated)
         {
             InventoryMenu.SetActive(true);
             menuActivated = true;
-            wall.SetActive(true);
+            OnWallActivation();
+            //wall.SetActive(true);
         }
     }
     
@@ -89,7 +100,8 @@ public class InventoryManager : MonoBehaviour
     {
         InventoryMenu.SetActive(false);
         menuActivated = false;
-        wall.SetActive(false);
+        //wall.SetActive(false);
+        OnWallDeactivation();
     }
 
     public void Activation()

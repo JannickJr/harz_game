@@ -44,6 +44,9 @@ public class Button_Manager : MonoBehaviour
 
     public void LoadMainMenu() // Laden des Hauptmenüs
     {
+        DialogActivation.characterNumber = 0;
+        DialogActivation.dialogActivated = true;
+        Dialog.LevelStarted = true;
         SceneManager.LoadScene("01_Main_Menu");
     }
 }

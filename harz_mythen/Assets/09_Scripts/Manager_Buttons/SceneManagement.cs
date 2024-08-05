@@ -26,9 +26,14 @@ public class SceneManagement : MonoBehaviour
 
     public void LoadNextScene() // Laden der nächsten Szene im Build
     {
-        if (GameObject.Find("Normal"))
+        if (GameObject.Find("01_Main_Menu"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        if (GameObject.Find("02_CutScene_01"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene("UI", LoadSceneMode.Additive);
         }
         if (GameObject.Find("03_Scene_01"))
         { 
@@ -69,6 +74,10 @@ public class SceneManagement : MonoBehaviour
 
     public void SceneActivation()
     {
+        if (GameObject.Find("03_Scene_01"))
+        {
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("03_Scene_01"));
+        }
         if (GameObject.Find("04_CutScene_02"))
         {
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("04_CutScene_02"));
