@@ -36,7 +36,7 @@ public class SceneManagement : MonoBehaviour
             SceneManager.LoadScene("UI", LoadSceneMode.Additive);
         }
         if (GameObject.Find("03_Scene_01"))
-        { 
+        {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Additive);
             //GameObject.Find("03_Scene_01").SetActive(false);
             SceneManager.UnloadSceneAsync("03_Scene_01");
@@ -66,13 +66,15 @@ public class SceneManagement : MonoBehaviour
         }
         if (GameObject.Find("07_Scene_03"))
         {
-            //SceneManager.LoadScene("01_Main_Menu");
-            //SceneManager.LoadScene("08_CutScene_04");
-            //SceneManager.UnloadSceneAsync("07_Scene_03");
+            SceneManager.LoadScene("08_CutScene_04");
+            SceneManager.UnloadSceneAsync("07_Scene_03");
         }
-        //if (GameObject.Find("08_CutScene_04"))
+        if (GameObject.Find("08_CutScene_04"))
         {
-            //SceneManager.LoadScene("01_Main_Menu");
+            DialogActivation.characterNumber = 0;
+            DialogActivation.dialogActivated = true;
+            Dialog.LevelStarted = true;
+            SceneManager.LoadScene("01_Main_Menu");
         }
     }
 
