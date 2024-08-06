@@ -19,7 +19,7 @@ public class Test_Scene_Change : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.M)) // mit M
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(6);
             Slider.SetActive(false);
             Slider_2.SetActive(true);
         }

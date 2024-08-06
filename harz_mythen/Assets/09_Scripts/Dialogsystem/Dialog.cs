@@ -27,12 +27,8 @@ namespace _09_Scripts._Dialogsystem
 
         #region //---HUD Deactivation---//
         [SerializeField] private GameObject Slider;
-        [SerializeField] private GameObject IS;
-        [SerializeField] private GameObject ISD;
-        [SerializeField] private GameObject IB;
-        [SerializeField] private GameObject MB;
-        
-        [SerializeField] private GameObject task_1;
+        public static event Action OnHUDActivation;
+        public static event Action OnHUDDeactivation;
         #endregion
 
         private GameObject character; 
@@ -42,6 +38,7 @@ namespace _09_Scripts._Dialogsystem
         public Camera mainCamera;
 
         //public static event Action OnInteraction; // gescheitertes Experiment für Itemslot // Test für Truhencollider funktionierte, ist aber unnötig
+        public static event Action OnLoadScene;
 
         #region //---INFO---//
         /* Nachricht schicken mit GetComponent oder FindComponent oder int, 
@@ -99,10 +96,7 @@ namespace _09_Scripts._Dialogsystem
             character.GetComponent<DialogActivation>().enabled = false;*/
             //---HUD Deactivation---//
             Slider.SetActive(false);
-            IS.SetActive(false);
-            ISD.SetActive(false);
-            IB.SetActive(false);
-            MB.SetActive(false);
+            OnHUDDeactivation();
             //---Wall---///
             wall.SetActive(true);
             cutScene_1IsActive = true; // cutScene_1IsActive = true; --> evtl. zu Methode ändern
@@ -139,12 +133,9 @@ namespace _09_Scripts._Dialogsystem
                 DialogActivation.dialogActivated = false;
                 DialogActivation.characterNumber = 0;
                 //index = 0; // im Moment nicht mehr notwendig, aber zur Sicherheit mal noch deaktiviert im Code lassen; war auf -1
-                //---HUD Activation---//
+                //---HUD Activation---////---Aufgabenaktivierung---//
                 Slider.SetActive(true);
-                //IS.SetActive(true);
-                //ISD.SetActive(true);
-                IB.SetActive(true); 
-                MB.SetActive(true);
+                OnHUDActivation();
                 //---Wall---///
                 wall.SetActive(false);
                 //---Script Activation---// --> braucht man nicht mehr wegen Wall
@@ -153,8 +144,6 @@ namespace _09_Scripts._Dialogsystem
                 character = GameObject.Find("Character_Ruma");
                 character.GetComponent<DialogActivation>().enabled = true;*/
                 cutScene_1IsActive = false; // cutScene_1IsActive = false; --> evtl. zu Methode ändern
-                //---Aufgabenaktivierung---//
-                task_1.SetActive(true);
                 LevelStarted = false; // LevelStarted = false; --> evtl. zu Methode ändern
                 //OnInteraction(); // gescheitertes Experiment // neuer Test funktionierte für Truhe
             }
@@ -235,10 +224,7 @@ namespace _09_Scripts._Dialogsystem
             character.GetComponent<DialogActivation>().enabled = false;*/
             //---HUD Deactivation---//
             Slider.SetActive(false);
-            IS.SetActive(false);
-            ISD.SetActive(false);
-            IB.SetActive(false);
-            MB.SetActive(false);
+            OnHUDDeactivation();
             //---Wall---///
             wall.SetActive(true);
             cutScene_2IsActive = true; // --> evtl.zu Methode ändern
@@ -271,9 +257,9 @@ namespace _09_Scripts._Dialogsystem
             else // kein Dialogfeld mehr vorhanden
             {
                 gameObject.SetActive(false);
-                //SceneManager.LoadScene("04_CutScene_02");
                 mainCamera.enabled = true;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                OnHUDActivation();  
+                OnLoadScene();
             }
         }
 
@@ -324,10 +310,7 @@ namespace _09_Scripts._Dialogsystem
         {
             //---HUD Deactivation---//
             Slider.SetActive(false);
-            IS.SetActive(false);
-            ISD.SetActive(false);
-            IB.SetActive(false);
-            MB.SetActive(false);
+            OnHUDDeactivation();
             if (DialogActivation.characterNumber == 1)
             {
                 imageRuma.SetActive(true);
@@ -370,10 +353,7 @@ namespace _09_Scripts._Dialogsystem
             character.GetComponent<DialogActivation>().enabled = true; 
             //---HUD Activation---//
             Slider.SetActive(true);
-            IB.SetActive(true);
-            MB.SetActive(true);
-            //IS.SetActive(true);
-            //ISD.SetActive(true);
+            OnHUDActivation();
         }
     }
 }
