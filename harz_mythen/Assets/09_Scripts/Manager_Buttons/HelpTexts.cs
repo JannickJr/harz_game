@@ -1,0 +1,51 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+public class HelpTexts : MonoBehaviour
+{
+    [SerializeField] private TMP_Text help_1;
+    [SerializeField] private TMP_Text help_2;
+    [SerializeField] private TMP_Text solution;
+
+    public void OnEnable()
+    {
+        //HelpVoting();
+    }
+
+    void Start()
+    {
+        
+    }
+
+    
+    void Update()
+    {
+        
+    }
+
+    public void HelpVoting()
+    {
+        if (GameObject.Find("03_Scene_01"))
+        {
+            help_1.text = "Es ist tief   im Wald versteckt.";
+            help_2.text = "Wie oft findest du die Farben auf dem Schloss auf den Blumen wieder?";
+            solution.text = "weiﬂ: 1 \nhelllila: 5 \ngelb: 4 \ndunkellila: 0";
+        } 
+        if (GameObject.Find("05_Scene_02"))
+        {
+            help_1.text = "...";
+            help_2.text = "...";
+            solution.text = "...";
+        }
+        if (GameObject.Find("07_Scene_03"))
+        {
+            help_1.text = "noch unbekannt";
+            help_2.text = "noch unbekannt";
+            solution.text = "noch unbekannt";
+        }
+    }
+
+}

@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
-
+using _09_Scripts._Dialogsystem;
 
 public class ItemSlot : MonoBehaviour, IPointerClickHandler
 {
@@ -30,18 +30,40 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
 
     public GameObject selectedShader;
-    public GameObject itemDescriptionBar; //neu
+    public GameObject itemDescriptionBar; 
     public bool thisItemSelected; // hiermit arbeiten
     
     private InventoryManager inventoryManager;
 
-    //public event Action OnItemMarked;
+    public static event Action OnItemShutUp; // Eventmanagement für Deaktivierung des markierten Zustands
 
-    private void Start()
+    public GameObject wall;
+
+    private void OnEnable()
+    {
+        Item_2.OnDelete += OnDeleteYes;
+        DialogActivation.OnInventoryWall += InventoryDeactivation;
+        //Dialog.OnInteraction += Inventory; // gescheitertes Experiment
+    }
+
+    /*private void OnDisable()
+    {
+        Dialog.OnInteraction += Inventory; // gescheitertes Experiment
+    }*/
+
+    private void Update() // muss am besten mit Eventmethode gelöst werden statt Update
+    {
+        if (Dialog.LevelStarted == false) // Empfänger
+        {
+            inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>(); // Es darf nicht in der Startmethode stehen, weil es da nicht gefunden wird, weil es in dem Moment noch deaktiviert ist.
+        }
+    }
+
+    public void Inventory() // gescheitertes Experiment
     {
         inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
     }
-    
+
     //==Variante ohne Stackable Items==// funktioniert // Hinzufügen eines Items in Itemslot
     public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
@@ -55,9 +77,125 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         //quantityText.enabled = true; // Anzahl fürs Erste entfernt
         itemImage.sprite = itemSprite;
     }
-    /*
+
+    public void OnPointerClick(PointerEventData eventData) // Weiterleitung zu den Methoden
+    {
+        if (eventData.button == PointerEventData.InputButton.Left)
+        {
+            OnLeftClick();
+        }
+        if (eventData.button == PointerEventData.InputButton.Right)
+        {
+            //OnRightClick();
+        }
+    }
+    
+    public void OnLeftClick() // Itemslot auswählen, um Itembeschreibung zu (de-)aktivieren
+    {
+        if (!thisItemSelected) // wenn kein Slot markiert ist und er angeklickt wird
+        {
+            inventoryManager.DeselectAllSlots(); // einer aktiviert, alle anderen deaktiviert
+            //inventoryManager.SelectTwoSlots(); // zwei können gleichzeitig aktiviert sein, alle anderen deaktiviert
+            thisItemSelected = true;
+            if (isFull == true) // Slots nur noch auswählabr, wenn etwas drinliegt, und auch nur dann Beschreibung sichtbar
+            {
+                selectedShader.SetActive(true);
+                Debug.Log("Item markiert");
+                itemDescriptionBar.SetActive(true); 
+                Debug.Log("Item markiert_2");
+
+                ItemDescriptionNameText.text = itemName;
+                ItemDescriptionText.text = itemDescription;
+                itemDescriptionImage.sprite = itemSprite;
+
+                inventoryManager.UseItem(itemName); // Weiterleitung an Item_SO // neu
+                Debug.Log("Item markiert_5");
+
+                //wall.SetActive(true);
+            }
+            else if (isFull == false) // wenn nichts drinliegt
+            {
+                selectedShader.SetActive(false);
+                itemDescriptionBar.SetActive(false);
+                //wall.SetActive(false);
+            }
+            if (itemDescriptionImage.sprite == null) // wenn kein Sprite mehr drinliegt
+            {
+                itemDescriptionImage.sprite = emptySprite;
+            }
+        }
+        else if (thisItemSelected) // wenn Slot markiert ist und er ein weiteres mal angeklickt wird
+        {
+            selectedShader.SetActive(false);
+            itemDescriptionBar.SetActive(false); 
+            thisItemSelected = false;
+            ItemDescriptionText.text = "";
+            ItemDescriptionNameText.text = "";
+            itemDescriptionImage.sprite = emptySprite;
+            OnItemShutUp(); // Eventmanagement für Deaktivierung des markierten Zustands
+        }
+    }
+
+    // Entfernen des Items aus Itemslot mit Rechtsklick, wenn das Item markiert war
+    public void OnRightClick() // funktioniert // aktuell deaktiviert bei Methodenweiterleitung 
+    {
+        if (thisItemSelected)
+        {
+            this.quantity -= 1;
+            quantityText.text = this.quantity.ToString();
+            if (this.quantity <= 0)
+            {
+                EmptySlot();
+            }
+        }
+    }
+
+    public void OnDeleteYes()
+    {
+        if (thisItemSelected)
+        {
+            this.quantity -= 1;
+            quantityText.text = this.quantity.ToString();
+            if (this.quantity <= 0)
+            {
+                EmptySlot();
+            }
+        }
+    }
+
+    public void EmptySlot() // Was passiert, wenn Itemslot leer ist.
+    {
+        quantityText.enabled = false;
+        itemImage.sprite = emptySprite;
+
+        isFull = false;
+        selectedShader.SetActive(false);
+        itemDescriptionBar.SetActive(false); 
+        thisItemSelected = false;
+        ItemDescriptionText.text = "";
+        ItemDescriptionNameText.text = "";
+        itemDescriptionImage.sprite = emptySprite;
+    }
+
+    public void InventoryDeactivation()
+    {
+        selectedShader.SetActive(false);
+        itemDescriptionBar.SetActive(false);
+        thisItemSelected = false;
+        ItemDescriptionText.text = "";
+        ItemDescriptionNameText.text = "";
+        itemDescriptionImage.sprite = emptySprite;
+    }
+
+    private void OnDestroy()
+    {
+        Item_2.OnDelete -= OnDeleteYes;
+        DialogActivation.OnInventoryWall -= InventoryDeactivation;
+        //Dialog.OnInteraction -= Inventory; // gescheitertes Experiment
+    }
+
     //==Variante mit Stackable Items==// funktioniert noch nicht
-    public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
+    /*public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
         //Check to see, if the slot is already full
         //isFull = true;
@@ -94,88 +232,5 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         quantityText.enabled = true;
 
         return 0;
-    }*/ //
-
-    public void OnPointerClick(PointerEventData eventData) // Weiterleitung zu den Methoden
-    {
-        if (eventData.button == PointerEventData.InputButton.Left)
-        {
-            OnLeftClick();
-        }
-        if (eventData.button == PointerEventData.InputButton.Right)
-        {
-            //OnRightClick();
-        }
-    }
-
-    public void OnLeftClick() // Itemslot auswählen, um Itembeschreibung zu (de-)aktivieren
-    {
-        if (!thisItemSelected)
-        {
-            inventoryManager.DeselectAllSlots(); // einer aktiviert, alle anderen deaktiviert
-            //inventoryManager.SelectTwoSlots(); // zwei können gleichzeitig aktiviert sein, alle anderen deaktiviert
-            if (isFull == true) // Slots nur noch auswählabr, wenn etwas drinliegt, und auch nur dann Beschreibung sichtbar
-            {
-                selectedShader.SetActive(true);
-                Debug.Log("Item markiert");
-                itemDescriptionBar.SetActive(true); //neu
-                //OnItemMarked?.Invoke(); // Event wird ausgelöst
-                Debug.Log("Item markiert_2");
-            }
-            else if (isFull == false)
-            {
-                selectedShader.SetActive(false);
-                itemDescriptionBar.SetActive(false); //neu
-            }
-            thisItemSelected = true;
-            // Hier muss Code eingefügt werden --> inventoryManager.UseItem(itemName);
-            ItemDescriptionNameText.text = itemName;
-            ItemDescriptionText.text = itemDescription;
-            itemDescriptionImage.sprite = itemSprite;
-            Debug.Log("Item markiert_5");
-            if (itemDescriptionImage.sprite == null)
-            {
-                itemDescriptionImage.sprite = emptySprite;
-            }
-        }
-        else if (thisItemSelected)
-        {
-            selectedShader.SetActive(false);
-            itemDescriptionBar.SetActive(false); 
-            thisItemSelected = false;
-            ItemDescriptionText.text = "";
-            ItemDescriptionNameText.text = "";
-            itemDescriptionImage.sprite = emptySprite;
-        }
-    }
-
-    // Entfernen des Items aus Itemslot mit Rechtsklick, wenn das Item markiert war
-    public void OnRightClick() // funktioniert // aktuell deaktiviert bei Methodenweiterleitung 
-    {
-        if (thisItemSelected)
-        {
-            this.quantity -= 1;
-            quantityText.text = this.quantity.ToString();
-            if (this.quantity <= 0)
-            {
-                EmptySlot();
-            }
-        }
-    }
-
-    public void EmptySlot() // Was passiert, wenn Itemslot leer ist.
-    {
-        quantityText.enabled = false;
-        itemImage.sprite = emptySprite;
-
-        isFull = false;
-        selectedShader.SetActive(false);
-        itemDescriptionBar.SetActive(false); 
-        thisItemSelected = false;
-        ItemDescriptionText.text = "";
-        ItemDescriptionNameText.text = "";
-        itemDescriptionImage.sprite = emptySprite;
-    }
-
-    
+    }*/
 }
