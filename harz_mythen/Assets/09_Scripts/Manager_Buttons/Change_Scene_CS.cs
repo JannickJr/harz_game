@@ -35,6 +35,11 @@ public class Change_Scene_CS : MonoBehaviour
         Debug.Log("fertig!");
     }
 
+    public void OnDestroy()
+    {
+        videoPlayer.loopPointReached -= ChangeSceneWhenVideoFinish;
+    }
+
     // Diese Methode ermöglicht das Laden einer Szene beim Anklicken eines Buttons
 
     /*public void LoadSceneOnClick(string sceneName)
