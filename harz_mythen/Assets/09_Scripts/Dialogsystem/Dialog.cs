@@ -39,7 +39,9 @@ namespace _09_Scripts._Dialogsystem
 
         //public static event Action OnInteraction; // gescheitertes Experiment für Itemslot // Test für Truhencollider funktionierte, ist aber unnötig
         public static event Action OnLoadScene;
+        public static event Action OnRing; // Ring zerstört sich
         [SerializeField] private GameObject Button;
+
 
         #region //---INFO---//
         /* Nachricht schicken mit GetComponent oder FindComponent oder int, 
@@ -259,8 +261,9 @@ namespace _09_Scripts._Dialogsystem
             {
                 gameObject.SetActive(false);
                 mainCamera.enabled = true;
-                OnHUDActivation();
                 Button.SetActive(true);
+                OnRing(); // Ring zerstört sich
+                OnHUDActivation();
                 OnLoadScene();
                 Debug.Log("weiter");
             }

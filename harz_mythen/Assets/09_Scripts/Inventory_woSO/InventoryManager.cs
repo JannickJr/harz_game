@@ -12,7 +12,7 @@ public class InventoryManager : MonoBehaviour
 
     public Item_SO[] itemSOs;
 
-    public GameObject wall;
+    //public GameObject wall;
 
     public static event Action OnWallActivation;
     public static event Action OnWallDeactivation;

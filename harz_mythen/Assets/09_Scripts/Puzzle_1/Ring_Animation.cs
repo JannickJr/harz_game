@@ -17,7 +17,7 @@ public class Ring_Animation : MonoBehaviour
     private void OnEnable() // Eventmanagement fuer Animation
     {
         Puzzle1_Camera.animationVictory += VictoryAnimation;
-        Dialog.OnLoadScene += Destroy;
+        Dialog.OnRing += Destroy;
     }
 
     void Start()
@@ -75,6 +75,6 @@ public class Ring_Animation : MonoBehaviour
     private void OnDestroy()
     {
         Puzzle1_Camera.animationVictory -= VictoryAnimation;
-        Dialog.OnLoadScene -= Destroy;
+        Dialog.OnRing -= Destroy;
     }
 }

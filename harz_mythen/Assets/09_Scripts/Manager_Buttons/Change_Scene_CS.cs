@@ -11,6 +11,7 @@ public class Change_Scene_CS : MonoBehaviour
 
     [SerializeField] private RawImage rawImage;
     [SerializeField] private VideoPlayer videoPlayer;
+    [SerializeField] private GameObject Arrow;
 
     public static event Action OnLoadScene;
 
@@ -30,6 +31,7 @@ public class Change_Scene_CS : MonoBehaviour
 
     public void ChangeSceneWhenVideoFinish(VideoPlayer vp) // Szenenwechsel
     {
+        Arrow.SetActive(true);
         Debug.Log("fertig?");
         OnLoadScene();
         Debug.Log("fertig!");
