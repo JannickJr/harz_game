@@ -642,12 +642,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881131873}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29.74, y: -8.77, z: -53.22}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -29.740002, y: -8.77, z: -53.219997}
   m_LocalScale: {x: 0.31646, y: 0.31646, z: 0.11067134}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2004645167}
+  m_Father: {fileID: 1335038154}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &881131875
 BoxCollider:
@@ -949,12 +949,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053974323}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.41, y: -8.77, z: -55.27}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.4099998, y: -8.77, z: -55.27}
   m_LocalScale: {x: 0.6433205, y: 0.31646, z: 0.17730306}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2004645167}
+  m_Father: {fileID: 1335038154}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1053974325
 BoxCollider:
@@ -1032,6 +1032,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 97ab1c907fdd7174bafab44444970cf5, type: 3}
   m_PrefabInstance: {fileID: 1913299663}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1335038153
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1335038154}
+  m_Layer: 0
+  m_Name: Wall_Connection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1335038154
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335038153}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 881131874}
+  - {fileID: 2015599875}
+  - {fileID: 1053974324}
+  m_Father: {fileID: 2004645167}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1398670671
 GameObject:
   m_ObjectHideFlags: 0
@@ -1206,6 +1240,9 @@ MonoBehaviour:
   itemDescription: Das hat wohl jemand verloren.
   mainCamera: {fileID: 643019714}
   bienePrefab: {fileID: 3414608346786208892, guid: b1d6f18a9c8491143bd912a1d4e6c80b, type: 3}
+  bee: {fileID: 0}
+  beeBox: {fileID: 0}
+  beeText: {fileID: 0}
   borki: {fileID: 0}
   borkiBox: {fileID: 0}
   borkiText: {fileID: 0}
@@ -1592,9 +1629,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 881131874}
-  - {fileID: 2015599875}
-  - {fileID: 1053974324}
+  - {fileID: 1335038154}
   m_Father: {fileID: 737370491}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2004645168
@@ -1609,6 +1644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 667ac858f7d640b45bca9a4d603bf787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wallConnection: {fileID: 1335038153}
 --- !u!1 &2015599874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1636,12 +1672,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2015599874}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.8, y: -9.93, z: -78.16}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.799999, y: -9.93, z: -78.16}
   m_LocalScale: {x: 0.6433205, y: 0.31646, z: 0.17730306}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2004645167}
+  m_Father: {fileID: 1335038154}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2015599876
 BoxCollider:
@@ -1786,6 +1822,9 @@ MonoBehaviour:
   itemDescription: Das hat wohl jemand verloren.
   mainCamera: {fileID: 643019714}
   bienePrefab: {fileID: 3414608346786208892, guid: b1d6f18a9c8491143bd912a1d4e6c80b, type: 3}
+  bee: {fileID: 0}
+  beeBox: {fileID: 0}
+  beeText: {fileID: 0}
   borki: {fileID: 0}
   borkiBox: {fileID: 0}
   borkiText: {fileID: 0}

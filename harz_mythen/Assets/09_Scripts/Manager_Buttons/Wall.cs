@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Wall : MonoBehaviour
 {
+    [SerializeField] GameObject wallConnection;
+
     private void OnEnable()
     {
         InventoryManager.OnWallActivation += OnWallActivation;
@@ -12,15 +14,15 @@ public class Wall : MonoBehaviour
 
     public void OnWallActivation()
     {
-        gameObject.SetActive(true);
+        wallConnection.SetActive(true);
     }
 
     public void OnWallDeactivation()
     {
-        gameObject.SetActive(false);
+        wallConnection.SetActive(false);
     }
 
-    private void OnDestroy()
+    private void OnDestroy() 
     {
         InventoryManager.OnWallActivation -= OnWallActivation;
         InventoryManager.OnWallDeactivation -= OnWallDeactivation;

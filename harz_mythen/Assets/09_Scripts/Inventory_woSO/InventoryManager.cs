@@ -24,11 +24,14 @@ public class InventoryManager : MonoBehaviour
 
         Dialog.OnLoadScene += Activation;
         Change_Scene_CS.OnLoadScene += Activation;
+
+        OnWallDeactivation(); // neu
     }
+
 
     private void Start()
     {
-        OnWallDeactivation();
+        //OnWallDeactivation();
     }
 
     public void Inventory() // Aktivierung und Deaktivierung der Inventarleiste
@@ -101,7 +104,7 @@ public class InventoryManager : MonoBehaviour
         InventoryMenu.SetActive(false);
         menuActivated = false;
         //wall.SetActive(false);
-        OnWallDeactivation();
+        OnWallDeactivation(); // schließen der Walls für Character bei Inventar --> Script Walls
     }
 
     public void Activation()
@@ -110,7 +113,7 @@ public class InventoryManager : MonoBehaviour
         //GameObject.Find("Task").SetActive(true);
     }
 
-    public void OnDestroy()
+    public void OnDestroy() 
     {
         DialogActivation.OnInventoryWall -= InventoryDeactivation;
 
