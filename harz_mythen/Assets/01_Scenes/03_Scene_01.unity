@@ -5465,7 +5465,7 @@ MonoBehaviour:
   - "Dann m\xF6chte ich dir ein Geschenk geben, das dich die Sorgen \xFCber deinen
     Vater f\xFCr einen winzigen Moment vergessen l\xE4sst."
   - Gedulde dich nur kurz, mein Liebling.
-  textSpeed: 0.025
+  textSpeed: 0.03
   lines2:
   - Sag, was verbirgst du in deiner Hand?
   - "Es ist nichts anderes als mein Geschenk f\xFCr dich, mein Liebling."
