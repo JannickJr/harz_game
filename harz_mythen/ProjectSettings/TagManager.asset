@@ -17,6 +17,8 @@ TagManager:
   - Borki
   - Ring
   - Pot
+  - Kobold_1
+  - Kobold_2
   layers:
   - Default
   - TransparentFX

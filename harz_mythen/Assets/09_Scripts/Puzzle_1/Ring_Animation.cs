@@ -1,3 +1,4 @@
+using _09_Scripts._Dialogsystem;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ public class Ring_Animation : MonoBehaviour
     private void OnEnable() // Eventmanagement fuer Animation
     {
         Puzzle1_Camera.animationVictory += VictoryAnimation;
+        Dialog.OnRing += Destroy;
     }
 
     void Start()
@@ -55,6 +57,11 @@ public class Ring_Animation : MonoBehaviour
         }
     }
 
+    public void Destroy()
+    {
+        Destroy(gameObject);
+    }
+
     /*public void OnMouseEnter()
     {
         OnMarkedItems();
@@ -68,5 +75,6 @@ public class Ring_Animation : MonoBehaviour
     private void OnDestroy()
     {
         Puzzle1_Camera.animationVictory -= VictoryAnimation;
+        Dialog.OnRing -= Destroy;
     }
 }
