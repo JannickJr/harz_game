@@ -17,7 +17,12 @@ public class Item_2 : MonoBehaviour
 
     public Camera mainCamera;
 
-    public GameObject bienePrefab; 
+    public GameObject bienePrefab;
+
+    public GameObject bee;
+    [SerializeField] private Image beeBox;
+    [SerializeField] private TextMeshProUGUI beeText;
+
     public GameObject borki;
     [SerializeField] private Image borkiBox;
     [SerializeField] private TextMeshProUGUI borkiText;
@@ -36,10 +41,30 @@ public class Item_2 : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (gameObject.CompareTag("Pot"))
+        {
+            inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
+            inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
+            Destroy(gameObject);
+        }
+        if (gameObject.CompareTag("Biene"))
+        {
+            bee.SetActive(true);
+            StartCoroutine(FadeOutBee());
+            if (potActive == true)
+            {
+                OnDelete();
+                bee.SetActive(false);
+                inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
+                inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
+                Destroy(gameObject);
+                Instantiate(bienePrefab, transform.position, Quaternion.Euler(new Vector3(-90F, 0F, 0F)));
+            } 
+        }
         if (gameObject.CompareTag("Borki"))
         {
             borki.SetActive(true);
-            StartCoroutine(FadeOut());
+            StartCoroutine(FadeOutBorki());
             if (honeyActive == true)
             {
                 OnDelete();
@@ -50,23 +75,22 @@ public class Item_2 : MonoBehaviour
                 ItemSlot.OnItemShutUp -= ShutUp; // ShutUp unsubscriben
             }
         }
-        if (gameObject.CompareTag("Biene") && potActive == true)
-        {
-            OnDelete();
-            inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
-            inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
-            Destroy(gameObject);
-            Instantiate(bienePrefab, transform.position, Quaternion.Euler(new Vector3(-90F, 0F, 0F)));
-        }
-        if (gameObject.CompareTag("Pot"))
-        {
-            inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
-            inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
-            Destroy(gameObject);
-        }
     }
 
-    IEnumerator FadeOut() // Borki-Text blendet aus
+    IEnumerator FadeOutBee() // Borki-Text blendet aus
+    {
+        Debug.Log("Bee");
+        yield return new WaitForSeconds(1f);
+        beeBox.CrossFadeAlpha(0, 1, false);
+        beeText.CrossFadeAlpha(0, 1, false);
+        yield return new WaitForSeconds(1f);
+        bee.SetActive(false);
+        beeBox.CrossFadeAlpha(1, 0, false);
+        beeText.CrossFadeAlpha(1, 1, false);
+        StopCoroutine(FadeOutBee());
+    }
+
+    IEnumerator FadeOutBorki() // Borki-Text blendet aus
     {
         Debug.Log("Borki");
         yield return new WaitForSeconds(1f);
@@ -76,7 +100,7 @@ public class Item_2 : MonoBehaviour
         borki.SetActive(false);
         borkiBox.CrossFadeAlpha(1, 0, false);
         borkiText.CrossFadeAlpha(1, 1, false);
-        StopAllCoroutines();
+        StopCoroutine(FadeOutBorki());
     }
 
     public void OnPotYes()

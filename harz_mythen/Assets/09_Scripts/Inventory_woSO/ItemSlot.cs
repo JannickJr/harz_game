@@ -37,7 +37,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     public static event Action OnItemShutUp; // Eventmanagement für Deaktivierung des markierten Zustands
 
-    public GameObject wall;
+    //public GameObject wall;
 
     private void OnEnable()
     {

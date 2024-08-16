@@ -11,6 +11,10 @@ public class UI_Canvas : MonoBehaviour
     {
         Dialog.OnHUDActivation += OnHUDActivation;
         Dialog.OnHUDDeactivation += OnHUDDeactivation;
+        Dialog_2.OnHUDActivation += OnHUDActivation;
+        Dialog_2.OnHUDDeactivation += OnHUDDeactivation;
+        Dialog_3.OnHUDActivation += OnHUDActivation;
+        Dialog_3.OnHUDDeactivation += OnHUDDeactivation;
     }
 
     public void OnHUDActivation()
@@ -27,5 +31,9 @@ public class UI_Canvas : MonoBehaviour
     {
         Dialog.OnHUDActivation -= OnHUDActivation;
         Dialog.OnHUDDeactivation -= OnHUDDeactivation;
+        Dialog_2.OnHUDActivation -= OnHUDActivation;
+        Dialog_2.OnHUDDeactivation -= OnHUDDeactivation;
+        Dialog_3.OnHUDActivation -= OnHUDActivation;
+        Dialog_3.OnHUDDeactivation -= OnHUDDeactivation;
     }
 }
