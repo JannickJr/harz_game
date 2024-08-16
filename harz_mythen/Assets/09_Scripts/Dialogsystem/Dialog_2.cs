@@ -26,6 +26,9 @@ namespace _09_Scripts._Dialogsystem
         private bool cutScene_2IsActive = false;
         public static bool LevelStarted = true; // als Methode schreiben
 
+        private bool speechbubbleKoboldIsActive = false;
+        private bool end = false;
+
         #region //---HUD Deactivation---//
         //[SerializeField] private GameObject Slider; // neu
         public static event Action OnHUDActivation;
@@ -325,9 +328,12 @@ namespace _09_Scripts._Dialogsystem
                 imageRuma.SetActive(true);
                 textName.text = "Ruma";
                 // hier davor evtl. int wechseln, für anderen Text; aber nur in andere(r) Szene
-                textComponent.text = "Ein Geschenk möchtest du mir geben? Oh Romar, du bist so gut zu mir!";
+                textComponent.text = "Was soll ich nur tun? Wenn es doch nur einen Ausweg aus dieser finsteren Höhle gäbe….";
                 imageKobold_1.SetActive(false);
-                character = GameObject.Find("Character_Romar"); 
+                character = GameObject.Find("Character_Kobold_1"); 
+                character.GetComponent<DialogActivation>().enabled = false;
+                imageKobold_2.SetActive(false);
+                character = GameObject.Find("Character_Kobold_2");
                 character.GetComponent<DialogActivation>().enabled = false;
                 if (Input.GetMouseButtonDown(0))
                 {
@@ -336,15 +342,80 @@ namespace _09_Scripts._Dialogsystem
             }
             if (DialogActivation.characterNumber == 2)
             {
-                imageKobold_1.SetActive(true);
-                textName.text = "Romar";
-                textComponent.text = "Das Geschenk für Ruma liegt hier irgendwo verborgen. Wenn ich doch bloß wüsste, wo ich es ließ ….";
-                imageRuma.SetActive(false);
-                character = GameObject.Find("Character_Ruma");
-                character.GetComponent<DialogActivation>().enabled = false;
+                if (speechbubbleKoboldIsActive == false)
+                {
+                    imageKobold_1.SetActive(true);
+                    textName.text = "Kobold 1";
+                    textComponent.text = "Denk gar nicht erst daran, zu fliehen! Unsere Speere sind geschärft und wir werden sie benutzen!";
+                    imageRuma.SetActive(false);
+                    character = GameObject.Find("Character_Ruma");
+                    imageKobold_2.SetActive(false);
+                    character = GameObject.Find("Character_Kobold_2");
+                }
+                if (speechbubbleKoboldIsActive == true)
+                {
+                    imageRuma.SetActive(true);
+                    textName.text = "Ruma";
+                    textComponent.text = "Fieslinge! Kennt ihr denn gar kein Erbarmen?";
+                    imageKobold_1.SetActive(false);
+                    character = GameObject.Find("Character_Kobold_1");
+                    imageKobold_2.SetActive(false);
+                    character = GameObject.Find("Character_Kobold_2");
+                    end = true;
+                }
                 if (Input.GetMouseButtonDown(0))
                 {
-                    End();
+                    if (speechbubbleKoboldIsActive == false)
+                    {
+                        speechbubbleKoboldIsActive = true;
+                        Debug.Log("speechbubbleRomarIsActive: " + speechbubbleKoboldIsActive);
+                    }
+                    if (end == true)
+                    {
+                        speechbubbleKoboldIsActive = false;
+                        end = false;
+                        Debug.Log("speechbubbleRomarIsActive: " + speechbubbleKoboldIsActive);
+                        End();
+                    }
+                }
+            }
+            if (DialogActivation.characterNumber == 3)
+            {
+                if (speechbubbleKoboldIsActive == false)
+                {
+                    imageKobold_2.SetActive(true);
+                    textName.text = "Kobold 2";
+                    textComponent.text = "Ihr seid genau so hübsch wie man sich erzählt, Prinzessin.";
+                    imageRuma.SetActive(false);
+                    character = GameObject.Find("Character_Ruma");
+                    imageKobold_1.SetActive(false);
+                    character = GameObject.Find("Character_Kobold_1");
+                }
+                if (speechbubbleKoboldIsActive == true)
+                {
+                    imageRuma.SetActive(true);
+                    textName.text = "Ruma";
+                    textComponent.text = "Schweig still! Nur mein lieber Romar darf diese Worte zu mir sagen.";
+                    imageKobold_1.SetActive(false);
+                    character = GameObject.Find("Character_Kobold_1");
+                    imageKobold_2.SetActive(false);
+                    character = GameObject.Find("Character_Kobold_2");
+                    end = true;
+                }
+                if (Input.GetMouseButtonDown(0))
+                {
+                    if (speechbubbleKoboldIsActive == false)
+                    {
+                        speechbubbleKoboldIsActive = true;
+                        Debug.Log("speechbubbleRomarIsActive: " + speechbubbleKoboldIsActive);
+                    }
+                    if (end == true)
+                    {
+                        speechbubbleKoboldIsActive = false;
+                        end = false;
+                        Debug.Log("speechbubbleRomarIsActive: " + speechbubbleKoboldIsActive);
+                        End();
+                    }
                 }
             }
         }
@@ -354,12 +425,15 @@ namespace _09_Scripts._Dialogsystem
             gameObject.SetActive(false);
             imageRuma.SetActive(false);
             imageKobold_1.SetActive(false);
+            imageKobold_2.SetActive(false);
             DialogActivation.dialogActivated = false;
             DialogActivation.characterNumber = 0;
-            character = GameObject.Find("Character_Romar");
-            character.GetComponent<DialogActivation>().enabled = true;
             character = GameObject.Find("Character_Ruma");
-            character.GetComponent<DialogActivation>().enabled = true; 
+            character.GetComponent<DialogActivation>().enabled = true;
+            character = GameObject.Find("Character_Kobold_1");
+            character.GetComponent<DialogActivation>().enabled = true;
+            character = GameObject.Find("Character_Kobold_2");
+            character.GetComponent<DialogActivation>().enabled = true;
             //---HUD Activation---//
             // Slider.SetActive(true); // neu
             OnHUDActivation();

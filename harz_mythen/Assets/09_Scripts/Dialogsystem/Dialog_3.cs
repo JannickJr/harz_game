@@ -25,7 +25,6 @@ namespace _09_Scripts._Dialogsystem
         private bool cutScene_2IsActive = false;
         public static bool LevelStarted = true; // als Methode schreiben
 
-        public string[] lines3;
         private bool speechbubbleRomarIsActive = false;
         private bool end = false;
 
