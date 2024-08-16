@@ -14,7 +14,8 @@ namespace _09_Scripts._Dialogsystem
         public TextMeshProUGUI textComponent;
         public TextMeshProUGUI textName; 
         public GameObject imageRuma;
-        public GameObject imageRomar;
+        public GameObject imageKobold_1;
+        public GameObject imageKobold_2;
         public string[] lines;
         public float textSpeed;
 
@@ -26,7 +27,7 @@ namespace _09_Scripts._Dialogsystem
         public static bool LevelStarted = true; // als Methode schreiben
 
         #region //---HUD Deactivation---//
-        [SerializeField] private GameObject Slider;
+        //[SerializeField] private GameObject Slider; // neu
         public static event Action OnHUDActivation;
         public static event Action OnHUDDeactivation;
         #endregion
@@ -98,7 +99,7 @@ namespace _09_Scripts._Dialogsystem
             character = GameObject.Find("Character_Ruma");
             character.GetComponent<DialogActivation>().enabled = false;*/
             //---HUD Deactivation---//
-            Slider.SetActive(false);
+            //Slider.SetActive(false); // neu
             OnHUDDeactivation();
             //---Wall---///
             wall.SetActive(true);
@@ -137,7 +138,7 @@ namespace _09_Scripts._Dialogsystem
                 DialogActivation.characterNumber = 0;
                 //index = 0; // im Moment nicht mehr notwendig, aber zur Sicherheit mal noch deaktiviert im Code lassen; war auf -1
                 //---HUD Activation---////---Aufgabenaktivierung---//
-                Slider.SetActive(true);
+                // Slider.SetActive(true); // neu
                 OnHUDActivation();
                 //---Wall---///
                 wall.SetActive(false);
@@ -172,20 +173,32 @@ namespace _09_Scripts._Dialogsystem
         {
             switch (index)
             {
+                case 0:
                 case 2:
-                case 3:
                 case 4:
-                    imageRuma.SetActive(false);
-                    imageRomar.SetActive(true);
-                    textName.text = "Romar";
+                case 5:
+                case 9:
+                case 10:
+                case 11:
+                    imageRuma.SetActive(true);
+                    imageKobold_1.SetActive(false);
+                    imageKobold_2.SetActive(false);
+                    textName.text = "Ruma";
                     break;
                 case 1:
-                case 5:
+                case 8:
+                    imageRuma.SetActive(false);
+                    imageKobold_1.SetActive(true);
+                    imageKobold_2.SetActive(false);
+                    textName.text = "Kobold 1";
+                    break;
+                case 3:
                 case 6:
                 case 7:
-                    imageRuma.SetActive(true);
-                    imageRomar.SetActive(false);
-                    textName.text = "Ruma";
+                    imageRuma.SetActive(false);
+                    imageKobold_1.SetActive(false);
+                    imageKobold_2.SetActive(true);
+                    textName.text = "Kobold 2";
                     break;
                 default:
                     break;
@@ -226,7 +239,7 @@ namespace _09_Scripts._Dialogsystem
             character = GameObject.Find("Character_Ruma");
             character.GetComponent<DialogActivation>().enabled = false;*/
             //---HUD Deactivation---//
-            Slider.SetActive(false);
+            //Slider.SetActive(false); // neu
             OnHUDDeactivation();
             //---Wall---///
             wall.SetActive(true);
@@ -289,21 +302,11 @@ namespace _09_Scripts._Dialogsystem
         {
             switch (index)
             {
-                case 1:
-                case 2:
-                case 5:
-                case 7:
-                case 8: 
-                    imageRuma.SetActive(false);
-                    imageRomar.SetActive(true);
-                    textName.text = "Romar";
-                    break;
                 case 0:
-                case 3:
-                case 4:
-                case 6:
+                case 1:
                     imageRuma.SetActive(true);
-                    imageRomar.SetActive(false);
+                    imageKobold_1.SetActive(false);
+                    imageKobold_2.SetActive(false);
                     textName.text = "Ruma";
                     break;
                 default:
@@ -315,7 +318,7 @@ namespace _09_Scripts._Dialogsystem
         public void TextStart() // Sprechblasen - Start
         {
             //---HUD Deactivation---//
-            Slider.SetActive(false);
+            //Slider.SetActive(false); // neu
             OnHUDDeactivation();
             if (DialogActivation.characterNumber == 1)
             {
@@ -323,7 +326,7 @@ namespace _09_Scripts._Dialogsystem
                 textName.text = "Ruma";
                 // hier davor evtl. int wechseln, für anderen Text; aber nur in andere(r) Szene
                 textComponent.text = "Ein Geschenk möchtest du mir geben? Oh Romar, du bist so gut zu mir!";
-                imageRomar.SetActive(false);
+                imageKobold_1.SetActive(false);
                 character = GameObject.Find("Character_Romar"); 
                 character.GetComponent<DialogActivation>().enabled = false;
                 if (Input.GetMouseButtonDown(0))
@@ -333,7 +336,7 @@ namespace _09_Scripts._Dialogsystem
             }
             if (DialogActivation.characterNumber == 2)
             {
-                imageRomar.SetActive(true);
+                imageKobold_1.SetActive(true);
                 textName.text = "Romar";
                 textComponent.text = "Das Geschenk für Ruma liegt hier irgendwo verborgen. Wenn ich doch bloß wüsste, wo ich es ließ ….";
                 imageRuma.SetActive(false);
@@ -350,7 +353,7 @@ namespace _09_Scripts._Dialogsystem
         {
             gameObject.SetActive(false);
             imageRuma.SetActive(false);
-            imageRomar.SetActive(false);
+            imageKobold_1.SetActive(false);
             DialogActivation.dialogActivated = false;
             DialogActivation.characterNumber = 0;
             character = GameObject.Find("Character_Romar");
@@ -358,7 +361,7 @@ namespace _09_Scripts._Dialogsystem
             character = GameObject.Find("Character_Ruma");
             character.GetComponent<DialogActivation>().enabled = true; 
             //---HUD Activation---//
-            Slider.SetActive(true);
+            // Slider.SetActive(true); // neu
             OnHUDActivation();
         }
     }

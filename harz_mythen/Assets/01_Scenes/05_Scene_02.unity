@@ -348,7 +348,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 20, y: 20, z: 20, w: 10}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -388,11 +388,11 @@ Transform:
   m_GameObject: {fileID: 289817233}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.2, y: -9.5, z: -117}
+  m_LocalPosition: {x: 0.13000107, y: 0.47000027, z: -0.11000061}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 737370491}
+  m_Father: {fileID: 1371262906}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &289817235
 SpriteRenderer:
@@ -446,6 +446,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &376661565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 376661566}
+  - component: {fileID: 376661568}
+  - component: {fileID: 376661567}
+  m_Layer: 0
+  m_Name: Character_Kobold_2
+  m_TagString: Kobold_2
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &376661566
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376661565}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.47, y: -8.61, z: -91.58}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1841730015}
+  m_Father: {fileID: 737370491}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &376661567
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376661565}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 18, y: 20, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &376661568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376661565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84724fe490ebabd4daa5fe51978ddb9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogi: {fileID: 1460374508}
+  mainCamera: {fileID: 643019714}
 --- !u!1 &463420859
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,9 +1114,9 @@ Transform:
   - {fileID: 674042346}
   - {fileID: 1634032481}
   - {fileID: 2122136773}
-  - {fileID: 289817234}
-  - {fileID: 1841730015}
-  - {fileID: 966256888}
+  - {fileID: 1371262906}
+  - {fileID: 984772927}
+  - {fileID: 376661566}
   - {fileID: 2004645167}
   - {fileID: 1194326266}
   m_Father: {fileID: 0}
@@ -1459,11 +1528,11 @@ Transform:
   m_GameObject: {fileID: 966256887}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 37.41, y: -8.8, z: -93.36}
+  m_LocalPosition: {x: 0.86999893, y: 0.069999695, z: 0.27999878}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 737370491}
+  m_Father: {fileID: 984772927}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &966256889
 SpriteRenderer:
@@ -1517,6 +1586,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &984772926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 984772927}
+  - component: {fileID: 984772929}
+  - component: {fileID: 984772928}
+  m_Layer: 0
+  m_Name: Character_Kobold_1
+  m_TagString: Kobold_1
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &984772927
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984772926}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 36.54, y: -8.87, z: -93.64}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 966256888}
+  m_Father: {fileID: 737370491}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &984772928
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984772926}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 14, y: 19, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &984772929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984772926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84724fe490ebabd4daa5fe51978ddb9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogi: {fileID: 1460374508}
+  mainCamera: {fileID: 643019714}
 --- !u!1 &995124122
 GameObject:
   m_ObjectHideFlags: 0
@@ -1857,6 +1995,75 @@ Transform:
   - {fileID: 1053974324}
   m_Father: {fileID: 2004645167}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1371262905
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1371262906}
+  - component: {fileID: 1371262908}
+  - component: {fileID: 1371262907}
+  m_Layer: 0
+  m_Name: Character_Ruma
+  m_TagString: Ruma
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1371262906
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371262905}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 25.07, y: -9.97, z: -116.89}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 289817234}
+  m_Father: {fileID: 737370491}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1371262907
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371262905}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 9, y: 16, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1371262908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371262905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84724fe490ebabd4daa5fe51978ddb9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogi: {fileID: 1460374508}
+  mainCamera: {fileID: 643019714}
 --- !u!1 &1398670671
 GameObject:
   m_ObjectHideFlags: 0
@@ -1996,8 +2203,8 @@ RectTransform:
   - {fileID: 1469807815}
   - {fileID: 1877974547}
   - {fileID: 995124123}
-  - {fileID: 1583538427}
   - {fileID: 630267115}
+  - {fileID: 1583538427}
   m_Father: {fileID: 1398670675}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2058,11 +2265,32 @@ MonoBehaviour:
   textComponent: {fileID: 1469807816}
   textName: {fileID: 282715093}
   imageRuma: {fileID: 995124122}
-  imageRomar: {fileID: 0}
-  lines: []
+  imageKobold_1: {fileID: 630267114}
+  imageKobold_2: {fileID: 1583538426}
+  lines:
+  - "Mein Liebster, wo bist du nur? Ich ertrage es keine Sekunde l\xE4nger, von dir
+    getrennt zu sein."
+  - "Dieses st\xE4ndige Jammern ist nicht auszuhalten. \u201ABuhu, mein Liebster!\u2018
+    \u2026 Furchtbar, dieses Geseiere!"
+  - Elender! Wage es nicht, unsere Liebe zu verunglimpfen.
+  - "L-Liebe\u2026? Wovon redet sie blo\xDF?"
+  - "Unholden wie euch bleibt die wahre Liebe verwehrt. Sie verbindet meinen Romar
+    und mich \xFCber jede Distanz hinweg."
+  - "Auch, wenn ich hier eingesperrt wurde, wei\xDF ich, dass ich ihn wiedersehen
+    werde."
+  - 'Die Prinzessin wurde also eingesperrt, weil sie jemanden mag? Sie tut mir leid. '
+  - Befreien wir sie doch und lassen sie zu ihrem Liebsten gehen.
+  - "Schwachkopf! Dann wird uns der K\xF6nig richten lassen. An mir kommt niemand
+    vorbei, denn ich h\xE4nge an meinem Leben."
+  - "So wollt ihr mich weiterhin leiden lassen? Jedes Gl\xFCck muss mich verlassen
+    haben, dass mir solch ein furchtbares Schicksal zuteil wird."
+  - "Oh, mein Romar. W\xE4ren wir doch nur wieder vereint\u2026 ."
   textSpeed: 0.03
-  lines2: []
-  Slider: {fileID: 0}
+  lines2:
+  - "Einen Moment - das Wasser, es flie\xDFt! Wenn das Wasser aus dieser H\xF6hle
+    entkommen kann, so vermag ich dies ebenfalls zu vollbringen!"
+  - Auch wenn dies bedeutet, mein altes Leben hinter mir zu lassen. Romar, bald werden
+    wir wieder vereint sein.
   wall: {fileID: 163958998}
   mainCamera: {fileID: 643019714}
   Button: {fileID: 948948874}
@@ -2725,11 +2953,11 @@ Transform:
   m_GameObject: {fileID: 1841730014}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.03, y: -8.315001, z: -91.54}
+  m_LocalPosition: {x: 0.55999875, y: 0.29499912, z: 0.040000916}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 737370491}
+  m_Father: {fileID: 376661566}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1841730016
 SpriteRenderer:
@@ -2818,8 +3046,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 158.96997, y: 246.63626}
-  m_SizeDelta: {x: 317.93, y: 96.8905}
+  m_AnchoredPosition: {x: 175, y: 253.2}
+  m_SizeDelta: {x: 350, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1877974548
 MonoBehaviour:
