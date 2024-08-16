@@ -21,6 +21,8 @@ public class InventoryManager : MonoBehaviour
     public void OnEnable()
     {
         DialogActivation.OnInventoryWall += InventoryDeactivation;
+        //DialogActivation_2.OnInventoryWall += InventoryDeactivation;
+        //DialogActivation_3.OnInventoryWall += InventoryDeactivation;
 
         Dialog.OnLoadScene += Activation;
         Change_Scene_CS.OnLoadScene += Activation;
@@ -116,6 +118,8 @@ public class InventoryManager : MonoBehaviour
     public void OnDestroy() 
     {
         DialogActivation.OnInventoryWall -= InventoryDeactivation;
+        //DialogActivation_2.OnInventoryWall -= InventoryDeactivation;
+        //DialogActivation_3.OnInventoryWall -= InventoryDeactivation;
 
         Dialog.OnLoadScene -= Activation;
         Change_Scene_CS.OnLoadScene -= Activation;

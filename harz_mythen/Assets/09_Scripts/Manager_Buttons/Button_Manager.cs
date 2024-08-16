@@ -14,6 +14,9 @@ public class Button_Manager : MonoBehaviour
     public void OnEnable()
     {
         Dialog.OnLoadScene += Activation;
+        Dialog_2.OnLoadScene += Activation;
+        Dialog_3.OnLoadScene += Activation;
+
         Change_Scene_CS.OnLoadScene += Activation;
     }
 
@@ -39,6 +42,9 @@ public class Button_Manager : MonoBehaviour
     public void OnDestroy()
     {
         Dialog.OnLoadScene -= Activation;
+        Dialog_2.OnLoadScene -= Activation;
+        Dialog_3.OnLoadScene -= Activation;
+
         Change_Scene_CS.OnLoadScene -= Activation;
     }
 
