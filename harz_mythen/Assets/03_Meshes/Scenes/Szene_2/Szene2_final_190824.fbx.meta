@@ -1,54 +1,9 @@
 fileFormatVersion: 2
-guid: 2ce5217a124daf44fba1e9f2004bdad1
+guid: 79a4c3d90d391b84a8ff04e8915ab143
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material_Holz
-    second: {fileID: 2100000, guid: 66d14cfe752040c478cc69b4dceb8606, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material_Kristalle
-    second: {fileID: 2100000, guid: a99fc54e14165d14fba6f3f3cdca99e5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material_Licht
-    second: {fileID: 2100000, guid: 47d1d4e7e4ebdcd44ae9b3c3dfd99546, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material_Lorenwaggon
-    second: {fileID: 2100000, guid: 410bd5f20464a23459d4a302492cd2eb, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material_Pflanzen
-    second: {fileID: 2100000, guid: b09f99425d5b0de4faed1db6271491ae, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material_Steine
-    second: {fileID: 2100000, guid: 93b2f524c789c484b94b985971f2b875, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material_Tropfsteine
-    second: {fileID: 2100000, guid: 062543c00e72383478167de88003d5bd, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material_rostigesMetall
-    second: {fileID: 2100000, guid: f5871f498b6fc0c439bdd80cb3eefe15, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material_rostigesMetall.001
-    second: {fileID: 2100000, guid: d5c90dadf952a14418d899f3fb1b670b, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
