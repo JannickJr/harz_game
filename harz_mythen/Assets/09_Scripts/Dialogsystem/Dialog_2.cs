@@ -40,6 +40,7 @@ namespace _09_Scripts._Dialogsystem
         public GameObject wall;
 
         public Camera mainCamera;
+        public Camera cameraDialog;
 
         //public static event Action OnInteraction; // gescheitertes Experiment für Itemslot // Test für Truhencollider funktionierte, ist aber unnötig
         public static event Action OnLoadScene;
@@ -63,6 +64,8 @@ namespace _09_Scripts._Dialogsystem
 
         void Start()
         {
+            cameraDialog.enabled = true;
+            mainCamera.enabled = false;
             StartCutscene_1();
         }
         
@@ -83,13 +86,6 @@ namespace _09_Scripts._Dialogsystem
                 CharacterChange2();
             }
         }
-
-        /*private void OnEnable()
-        {
-            Puzzle1_LockControl.PuzzleVictory += Victory;
-            Puzzle1_Camera.OnDialog_2_Continue += Dialog2Continue; 
-            Victory();
-        }*/
 
         //---DIALOG 1---//
         public void StartCutscene_1() // Dialog 1 - Verweis auf startende Methode
@@ -136,6 +132,8 @@ namespace _09_Scripts._Dialogsystem
             }
             else  // kein Dialogfeld mehr vorhanden
             {
+                mainCamera.enabled = true;
+                cameraDialog.enabled = false;
                 gameObject.SetActive(false);
                 DialogActivation.dialogActivated = false;
                 DialogActivation.characterNumber = 0;
@@ -221,6 +219,8 @@ namespace _09_Scripts._Dialogsystem
 
         private void OnEnable() // Start Dialog 2 nach Rätsellösung
         {
+            cameraDialog.enabled = true;
+            mainCamera.enabled = false;
             if (LevelStarted == false && Puzzle1_LockControl.victory == true) // evtl. zu Methode ändern
             {
                 StartCutscene_2();
@@ -276,6 +276,7 @@ namespace _09_Scripts._Dialogsystem
             else // kein Dialogfeld mehr vorhanden
             {
                 gameObject.SetActive(false);
+                cameraDialog.enabled = false;
                 mainCamera.enabled = true;
                 Button.SetActive(true);
                 OnRing(); // Ring zerstört sich
@@ -422,6 +423,8 @@ namespace _09_Scripts._Dialogsystem
 
         public void End() // Sprechblasen - Ende
         {
+            mainCamera.enabled = true;
+            cameraDialog.enabled = false;
             gameObject.SetActive(false);
             imageRuma.SetActive(false);
             imageKobold_1.SetActive(false);
