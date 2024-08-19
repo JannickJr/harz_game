@@ -3,7 +3,52 @@ guid: 79a4c3d90d391b84a8ff04e8915ab143
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Holz
+    second: {fileID: 2100000, guid: 5b03733ed8a58564585aef2cad16a89e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Kristalle
+    second: {fileID: 2100000, guid: 970139f1f81111a4289b4bde57797291, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Licht
+    second: {fileID: 2100000, guid: 7967a7f44ded56e428f8652a62448e4a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Lorenwaggon
+    second: {fileID: 2100000, guid: 6ac580196f112c6479ac9bb8a3582cec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Pflanzen
+    second: {fileID: 2100000, guid: 189df736036068b4ebba4d1ded901eb5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Steine
+    second: {fileID: 2100000, guid: 6c8ca717a3637644ba48154940b22ccd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Tropfsteine
+    second: {fileID: 2100000, guid: dbb1cbef3d9614a43a01f69803bd69a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_rostigesMetall
+    second: {fileID: 2100000, guid: 0d7dabec2f2cacc4e92b3d5c18101ec6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_rostigesMetall.001
+    second: {fileID: 2100000, guid: e6a6523a9aacfbe49a1d4ea4e5490b02, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
