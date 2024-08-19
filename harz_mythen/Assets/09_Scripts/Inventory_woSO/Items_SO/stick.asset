@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: stick
   m_EditorClassIdentifier: 
   itemName: Stock
-  statToChange: 0
+  statToChange: 3
   amountToChangeStat: 1
   attributesToChange: 0
   amountToChangeAttributes: 0
