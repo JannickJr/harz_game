@@ -19496,6 +19496,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Szene1_H\xFCgel"
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6e3207c4006625a4ba29067ef38c922c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2915357609019638705, guid: 6e3207c4006625a4ba29067ef38c922c, type: 3}
       propertyPath: m_Materials.Array.size
       value: 2
