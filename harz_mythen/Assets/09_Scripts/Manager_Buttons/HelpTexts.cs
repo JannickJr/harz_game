@@ -36,15 +36,15 @@ public class HelpTexts : MonoBehaviour
         } 
         if (GameObject.Find("05_Scene_02"))
         {
-            help_1.text = "...";
-            help_2.text = "...";
+            help_1.text = "Die Kristalle bergen eine magische Kraft.";
+            help_2.text = "Die Kristalle müssen in der Reihenfolge der Melodie angeklickt werden.";
             solution.text = "...";
         }
         if (GameObject.Find("07_Scene_03"))
         {
-            help_1.text = "noch unbekannt";
+            help_1.text = "Die Sterne leuchten ganz hell.";
             help_2.text = "noch unbekannt";
-            solution.text = "noch unbekannt";
+            solution.text = "...";
         }
     }
 
