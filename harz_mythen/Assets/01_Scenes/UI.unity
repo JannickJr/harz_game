@@ -1428,7 +1428,6 @@ MonoBehaviour:
   itemSOs:
   - {fileID: 11400000, guid: f69b1535a3a3c694e85d5c7c11404177, type: 2}
   - {fileID: 11400000, guid: 319f2db4a8999c742966b43686ec3714, type: 2}
-  wall: {fileID: 0}
 --- !u!114 &253160838
 MonoBehaviour:
   m_ObjectHideFlags: 0

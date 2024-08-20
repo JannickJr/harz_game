@@ -17,6 +17,8 @@ public class Item_SO : ScriptableObject
 
     public static event Action OnPot;
     public static event Action OnHoney;
+    public static event Action OnFishing;
+    public static event Action OnOlm;
 
 
     public void UseItem()
@@ -34,6 +36,18 @@ public class Item_SO : ScriptableObject
             OnHoney();
             Debug.Log("Find_34");
         }
+        if (statToChange == StatToChange.stick || statToChange == StatToChange.web) // jetzt muss was passieren
+        {
+            Debug.Log("Find");
+            OnFishing();
+            Debug.Log("Find_2");
+        }
+        if (statToChange == StatToChange.fishing) // jetzt muss was passieren
+        {
+            Debug.Log("Find43");
+            OnOlm();
+            Debug.Log("Find_34");
+        }
     }
 
     public enum StatToChange 
@@ -41,12 +55,18 @@ public class Item_SO : ScriptableObject
         none,
         pot,
         honey,
+        stick,
+        web,
+        fishing
     };
 
     public enum AttributesToChange // brauche ich nicht 
     {
         none,
         pot,
-        honey
+        honey,
+        stick,
+        web,
+        fishing
     };
 }
