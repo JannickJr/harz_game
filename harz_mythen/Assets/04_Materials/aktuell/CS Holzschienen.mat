@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CS Steine
+  m_Name: CS Holzschienen
   m_Shader: {fileID: -6465566751694194690, guid: 8fe31de94f8b52b46a7d85e33d4a42b2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -54,10 +54,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Lighting_Cutoff: 0.74
+    - _Lighting_Cutoff: 0.4
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Shadow_Brightness: 0.5
     m_Colors:
-    - _Color: {r: 0.57254905, g: 0.57254905, b: 0.57254905, a: 0}
+    - _Color: {r: 0.34117648, g: 0.26666668, b: 0.23529412, a: 0}
   m_BuildTextureStacks: []
