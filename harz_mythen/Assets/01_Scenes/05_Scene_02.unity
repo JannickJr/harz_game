@@ -374,6 +374,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 347536094}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &264644702
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17.34
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.181144
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 21.98
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.1995113
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.055455126
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.66920066
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7136459
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
+      propertyPath: m_Name
+      value: Spinnennetz (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
 --- !u!1 &282715091
 GameObject:
   m_ObjectHideFlags: 0
@@ -2144,6 +2201,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053974323}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1096238513
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2758
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.242984
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2758
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16.745352
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.152088
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 22.044918
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.05714098
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.083277635
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.99488676
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.00020224975
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0.568
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 546.527
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 9.537
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
+      propertyPath: m_Name
+      value: Spinnennetz
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6761233f87e4e4542823b7b6545f2b0a, type: 3}
 --- !u!1 &1149735520
 GameObject:
   m_ObjectHideFlags: 0
@@ -26409,3 +26535,5 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 737370491}
+  - {fileID: 1096238513}
+  - {fileID: 264644702}
