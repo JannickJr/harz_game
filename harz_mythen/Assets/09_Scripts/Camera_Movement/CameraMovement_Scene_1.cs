@@ -30,7 +30,7 @@ public class CameraMovement_Scene_1 : MonoBehaviour
 
     private void Update()
     {
-        MoveCamera_S1();
+        //MoveCamera_S1();
         if (slider.value != 0) // führe Methode aus, wenn Sliderwert nicht Null ist
         {
             MoveCamera_S1();
@@ -42,7 +42,7 @@ public class CameraMovement_Scene_1 : MonoBehaviour
     // eine Koordinate angucken: Ist x-Koordinate größer oder kleiner als Ecken (= Sitz der Emptys), die ich gesetzt habe?
     // wenn nicht gedrückt, dann nicht bewegen
 
-    /*public void MoveCamera_S1() // Kamerabewegung durch Sliderverschiebung
+    public void MoveCamera_S1() // Kamerabewegung durch Sliderverschiebung
     {
         float movement = slider.value;
 
@@ -63,9 +63,9 @@ public class CameraMovement_Scene_1 : MonoBehaviour
     public void resetSlider()  // Slider wird auf Null gesetzt, wenn er losgelassen wird
     {
         slider.value = 0;
-    }*/
+    }
 
-    public void MoveCamera_S1() // Kamerabewegung durch Sliderverschiebung
+    /*public void MoveCamera_S1() // Kamerabewegung durch Sliderverschiebung
     {
         //float movement = slider.value;
         movement = cameraControlls.ReadValue<Vector2>();
@@ -81,12 +81,12 @@ public class CameraMovement_Scene_1 : MonoBehaviour
         else if (slider.value >= 0 && mainCamera.transform.position.x >= rightWall.position.x) // rechts
         {
             mainCamera.transform.position = rightWall.position;
-        }*/
-    }
+        }
+    }*/
 
-    public void resetSlider()  // Slider wird auf Null gesetzt, wenn er losgelassen wird
-    {
-        slider.value = 0;
-    }
+    //public void resetSlider()  // Slider wird auf Null gesetzt, wenn er losgelassen wird
+    //{
+        //slider.value = 0;
+    //}
 }
 
