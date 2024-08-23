@@ -21,7 +21,7 @@ public class Puzzle1_LockControl : MonoBehaviour
     private void Start()
     {
         result = new int[] { 0, 0, 0, 0 };
-        correctCombination = new int[] { 1, 5, 4, 0 }; // L�sung
+        correctCombination = new int[] { 1, 5, 4, 1 }; // L�sung
         Puzzle1_Rotate.Rotated += CheckResults;
     }
 
