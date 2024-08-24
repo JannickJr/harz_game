@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:harz_mythen/Assets/01_Scenes/Sicherung_07_Scene_03 1.unity.meta
 guid: 8e5e9cebdc87e5c4da2c0b3a0c2338f4
 DefaultImporter:
+========
+guid: 0535c8a0e18189e4e8abe4d7461a8fbf
+NativeFormatImporter:
+>>>>>>>> 194b5e35e5cb61eacc71ea5efc1cfc70f1a8a0f5:harz_mythen/Assets/04_Materials/aktuell/CS BK2 mittel.mat.meta
   externalObjects: {}
+  mainObjectFileID: 2100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
