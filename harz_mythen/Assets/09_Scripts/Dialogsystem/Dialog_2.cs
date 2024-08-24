@@ -11,6 +11,7 @@ namespace _09_Scripts._Dialogsystem
 {
     public class Dialog_2 : MonoBehaviour
     {
+        #region
         public TextMeshProUGUI textComponent;
         public TextMeshProUGUI textName; 
         public GameObject imageRuma;
@@ -29,11 +30,10 @@ namespace _09_Scripts._Dialogsystem
         private bool speechbubbleKoboldIsActive = false;
         private bool end = false;
 
-        #region //---HUD Deactivation---//
-        //[SerializeField] private GameObject Slider; // neu
+        //---HUD Deactivation---//
         public static event Action OnHUDActivation;
         public static event Action OnHUDDeactivation;
-        #endregion
+        
 
         private GameObject character; 
 
@@ -46,7 +46,7 @@ namespace _09_Scripts._Dialogsystem
         public static event Action OnLoadScene;
         public static event Action OnRing; // Ring zerstört sich
         [SerializeField] private GameObject Button;
-
+        #endregion
 
         #region //---INFO---//
         /* Nachricht schicken mit GetComponent oder FindComponent oder int, 
@@ -98,7 +98,6 @@ namespace _09_Scripts._Dialogsystem
             character = GameObject.Find("Character_Ruma");
             character.GetComponent<DialogActivation>().enabled = false;*/
             //---HUD Deactivation---//
-            //Slider.SetActive(false); // neu
             OnHUDDeactivation();
             //---Wall---///
             wall.SetActive(true);
@@ -139,7 +138,6 @@ namespace _09_Scripts._Dialogsystem
                 DialogActivation.characterNumber = 0;
                 //index = 0; // im Moment nicht mehr notwendig, aber zur Sicherheit mal noch deaktiviert im Code lassen; war auf -1
                 //---HUD Activation---////---Aufgabenaktivierung---//
-                // Slider.SetActive(true); // neu
                 OnHUDActivation();
                 //---Wall---///
                 wall.SetActive(false);
@@ -242,7 +240,6 @@ namespace _09_Scripts._Dialogsystem
             character = GameObject.Find("Character_Ruma");
             character.GetComponent<DialogActivation>().enabled = false;*/
             //---HUD Deactivation---//
-            //Slider.SetActive(false); // neu
             OnHUDDeactivation();
             //---Wall---///
             wall.SetActive(true);
@@ -322,7 +319,6 @@ namespace _09_Scripts._Dialogsystem
         public void TextStart() // Sprechblasen - Start
         {
             //---HUD Deactivation---//
-            //Slider.SetActive(false); // neu
             OnHUDDeactivation();
             if (DialogActivation.characterNumber == 1)
             {
@@ -438,7 +434,6 @@ namespace _09_Scripts._Dialogsystem
             character = GameObject.Find("Character_Kobold_2");
             character.GetComponent<DialogActivation>().enabled = true;
             //---HUD Activation---//
-            // Slider.SetActive(true); // neu
             OnHUDActivation();
         }
     }
