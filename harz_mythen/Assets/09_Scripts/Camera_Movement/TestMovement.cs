@@ -5,10 +5,14 @@ using UnityEngine.InputSystem;
 
 public class TestMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
 
     PlayerInput cameraInput;
     InputAction moveAction;
+
+    [SerializeField] private float movementSpeedCamera;
+
+    [SerializeField] private Transform leftWall;
+    [SerializeField] private Transform rightWall;
 
     void Start()
     {
@@ -16,7 +20,6 @@ public class TestMovement : MonoBehaviour
         moveAction = cameraInput.actions.FindAction("Move");
     }
 
-    // Update is called once per frame
     void Update()
     {
         MovePlayer();
@@ -26,6 +29,17 @@ public class TestMovement : MonoBehaviour
     {
         Debug.Log(moveAction.ReadValue<Vector2>());
         Vector2 direction = moveAction.ReadValue<Vector2>();
-        transform.position += new Vector3(direction.x, 0, direction.y) * Time.deltaTime;
-    }
+        transform.position += new Vector3(direction.x, 0, direction.y) * movementSpeedCamera * Time.deltaTime;
+
+        if (transform.position.x <= leftWall.position.x) // links
+        {
+            Debug.Log("Es ist soweit."); // wird erkannt
+            transform.position = leftWall.position;
+
+        }
+        else if (transform.position.x >= rightWall.position.x) // rechts
+        {
+            transform.position = rightWall.position;
+        }
+    } 
 }
