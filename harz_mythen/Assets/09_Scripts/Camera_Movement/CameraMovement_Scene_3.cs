@@ -19,8 +19,8 @@ public class CameraMovement_Scene_3 : MonoBehaviour
 
     [SerializeField] private float movementSpeedCamera;
 
-    [SerializeField] private Transform topWall;
     [SerializeField] private Transform bottomWall;
+    [SerializeField] private Transform topWall;
 
     private void OnEnable()
     {
@@ -42,6 +42,7 @@ public class CameraMovement_Scene_3 : MonoBehaviour
         //---WASD-VARIANTE---//
         cameraInput = GetComponent<PlayerInput>();
         moveAction = cameraInput.actions.FindAction("Move_S3");
+        Debug.Log(cameraInput.actions.FindAction("Move_S3") + "ja");
     }
 
     private void Update()
@@ -59,18 +60,18 @@ public class CameraMovement_Scene_3 : MonoBehaviour
     //---WASD-VARIANTE---//
     private void MoveCamera_S3a()
     {
-        //Debug.Log(moveAction.ReadValue<Vector2>());
+        Debug.Log(moveAction.ReadValue<Vector2>());
         Vector2 direction = moveAction.ReadValue<Vector2>();
-        transform.position += new Vector3(direction.x, 0, direction.y) * movementSpeedCamera * Time.deltaTime;
+        transform.position += new Vector3(direction.x, direction.y, 0) * movementSpeedCamera * Time.deltaTime;
 
-        if (transform.position.x <= topWall.position.x) // links
+        if (transform.position.y <= bottomWall.position.y) // unten
         {
             Debug.Log("Es ist soweit.");
-            transform.position = topWall.position;
-        }
-        else if (transform.position.x >= bottomWall.position.x) // rechts
-        {
             transform.position = bottomWall.position;
+        }
+        else if (transform.position.y >= topWall.position.y) // oben
+        {
+            transform.position = topWall.position;
         }
     }
 
@@ -92,17 +93,17 @@ public class CameraMovement_Scene_3 : MonoBehaviour
     {
         float movement = slider.value;
 
-        mainCamera.transform.position += new Vector3(movement, 0, 0) * movementSpeedCamera * Time.deltaTime;
+        mainCamera.transform.position += new Vector3(0, movement, 0) * movementSpeedCamera * Time.deltaTime;
 
-        if (slider.value <= 0 && mainCamera.transform.position.x <= topWall.position.x) // links
+        if (slider.value <= 0 && mainCamera.transform.position.y <= bottomWall.position.y) // unten
         {
             Debug.Log("Es ist soweit."); 
-            mainCamera.transform.position = topWall.position;
+            mainCamera.transform.position = bottomWall.position;
 
         }
-        else if (slider.value >= 0 && mainCamera.transform.position.x >= bottomWall.position.x) // rechts
+        else if (slider.value >= 0 && mainCamera.transform.position.y >= topWall.position.y) // oben
         {
-            mainCamera.transform.position = bottomWall.position;
+            mainCamera.transform.position = topWall.position;
         }
     }
 

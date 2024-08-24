@@ -17,7 +17,10 @@ public class TestMovement : MonoBehaviour
     void Start()
     {
         cameraInput = GetComponent<PlayerInput>();
-        moveAction = cameraInput.actions.FindAction("Move");
+        //Szene 1
+        moveAction = cameraInput.actions.FindAction("Move_S1");
+        //Szene 3
+        //moveAction = cameraInput.actions.FindAction("Move_S3");
     }
 
     void Update()
@@ -29,7 +32,10 @@ public class TestMovement : MonoBehaviour
     {
         Debug.Log(moveAction.ReadValue<Vector2>());
         Vector2 direction = moveAction.ReadValue<Vector2>();
+        //Szene 1
         transform.position += new Vector3(direction.x, 0, direction.y) * movementSpeedCamera * Time.deltaTime;
+        //Szene 3
+        //transform.position += new Vector3(direction.x, direction.y, 0) * movementSpeedCamera * Time.deltaTime;
 
         if (transform.position.x <= leftWall.position.x) // links
         {
