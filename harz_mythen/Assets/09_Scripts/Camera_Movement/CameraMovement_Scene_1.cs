@@ -7,88 +7,42 @@ using UnityEngine.InputSystem;
 
 public class CameraMovement_Scene_1 : MonoBehaviour
 {
-    //---SLIDER-VARIANTE---//
-    [SerializeField] private Slider slider;
-
-    //---WASD-VARIANTE---//
-    PlayerInput cameraInput;
-    InputAction moveAction;
-
-    //---BEIDE VARIANTEN---//
     [SerializeField] private GameObject mainCamera;
-
+    [SerializeField] private Slider slider;
     [SerializeField] private float movementSpeedCamera;
+
+    public InputAction cameraControlls;
+
+    Vector2 movement = Vector2.zero;
 
     [SerializeField] private Transform leftWall;
     [SerializeField] private Transform rightWall;
 
     private void OnEnable()
     {
-        Dialog.OnHUDActivation += OnHUDActivation;
-        Dialog.OnHUDDeactivation += OnHUDDeactivation;
-    }
-    public void OnHUDActivation()
-    {
-        mainCamera.GetComponent<PlayerInput>().enabled = true;
+        cameraControlls.Enable();
     }
 
-    public void OnHUDDeactivation()
+    private void OnDisable()
     {
-        mainCamera.GetComponent<PlayerInput>().enabled = false;
-    }
-
-    private void Start()
-    {
-        //---WASD-VARIANTE---//
-        cameraInput = GetComponent<PlayerInput>();
-        moveAction = cameraInput.actions.FindAction("Move_S1");
+        cameraControlls.Disable();
     }
 
     private void Update()
     {
-        //---WASD-VARIANTE---//
-        MoveCamera_S1a();
-
-        //---SLIDER-VARIANTE---//
-        /*if (slider.value != 0) // führe Methode aus, wenn Sliderwert nicht Null ist
+        //MoveCamera_S1();
+        if (slider.value != 0) // führe Methode aus, wenn Sliderwert nicht Null ist
         {
-            MoveCamera_S1b();
-        }*/
-    }
-
-    //---WASD-VARIANTE---//
-    private void MoveCamera_S1a()
-    {
-        //Debug.Log(moveAction.ReadValue<Vector2>());
-        Vector2 direction = moveAction.ReadValue<Vector2>();
-        transform.position += new Vector3(direction.x, 0, direction.y) * movementSpeedCamera * Time.deltaTime;
-
-        if (transform.position.x <= leftWall.position.x) // links
-        {
-            Debug.Log("Es ist soweit."); 
-            transform.position = leftWall.position;
+            MoveCamera_S1();
         }
-        else if (transform.position.x >= rightWall.position.x) // rechts
-        {
-            transform.position = rightWall.position;
-        }
+        
     }
-
-    private void OnDestroy()
-    {
-        Dialog.OnHUDActivation -= OnHUDActivation;
-        Dialog.OnHUDDeactivation -= OnHUDDeactivation;
-    }
-
-    //---SLIDER-VARIANTE---//
-
     // Wenn Slider negativ + Kamera zu nah am linken Empty, dann Slider nicht weiter in diese Richtung bewegen;
     // Wenn Slider positiv + Kamera zu nah am rechten Empty, dann Slider nicht weiter in diese Richtung bewegen; 
     // eine Koordinate angucken: Ist x-Koordinate größer oder kleiner als Ecken (= Sitz der Emptys), die ich gesetzt habe?
     // wenn nicht gedrückt, dann nicht bewegen
 
-
-    /*public void MoveCamera_S1b() // Kamerabewegung durch Sliderverschiebung
+    public void MoveCamera_S1() // Kamerabewegung durch Sliderverschiebung
     {
         float movement = slider.value;
 
@@ -96,7 +50,7 @@ public class CameraMovement_Scene_1 : MonoBehaviour
 
         if (slider.value <= 0 && mainCamera.transform.position.x <= leftWall.position.x) // links
         {
-            Debug.Log("Es ist soweit."); 
+            Debug.Log("Es ist soweit."); // wird erkannt
             mainCamera.transform.position = leftWall.position;
 
         }
@@ -106,9 +60,33 @@ public class CameraMovement_Scene_1 : MonoBehaviour
         }
     }
 
-    public void ResetSlider()  // Slider wird auf Null gesetzt, wenn er losgelassen wird
+    public void resetSlider()  // Slider wird auf Null gesetzt, wenn er losgelassen wird
     {
         slider.value = 0;
+    }
+
+    /*public void MoveCamera_S1() // Kamerabewegung durch Sliderverschiebung
+    {
+        //float movement = slider.value;
+        movement = cameraControlls.ReadValue<Vector2>();
+
+        mainCamera.transform.position = new Vector2(movement.x * movementSpeedCamera * Time.deltaTime, movement.y * movementSpeedCamera * Time.deltaTime);
+
+        /*if (slider.value <= 0 && mainCamera.transform.position.x <= leftWall.position.x) // links
+        {
+            Debug.Log("Es ist soweit."); // wird erkannt
+            mainCamera.transform.position = leftWall.position;
+
+        }
+        else if (slider.value >= 0 && mainCamera.transform.position.x >= rightWall.position.x) // rechts
+        {
+            mainCamera.transform.position = rightWall.position;
+        }
     }*/
+
+    //public void resetSlider()  // Slider wird auf Null gesetzt, wenn er losgelassen wird
+    //{
+        //slider.value = 0;
+    //}
 }
 

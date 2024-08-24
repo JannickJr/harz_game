@@ -5893,7 +5893,7 @@ RectTransform:
   m_Father: {fileID: 829884823}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6131,7 +6131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &705135941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6148,7 +6148,19 @@ MonoBehaviour:
   - eventID: 3
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1750940347}
+          m_TargetAssemblyTypeName: CameraMovement_Scene_3, Assembly-CSharp
+          m_MethodName: resetSlider
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &705135942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7221,8 +7233,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 371176345}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -14215,7 +14227,6 @@ GameObject:
   - component: {fileID: 1750940342}
   - component: {fileID: 1750940345}
   - component: {fileID: 1750940347}
-  - component: {fileID: 1750940348}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -14353,41 +14364,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1167dd372530c224890590a95ed8d5f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 705135942}
   mainCamera: {fileID: 1750940341}
-  movementSpeedCamera: 2
+  slider: {fileID: 705135942}
+  movementSpeedCamera: 0.8
   bottomWall: {fileID: 1719969068}
   topWall: {fileID: 318007965}
---- !u!114 &1750940348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1750940341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: d8ec2458958a0dd4293d1aa1d4b5ceb4, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Camera_Movement
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 1750940343}
 --- !u!1 &1760409146
 GameObject:
   m_ObjectHideFlags: 0
@@ -15653,7 +15634,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6cc583b246a233543b5943172ba6a645, type: 2}
+  - {fileID: 2100000, guid: cfd8f02bd9d1ccd44ace137f34369cfa, type: 2}
   - {fileID: 2100000, guid: 1bdf8f081e45d0d41a936e27879045f1, type: 2}
   - {fileID: 2100000, guid: 808d58b6f51ad2049a1ea3c2845a1608, type: 2}
   m_StaticBatchInfo:
