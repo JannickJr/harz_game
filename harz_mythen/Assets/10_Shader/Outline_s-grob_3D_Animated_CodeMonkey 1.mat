@@ -58,7 +58,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+<<<<<<< HEAD
     - _OutlineThickness: 0.0238
+=======
+    - _OutlineThickness: 0.03
+>>>>>>> b71bd3458c0b2511e7944d4eaffcd22aed5e556d
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
