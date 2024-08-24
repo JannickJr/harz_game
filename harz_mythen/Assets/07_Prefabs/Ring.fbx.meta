@@ -8,17 +8,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: "Material_Bl\xFCte_Ring"
-    second: {fileID: 2100000, guid: b52e9c7e3d84cfc46ace2a40efc0ead2, type: 2}
+    second: {fileID: 2100000, guid: 1bdf8f081e45d0d41a936e27879045f1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: "Material_Gr\xFCnzeug"
-    second: {fileID: 2100000, guid: 4ffc56fbe7494eb48944b2db61c43b02, type: 2}
+    second: {fileID: 2100000, guid: 985fe182b592c474c8bed96a4b91963b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material_LB
-    second: {fileID: 2100000, guid: 58694c334329f094482ab54d257472f9, type: 2}
+    second: {fileID: 2100000, guid: 444834168ffd05f40914ed225995d7a1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -28,7 +28,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material_Pollending
-    second: {fileID: 2100000, guid: 3959f179230b97a4bb3bfd292141f389, type: 2}
+    second: {fileID: 2100000, guid: 83cd0b3dab936944583e0ba0d6ac2c23, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

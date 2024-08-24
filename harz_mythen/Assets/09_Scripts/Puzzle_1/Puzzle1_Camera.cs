@@ -13,7 +13,7 @@ public class Puzzle1_Camera : MonoBehaviour
     public bool Cam2On;
     public GameObject Box;
     public GameObject Button;
-    public GameObject Slider;
+    //public GameObject Slider;
     public GameObject Lock;
 
     private GameObject character;
@@ -66,7 +66,7 @@ public class Puzzle1_Camera : MonoBehaviour
                     cam3.enabled = false;
                     Cam2On = true;
                     Button.SetActive(true);
-                    Slider.SetActive(false);
+                    //Slider.SetActive(false);
                     character = GameObject.Find("Character_Romar");
                     character.GetComponent<DialogActivation>().enabled = false;
                     character = GameObject.Find("Character_Ruma");
@@ -103,7 +103,7 @@ public class Puzzle1_Camera : MonoBehaviour
             cam2.enabled = false;
             cam3.enabled = false;
             Button.SetActive(false);
-            Slider.SetActive(true);
+            //Slider.SetActive(true);
             character = GameObject.Find("Character_Romar");
             character.GetComponent<DialogActivation>().enabled = true;
             character = GameObject.Find("Character_Ruma");
