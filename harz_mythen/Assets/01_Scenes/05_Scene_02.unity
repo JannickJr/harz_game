@@ -795,7 +795,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &454184297
 Transform:
   m_ObjectHideFlags: 0
@@ -805,8 +805,8 @@ Transform:
   m_GameObject: {fileID: 454184296}
   serializedVersion: 2
   m_LocalRotation: {x: -0.026182514, y: 0.89569086, z: -0.053213485, w: -0.44070482}
-  m_LocalPosition: {x: -1.0139389, y: 1.6484612, z: -2.8887978}
-  m_LocalScale: {x: 2.1293995, y: 1, z: -0.047546}
+  m_LocalPosition: {x: -1.0139389, y: 1.6484612, z: -2.53}
+  m_LocalScale: {x: 2.1293995, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 347536094}
@@ -6621,6 +6621,7 @@ GameObject:
   - component: {fileID: 7778184173023688597}
   - component: {fileID: 8612273808464334336}
   - component: {fileID: 8612273808464334335}
+  - component: {fileID: 8612273808464334337}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -24794,7 +24795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4388ed0c1b3a582469d45cc1a0d9b4bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 15
+  rotationSpeed: 20
 --- !u!81 &8612273808464334336
 AudioListener:
   m_ObjectHideFlags: 0
@@ -24803,6 +24804,36 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1235647134705401656}
   m_Enabled: 1
+--- !u!114 &8612273808464334337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235647134705401656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: d8ec2458958a0dd4293d1aa1d4b5ceb4, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Camera_Movement
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 8612273808464334334}
 --- !u!33 &8622213476779928284
 MeshFilter:
   m_ObjectHideFlags: 0

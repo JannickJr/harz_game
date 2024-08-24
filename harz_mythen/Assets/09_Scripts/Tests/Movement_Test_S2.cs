@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CameraMovement_Scene_2 : MonoBehaviour
+public class Movement_Test_S2 : MonoBehaviour
 {
     //---WASD-VARIANTE---//
     PlayerInput cameraInput;
