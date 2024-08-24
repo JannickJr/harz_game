@@ -8,7 +8,6 @@ using UnityEngine.InputSystem;
 public class CameraMovement_Scene_1 : MonoBehaviour
 {
     //---SLIDER-VARIANTE---//
-    [SerializeField] private GameObject mainCamera;
     [SerializeField] private Slider slider;
 
     //---WASD-VARIANTE---//
@@ -16,16 +15,33 @@ public class CameraMovement_Scene_1 : MonoBehaviour
     InputAction moveAction;
 
     //---BEIDE VARIANTEN---//
+    [SerializeField] private GameObject mainCamera;
+
     [SerializeField] private float movementSpeedCamera;
 
     [SerializeField] private Transform leftWall;
     [SerializeField] private Transform rightWall;
 
+    private void OnEnable()
+    {
+        Dialog.OnHUDActivation += OnHUDActivation;
+        Dialog.OnHUDDeactivation += OnHUDDeactivation;
+    }
+    public void OnHUDActivation()
+    {
+        mainCamera.GetComponent<PlayerInput>().enabled = true;
+    }
+
+    public void OnHUDDeactivation()
+    {
+        mainCamera.GetComponent<PlayerInput>().enabled = false;
+    }
+
     private void Start()
     {
         //---WASD-VARIANTE---//
         cameraInput = GetComponent<PlayerInput>();
-        moveAction = cameraInput.actions.FindAction("Move");
+        moveAction = cameraInput.actions.FindAction("Move_S1");
     }
 
     private void Update()
@@ -58,6 +74,12 @@ public class CameraMovement_Scene_1 : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        Dialog.OnHUDActivation -= OnHUDActivation;
+        Dialog.OnHUDDeactivation -= OnHUDDeactivation;
+    }
+
     //---SLIDER-VARIANTE---//
 
     // Wenn Slider negativ + Kamera zu nah am linken Empty, dann Slider nicht weiter in diese Richtung bewegen;
@@ -65,7 +87,7 @@ public class CameraMovement_Scene_1 : MonoBehaviour
     // eine Koordinate angucken: Ist x-Koordinate größer oder kleiner als Ecken (= Sitz der Emptys), die ich gesetzt habe?
     // wenn nicht gedrückt, dann nicht bewegen
 
-    
+
     /*public void MoveCamera_S1b() // Kamerabewegung durch Sliderverschiebung
     {
         float movement = slider.value;
@@ -87,6 +109,6 @@ public class CameraMovement_Scene_1 : MonoBehaviour
     public void ResetSlider()  // Slider wird auf Null gesetzt, wenn er losgelassen wird
     {
         slider.value = 0;
-    }*/  
+    }*/
 }
 
