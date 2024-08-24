@@ -6,9 +6,18 @@
             "id": "c98d97ef-cfc7-46b9-885b-1dfed3ae3bda",
             "actions": [
                 {
-                    "name": "Move",
+                    "name": "Move_S1",
                     "type": "Value",
                     "id": "034e80a8-9296-48e6-97c8-64a0d05dcf30",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Move_S3",
+                    "type": "Value",
+                    "id": "e20ff595-77d4-49ae-a499-91e1b5fdc288",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -23,31 +32,9 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "Move_S1",
                     "isComposite": true,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "44fbcbbc-9934-4818-b48f-914915dcd56b",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "567e8665-bdd8-411e-b0ed-97eb1b2bb40a",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 },
                 {
                     "name": "left",
@@ -56,7 +43,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "Move_S1",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -67,7 +54,40 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "Move_S1",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "WASD",
+                    "id": "be1da66c-7acb-4f13-9494-abd102ac7a97",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move_S3",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "fc72e912-4a4a-4fed-99d9-131714491012",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move_S3",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "080b6f9f-a4ef-45e1-ba2e-7eada50c735f",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move_S3",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }

@@ -11,8 +11,9 @@ namespace _09_Scripts._Dialogsystem
 {
     public class Dialog_3 : MonoBehaviour
     {
+        #region
         public TextMeshProUGUI textComponent;
-        public TextMeshProUGUI textName; 
+        public TextMeshProUGUI textName;
         public GameObject imageRuma;
         public GameObject imageRomar;
         public string[] lines;
@@ -28,13 +29,12 @@ namespace _09_Scripts._Dialogsystem
         private bool speechbubbleRomarIsActive = false;
         private bool end = false;
 
-        #region //---HUD Deactivation---//
-        [SerializeField] private GameObject Slider;
+        //---HUD Deactivation---//
         public static event Action OnHUDActivation;
         public static event Action OnHUDDeactivation;
-        #endregion
 
-        private GameObject character; 
+
+        private GameObject character;
 
         public GameObject wall;
 
@@ -44,7 +44,7 @@ namespace _09_Scripts._Dialogsystem
         public static event Action OnLoadScene; // sendet in 
         public static event Action OnRing; // Ring zerstört sich
         [SerializeField] private GameObject Button;
-
+        #endregion
 
         #region //---INFO---//
         /* Nachricht schicken mit GetComponent oder FindComponent oder int, 
@@ -64,8 +64,8 @@ namespace _09_Scripts._Dialogsystem
         {
             StartCutscene_1();
         }
-        
-        void Update() 
+
+        void Update()
         {
             //---Sprechblasen---// --> Muss vor "Dialog weiter"-Methoden stehen!
             TextStart();
@@ -101,7 +101,6 @@ namespace _09_Scripts._Dialogsystem
             character = GameObject.Find("Character_Ruma");
             character.GetComponent<DialogActivation>().enabled = false;*/
             //---HUD Deactivation---//
-            Slider.SetActive(false);
             OnHUDDeactivation();
             //---Wall---///
             wall.SetActive(true);
@@ -140,7 +139,6 @@ namespace _09_Scripts._Dialogsystem
                 DialogActivation.characterNumber = 0;
                 //index = 0; // im Moment nicht mehr notwendig, aber zur Sicherheit mal noch deaktiviert im Code lassen; war auf -1
                 //---HUD Activation---////---Aufgabenaktivierung---//
-                Slider.SetActive(true);
                 OnHUDActivation();
                 //---Wall---///
                 wall.SetActive(false);
@@ -151,7 +149,7 @@ namespace _09_Scripts._Dialogsystem
                 character.GetComponent<DialogActivation>().enabled = true;*/
                 cutScene_1IsActive = false; // cutScene_1IsActive = false; --> evtl. zu Methode ändern
                 LevelStarted = false; // LevelStarted = false; --> evtl. zu Methode ändern
-                //OnInteraction(); // gescheitertes Experiment // neuer Test funktionierte für Truhe
+                                      //OnInteraction(); // gescheitertes Experiment // neuer Test funktionierte für Truhe
             }
         }
 
@@ -168,7 +166,7 @@ namespace _09_Scripts._Dialogsystem
                     StopAllCoroutines();
                     textComponent.text = lines[index];
                 }
-            }  
+            }
         }
 
         public void CharacterChange() // Dialog 1 - Textboxanhänge verändern sich
@@ -229,7 +227,6 @@ namespace _09_Scripts._Dialogsystem
             character = GameObject.Find("Character_Ruma");
             character.GetComponent<DialogActivation>().enabled = false;*/
             //---HUD Deactivation---//
-            Slider.SetActive(false);
             OnHUDDeactivation();
             //---Wall---///
             wall.SetActive(true);
@@ -280,7 +277,7 @@ namespace _09_Scripts._Dialogsystem
                 {
                     NextLine2();
                 }
-                else 
+                else
                 {
                     StopAllCoroutines();
                     textComponent.text = lines2[index];
@@ -313,8 +310,7 @@ namespace _09_Scripts._Dialogsystem
         //---SPRECHBLASEN---//
         public void TextStart() // Sprechblasen - Start
         {
-            //---HUD Deactivation---//
-            Slider.SetActive(false);
+            //---HUD Deactivation---//;
             OnHUDDeactivation();
             if (DialogActivation.characterNumber == 1)
             {
@@ -323,7 +319,7 @@ namespace _09_Scripts._Dialogsystem
                 // hier davor evtl. int wechseln, für anderen Text; aber nur in andere(r) Szene
                 textComponent.text = "Lediglich die Sterne wissen, ob mein Liebster und ich uns je wiedersehen werden.";
                 imageRomar.SetActive(false);
-                character = GameObject.Find("Character_Romar"); 
+                character = GameObject.Find("Character_Romar");
                 character.GetComponent<DialogActivation>().enabled = false;
                 if (Input.GetMouseButtonDown(0))
                 {
@@ -358,7 +354,7 @@ namespace _09_Scripts._Dialogsystem
                         end = false;
                         Debug.Log("speechbubbleRomarIsActive: " + speechbubbleRomarIsActive);
                         End();
-                    }   
+                    }
                 }
             }
         }
@@ -374,9 +370,8 @@ namespace _09_Scripts._Dialogsystem
             character = GameObject.Find("Character_Romar");
             character.GetComponent<DialogActivation>().enabled = true;
             character = GameObject.Find("Character_Ruma");
-            character.GetComponent<DialogActivation>().enabled = true; 
+            character.GetComponent<DialogActivation>().enabled = true;
             //---HUD Activation---//
-            Slider.SetActive(true);
             OnHUDActivation();
         }
     }
