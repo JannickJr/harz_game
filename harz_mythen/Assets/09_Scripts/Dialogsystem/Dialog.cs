@@ -16,6 +16,19 @@ namespace _09_Scripts._Dialogsystem
         public TextMeshProUGUI textName;
         public GameObject imageRuma;
         public GameObject imageRomar;
+
+        //---Material Change---//
+        public Image imageChangeRuma;
+        public List<Sprite> spriteChoicesRuma_1;
+        public List<Sprite> spriteChoicesRuma_2;
+        public Sprite RumaSpeechbubble;
+
+        public Image imageChangeRomar;
+        public List<Sprite> spriteChoicesRomar_1;
+        public List<Sprite> spriteChoicesRomar_2;
+        public Sprite RomarSpeechbubble;
+
+        //---Text---//
         public string[] lines;
         public float textSpeed;
 
@@ -40,6 +53,17 @@ namespace _09_Scripts._Dialogsystem
         public static event Action OnLoadScene;
         public static event Action OnRing; // Ring zerstört sich
         [SerializeField] private GameObject Button;
+
+        //---Material Change - Versuche---//
+        /*public SpriteRenderer spriteRenderer;
+        public Sprite[] spriteArray;
+        
+        public Image imageTest;
+        public Image[] imageArray;
+
+        private Renderer rendWater;
+        [SerializeField] private Material[] materialWater_1;
+        [SerializeField] private Material[] materialWater_2;*/
         #endregion
 
         #region //---INFO---//
@@ -59,6 +83,8 @@ namespace _09_Scripts._Dialogsystem
         void Start()
         {
             StartCutscene_1();
+            //rendWater.enabled = true;
+            //rendWater.sharedMaterial = materialWater_1[0];
         }
 
         void Update()
@@ -91,6 +117,10 @@ namespace _09_Scripts._Dialogsystem
         {
             Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
             textComponent.text = string.Empty;
+            imageRuma.SetActive(true);
+            imageRomar.SetActive(true);
+            imageChangeRuma.enabled = true;
+            imageChangeRomar.enabled = true;
             //--- R + R können nicht angeklickt werden ---// --> braucht man nicht mehr wegen Wall
             /*character = GameObject.Find("Character_Romar");
             character.GetComponent<DialogActivation>().enabled = false;
@@ -126,11 +156,19 @@ namespace _09_Scripts._Dialogsystem
                 index++;
                 Debug.Log(index);
                 textComponent.text = string.Empty;
+                //spriteRenderer.sprite = spriteArray[index];
+                //imageTest = imageArray[index];
+                imageChangeRuma.sprite = spriteChoicesRuma_1[index];
+                imageChangeRomar.sprite = spriteChoicesRomar_1[index];
                 StartCoroutine(TypeLine());
             }
             else  // kein Dialogfeld mehr vorhanden
             {
+                imageChangeRuma.enabled = false;
+                imageChangeRomar.enabled = false;
                 gameObject.SetActive(false);
+                imageRuma.SetActive(false);
+                imageRomar.SetActive(false);
                 DialogActivation.dialogActivated = false;
                 DialogActivation.characterNumber = 0;
                 //index = 0; // im Moment nicht mehr notwendig, aber zur Sicherheit mal noch deaktiviert im Code lassen; war auf -1
@@ -173,15 +211,18 @@ namespace _09_Scripts._Dialogsystem
                 case 3:
                 case 5:
                 case 6:
-                    imageRuma.SetActive(false);
-                    imageRomar.SetActive(true);
+                    //imageRuma.SetActive(false);
+                    //imageRuma.SetActive(true);
+                    //imageRomar.SetActive(true);
+                    imageChangeRuma.enabled = true;
+                    imageChangeRomar.enabled = true;
                     textName.text = "Romar";
                     break;
                 case 1:
                 case 2:
                 case 4:
-                    imageRuma.SetActive(true);
-                    imageRomar.SetActive(false);
+                    //imageRuma.SetActive(true);
+                    //imageRomar.SetActive(false);
                     textName.text = "Ruma";
                     break;
                 default:
@@ -206,6 +247,10 @@ namespace _09_Scripts._Dialogsystem
             {
                 StartCutscene_2();
                 Debug.Log("Start2");
+                /*rendRuma.enabled = true;
+                rendRomar.enabled = true;
+                rendRuma.sharedMaterial = materialRumaNew_2[0];
+                rendRomar.sharedMaterial = materialRomarNew_2[0];*/
             }
             else
             {
@@ -217,6 +262,10 @@ namespace _09_Scripts._Dialogsystem
         {
             Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
             textComponent.text = string.Empty;
+            imageRuma.SetActive(true);
+            imageRomar.SetActive(true);
+            imageChangeRuma.enabled = true;
+            imageChangeRomar.enabled = true;
             //--- R + R können nicht angeklickt werden --- --> braucht man nicht mehr wegen Wall
             /*character = GameObject.Find("Character_Romar");
             character.GetComponent<DialogActivation>().enabled = false;
@@ -251,6 +300,8 @@ namespace _09_Scripts._Dialogsystem
                 index++;
                 Debug.Log(index);
                 textComponent.text = string.Empty;
+                imageChangeRuma.sprite = spriteChoicesRuma_2[index];
+                imageChangeRomar.sprite = spriteChoicesRomar_2[index];
                 StartCoroutine(TypeLine2());
             }
             else // kein Dialogfeld mehr vorhanden
@@ -290,16 +341,20 @@ namespace _09_Scripts._Dialogsystem
                 case 5:
                 case 7:
                 case 8:
-                    imageRuma.SetActive(false);
-                    imageRomar.SetActive(true);
+                    //imageRuma.SetActive(false);
+                    //imageRuma.SetActive(true);
+                    //imageRomar.SetActive(true);
                     textName.text = "Romar";
                     break;
                 case 0:
                 case 3:
                 case 4:
                 case 6:
-                    imageRuma.SetActive(true);
-                    imageRomar.SetActive(false);
+                    //imageRuma.SetActive(true);
+                    //imageRomar.SetActive(true);
+                    //imageRomar.SetActive(false);
+                    imageChangeRuma.enabled = true;
+                    imageChangeRomar.enabled = true;
                     textName.text = "Ruma";
                     break;
                 default:
@@ -315,10 +370,16 @@ namespace _09_Scripts._Dialogsystem
             if (DialogActivation.characterNumber == 1)
             {
                 imageRuma.SetActive(true);
+                //imageRomar.SetActive(false);
+                imageChangeRuma.enabled = true;
+                imageChangeRomar.enabled = false;
+                //imageRomar.SetActive(true);
+                imageChangeRuma.sprite = RumaSpeechbubble;
+                //imageChangeRomar.sprite = RomarSpeechbubble;
                 textName.text = "Ruma";
                 // hier davor evtl. int wechseln, für anderen Text; aber nur in andere(r) Szene
                 textComponent.text = "Ein Geschenk möchtest du mir geben? Oh Romar, du bist so gut zu mir!";
-                imageRomar.SetActive(false);
+                //imageRomar.SetActive(false);
                 character = GameObject.Find("Character_Romar");
                 character.GetComponent<DialogActivation>().enabled = false;
                 if (Input.GetMouseButtonDown(0))
@@ -328,10 +389,16 @@ namespace _09_Scripts._Dialogsystem
             }
             if (DialogActivation.characterNumber == 2)
             {
+                //imageRuma.SetActive(true);
                 imageRomar.SetActive(true);
+                //imageRuma.SetActive(false);
+                imageChangeRomar.enabled = true;
+                imageChangeRuma.enabled = false;
+                //imageChangeRuma.sprite = RumaSpeechbubble;
+                imageChangeRomar.sprite = RomarSpeechbubble;
                 textName.text = "Romar";
                 textComponent.text = "Das Geschenk für Ruma liegt hier irgendwo verborgen. Wenn ich doch bloß wüsste, wo ich es ließ ….";
-                imageRuma.SetActive(false);
+                //imageRuma.SetActive(false);
                 character = GameObject.Find("Character_Ruma");
                 character.GetComponent<DialogActivation>().enabled = false;
                 if (Input.GetMouseButtonDown(0))
@@ -346,6 +413,8 @@ namespace _09_Scripts._Dialogsystem
             gameObject.SetActive(false);
             imageRuma.SetActive(false);
             imageRomar.SetActive(false);
+            imageChangeRuma.enabled = false;
+            imageChangeRomar.enabled = false;
             DialogActivation.dialogActivated = false;
             DialogActivation.characterNumber = 0;
             character = GameObject.Find("Character_Romar");
