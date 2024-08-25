@@ -11,11 +11,31 @@ namespace _09_Scripts._Dialogsystem
 {
     public class Dialog_2 : MonoBehaviour
     {
+        #region
         public TextMeshProUGUI textComponent;
-        public TextMeshProUGUI textName; 
+        public TextMeshProUGUI textName;
         public GameObject imageRuma;
         public GameObject imageKobold_1;
         public GameObject imageKobold_2;
+
+        //---Material Change---//
+        public Image imageChangeRuma;
+        public List<Sprite> spriteChoicesRuma_1;
+        public List<Sprite> spriteChoicesRuma_2;
+        public Sprite RumaSpeechbubble;
+        public Sprite RumaSpeechbubbleA;
+        public Sprite RumaSpeechbubbleB;
+
+        public Image imageChangeKobold;
+        public List<Sprite> spriteChoicesKobold;
+        public Sprite KoboldASpeechbubble;
+        public Sprite KoboldBSpeechbubble;
+
+        //public Image imageChangeKoboldB;
+        //public List<Sprite> spriteChoicesKoboldB;
+
+
+        //---Text---//
         public string[] lines;
         public float textSpeed;
 
@@ -29,13 +49,12 @@ namespace _09_Scripts._Dialogsystem
         private bool speechbubbleKoboldIsActive = false;
         private bool end = false;
 
-        #region //---HUD Deactivation---//
-        //[SerializeField] private GameObject Slider; // neu
+        //---HUD Deactivation---//
         public static event Action OnHUDActivation;
         public static event Action OnHUDDeactivation;
-        #endregion
 
-        private GameObject character; 
+
+        private GameObject character;
 
         public GameObject wall;
 
@@ -46,7 +65,7 @@ namespace _09_Scripts._Dialogsystem
         public static event Action OnLoadScene;
         public static event Action OnRing; // Ring zerstört sich
         [SerializeField] private GameObject Button;
-
+        #endregion
 
         #region //---INFO---//
         /* Nachricht schicken mit GetComponent oder FindComponent oder int, 
@@ -68,8 +87,8 @@ namespace _09_Scripts._Dialogsystem
             mainCamera.enabled = false;
             StartCutscene_1();
         }
-        
-        void Update() 
+
+        void Update()
         {
             //---Sprechblasen---// --> Muss vor "Dialog weiter"-Methoden stehen!
             TextStart();
@@ -92,13 +111,19 @@ namespace _09_Scripts._Dialogsystem
         {
             Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
             textComponent.text = string.Empty;
+            imageRuma.SetActive(true);
+            imageChangeRuma.enabled = true;
+            imageKobold_1.SetActive(true);
+            imageChangeKobold.enabled = true;
+            imageKobold_2.SetActive(false);
+            //imageKobold_2.SetActive(true);
+            //imageChangeKoboldB.enabled = false;
             //--- R + R können nicht angeklickt werden ---// --> braucht man nicht mehr wegen Wall
             /*character = GameObject.Find("Character_Romar");
             character.GetComponent<DialogActivation>().enabled = false;
             character = GameObject.Find("Character_Ruma");
             character.GetComponent<DialogActivation>().enabled = false;*/
             //---HUD Deactivation---//
-            //Slider.SetActive(false); // neu
             OnHUDDeactivation();
             //---Wall---///
             wall.SetActive(true);
@@ -128,6 +153,9 @@ namespace _09_Scripts._Dialogsystem
                 index++;
                 Debug.Log(index);
                 textComponent.text = string.Empty;
+                imageChangeRuma.sprite = spriteChoicesRuma_1[index];
+                imageChangeKobold.sprite = spriteChoicesKobold[index];
+                //imageChangeKoboldB.sprite = spriteChoicesKoboldB[index];
                 StartCoroutine(TypeLine());
             }
             else  // kein Dialogfeld mehr vorhanden
@@ -139,7 +167,6 @@ namespace _09_Scripts._Dialogsystem
                 DialogActivation.characterNumber = 0;
                 //index = 0; // im Moment nicht mehr notwendig, aber zur Sicherheit mal noch deaktiviert im Code lassen; war auf -1
                 //---HUD Activation---////---Aufgabenaktivierung---//
-                // Slider.SetActive(true); // neu
                 OnHUDActivation();
                 //---Wall---///
                 wall.SetActive(false);
@@ -150,7 +177,7 @@ namespace _09_Scripts._Dialogsystem
                 character.GetComponent<DialogActivation>().enabled = true;*/
                 cutScene_1IsActive = false; // cutScene_1IsActive = false; --> evtl. zu Methode ändern
                 LevelStarted = false; // LevelStarted = false; --> evtl. zu Methode ändern
-                //OnInteraction(); // gescheitertes Experiment // neuer Test funktionierte für Truhe
+                                      //OnInteraction(); // gescheitertes Experiment // neuer Test funktionierte für Truhe
             }
         }
 
@@ -167,7 +194,7 @@ namespace _09_Scripts._Dialogsystem
                     StopAllCoroutines();
                     textComponent.text = lines[index];
                 }
-            }  
+            }
         }
 
         public void CharacterChange() // Dialog 1 - Textboxanhänge verändern sich
@@ -181,24 +208,26 @@ namespace _09_Scripts._Dialogsystem
                 case 9:
                 case 10:
                 case 11:
-                    imageRuma.SetActive(true);
-                    imageKobold_1.SetActive(false);
-                    imageKobold_2.SetActive(false);
+                    //imageRuma.SetActive(true);
+                    //imageKobold_1.SetActive(false);
+                    //imageKobold_2.SetActive(false);
+                    imageChangeRuma.enabled = true;
+                    imageChangeKobold.enabled = true;
                     textName.text = "Ruma";
                     break;
                 case 1:
                 case 8:
-                    imageRuma.SetActive(false);
-                    imageKobold_1.SetActive(true);
-                    imageKobold_2.SetActive(false);
+                    //imageRuma.SetActive(false);
+                    //imageKobold_1.SetActive(true);
+                    //imageKobold_2.SetActive(false);
                     textName.text = "Kobold 1";
                     break;
                 case 3:
                 case 6:
                 case 7:
-                    imageRuma.SetActive(false);
-                    imageKobold_1.SetActive(false);
-                    imageKobold_2.SetActive(true);
+                    //imageRuma.SetActive(false);
+                    //imageKobold_1.SetActive(false);
+                    //imageKobold_2.SetActive(true);
                     textName.text = "Kobold 2";
                     break;
                 default:
@@ -236,13 +265,14 @@ namespace _09_Scripts._Dialogsystem
         {
             Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
             textComponent.text = string.Empty;
+            imageRuma.SetActive(true);
+            imageChangeRuma.enabled = true;
             //--- R + R können nicht angeklickt werden --- --> braucht man nicht mehr wegen Wall
             /*character = GameObject.Find("Character_Romar");
             character.GetComponent<DialogActivation>().enabled = false;
             character = GameObject.Find("Character_Ruma");
             character.GetComponent<DialogActivation>().enabled = false;*/
             //---HUD Deactivation---//
-            //Slider.SetActive(false); // neu
             OnHUDDeactivation();
             //---Wall---///
             wall.SetActive(true);
@@ -271,6 +301,7 @@ namespace _09_Scripts._Dialogsystem
                 index++;
                 Debug.Log(index);
                 textComponent.text = string.Empty;
+                imageChangeRuma.sprite = spriteChoicesRuma_2[index];
                 StartCoroutine(TypeLine2());
             }
             else // kein Dialogfeld mehr vorhanden
@@ -294,7 +325,7 @@ namespace _09_Scripts._Dialogsystem
                 {
                     NextLine2();
                 }
-                else 
+                else
                 {
                     StopAllCoroutines();
                     textComponent.text = lines2[index];
@@ -309,8 +340,9 @@ namespace _09_Scripts._Dialogsystem
                 case 0:
                 case 1:
                     imageRuma.SetActive(true);
-                    imageKobold_1.SetActive(false);
-                    imageKobold_2.SetActive(false);
+                    imageChangeRuma.enabled = true;
+                    //imageKobold_1.SetActive(false);
+                    //imageKobold_2.SetActive(false);
                     textName.text = "Ruma";
                     break;
                 default:
@@ -322,16 +354,17 @@ namespace _09_Scripts._Dialogsystem
         public void TextStart() // Sprechblasen - Start
         {
             //---HUD Deactivation---//
-            //Slider.SetActive(false); // neu
             OnHUDDeactivation();
             if (DialogActivation.characterNumber == 1)
             {
                 imageRuma.SetActive(true);
+                imageChangeRuma.enabled = true;
+                imageChangeRuma.sprite = RumaSpeechbubble;
                 textName.text = "Ruma";
                 // hier davor evtl. int wechseln, für anderen Text; aber nur in andere(r) Szene
                 textComponent.text = "Was soll ich nur tun? Wenn es doch nur einen Ausweg aus dieser finsteren Höhle gäbe….";
                 imageKobold_1.SetActive(false);
-                character = GameObject.Find("Character_Kobold_1"); 
+                character = GameObject.Find("Character_Kobold_1");
                 character.GetComponent<DialogActivation>().enabled = false;
                 imageKobold_2.SetActive(false);
                 character = GameObject.Find("Character_Kobold_2");
@@ -346,21 +379,26 @@ namespace _09_Scripts._Dialogsystem
                 if (speechbubbleKoboldIsActive == false)
                 {
                     imageKobold_1.SetActive(true);
+                    imageChangeKobold.enabled = true;
+                    imageChangeKobold.sprite = KoboldASpeechbubble;
+                    imageRuma.SetActive(true);
+                    imageChangeRuma.enabled = true;
+                    imageChangeRuma.sprite = RumaSpeechbubble;
                     textName.text = "Kobold 1";
                     textComponent.text = "Denk gar nicht erst daran, zu fliehen! Unsere Speere sind geschärft und wir werden sie benutzen!";
-                    imageRuma.SetActive(false);
+                    //imageRuma.SetActive(false);
                     character = GameObject.Find("Character_Ruma");
                     imageKobold_2.SetActive(false);
                     character = GameObject.Find("Character_Kobold_2");
                 }
                 if (speechbubbleKoboldIsActive == true)
                 {
-                    imageRuma.SetActive(true);
+                    //imageRuma.SetActive(true);
                     textName.text = "Ruma";
                     textComponent.text = "Fieslinge! Kennt ihr denn gar kein Erbarmen?";
-                    imageKobold_1.SetActive(false);
+                    //imageKobold_1.SetActive(false);
                     character = GameObject.Find("Character_Kobold_1");
-                    imageKobold_2.SetActive(false);
+                    //imageKobold_2.SetActive(false);
                     character = GameObject.Find("Character_Kobold_2");
                     end = true;
                 }
@@ -385,21 +423,26 @@ namespace _09_Scripts._Dialogsystem
                 if (speechbubbleKoboldIsActive == false)
                 {
                     imageKobold_2.SetActive(true);
+                    imageChangeKobold.enabled = true;
+                    imageChangeKobold.sprite = KoboldBSpeechbubble;
+                    imageRuma.SetActive(true);
+                    imageChangeRuma.enabled = true;
+                    imageChangeRuma.sprite = RumaSpeechbubble;
                     textName.text = "Kobold 2";
                     textComponent.text = "Ihr seid genau so hübsch wie man sich erzählt, Prinzessin.";
-                    imageRuma.SetActive(false);
+                    //imageRuma.SetActive(false);
                     character = GameObject.Find("Character_Ruma");
                     imageKobold_1.SetActive(false);
                     character = GameObject.Find("Character_Kobold_1");
                 }
                 if (speechbubbleKoboldIsActive == true)
                 {
-                    imageRuma.SetActive(true);
+                    //imageRuma.SetActive(true);
                     textName.text = "Ruma";
                     textComponent.text = "Schweig still! Nur mein lieber Romar darf diese Worte zu mir sagen.";
-                    imageKobold_1.SetActive(false);
+                    //imageKobold_1.SetActive(false);
                     character = GameObject.Find("Character_Kobold_1");
-                    imageKobold_2.SetActive(false);
+                    //imageKobold_2.SetActive(false);
                     character = GameObject.Find("Character_Kobold_2");
                     end = true;
                 }
@@ -426,9 +469,11 @@ namespace _09_Scripts._Dialogsystem
             mainCamera.enabled = true;
             cameraDialog.enabled = false;
             gameObject.SetActive(false);
-            imageRuma.SetActive(false);
             imageKobold_1.SetActive(false);
             imageKobold_2.SetActive(false);
+            imageChangeKobold.enabled = false;
+            imageRuma.SetActive(false);
+            imageChangeRuma.enabled = false;
             DialogActivation.dialogActivated = false;
             DialogActivation.characterNumber = 0;
             character = GameObject.Find("Character_Ruma");
@@ -438,7 +483,6 @@ namespace _09_Scripts._Dialogsystem
             character = GameObject.Find("Character_Kobold_2");
             character.GetComponent<DialogActivation>().enabled = true;
             //---HUD Activation---//
-            // Slider.SetActive(true); // neu
             OnHUDActivation();
         }
     }

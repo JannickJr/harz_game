@@ -5,32 +5,46 @@ using UnityEngine.InputSystem;
 
 public class CameraMovement_Scene_2 : MonoBehaviour
 {
-    // Variante 1:
-    float rotationX = 0f;
-    float rotationY = 0f;
-    public float sensitivity = 5f;
+    //---WASD-VARIANTE---//
+    PlayerInput cameraInput;
+    InputAction moveAction;
+    public float rotationSpeed;
+    //public GameObject objectRotate;
 
-    // Variante 2: // kein 360°-Blick
-    /*private float x;
-    private float y;
-    public float sensitivity_2 = -1f;
-    private Vector3 rotate;*/
 
+    private void Start()
+    {
+        //---WASD-VARIANTE---//
+        cameraInput = GetComponent<PlayerInput>();
+        moveAction = cameraInput.actions.FindAction("Move_S2");
+        Debug.Log(cameraInput.actions.FindAction("Move_S2"));
+    }
 
     void Update()
     {
-        // Variante 1: 360°-Blick
-        rotationY += Input.GetAxis("Mouse X") * sensitivity;
-        rotationY += Input.GetAxis("Mouse Y") * -1 * sensitivity;
-        transform.localEulerAngles = new Vector3(rotationX, rotationY, 0);
+        Rotation();
+    }
 
-        // Variante 2: kein 360°-Blick
-        /*y = Input.GetAxis("Mouse Y");
-        x = Input.GetAxis("Mouse X");
-        rotate = new Vector3(x, y * sensitivity_2, 0);
-        transform.eulerAngles = transform.eulerAngles - rotate;*/
+    public void Rotation()
+    {
+        Vector2 direction = moveAction.ReadValue<Vector2>();
+        rotationSpeed = 30f;
+        transform.eulerAngles += new Vector3(direction.x, direction.y, 0) * rotationSpeed * Time.deltaTime;
 
-        // Variante 3: // 360°-Blick
-        // hier dann weiter (24.08.2024)
+        if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S))
+        {
+            rotationSpeed = 0f;
+        }
+
+        /*if (Input.GetKey(KeyCode.D))
+        {
+            rotationSpeed = 30f;
+            objectRotate.transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            rotationSpeed = 30f;
+            objectRotate.transform.Rotate(Vector3.down, rotationSpeed * Time.deltaTime);
+        }*/
     }
 }
