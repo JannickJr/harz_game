@@ -13333,6 +13333,38 @@ MonoBehaviour:
   textName: {fileID: 1854120844}
   imageRuma: {fileID: 228351875}
   imageRomar: {fileID: 301048027}
+  imageChangeRuma: {fileID: 228351877}
+  spriteChoicesRuma_1:
+  - {fileID: 21300000, guid: cda7ade85fe6511468d976fb5364f39b, type: 3}
+  - {fileID: 21300000, guid: ac0a842073fcde5429ba1b2c6a8761dd, type: 3}
+  - {fileID: 21300000, guid: cda7ade85fe6511468d976fb5364f39b, type: 3}
+  - {fileID: 21300000, guid: ac0a842073fcde5429ba1b2c6a8761dd, type: 3}
+  - {fileID: 21300000, guid: ac0a842073fcde5429ba1b2c6a8761dd, type: 3}
+  - {fileID: 21300000, guid: cda7ade85fe6511468d976fb5364f39b, type: 3}
+  - {fileID: 21300000, guid: ac0a842073fcde5429ba1b2c6a8761dd, type: 3}
+  spriteChoicesRuma_2:
+  - {fileID: 21300000, guid: cda7ade85fe6511468d976fb5364f39b, type: 3}
+  - {fileID: 21300000, guid: ac0a842073fcde5429ba1b2c6a8761dd, type: 3}
+  - {fileID: 21300000, guid: cda7ade85fe6511468d976fb5364f39b, type: 3}
+  - {fileID: 21300000, guid: ac0a842073fcde5429ba1b2c6a8761dd, type: 3}
+  - {fileID: 21300000, guid: cda7ade85fe6511468d976fb5364f39b, type: 3}
+  RumaSpeechbubble: {fileID: 21300000, guid: ac0a842073fcde5429ba1b2c6a8761dd, type: 3}
+  imageChangeRomar: {fileID: 301048029}
+  spriteChoicesRomar_1:
+  - {fileID: 21300000, guid: c4a9670a5102dd94bbf1018aebebc1cc, type: 3}
+  - {fileID: 21300000, guid: f97e839621691884880b67bbc378cd4d, type: 3}
+  - {fileID: 21300000, guid: a97eb140270d0e44d8bb187af4026c82, type: 3}
+  - {fileID: 21300000, guid: 540a973d9c900504f96595d35727e59e, type: 3}
+  - {fileID: 21300000, guid: ab385d8daf747c84f9072b765d0698f5, type: 3}
+  - {fileID: 21300000, guid: c4a9670a5102dd94bbf1018aebebc1cc, type: 3}
+  - {fileID: 21300000, guid: f97e839621691884880b67bbc378cd4d, type: 3}
+  spriteChoicesRomar_2:
+  - {fileID: 21300000, guid: a97eb140270d0e44d8bb187af4026c82, type: 3}
+  - {fileID: 21300000, guid: 540a973d9c900504f96595d35727e59e, type: 3}
+  - {fileID: 21300000, guid: ab385d8daf747c84f9072b765d0698f5, type: 3}
+  - {fileID: 21300000, guid: c4a9670a5102dd94bbf1018aebebc1cc, type: 3}
+  - {fileID: 21300000, guid: f97e839621691884880b67bbc378cd4d, type: 3}
+  RomarSpeechbubble: {fileID: 21300000, guid: 540a973d9c900504f96595d35727e59e, type: 3}
   lines:
   - "Nun bin ich schon frei und doch an das Wasser gebunden. Mich d\xFCnkt, Romar
     und ich werden niemals wieder vereint sein."

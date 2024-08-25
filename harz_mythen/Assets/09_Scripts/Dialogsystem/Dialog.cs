@@ -166,9 +166,9 @@ namespace _09_Scripts._Dialogsystem
             {
                 imageChangeRuma.enabled = false;
                 imageChangeRomar.enabled = false;
-                gameObject.SetActive(false);
                 imageRuma.SetActive(false);
                 imageRomar.SetActive(false);
+                gameObject.SetActive(false);
                 DialogActivation.dialogActivated = false;
                 DialogActivation.characterNumber = 0;
                 //index = 0; // im Moment nicht mehr notwendig, aber zur Sicherheit mal noch deaktiviert im Code lassen; war auf -1
@@ -372,7 +372,7 @@ namespace _09_Scripts._Dialogsystem
                 imageRuma.SetActive(true);
                 //imageRomar.SetActive(false);
                 imageChangeRuma.enabled = true;
-                imageChangeRomar.enabled = false;
+                //imageChangeRomar.enabled = false;
                 //imageRomar.SetActive(true);
                 imageChangeRuma.sprite = RumaSpeechbubble;
                 //imageChangeRomar.sprite = RomarSpeechbubble;
@@ -393,7 +393,7 @@ namespace _09_Scripts._Dialogsystem
                 imageRomar.SetActive(true);
                 //imageRuma.SetActive(false);
                 imageChangeRomar.enabled = true;
-                imageChangeRuma.enabled = false;
+                //imageChangeRuma.enabled = false;
                 //imageChangeRuma.sprite = RumaSpeechbubble;
                 imageChangeRomar.sprite = RomarSpeechbubble;
                 textName.text = "Romar";
