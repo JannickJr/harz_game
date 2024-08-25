@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CS Seerosenblatt
+  m_Name: CS Stein_Szene3
   m_Shader: {fileID: -6465566751694194690, guid: 8fe31de94f8b52b46a7d85e33d4a42b2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -54,10 +54,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Lighting_Cutoff: 0.4
+    - _Lighting_Cutoff: 0.74
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Shadow_Brightness: 0.5
     m_Colors:
-    - _Color: {r: 0.46506518, g: 0.5686275, b: 0.3254902, a: 0}
+    - _Color: {r: 0.35211816, g: 0.3962264, b: 0.35763168, a: 0}
   m_BuildTextureStacks: []
