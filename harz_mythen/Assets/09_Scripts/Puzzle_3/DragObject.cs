@@ -44,6 +44,7 @@ public class DragObject : MonoBehaviour
 
     // Object to fade in when the condition is met
     public GameObject objectToFadeIn;
+    public GameObject objectToFadeOut;
     public float fadeDuration = 1.0f;
 
     void Start()
@@ -85,14 +86,22 @@ public class DragObject : MonoBehaviour
             Vector2 projectedPosition = ProjectOntoLine(mouseWorldPosition, closestLine);
             transform.position = new Vector3(projectedPosition.x, projectedPosition.y, fixedZ); // Maintain fixed z-coordinate
 
+            // Calculate distances to start and end points of the closest line
             float distanceToStart = Vector2.Distance(transform.position, Adjusted(closestLine.start));
             float distanceToEnd = Vector2.Distance(transform.position, Adjusted(closestLine.end));
 
-            bool canChangeLine = (distanceToStart < lineChangeThreshold) || (distanceToEnd < lineChangeThreshold);
+            // Object can only switch lines if it's near the start or end of the current line
+            bool canChangeLine = (distanceToStart < snapThreshold) || (distanceToEnd < snapThreshold);
 
             if (canChangeLine)
             {
-                closestLine = FindClosestLine(mouseWorldPosition);
+                // Only switch to a line that shares the start or end point with the current line
+                Line newLine = FindClosestLineWithSharedPoint(mouseWorldPosition, closestLine);
+
+                if (newLine.start != Vector2.zero || newLine.end != Vector2.zero)
+                {
+                    closestLine = newLine;
+                }
             }
         }
     }
@@ -169,6 +178,42 @@ public class DragObject : MonoBehaviour
         return closest;
     }
 
+    // Function to find the closest line that shares a start or end point with the current line
+private Line FindClosestLineWithSharedPoint(Vector2 position, Line currentLine)
+{
+    Line closest = new Line();
+    float minDistance = Mathf.Infinity;
+
+    foreach (Line line in lines)
+    {
+        // Check if the line shares a start or end point with the current line
+        bool sharesPoint = (line.start == currentLine.start || line.start == currentLine.end ||
+                            line.end == currentLine.start || line.end == currentLine.end);
+
+        if (sharesPoint)
+        {
+            Vector2 startAdjusted = new Vector2(Adjusted(line.start).x, Adjusted(line.start).y);
+            Vector2 endAdjusted = new Vector2(Adjusted(line.end).x, Adjusted(line.end).y);
+
+            float distanceToStart = Vector2.Distance(position, startAdjusted);
+            float distanceToEnd = Vector2.Distance(position, endAdjusted);
+
+            if (distanceToStart < minDistance)
+            {
+                minDistance = distanceToStart;
+                closest = line;
+            }
+
+            if (distanceToEnd < minDistance)
+            {
+                minDistance = distanceToEnd;
+                closest = line;
+            }
+        }
+    }
+
+    return closest;
+}
     private Vector2 ProjectOntoLine(Vector2 position, Line line)
     {
         Vector3 adjustedStart = Adjusted(line.start);
@@ -256,6 +301,10 @@ public class DragObject : MonoBehaviour
 
         if (allInPosition)
         {
+            StopCoroutine("FadeOutObject");
+            StopCoroutine("FadeInObject");
+
+            StartCoroutine(FadeOutObject(objectToFadeOut, fadeDuration));
             StartCoroutine(FadeInObject(objectToFadeIn, fadeDuration));
         }
     }
@@ -274,6 +323,29 @@ public class DragObject : MonoBehaviour
             SetObjectAlpha(obj, newAlpha);
             yield return null;
         }
+
+    }
+
+    private IEnumerator FadeOutObject(GameObject obj, float duration)
+    {
+        obj.gameObject.SetActive(false);
+        // Ensure object is fully visible at the start
+        SetObjectAlpha(obj, 1.0f);
+
+        float startAlpha = obj.GetComponent<SpriteRenderer>().color.a;
+        float endAlpha = 0f;
+
+        float t = 0;
+        while (t < 1)
+        {
+            t += Time.deltaTime / duration;
+            float newAlpha = Mathf.Lerp(startAlpha, endAlpha, t);
+            SetObjectAlpha(obj, newAlpha);
+            yield return null;
+        }
+
+        // Just to be sure, set the alpha to 0 at the end
+        SetObjectAlpha(obj, 0f);
     }
 
     private void SetObjectAlpha(GameObject obj, float alpha)

@@ -2161,7 +2161,7 @@ Transform:
   m_GameObject: {fileID: 246116689}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.25, y: 3.468, z: 0}
+  m_LocalPosition: {x: 0.65, y: 4.5, z: 0}
   m_LocalScale: {x: 0.23, y: 0.23, z: 0.23}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2267,9 +2267,10 @@ MonoBehaviour:
     end: {x: 0.65, y: 4.5}
   - start: {x: 0.65, y: 4.5}
     end: {x: -0.25, y: 3.468}
-  snapThreshold: 1
+  snapThreshold: 0.1
   lineChangeThreshold: 0.1
   objectToFadeIn: {fileID: 1112611948}
+  objectToFadeOut: {fileID: 664823898}
   fadeDuration: 3
 --- !u!212 &246116693
 SpriteRenderer:
@@ -2625,9 +2626,10 @@ MonoBehaviour:
     end: {x: 0.65, y: 4.5}
   - start: {x: 0.65, y: 4.5}
     end: {x: -0.25, y: 3.468}
-  snapThreshold: 1
+  snapThreshold: 0.1
   lineChangeThreshold: 0.1
   objectToFadeIn: {fileID: 1112611948}
+  objectToFadeOut: {fileID: 664823898}
   fadeDuration: 3
 --- !u!212 &290337876
 SpriteRenderer:
@@ -3005,8 +3007,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 312683318}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.4669805, y: -1.1652164, z: -14.673229}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3036,7 +3038,7 @@ Transform:
   - {fileID: 263260385}
   - {fileID: 745308488}
   - {fileID: 1900310786}
-  m_Father: {fileID: 1184487658}
+  m_Father: {fileID: 664823899}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &323061643
 GameObject:
@@ -3613,6 +3615,7 @@ MonoBehaviour:
   snapThreshold: 1
   lineChangeThreshold: 0.1
   objectToFadeIn: {fileID: 1540250335}
+  objectToFadeOut: {fileID: 0}
   fadeDuration: 3
 --- !u!212 &360840858
 SpriteRenderer:
@@ -4026,7 +4029,7 @@ Transform:
   m_GameObject: {fileID: 398743374}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.986, y: 0.757, z: 0}
+  m_LocalPosition: {x: 0.08, y: 1.73, z: 0}
   m_LocalScale: {x: 0.23, y: 0.23, z: 0.23}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -4132,9 +4135,10 @@ MonoBehaviour:
     end: {x: 0.65, y: 4.5}
   - start: {x: 0.65, y: 4.5}
     end: {x: -0.25, y: 3.468}
-  snapThreshold: 1
+  snapThreshold: 0.1
   lineChangeThreshold: 0.1
   objectToFadeIn: {fileID: 1112611948}
+  objectToFadeOut: {fileID: 664823898}
   fadeDuration: 3
 --- !u!212 &398743378
 SpriteRenderer:
@@ -6120,6 +6124,39 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &664823898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 664823899}
+  m_Layer: 0
+  m_Name: Puzzle w/ Result Artwork
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &664823899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664823898}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.4669805, y: 1.1652164, z: 14.673229}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 312683319}
+  - {fileID: 1409908347}
+  m_Father: {fileID: 1184487658}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &667715417
 GameObject:
   m_ObjectHideFlags: 0
@@ -9108,6 +9145,7 @@ MonoBehaviour:
   snapThreshold: 1
   lineChangeThreshold: 0.1
   objectToFadeIn: {fileID: 1540250335}
+  objectToFadeOut: {fileID: 0}
   fadeDuration: 3
 --- !u!212 &992274935
 SpriteRenderer:
@@ -9500,9 +9538,10 @@ MonoBehaviour:
     end: {x: 0.65, y: 4.5}
   - start: {x: 0.65, y: 4.5}
     end: {x: -0.25, y: 3.468}
-  snapThreshold: 1
+  snapThreshold: 0.1
   lineChangeThreshold: 0.1
   objectToFadeIn: {fileID: 1112611948}
+  objectToFadeOut: {fileID: 664823898}
   fadeDuration: 3
 --- !u!212 &1047415326
 SpriteRenderer:
@@ -9885,7 +9924,7 @@ Transform:
   m_GameObject: {fileID: 1110482206}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.732, y: 0.521, z: 0}
+  m_LocalPosition: {x: -1.59, y: 1.07, z: 0}
   m_LocalScale: {x: 0.23, y: 0.23, z: 0.23}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -9991,9 +10030,10 @@ MonoBehaviour:
     end: {x: 0.65, y: 4.5}
   - start: {x: 0.65, y: 4.5}
     end: {x: -0.25, y: 3.468}
-  snapThreshold: 1
+  snapThreshold: 0.1
   lineChangeThreshold: 0.1
   objectToFadeIn: {fileID: 1112611948}
+  objectToFadeOut: {fileID: 664823898}
   fadeDuration: 3
 --- !u!212 &1110482210
 SpriteRenderer:
@@ -10273,7 +10313,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134202755}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10678,10 +10718,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 312683319}
+  - {fileID: 664823899}
   - {fileID: 1112611950}
   - {fileID: 1134202756}
-  - {fileID: 1409908347}
   m_Father: {fileID: 340161915}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1184777605
@@ -11583,6 +11622,7 @@ MonoBehaviour:
   snapThreshold: 1
   lineChangeThreshold: 0.1
   objectToFadeIn: {fileID: 1540250335}
+  objectToFadeOut: {fileID: 0}
   fadeDuration: 3
 --- !u!212 &1258809821
 SpriteRenderer:
@@ -12505,6 +12545,7 @@ MonoBehaviour:
   snapThreshold: 1
   lineChangeThreshold: 0.1
   objectToFadeIn: {fileID: 1540250335}
+  objectToFadeOut: {fileID: 0}
   fadeDuration: 3
 --- !u!212 &1365822309
 SpriteRenderer:
@@ -12666,8 +12707,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1409908346}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.4669805, y: -1.1652164, z: -14.673229}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12686,7 +12727,7 @@ Transform:
   - {fileID: 1456016942}
   - {fileID: 652665100}
   - {fileID: 99859783}
-  m_Father: {fileID: 1184487658}
+  m_Father: {fileID: 664823899}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1454025871
 GameObject:
@@ -13534,7 +13575,7 @@ Transform:
   m_GameObject: {fileID: 1564246777}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.241, y: 1.731, z: 0}
+  m_LocalPosition: {x: 3.2, y: 3.47, z: 0}
   m_LocalScale: {x: 0.23, y: 0.23, z: 0.23}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -13640,9 +13681,10 @@ MonoBehaviour:
     end: {x: 0.65, y: 4.5}
   - start: {x: 0.65, y: 4.5}
     end: {x: -0.25, y: 3.468}
-  snapThreshold: 1
+  snapThreshold: 0.1
   lineChangeThreshold: 0.1
   objectToFadeIn: {fileID: 1112611948}
+  objectToFadeOut: {fileID: 664823898}
   fadeDuration: 3
 --- !u!212 &1564246781
 SpriteRenderer:
@@ -15202,6 +15244,7 @@ MonoBehaviour:
   snapThreshold: 1
   lineChangeThreshold: 0.1
   objectToFadeIn: {fileID: 1540250335}
+  objectToFadeOut: {fileID: 0}
   fadeDuration: 3
 --- !u!212 &1689153212
 SpriteRenderer:
@@ -18159,6 +18202,7 @@ MonoBehaviour:
   snapThreshold: 1
   lineChangeThreshold: 0.1
   objectToFadeIn: {fileID: 1540250335}
+  objectToFadeOut: {fileID: 0}
   fadeDuration: 3
 --- !u!212 &2019126069
 SpriteRenderer:
