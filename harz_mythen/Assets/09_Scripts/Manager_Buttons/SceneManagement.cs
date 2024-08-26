@@ -74,6 +74,8 @@ public class SceneManagement : MonoBehaviour
             DialogActivation.characterNumber = 0;
             DialogActivation.dialogActivated = true;
             Dialog.LevelStarted = true;
+            Item_2.stick = false;
+            Item_2.web = false;
             SceneManager.LoadScene("01_Main_Menu");
         }
     }

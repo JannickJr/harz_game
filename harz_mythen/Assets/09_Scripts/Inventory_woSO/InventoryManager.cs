@@ -23,6 +23,7 @@ public class InventoryManager : MonoBehaviour
         DialogActivation.OnInventoryWall += InventoryDeactivation;
         //DialogActivation_2.OnInventoryWall += InventoryDeactivation;
         //DialogActivation_3.OnInventoryWall += InventoryDeactivation;
+        //ItemSlot.OnItemPlay += DeselectAllSlots; // neu
 
         Dialog.OnLoadScene += Activation;
         Change_Scene_CS.OnLoadScene += Activation;
@@ -53,9 +54,10 @@ public class InventoryManager : MonoBehaviour
             //wall.SetActive(true);
         }
     }
-    
+
     public void UseItem(string itemName) // wird aufgerufen, wenn Item in Inventar angeklickt wird
-    { 
+    {
+        Debug.Log("nutzen");
         for (int i = 0; i < itemSOs.Length; i++) // Suche in Liste der Scriptable Objects 
         {
             if (itemSOs[i].itemName == itemName) // wenn die Namen übereinstimmen 
@@ -120,6 +122,7 @@ public class InventoryManager : MonoBehaviour
         DialogActivation.OnInventoryWall -= InventoryDeactivation;
         //DialogActivation_2.OnInventoryWall -= InventoryDeactivation;
         //DialogActivation_3.OnInventoryWall -= InventoryDeactivation;
+        //ItemSlot.OnItemPlay -= DeselectAllSlots; // neu
 
         Dialog.OnLoadScene -= Activation;
         Change_Scene_CS.OnLoadScene -= Activation;

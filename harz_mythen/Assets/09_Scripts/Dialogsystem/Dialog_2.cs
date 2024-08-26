@@ -177,7 +177,7 @@ namespace _09_Scripts._Dialogsystem
                 character.GetComponent<DialogActivation>().enabled = true;*/
                 cutScene_1IsActive = false; // cutScene_1IsActive = false; --> evtl. zu Methode ändern
                 LevelStarted = false; // LevelStarted = false; --> evtl. zu Methode ändern
-                                      //OnInteraction(); // gescheitertes Experiment // neuer Test funktionierte für Truhe
+                Debug.Log("LevelStarted = " + LevelStarted);                      //OnInteraction(); // gescheitertes Experiment // neuer Test funktionierte für Truhe
             }
         }
 

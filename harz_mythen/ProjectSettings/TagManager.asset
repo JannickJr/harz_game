@@ -19,9 +19,9 @@ TagManager:
   - Pot
   - Kobold_1
   - Kobold_2
-  - Stock
   - Web
   - Water
+  - Stick
   layers:
   - Default
   - TransparentFX

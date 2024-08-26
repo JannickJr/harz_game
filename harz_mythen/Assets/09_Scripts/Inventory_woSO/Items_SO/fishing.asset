@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a935135571d204c4abadedf9dfed0c67, type: 3}
   m_Name: fishing
   m_EditorClassIdentifier: 
-  itemName: Angel
+  itemName: Kescher
   statToChange: 5
   amountToChangeStat: 2
   attributesToChange: 0

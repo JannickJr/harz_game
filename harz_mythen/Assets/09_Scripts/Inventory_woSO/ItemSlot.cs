@@ -36,6 +36,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     private InventoryManager inventoryManager;
 
     public static event Action OnItemShutUp; // Eventmanagement für Deaktivierung des markierten Zustands
+    //public static event Action OnItemPlay; // Eventmanagement für Aktivierung des markierten Zustands
 
     //public GameObject wall;
 
@@ -53,7 +54,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     private void Update() // muss am besten mit Eventmethode gelöst werden statt Update
     {
-        if (Dialog.LevelStarted == false) // Empfänger
+        if (Dialog.LevelStarted == false || Dialog_2.LevelStarted == false || Dialog_3.LevelStarted == false) // Empfänger
         {
             inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>(); // Es darf nicht in der Startmethode stehen, weil es da nicht gefunden wird, weil es in dem Moment noch deaktiviert ist.
         }
@@ -72,6 +73,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         this.itemSprite = itemSprite;
         this.itemDescription = itemDescription;
         isFull = true;
+        Debug.Log("is Full = " + isFull);
 
         //quantityText.text = quantity.ToString(); // Anzahl fürs Erste entfernt
         //quantityText.enabled = true; // Anzahl fürs Erste entfernt
@@ -92,11 +94,15 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     
     public void OnLeftClick() // Itemslot auswählen, um Itembeschreibung zu (de-)aktivieren
     {
+        //inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
         if (!thisItemSelected) // wenn kein Slot markiert ist und er angeklickt wird
         {
-            inventoryManager.DeselectAllSlots(); // einer aktiviert, alle anderen deaktiviert
+            Debug.Log("Test");
+            //OnItemPlay(); // zu IM; deaktiviert alle Slots, aber führt in Verbindung mit "ThisItemSelected = true" zu einer aktiviert, alle anderen deaktiviert
+            inventoryManager.DeselectAllSlots(); // einer aktiviert, alle anderen deaktiviert --> Jetzt OnItemPlay();
+            Debug.Log("Test_2");
             //inventoryManager.SelectTwoSlots(); // zwei können gleichzeitig aktiviert sein, alle anderen deaktiviert
-            thisItemSelected = true;
+            thisItemSelected = true; // aktiviert den aktuellen Slot
             if (isFull == true) // Slots nur noch auswählabr, wenn etwas drinliegt, und auch nur dann Beschreibung sichtbar
             {
                 selectedShader.SetActive(true);
@@ -107,6 +113,8 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
                 ItemDescriptionNameText.text = itemName;
                 ItemDescriptionText.text = itemDescription;
                 itemDescriptionImage.sprite = itemSprite;
+
+                //inventoryManager = GameObject.Find("Inventory_Button").GetComponent<InventoryManager>();
 
                 inventoryManager.UseItem(itemName); // Weiterleitung an Item_SO // neu
                 Debug.Log("Item markiert_5");
@@ -124,7 +132,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
                 itemDescriptionImage.sprite = emptySprite;
             }
         }
-        else if (thisItemSelected) // wenn Slot markiert ist und er ein weiteres mal angeklickt wird
+        else if (thisItemSelected) // wenn Slot markiert ist und er ein weiteres Mal angeklickt wird
         {
             selectedShader.SetActive(false);
             itemDescriptionBar.SetActive(false); 
@@ -133,6 +141,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
             ItemDescriptionNameText.text = "";
             itemDescriptionImage.sprite = emptySprite;
             OnItemShutUp(); // Eventmanagement für Deaktivierung des markierten Zustands
+            Debug.Log("zu");
         }
     }
 

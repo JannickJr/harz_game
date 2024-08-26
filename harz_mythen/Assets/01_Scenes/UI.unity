@@ -1428,6 +1428,9 @@ MonoBehaviour:
   itemSOs:
   - {fileID: 11400000, guid: f69b1535a3a3c694e85d5c7c11404177, type: 2}
   - {fileID: 11400000, guid: 319f2db4a8999c742966b43686ec3714, type: 2}
+  - {fileID: 11400000, guid: 3a07127c4230e77499a129e333d12713, type: 2}
+  - {fileID: 11400000, guid: 0f0efe04904a25145bd6194182177752, type: 2}
+  - {fileID: 11400000, guid: 43a365b751fed5c4ca3e7b0ad0c383b2, type: 2}
 --- !u!114 &253160838
 MonoBehaviour:
   m_ObjectHideFlags: 0
