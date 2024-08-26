@@ -49,6 +49,8 @@ public class SceneManagement : MonoBehaviour
             //GameObject.Find("Menu_Buttons").SetActive(true);
             //GameObject.Find("Task").SetActive(true);
             GameObject.Find("Buttons").SetActive(true);
+            DialogActivation.characterNumber = 0;
+            DialogActivation.dialogActivated = true;
         }
         if (GameObject.Find("05_Scene_02"))
         {
@@ -63,6 +65,8 @@ public class SceneManagement : MonoBehaviour
             //GameObject.Find("Menu_Buttons").SetActive(true);
             //GameObject.Find("Task").SetActive(true);
             GameObject.Find("Buttons").SetActive(true);
+            DialogActivation.characterNumber = 0;
+            DialogActivation.dialogActivated = true;
         }
         if (GameObject.Find("07_Scene_03"))
         {

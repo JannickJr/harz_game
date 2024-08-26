@@ -423,6 +423,7 @@ namespace _09_Scripts._Dialogsystem
             character.GetComponent<DialogActivation>().enabled = true;
             //---HUD Activation---//
             OnHUDActivation();
+            wall.SetActive(false);
         }
     }
 }
