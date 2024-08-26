@@ -397,6 +397,7 @@ namespace _09_Scripts._Dialogsystem
                     //imageRuma.SetActive(true);
                     textName.text = "Ruma";
                     textComponent.text = "Fieslinge! Kennt ihr denn gar kein Erbarmen?";
+                    imageChangeRuma.sprite = RumaSpeechbubbleA;
                     //imageKobold_1.SetActive(false);
                     character = GameObject.Find("Character_Kobold_1");
                     //imageKobold_2.SetActive(false);
@@ -441,6 +442,7 @@ namespace _09_Scripts._Dialogsystem
                     //imageRuma.SetActive(true);
                     textName.text = "Ruma";
                     textComponent.text = "Schweig still! Nur mein lieber Romar darf diese Worte zu mir sagen.";
+                    imageChangeRuma.sprite = RumaSpeechbubbleB;
                     //imageKobold_1.SetActive(false);
                     character = GameObject.Find("Character_Kobold_1");
                     //imageKobold_2.SetActive(false);
