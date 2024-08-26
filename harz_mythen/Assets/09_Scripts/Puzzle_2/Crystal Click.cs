@@ -13,7 +13,7 @@ public class CrystalClick : MonoBehaviour
     private Renderer objectRenderer;
     private Color originalColor;
 
-    private static readonly int[] correctSequence = new int[] { 1, 2, 3, 1, 2, 4, 1, 3, 2, 6, 2, 4, 3 };
+    private static readonly int[] correctSequence = new int[] { 1, 2, 3, 1, 2, 4 };
     private static int currentSequenceIndex = 0;
     private static bool puzzleCompleted = false;
 
