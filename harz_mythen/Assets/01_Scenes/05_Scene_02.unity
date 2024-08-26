@@ -1176,15 +1176,15 @@ RectTransform:
   m_GameObject: {fileID: 630267114}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_LocalScale: {x: 80, y: 80, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1460374509}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 853, y: 240}
-  m_SizeDelta: {x: 20.47998, y: 20.479996}
+  m_AnchoredPosition: {x: 1400, y: 220.5}
+  m_SizeDelta: {x: 12, y: 12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &630267116
 MonoBehaviour:
@@ -1206,12 +1206,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f97e839621691884880b67bbc378cd4d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 21df2915fe8b2cd409c54ac31ae01f9e, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0.735
+  m_FillAmount: 0.723
   m_FillClockwise: 1
   m_FillOrigin: 1
   m_UseSpriteMesh: 0
@@ -1791,14 +1791,14 @@ RectTransform:
   m_GameObject: {fileID: 995124122}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 11, y: 11, z: 11}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 12, y: 12, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1460374509}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1553, y: 88.2}
+  m_AnchoredPosition: {x: 650, y: 100}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &995124124
@@ -1821,12 +1821,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cda7ade85fe6511468d976fb5364f39b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0.581
+  m_FillAmount: 0.554
   m_FillClockwise: 1
   m_FillOrigin: 1
   m_UseSpriteMesh: 0
@@ -2327,38 +2327,38 @@ MonoBehaviour:
   imageKobold_2: {fileID: 1583538426}
   imageChangeRuma: {fileID: 995124124}
   spriteChoicesRuma_1:
-  - {fileID: 21300000, guid: cda7ade85fe6511468d976fb5364f39b, type: 3}
-  - {fileID: 21300000, guid: ac0a842073fcde5429ba1b2c6a8761dd, type: 3}
-  - {fileID: 21300000, guid: cda7ade85fe6511468d976fb5364f39b, type: 3}
-  - {fileID: 21300000, guid: ac0a842073fcde5429ba1b2c6a8761dd, type: 3}
-  - {fileID: 21300000, guid: cda7ade85fe6511468d976fb5364f39b, type: 3}
-  - {fileID: 21300000, guid: ac0a842073fcde5429ba1b2c6a8761dd, type: 3}
-  - {fileID: 21300000, guid: cda7ade85fe6511468d976fb5364f39b, type: 3}
-  - {fileID: 21300000, guid: ac0a842073fcde5429ba1b2c6a8761dd, type: 3}
-  - {fileID: 21300000, guid: cda7ade85fe6511468d976fb5364f39b, type: 3}
-  - {fileID: 21300000, guid: ac0a842073fcde5429ba1b2c6a8761dd, type: 3}
-  - {fileID: 21300000, guid: ac0a842073fcde5429ba1b2c6a8761dd, type: 3}
+  - {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
+  - {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
+  - {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
+  - {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
+  - {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
+  - {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
+  - {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
+  - {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
+  - {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
+  - {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
+  - {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
   spriteChoicesRuma_2:
-  - {fileID: 21300000, guid: ac0a842073fcde5429ba1b2c6a8761dd, type: 3}
-  - {fileID: 21300000, guid: ac0a842073fcde5429ba1b2c6a8761dd, type: 3}
-  RumaSpeechbubble: {fileID: 21300000, guid: cda7ade85fe6511468d976fb5364f39b, type: 3}
-  RumaSpeechbubbleA: {fileID: 21300000, guid: cda7ade85fe6511468d976fb5364f39b, type: 3}
-  RumaSpeechbubbleB: {fileID: 21300000, guid: cda7ade85fe6511468d976fb5364f39b, type: 3}
+  - {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
+  - {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
+  RumaSpeechbubble: {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
+  RumaSpeechbubbleA: {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
+  RumaSpeechbubbleB: {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
   imageChangeKobold: {fileID: 630267116}
   spriteChoicesKobold:
-  - {fileID: 21300000, guid: f97e839621691884880b67bbc378cd4d, type: 3}
-  - {fileID: 21300000, guid: f97e839621691884880b67bbc378cd4d, type: 3}
-  - {fileID: 21300000, guid: f97e839621691884880b67bbc378cd4d, type: 3}
-  - {fileID: 21300000, guid: a97eb140270d0e44d8bb187af4026c82, type: 3}
-  - {fileID: 21300000, guid: a97eb140270d0e44d8bb187af4026c82, type: 3}
-  - {fileID: 21300000, guid: a97eb140270d0e44d8bb187af4026c82, type: 3}
-  - {fileID: 21300000, guid: a97eb140270d0e44d8bb187af4026c82, type: 3}
-  - {fileID: 21300000, guid: a97eb140270d0e44d8bb187af4026c82, type: 3}
-  - {fileID: 21300000, guid: f97e839621691884880b67bbc378cd4d, type: 3}
-  - {fileID: 21300000, guid: f97e839621691884880b67bbc378cd4d, type: 3}
-  - {fileID: 21300000, guid: f97e839621691884880b67bbc378cd4d, type: 3}
-  KoboldASpeechbubble: {fileID: 21300000, guid: f97e839621691884880b67bbc378cd4d, type: 3}
-  KoboldBSpeechbubble: {fileID: 21300000, guid: a97eb140270d0e44d8bb187af4026c82, type: 3}
+  - {fileID: 21300000, guid: 21df2915fe8b2cd409c54ac31ae01f9e, type: 3}
+  - {fileID: 21300000, guid: 21df2915fe8b2cd409c54ac31ae01f9e, type: 3}
+  - {fileID: 21300000, guid: 21df2915fe8b2cd409c54ac31ae01f9e, type: 3}
+  - {fileID: 21300000, guid: c4351129de54a964996943e7b6e0eaf8, type: 3}
+  - {fileID: 21300000, guid: c4351129de54a964996943e7b6e0eaf8, type: 3}
+  - {fileID: 21300000, guid: c4351129de54a964996943e7b6e0eaf8, type: 3}
+  - {fileID: 21300000, guid: c4351129de54a964996943e7b6e0eaf8, type: 3}
+  - {fileID: 21300000, guid: c4351129de54a964996943e7b6e0eaf8, type: 3}
+  - {fileID: 21300000, guid: 21df2915fe8b2cd409c54ac31ae01f9e, type: 3}
+  - {fileID: 21300000, guid: 21df2915fe8b2cd409c54ac31ae01f9e, type: 3}
+  - {fileID: 21300000, guid: 21df2915fe8b2cd409c54ac31ae01f9e, type: 3}
+  KoboldASpeechbubble: {fileID: 21300000, guid: 21df2915fe8b2cd409c54ac31ae01f9e, type: 3}
+  KoboldBSpeechbubble: {fileID: 21300000, guid: c4351129de54a964996943e7b6e0eaf8, type: 3}
   lines:
   - "Mein Liebster, wo bist du nur? Ich ertrage es keine Sekunde l\xE4nger, von dir
     getrennt zu sein."
@@ -2548,15 +2548,15 @@ RectTransform:
   m_GameObject: {fileID: 1583538426}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_LocalScale: {x: 95, y: 95, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1460374509}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 848, y: 165}
-  m_SizeDelta: {x: 20.47998, y: 20.479996}
+  m_AnchoredPosition: {x: 1400, y: 202.7}
+  m_SizeDelta: {x: 12, y: 12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1583538428
 MonoBehaviour:
@@ -2578,12 +2578,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a97eb140270d0e44d8bb187af4026c82, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c4351129de54a964996943e7b6e0eaf8, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0.662
+  m_FillAmount: 0.669
   m_FillClockwise: 1
   m_FillOrigin: 1
   m_UseSpriteMesh: 0
