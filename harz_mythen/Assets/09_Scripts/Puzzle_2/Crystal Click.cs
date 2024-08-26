@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class CrystalClick : MonoBehaviour
 {
@@ -16,6 +17,10 @@ public class CrystalClick : MonoBehaviour
     private static readonly int[] correctSequence = new int[] { 1, 2, 3, 1, 2, 4 };
     private static int currentSequenceIndex = 0;
     private static bool puzzleCompleted = false;
+
+    public static bool victory = false;
+    [SerializeField] private GameObject Dialogi;
+    [SerializeField] private Camera cam;
 
     void Start()
     {
@@ -68,6 +73,10 @@ public class CrystalClick : MonoBehaviour
     {
         audioSource.clip = successMelody;
         audioSource.Play();
+        victory = true;
+        Dialogi.SetActive(true);
+        Debug.Log("victory = " + victory);
+        cam.enabled = true;
     }
 
     void HighlightObject()

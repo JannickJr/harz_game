@@ -250,7 +250,7 @@ namespace _09_Scripts._Dialogsystem
         {
             cameraDialog.enabled = true;
             mainCamera.enabled = false;
-            if (LevelStarted == false && Puzzle1_LockControl.victory == true) // evtl. zu Methode ändern
+            if (LevelStarted == false && CrystalClick.victory == true) // evtl. zu Methode ändern
             {
                 StartCutscene_2();
                 Debug.Log("Start2");
@@ -267,6 +267,8 @@ namespace _09_Scripts._Dialogsystem
             textComponent.text = string.Empty;
             imageRuma.SetActive(true);
             imageChangeRuma.enabled = true;
+            imageKobold_1.SetActive(false);
+            imageKobold_2.SetActive(false);
             //--- R + R können nicht angeklickt werden --- --> braucht man nicht mehr wegen Wall
             /*character = GameObject.Find("Character_Romar");
             character.GetComponent<DialogActivation>().enabled = false;
