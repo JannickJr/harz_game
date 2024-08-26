@@ -2342,9 +2342,9 @@ MonoBehaviour:
   spriteChoicesRuma_2:
   - {fileID: 21300000, guid: 518530d7faeb6d346b5ec331f6a70424, type: 3}
   - {fileID: 21300000, guid: 29a7b6868c34c0c43a6734e63a9368dc, type: 3}
-  RumaSpeechbubble: {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
-  RumaSpeechbubbleA: {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
-  RumaSpeechbubbleB: {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
+  RumaSpeechbubble: {fileID: 21300000, guid: 00d974f925727ff478a879f891c08ccd, type: 3}
+  RumaSpeechbubbleA: {fileID: 21300000, guid: 7a20667df4087c94396b85f317006a5a, type: 3}
+  RumaSpeechbubbleB: {fileID: 21300000, guid: ffdbe860702738943a173a449022410f, type: 3}
   imageChangeKobold: {fileID: 630267116}
   spriteChoicesKobold:
   - {fileID: 21300000, guid: 21df2915fe8b2cd409c54ac31ae01f9e, type: 3}
@@ -2359,8 +2359,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dbe3bfc08d7ff914eb8ceb8e2508fe61, type: 3}
   - {fileID: 21300000, guid: dbe3bfc08d7ff914eb8ceb8e2508fe61, type: 3}
   - {fileID: 21300000, guid: dbe3bfc08d7ff914eb8ceb8e2508fe61, type: 3}
-  KoboldASpeechbubble: {fileID: 21300000, guid: 1708bfac40219194094a5cded11527e9, type: 3}
-  KoboldBSpeechbubble: {fileID: 21300000, guid: c4351129de54a964996943e7b6e0eaf8, type: 3}
+  KoboldASpeechbubble: {fileID: 21300000, guid: 21df2915fe8b2cd409c54ac31ae01f9e, type: 3}
+  KoboldBSpeechbubble: {fileID: 21300000, guid: 1708bfac40219194094a5cded11527e9, type: 3}
   lines:
   - "Mein Liebster, wo bist du nur? Ich ertrage es keine Sekunde l\xE4nger, von dir
     getrennt zu sein."
@@ -2856,7 +2856,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1804724167
 RectTransform:
   m_ObjectHideFlags: 0
