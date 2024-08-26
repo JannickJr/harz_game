@@ -265,6 +265,8 @@ namespace _09_Scripts._Dialogsystem
         void StartDialog2() // Dialog 2 - Start 
         {
             index = 0;
+            imageChangeRuma.sprite = spriteChoicesRuma_2[index];
+            imageChangeRomar.sprite = spriteChoicesRomar_2[index];
             StartCoroutine(TypeLine2());
         }
 

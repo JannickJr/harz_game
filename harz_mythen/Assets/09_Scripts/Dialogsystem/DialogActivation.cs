@@ -40,6 +40,7 @@ namespace _09_Scripts._Dialogsystem
                             {
                                 Dialogi.SetActive(false);
                                 dialogActivated = false;
+                                Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
                                 characterNumber = 0;
                             }
                             if (!dialogActivated && characterNumber != 2)
@@ -80,6 +81,7 @@ namespace _09_Scripts._Dialogsystem
                             Debug.Log("Treffer XXX Ruma"); // funktioniert
                             if (dialogActivated)
                             {
+                                Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
                                 Dialogi.SetActive(false);
                                 dialogActivated = false;
                                 characterNumber = 0;
@@ -99,6 +101,7 @@ namespace _09_Scripts._Dialogsystem
                             Debug.Log("Treffer XXX Kobold_1"); // funktioniert
                             if (dialogActivated)
                             {
+                                Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
                                 Dialogi.SetActive(false);
                                 dialogActivated = false;
                                 characterNumber = 0;
@@ -118,6 +121,7 @@ namespace _09_Scripts._Dialogsystem
                             Debug.Log("Treffer XXX Kobold_2"); // funktioniert
                             if (dialogActivated)
                             {
+                                Debug.Log("CharacterNumber = " + DialogActivation.characterNumber);
                                 Dialogi.SetActive(false);
                                 dialogActivated = false;
                                 characterNumber = 0;

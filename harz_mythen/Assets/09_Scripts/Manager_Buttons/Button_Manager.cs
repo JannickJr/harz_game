@@ -53,6 +53,8 @@ public class Button_Manager : MonoBehaviour
         DialogActivation.characterNumber = 0;
         DialogActivation.dialogActivated = true;
         Dialog.LevelStarted = true;
+        Dialog_2.LevelStarted = true;
+        Dialog_3.LevelStarted = true;
         Item_2.stick = false;
         Item_2.web = false;
         SceneManager.LoadScene("01_Main_Menu");
