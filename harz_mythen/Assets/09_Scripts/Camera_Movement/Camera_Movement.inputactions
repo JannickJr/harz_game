@@ -132,28 +132,6 @@
                     "action": "Move_S2",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "a3b2306f-6f19-45ff-8e71-d3baf0ce6f84",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move_S2",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "e198434d-ac92-4707-8f9a-bc618c44c9bf",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move_S2",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 }
             ]
         }
