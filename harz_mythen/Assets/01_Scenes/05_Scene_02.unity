@@ -1821,7 +1821,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 00d974f925727ff478a879f891c08ccd, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2327,37 +2327,39 @@ MonoBehaviour:
   imageKobold_2: {fileID: 1583538426}
   imageChangeRuma: {fileID: 995124124}
   spriteChoicesRuma_1:
-  - {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
-  - {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
-  - {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
-  - {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
-  - {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
-  - {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
-  - {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
-  - {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
-  - {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
-  - {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
-  - {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
+  - {fileID: 21300000, guid: 00d974f925727ff478a879f891c08ccd, type: 3}
+  - {fileID: 21300000, guid: 00d974f925727ff478a879f891c08ccd, type: 3}
+  - {fileID: 21300000, guid: ffdbe860702738943a173a449022410f, type: 3}
+  - {fileID: 21300000, guid: ffdbe860702738943a173a449022410f, type: 3}
+  - {fileID: 21300000, guid: 0ae3c443ab6a95d419201e17c4fedd3d, type: 3}
+  - {fileID: 21300000, guid: 29a7b6868c34c0c43a6734e63a9368dc, type: 3}
+  - {fileID: 21300000, guid: 29a7b6868c34c0c43a6734e63a9368dc, type: 3}
+  - {fileID: 21300000, guid: 29a7b6868c34c0c43a6734e63a9368dc, type: 3}
+  - {fileID: 21300000, guid: 29a7b6868c34c0c43a6734e63a9368dc, type: 3}
+  - {fileID: 21300000, guid: 29a7b6868c34c0c43a6734e63a9368dc, type: 3}
+  - {fileID: 21300000, guid: 7a20667df4087c94396b85f317006a5a, type: 3}
+  - {fileID: 21300000, guid: 00d974f925727ff478a879f891c08ccd, type: 3}
   spriteChoicesRuma_2:
-  - {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
-  - {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
+  - {fileID: 21300000, guid: 518530d7faeb6d346b5ec331f6a70424, type: 3}
+  - {fileID: 21300000, guid: 29a7b6868c34c0c43a6734e63a9368dc, type: 3}
   RumaSpeechbubble: {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
   RumaSpeechbubbleA: {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
   RumaSpeechbubbleB: {fileID: 21300000, guid: 24fe19977ea78b24eaafc0e7a49774f7, type: 3}
   imageChangeKobold: {fileID: 630267116}
   spriteChoicesKobold:
   - {fileID: 21300000, guid: 21df2915fe8b2cd409c54ac31ae01f9e, type: 3}
-  - {fileID: 21300000, guid: 21df2915fe8b2cd409c54ac31ae01f9e, type: 3}
-  - {fileID: 21300000, guid: 21df2915fe8b2cd409c54ac31ae01f9e, type: 3}
-  - {fileID: 21300000, guid: c4351129de54a964996943e7b6e0eaf8, type: 3}
-  - {fileID: 21300000, guid: c4351129de54a964996943e7b6e0eaf8, type: 3}
-  - {fileID: 21300000, guid: c4351129de54a964996943e7b6e0eaf8, type: 3}
-  - {fileID: 21300000, guid: c4351129de54a964996943e7b6e0eaf8, type: 3}
-  - {fileID: 21300000, guid: c4351129de54a964996943e7b6e0eaf8, type: 3}
-  - {fileID: 21300000, guid: 21df2915fe8b2cd409c54ac31ae01f9e, type: 3}
-  - {fileID: 21300000, guid: 21df2915fe8b2cd409c54ac31ae01f9e, type: 3}
-  - {fileID: 21300000, guid: 21df2915fe8b2cd409c54ac31ae01f9e, type: 3}
-  KoboldASpeechbubble: {fileID: 21300000, guid: 21df2915fe8b2cd409c54ac31ae01f9e, type: 3}
+  - {fileID: 21300000, guid: 45bfb74efd50be34c86c2c936040e102, type: 3}
+  - {fileID: 21300000, guid: 45bfb74efd50be34c86c2c936040e102, type: 3}
+  - {fileID: 21300000, guid: 4ae4893f3d8885f45b5b9996799099d2, type: 3}
+  - {fileID: 21300000, guid: 4ae4893f3d8885f45b5b9996799099d2, type: 3}
+  - {fileID: 21300000, guid: 4ae4893f3d8885f45b5b9996799099d2, type: 3}
+  - {fileID: 21300000, guid: 4ae4893f3d8885f45b5b9996799099d2, type: 3}
+  - {fileID: 21300000, guid: 1708bfac40219194094a5cded11527e9, type: 3}
+  - {fileID: 21300000, guid: 57153493b9b1dd64d86094348cb6ea9e, type: 3}
+  - {fileID: 21300000, guid: dbe3bfc08d7ff914eb8ceb8e2508fe61, type: 3}
+  - {fileID: 21300000, guid: dbe3bfc08d7ff914eb8ceb8e2508fe61, type: 3}
+  - {fileID: 21300000, guid: dbe3bfc08d7ff914eb8ceb8e2508fe61, type: 3}
+  KoboldASpeechbubble: {fileID: 21300000, guid: 1708bfac40219194094a5cded11527e9, type: 3}
   KoboldBSpeechbubble: {fileID: 21300000, guid: c4351129de54a964996943e7b6e0eaf8, type: 3}
   lines:
   - "Mein Liebster, wo bist du nur? Ich ertrage es keine Sekunde l\xE4nger, von dir
@@ -2372,8 +2374,8 @@ MonoBehaviour:
     werde."
   - 'Die Prinzessin wurde also eingesperrt, weil sie jemanden mag? Sie tut mir leid. '
   - Befreien wir sie doch und lassen sie zu ihrem Liebsten gehen.
-  - "Schwachkopf! Dann wird uns der K\xF6nig richten lassen. An mir kommt niemand
-    vorbei, denn ich h\xE4nge an meinem Leben."
+  - "Schwachkopf! Dann wird uns der K\xF6nig richten lassen."
+  - "An mir kommt niemand vorbei, denn ich h\xE4nge an meinem Leben."
   - "So wollt ihr mich weiterhin leiden lassen? Jedes Gl\xFCck muss mich verlassen
     haben, dass mir solch ein furchtbares Schicksal zuteil wird."
   - "Oh, mein Romar. W\xE4ren wir doch nur wieder vereint\u2026."
