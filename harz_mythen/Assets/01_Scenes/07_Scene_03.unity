@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2723,7 +2723,7 @@ AudioSource:
   m_GameObject: {fileID: 291965076}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 6b5a557ecd2ba944891eb322c1ed6123, type: 2}
   m_audioClip: {fileID: 8300000, guid: 3008f7e077d469344abb53dafc63141f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.136
@@ -61170,18 +61170,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1131987824}
     m_Modifications:
-    - target: {fileID: 3299150556615474673, guid: 4f5fd0b6b8610304daac857fa9f7664d, type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5825042568708827340, guid: 4f5fd0b6b8610304daac857fa9f7664d, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5825042568708827340, guid: 4f5fd0b6b8610304daac857fa9f7664d, type: 3}
-      propertyPath: mainCamera
-      value: 
-      objectReference: {fileID: 1750940343}
     - target: {fileID: 6358320856239067810, guid: 801bbcd52e7a4e74c80080f098d41a5a, type: 3}
       propertyPath: m_Name
       value: Seerosenblatt.002 (1)
@@ -61258,6 +61246,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3299150556615474673, guid: 4f5fd0b6b8610304daac857fa9f7664d, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825042568708827340, guid: 4f5fd0b6b8610304daac857fa9f7664d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825042568708827340, guid: 4f5fd0b6b8610304daac857fa9f7664d, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1750940343}
     m_RemovedComponents:
     - {fileID: 0}
     m_RemovedGameObjects: []
