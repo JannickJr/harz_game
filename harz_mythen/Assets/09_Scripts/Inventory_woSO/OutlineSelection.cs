@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class OutlineSelection : MonoBehaviour
 {
- 
     void Start()
     {
         Material myMaterial = GetComponent<Renderer>().material;
