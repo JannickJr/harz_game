@@ -12,10 +12,4 @@ public class HSB_Start : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.Play("HSB");
     }
-
-    
-    void Update()
-    {
-        
-    }
 }

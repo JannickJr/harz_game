@@ -15,6 +15,16 @@ public class Quit_Game : MonoBehaviour
         Exit();
     }
 
+    private void OnMouseDown()
+    {
+        Application.Quit();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
+
     public void Exit()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
