@@ -8498,7 +8498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1691fac1ed12bc4a921259d3bfac5bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Kescher
+  itemName: Grottenolm
   quantity: 2
   sprite: {fileID: 21300000, guid: 0f52f5bba7b01a54bb8899508d871082, type: 3}
   itemDescription: "Er sollte f\xFCr sp\xE4ter aufgehoben werden."
