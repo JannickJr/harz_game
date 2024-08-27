@@ -322,17 +322,17 @@ namespace _09_Scripts._Dialogsystem
         {
             switch (index)
             {
-                case 0:
                 case 2:
                 case 4:
                     //imageRuma.SetActive(false);
                     //imageRomar.SetActive(true);
-                    imageChangeRuma.enabled = true;
-                    imageChangeRomar.enabled = true;
                     textName.text = "Romar";
                     break;
+                case 0:
                 case 1:
                 case 3:
+                    imageChangeRuma.enabled = true;
+                    imageChangeRomar.enabled = true;
                     //imageRuma.SetActive(true);
                     //imageRomar.SetActive(false);
                     textName.text = "Ruma";

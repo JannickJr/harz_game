@@ -2522,6 +2522,7 @@ MonoBehaviour:
   snapThreshold: 1
   lineChangeThreshold: 0.1
   objectToFadeIn: {fileID: 1112611948}
+  objectToFadeOut: {fileID: 0}
   fadeDuration: 3
 --- !u!212 &246116693
 SpriteRenderer:
@@ -2964,6 +2965,7 @@ MonoBehaviour:
   snapThreshold: 1
   lineChangeThreshold: 0.1
   objectToFadeIn: {fileID: 1112611948}
+  objectToFadeOut: {fileID: 0}
   fadeDuration: 3
 --- !u!212 &290337876
 SpriteRenderer:
@@ -3781,6 +3783,7 @@ MonoBehaviour:
   snapThreshold: 1
   lineChangeThreshold: 0.1
   objectToFadeIn: {fileID: 1540250335}
+  objectToFadeOut: {fileID: 0}
   fadeDuration: 3
 --- !u!212 &360840858
 SpriteRenderer:
@@ -4303,6 +4306,7 @@ MonoBehaviour:
   snapThreshold: 1
   lineChangeThreshold: 0.1
   objectToFadeIn: {fileID: 1112611948}
+  objectToFadeOut: {fileID: 0}
   fadeDuration: 3
 --- !u!212 &398743378
 SpriteRenderer:
@@ -4655,7 +4659,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Zur n\xE4chsten Szene"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8b92165a5fd86e24ea9d6377f292a338, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4719,7 +4723,7 @@ MonoBehaviour:
   m_margin: {x: 20, y: 20, z: 20, w: 20}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &423402626
@@ -4919,6 +4923,7 @@ MonoBehaviour:
   snapThreshold: 3
   lineChangeThreshold: 0.1
   objectToFadeIn: {fileID: 0}
+  objectToFadeOut: {fileID: 0}
   fadeDuration: 1
 --- !u!114 &456046667
 MonoBehaviour:
@@ -5819,6 +5824,7 @@ MonoBehaviour:
   snapThreshold: 5
   lineChangeThreshold: 0.2
   objectToFadeIn: {fileID: 0}
+  objectToFadeOut: {fileID: 0}
   fadeDuration: 1
 --- !u!114 &574410175
 MonoBehaviour:
@@ -7305,6 +7311,7 @@ MonoBehaviour:
   snapThreshold: 5
   lineChangeThreshold: 0.2
   objectToFadeIn: {fileID: 0}
+  objectToFadeOut: {fileID: 0}
   fadeDuration: 1
 --- !u!114 &753804136
 MonoBehaviour:
@@ -7470,7 +7477,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Weiter
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8b92165a5fd86e24ea9d6377f292a338, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -7534,7 +7541,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &761096422
@@ -7682,6 +7689,7 @@ MonoBehaviour:
   snapThreshold: 5
   lineChangeThreshold: 0.2
   objectToFadeIn: {fileID: 0}
+  objectToFadeOut: {fileID: 0}
   fadeDuration: 1
 --- !u!114 &786821703
 MonoBehaviour:
@@ -8482,9 +8490,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Zur\xFCck"
+  m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8b92165a5fd86e24ea9d6377f292a338, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -8548,7 +8556,7 @@ MonoBehaviour:
   m_margin: {x: 10, y: 10, z: 10, w: 10}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &899041035
@@ -9428,6 +9436,7 @@ MonoBehaviour:
   snapThreshold: 1
   lineChangeThreshold: 0.1
   objectToFadeIn: {fileID: 1540250335}
+  objectToFadeOut: {fileID: 0}
   fadeDuration: 3
 --- !u!212 &992274935
 SpriteRenderer:
@@ -9655,6 +9664,7 @@ MonoBehaviour:
   snapThreshold: 1
   lineChangeThreshold: 0.1
   objectToFadeIn: {fileID: 1112611948}
+  objectToFadeOut: {fileID: 0}
   fadeDuration: 3
 --- !u!212 &1047415326
 SpriteRenderer:
@@ -10230,6 +10240,7 @@ MonoBehaviour:
   snapThreshold: 1
   lineChangeThreshold: 0.1
   objectToFadeIn: {fileID: 1112611948}
+  objectToFadeOut: {fileID: 0}
   fadeDuration: 3
 --- !u!212 &1110482210
 SpriteRenderer:
@@ -10472,6 +10483,7 @@ MonoBehaviour:
   snapThreshold: 5
   lineChangeThreshold: 0.2
   objectToFadeIn: {fileID: 0}
+  objectToFadeOut: {fileID: 0}
   fadeDuration: 1
 --- !u!114 &1122771531
 MonoBehaviour:
@@ -11929,6 +11941,7 @@ MonoBehaviour:
   snapThreshold: 1
   lineChangeThreshold: 0.1
   objectToFadeIn: {fileID: 1540250335}
+  objectToFadeOut: {fileID: 0}
   fadeDuration: 3
 --- !u!212 &1258809821
 SpriteRenderer:
@@ -12767,6 +12780,7 @@ MonoBehaviour:
   snapThreshold: 1
   lineChangeThreshold: 0.1
   objectToFadeIn: {fileID: 1540250335}
+  objectToFadeOut: {fileID: 0}
   fadeDuration: 3
 --- !u!212 &1365822309
 SpriteRenderer:
@@ -13775,10 +13789,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Weiter
+  m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8b92165a5fd86e24ea9d6377f292a338, type: 2}
+  m_sharedMaterial: {fileID: -6945926635847133890, guid: 8b92165a5fd86e24ea9d6377f292a338, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13802,7 +13816,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -14157,6 +14171,7 @@ MonoBehaviour:
   snapThreshold: 1
   lineChangeThreshold: 0.1
   objectToFadeIn: {fileID: 1112611948}
+  objectToFadeOut: {fileID: 0}
   fadeDuration: 3
 --- !u!212 &1564246781
 SpriteRenderer:
@@ -15477,6 +15492,7 @@ MonoBehaviour:
   snapThreshold: 1
   lineChangeThreshold: 0.1
   objectToFadeIn: {fileID: 1540250335}
+  objectToFadeOut: {fileID: 0}
   fadeDuration: 3
 --- !u!212 &1689153212
 SpriteRenderer:
@@ -16300,6 +16316,7 @@ MonoBehaviour:
   snapThreshold: 3
   lineChangeThreshold: 0.1
   objectToFadeIn: {fileID: 0}
+  objectToFadeOut: {fileID: 0}
   fadeDuration: 1
 --- !u!114 &1761297134
 MonoBehaviour:
@@ -17179,8 +17196,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8b92165a5fd86e24ea9d6377f292a338, type: 2}
+  m_sharedMaterial: {fileID: -6945926635847133890, guid: 8b92165a5fd86e24ea9d6377f292a338, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18309,6 +18326,7 @@ MonoBehaviour:
   snapThreshold: 1
   lineChangeThreshold: 0.1
   objectToFadeIn: {fileID: 1540250335}
+  objectToFadeOut: {fileID: 0}
   fadeDuration: 3
 --- !u!212 &2019126069
 SpriteRenderer:
@@ -18477,8 +18495,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: f41ee9c808260484e94e1e524e6d6af1, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -61318,18 +61336,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1131987824}
     m_Modifications:
-    - target: {fileID: 3299150556615474673, guid: 4f5fd0b6b8610304daac857fa9f7664d, type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5825042568708827340, guid: 4f5fd0b6b8610304daac857fa9f7664d, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5825042568708827340, guid: 4f5fd0b6b8610304daac857fa9f7664d, type: 3}
-      propertyPath: mainCamera
-      value: 
-      objectReference: {fileID: 1750940343}
     - target: {fileID: 6358320856239067810, guid: 801bbcd52e7a4e74c80080f098d41a5a, type: 3}
       propertyPath: m_Name
       value: Seerosenblatt.002 (1)
@@ -61406,6 +61412,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3299150556615474673, guid: 4f5fd0b6b8610304daac857fa9f7664d, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825042568708827340, guid: 4f5fd0b6b8610304daac857fa9f7664d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825042568708827340, guid: 4f5fd0b6b8610304daac857fa9f7664d, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1750940343}
     m_RemovedComponents:
     - {fileID: 0}
     m_RemovedGameObjects: []
