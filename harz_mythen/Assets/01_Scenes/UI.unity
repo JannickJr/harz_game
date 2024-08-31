@@ -12735,8 +12735,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Die Farben auf dem Truhenschloss stehen in Zusammenanhang mit den Blumen
-    im Wald.
+  m_text: "Die Farben auf den Zahnr\xE4dern stehen in Zusammenhang mit den Blumen
+    im Wald."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b92165a5fd86e24ea9d6377f292a338, type: 2}
   m_sharedMaterial: {fileID: -6945926635847133890, guid: 8b92165a5fd86e24ea9d6377f292a338, type: 2}
