@@ -44,7 +44,7 @@ public class HelpTexts : MonoBehaviour
         {
             help_1.text = "Die Sterne leuchten ganz hell.";
             help_2.text = "Die Sterne müssen in die richtige Form geschoben werden.";
-            solution.text = "...";
+            solution.text = "Die Lösung ist auf dem Seerosenblatt zu sehen.";
         }
     }
 
