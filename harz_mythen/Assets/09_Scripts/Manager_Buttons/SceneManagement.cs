@@ -61,8 +61,8 @@ public class SceneManagement : MonoBehaviour
         }
         if (GameObject.Find("06_CutScene_03"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Additive);
-            SceneManager.UnloadSceneAsync("06_CutScene_03");
+            SceneManager.LoadScene("07_Scene_03");
+            //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
             //GameObject.Find("Inventory_Button").SetActive(true);
             //GameObject.Find("Menu_Buttons").SetActive(true);
             //GameObject.Find("Task").SetActive(true);
@@ -84,7 +84,7 @@ public class SceneManagement : MonoBehaviour
             Dialog_3.LevelStarted = true;
             Item_2.stick = false;
             Item_2.web = false;
-            SceneManager.LoadScene("01_Main_Menu");
+            SceneManager.LoadScene("07_Scene_03");
         }
     }
 
@@ -110,6 +110,11 @@ public class SceneManagement : MonoBehaviour
         {
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("07_Scene_03"));
         }
+    }
+
+    public void LoadScene03()
+    {
+        SceneManager.LoadScene(6);
     }
 
     private void OnDisable()
